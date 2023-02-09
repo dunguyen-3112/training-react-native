@@ -1,7 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import StorybookUI from './storybook';
 
-export default function App() {
+const STORYBOOK_START = true;
+
+const App = () => {
   return (
     <View style={styles.container}>
       <Text>Open up App.tsx to start working on your app!</Text>
@@ -18,3 +21,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+export default STORYBOOK_START ? StorybookUI : App; 
+
