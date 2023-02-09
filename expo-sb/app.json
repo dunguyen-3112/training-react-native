@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "init-redux",
-    "slug": "init-redux",
+    "name": "expo-sb",
+    "slug": "expo-sb",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
