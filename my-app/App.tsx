@@ -9,8 +9,11 @@ import {
   createBottomTabNavigator,
 } from '@react-navigation/bottom-tabs';
 
+import { Provider } from 'react-redux';
+
 import StorybookUI from '.storybook';
 import { BlogScreen, HomeScreen } from 'screens';
+import { store } from 'store';
 
 const STORYBOOK_START = false;
 
@@ -20,33 +23,35 @@ const App = () => {
   const Tab = createBottomTabNavigator();
 
   return (
-    <NavigationContainer>
-      <StatusBar style="auto" />
-      <Tab.Navigator
-        screenOptions={{ headerShown: false }}
-        tabBar={(props) => <CustomTabBar {...props} />}
-      >
-        <Tab.Screen name="Tab 1">
-          {() => (
-            <Stack.Navigator>
-              <Stack.Screen name="Blog" component={BlogScreen} />
-            </Stack.Navigator>
-          )}
-        </Tab.Screen>
-        <Tab.Screen name="Tab 2">
-          {() => (
-            <Stack.Navigator>
-              <Stack.Screen name="Home" component={HomeScreen} />
-              <Stack.Screen name="Blog" component={BlogScreen} />
-            </Stack.Navigator>
-          )}
-        </Tab.Screen>
-      </Tab.Navigator>
-      {/* <Stack.Navigator>
+    <Provider store={store}>
+      <NavigationContainer>
+        <StatusBar style="auto" />
+        <Tab.Navigator
+          screenOptions={{ headerShown: false }}
+          tabBar={(props) => <CustomTabBar {...props} />}
+        >
+          <Tab.Screen name="Tab 1">
+            {() => (
+              <Stack.Navigator>
+                <Stack.Screen name="Blog" component={BlogScreen} />
+              </Stack.Navigator>
+            )}
+          </Tab.Screen>
+          <Tab.Screen name="Tab 2">
+            {() => (
+              <Stack.Navigator>
+                <Stack.Screen name="Home" component={HomeScreen} />
+                <Stack.Screen name="Blog" component={BlogScreen} />
+              </Stack.Navigator>
+            )}
+          </Tab.Screen>
+        </Tab.Navigator>
+        {/* <Stack.Navigator>
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Blog" component={BlogScreen} />
       </Stack.Navigator> */}
-    </NavigationContainer>
+      </NavigationContainer>
+    </Provider>
   );
 };
 
@@ -64,7 +69,6 @@ const CustomTabBar = ({
   descriptors,
   navigation,
 }: BottomTabBarProps) => {
-  console.log({ state, descriptors, navigation });
   return (
     <View style={styles1.container}>
       {state.routes.map((route, index) => {
