@@ -1,3 +1,3 @@
-import Test from "./Test";
+import Tag from "./Tag";
 
-export {Test};
+export {Tag};
