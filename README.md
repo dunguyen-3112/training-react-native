@@ -37,7 +37,7 @@
 - Check out the branch: feature/practice
 > ``` 
 > git checkout feature/practice
->> ```
+> ```
 
 - Directory folder app:
 > ```
