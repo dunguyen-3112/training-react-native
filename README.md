@@ -30,10 +30,14 @@
 - expo: v.47.0.12
 
 - Clone repository: 
-> ``` git clone https://github.com/dunguyen-3112/training-react-native.git```
+> ```
+> git clone https://github.com/dunguyen-3112/training-react-native.git
+> ```
 
 - Check out the branch: feature/practice
-> ``` git checkout feature/practice```
+> ``` 
+> git checkout feature/practice
+>> ```
 
 - Directory folder app:
 > ```
@@ -43,13 +47,19 @@
 - Install package dependencies and run app:
 
 + use npm:
-> ``` npm install & npm run <platform>```
+> ```
+> npm install & npm run <platform>
+> ```
 
 + Use yarn:
-> ```yarn install & yarn <platform>```
+> ```
+> yarn install & yarn <platform>
+> ```
 
 - Run application on Android:
-> ``` yarn install & yarn android```
+> ```
+> yarn install & yarn android
+> ```
 
 ## 6. Author
 
