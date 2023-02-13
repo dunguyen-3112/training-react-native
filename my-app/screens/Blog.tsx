@@ -4,7 +4,7 @@ import React from 'react';
 const Blog = () => {
   return (
     <View>
-      <Text>Blog</Text>
+      <Text>{2 >= 2}</Text>
     </View>
   );
 };
