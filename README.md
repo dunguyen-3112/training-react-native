@@ -36,7 +36,9 @@
 > ``` git checkout feature/practice```
 
 - Directory folder app:
-> ``` cd app ```
+> ```
+ cd app 
+ ```
 
 - Install package dependencies and run app:
 
