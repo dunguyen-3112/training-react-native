@@ -8,7 +8,7 @@ interface TagProps {
 const Tag = ({ title }: TagProps) => {
   return (
     <TouchableOpacity style={styles.container}>
-      <Text>{title}</Text>
+      <Text style={styles.title}>{title}</Text>
     </TouchableOpacity>
   );
 };
@@ -21,5 +21,12 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     backgroundColor: '#ECEDEC',
     borderRadius: 8,
+  },
+  title: {
+    fontFamily: 'Manrope',
+    fontWeight: '400',
+    fontSize: 13,
+    lineHeight: 18,
+    color: '#5C5C5C',
   },
 });

@@ -1,3 +1,4 @@
 import Tag from './Tag';
+import Food from './Food';
 
-export { Tag };
+export { Tag, Food };
