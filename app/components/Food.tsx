@@ -2,26 +2,49 @@ import {
   StyleSheet,
   Text,
   View,
-  TouchableOpacity,
   Image,
   ImageSourcePropType,
 } from 'react-native';
-import React from 'react';
+import React, { useMemo } from 'react';
+
+import * as C from '@constants';
+
+type Color = 'red' | 'purple' | 'orange' | 'yellow' | 'green';
 
 interface FoodProps {
-  image?: ImageSourcePropType | string;
+  imageUrl?: ImageSourcePropType | string;
   name: string;
   cal: number;
   weight: number;
+  color?: Color;
 }
 
-const Food = ({ image, name, cal, weight }: FoodProps) => {
-  const img = typeof image === 'string' ? { uri: image } : image;
-  //   image = require('@assets/images/a1.png');
+const Food = ({ food }: { food: FoodProps }) => {
+  const { imageUrl, name, color, cal, weight } = food;
+
+  const img = typeof imageUrl === 'string' ? { uri: imageUrl } : imageUrl;
+
+  const [_color, blur_color] = useMemo(() => {
+    switch (color) {
+      case 'red':
+        return [C.COLORS.RED_COLOR, C.COLORS.RED_BLUR_COLOR];
+      case 'purple':
+        return [C.COLORS.PURPLE_COLOR, C.COLORS.PURPLE_BLUR_COLOR];
+      case 'orange':
+        return [C.COLORS.ORANGE_COLOR, C.COLORS.ORANGE_COLOR];
+      case 'yellow':
+        return [C.COLORS.YELLOW_COLOR, C.COLORS.YELLOW_BLUR_COLOR];
+      case 'green':
+        return [C.COLORS.GREEN_COLOR, C.COLORS.GREEN_BLUR_COLOR];
+      default:
+        return [C.COLORS.RED_COLOR, C.COLORS.RED_BLUR_COLOR];
+    }
+  }, [color]);
+
   return (
     <View style={styles.container}>
-      <View style={styles.layer1}>
-        <View style={styles.layer2}></View>
+      <View style={[styles.layer1, { backgroundColor: blur_color }]}>
+        <View style={[styles.layer2, { backgroundColor: _color }]}></View>
         <Image source={img} style={styles.image} />
       </View>
       <Text style={styles.title}>{name}</Text>
@@ -49,28 +72,23 @@ const styles = StyleSheet.create({
     width: 92,
     height: 92,
     borderRadius: 46,
-    backgroundColor: 'rgba(144, 89, 167, 0.2);',
-    position: 'relative',
-    zIndex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    position: 'relative',
   },
   layer2: {
     width: 68,
     height: 68,
-    position: 'absolute',
     zIndex: 2,
     borderRadius: 34,
-    backgroundColor: 'rgba(144, 89, 167, 1);',
   },
   image: {
     position: 'absolute',
-    top: 34,
-    bottom: 7,
-    right: -9,
-    left: 16,
     zIndex: 3,
+    width: 100,
+    height: 80,
     resizeMode: 'contain',
+    right: -10,
   },
   title: {
     marginTop: 14,
