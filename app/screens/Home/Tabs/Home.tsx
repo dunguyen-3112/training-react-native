@@ -1,13 +1,49 @@
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import React from 'react';
 import { Header } from '../../../layouts';
-import { Search } from '@components';
+import { Foods, Search, Slide, Tags } from '@components';
+import { createStackNavigator } from '@react-navigation/stack';
 
 const Home = () => {
+  const Stack = createStackNavigator();
+  const tags = [
+    {
+      id: 1,
+      title: 'React',
+    },
+    {
+      id: 2,
+      title: 'Redux',
+    },
+    {
+      id: 3,
+      title: 'React Native',
+    },
+    {
+      id: 4,
+      title: 'Node',
+    },
+    {
+      id: 5,
+      title: 'Express',
+    },
+    {
+      id: 6,
+      title: 'MongoDB',
+    },
+    {
+      id: 7,
+      title: 'GraphQL',
+    },
+  ];
+
   return (
     <View style={styles.container}>
       <Header />
       <Search />
+      <Tags marginTop={17} />
+      <Slide marginTop={17} />
+      <Foods />
     </View>
   );
 };
@@ -19,5 +55,6 @@ const styles = StyleSheet.create({
     flex: 1,
     marginTop: 60,
     paddingHorizontal: 16,
+    backgroundColor: '#FFFFFF',
   },
 });

@@ -1,1 +1,1 @@
-import './Tag.stories';
+import './Slide.stories';

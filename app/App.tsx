@@ -3,15 +3,17 @@ import React from 'react';
 import Navigation from './navigation';
 
 export default function App() {
-  return <Navigation />;
+  return (
+    <View style={styles.container}>
+      <Navigation />
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#FFFFFF',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });
 
