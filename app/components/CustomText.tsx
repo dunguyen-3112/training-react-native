@@ -19,18 +19,29 @@ type size =
   | 23
   | 24;
 
-type COLOR = 'white' | 'black' | 'orange' | 'green';
+type weight = '400' | '500' | '600' | '700' | '800';
 
-type weight = '400' | '500' | '600' | '800';
+type transform = 'uppercase' | 'lowercase' | 'none';
 
 interface TextProps {
   text: string;
   size: size;
   weight: weight;
-  color: COLOR;
+  color: C.COLOR;
+  transform?: transform;
+  lineHeight?: number;
+  marginTop?: number;
 }
 
-const CustomText = ({ text, size, weight, color }: TextProps) => {
+const CustomText = ({
+  text,
+  size,
+  weight,
+  color,
+  transform = 'none',
+  lineHeight,
+  marginTop = 0,
+}: TextProps) => {
   const _size = useMemo(() => {
     if (typeof size === 'number') return size;
     switch (size) {
@@ -51,7 +62,10 @@ const CustomText = ({ text, size, weight, color }: TextProps) => {
         return C.COLORS.ORANGE_COLOR;
       case 'white':
         return C.COLORS.WHITE_COLOR;
-      case 'black':
+      case 'gray':
+        return C.COLORS.GRAY_COLOR;
+      case 'green':
+        return C.COLORS.GREEN_COLOR;
       default:
         return C.COLORS.TEXT_COLOR;
     }
@@ -61,7 +75,13 @@ const CustomText = ({ text, size, weight, color }: TextProps) => {
     <View>
       <Text
         style={[
-          { fontWeight: weight, fontSize: _size },
+          {
+            fontWeight: weight,
+            fontSize: _size,
+            lineHeight: lineHeight,
+            textTransform: transform,
+            marginTop: marginTop,
+          },
           styles.text,
           { color: _color },
         ]}
