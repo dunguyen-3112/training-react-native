@@ -1,16 +1,11 @@
-import { StyleSheet, TextInput, View, Image } from 'react-native';
+import { StyleSheet, View, Image } from 'react-native';
 import React, { useState, useCallback } from 'react';
 
-import { COLOR, COLORS } from '@constants';
+import { COLORS } from '@constants';
 import Input from './Input';
 
 const Search = () => {
-  const [isFocus, setIsFocus] = useState(true);
   const [searchText, setSearchText] = useState('');
-
-  const handleForcus = useCallback(() => {
-    setIsFocus((prev) => !prev);
-  }, []);
 
   const handleChangeSearched = useCallback((value: string) => {
     setSearchText(value);
@@ -23,15 +18,11 @@ const Search = () => {
         onChangeText={handleChangeSearched}
         value={searchText}
         placeholder="Search for healthy food"
-        onFocus={handleForcus}
-        onBlur={handleForcus}
       />
-      {isFocus && (
-        <Image
-          source={require('@assets/icons/iconsearch.png')}
-          style={styles.iconSearch}
-        />
-      )}
+      <Image
+        source={require('@assets/icons/iconsearch.png')}
+        style={styles.iconSearch}
+      />
     </View>
   );
 };
@@ -44,6 +35,7 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.ORANGE_BLUR_COLOR,
     borderRadius: 15,
     zIndex: 1,
+    marginTop: 14,
   },
   text: {
     fontSize: 13,
