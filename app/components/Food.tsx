@@ -1,55 +1,40 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  ImageSourcePropType,
-} from 'react-native';
-import React, { useMemo } from 'react';
+import { StyleSheet, Text, ImageSourcePropType } from 'react-native';
+import React, { useCallback } from 'react';
 
-import * as C from '@constants';
-
-type Color = 'red' | 'purple' | 'orange' | 'yellow' | 'green';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import { COLOR } from '@constants';
+import FoodAvatar from './FoodAvatar';
 
 interface FoodProps {
+  id: string;
   imageUrl?: ImageSourcePropType | string;
   name: string;
   cal: number;
   weight: number;
-  color?: Color;
+  color?: COLOR;
 }
 
-const Food = ({ food }: { food: FoodProps }) => {
-  const { imageUrl, name, color, cal, weight } = food;
+export { FoodProps };
 
-  const img = typeof imageUrl === 'string' ? { uri: imageUrl } : imageUrl;
+const Food = ({
+  food,
+  onPress,
+}: {
+  food: FoodProps;
+  onPress: (id: string) => void;
+}) => {
+  const { name, cal, weight } = food;
 
-  const [_color, blur_color] = useMemo(() => {
-    switch (color) {
-      case 'red':
-        return [C.COLORS.RED_COLOR, C.COLORS.RED_BLUR_COLOR];
-      case 'purple':
-        return [C.COLORS.PURPLE_COLOR, C.COLORS.PURPLE_BLUR_COLOR];
-      case 'orange':
-        return [C.COLORS.ORANGE_COLOR, C.COLORS.ORANGE_COLOR];
-      case 'yellow':
-        return [C.COLORS.YELLOW_COLOR, C.COLORS.YELLOW_BLUR_COLOR];
-      case 'green':
-        return [C.COLORS.GREEN_COLOR, C.COLORS.GREEN_BLUR_COLOR];
-      default:
-        return [C.COLORS.RED_COLOR, C.COLORS.RED_BLUR_COLOR];
-    }
-  }, [color]);
+  const handlePress = useCallback(() => {
+    onPress && onPress(food.id);
+  }, [food.id, onPress]);
 
   return (
-    <View style={styles.container}>
-      <View style={[styles.layer1, { backgroundColor: blur_color }]}>
-        <View style={[styles.layer2, { backgroundColor: _color }]}></View>
-        <Image source={img} style={styles.image} />
-      </View>
+    <TouchableOpacity style={styles.container} onLongPress={handlePress}>
+      <FoodAvatar {...food} />
       <Text style={styles.title}>{name}</Text>
       <Text style={styles.desc}>{`${cal} cal/${weight} kg`}</Text>
-    </View>
+    </TouchableOpacity>
   );
 };
 
@@ -61,35 +46,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
     borderColor: '#DBDBDB',
     borderWidth: 1,
-    height: 192,
-    width: 154,
     alignItems: 'center',
     justifyContent: 'space-around',
     paddingTop: 17,
     paddingBottom: 18,
+    paddingHorizontal: 27,
+    paddingVertical: 17,
   },
-  layer1: {
-    width: 92,
-    height: 92,
-    borderRadius: 46,
-    justifyContent: 'center',
-    alignItems: 'center',
-    position: 'relative',
-  },
-  layer2: {
-    width: 68,
-    height: 68,
-    zIndex: 2,
-    borderRadius: 34,
-  },
-  image: {
-    position: 'absolute',
-    zIndex: 3,
-    width: 100,
-    height: 80,
-    resizeMode: 'contain',
-    right: -10,
-  },
+
   title: {
     marginTop: 14,
     fontWeight: '700',
