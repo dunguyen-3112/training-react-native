@@ -1,7 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native';
-import React, { memo, useMemo } from 'react';
-
-import * as C from '@constants';
+import React, { memo, ReactNode, useCallback, useMemo } from 'react';
+import { COLOR, COLORS } from '@constants';
 
 type size =
   | 'medium'
@@ -21,25 +20,29 @@ type size =
 
 type weight = '400' | '500' | '600' | '700' | '800';
 
-type transform = 'uppercase' | 'lowercase' | 'none';
+type transform = 'uppercase' | 'lowercase' | 'none' | 'capitalize';
 
 interface TextProps {
-  text: string;
-  size: size;
-  weight: weight;
-  color: C.COLOR;
+  text?: string;
+  size?: size;
+  weight?: weight;
+  color?: COLOR | string;
+  onPress?: () => void;
   transform?: transform;
   lineHeight?: number;
   marginTop?: number;
+  children?: ReactNode | string;
 }
 
 const CustomText = ({
   text,
-  size,
-  weight,
-  color,
+  size = 'medium',
+  weight = '400',
+  color = 'default',
   transform = 'none',
   lineHeight,
+  onPress,
+  children,
   marginTop = 0,
 }: TextProps) => {
   const _size = useMemo(() => {
@@ -59,36 +62,39 @@ const CustomText = ({
   const _color = useMemo(() => {
     switch (color) {
       case 'orange':
-        return C.COLORS.ORANGE_COLOR;
+        return COLORS.ORANGE_COLOR;
       case 'white':
-        return C.COLORS.WHITE_COLOR;
+        return COLORS.WHITE_COLOR;
       case 'gray':
-        return C.COLORS.GRAY_COLOR;
+        return COLORS.GRAY_COLOR;
       case 'green':
-        return C.COLORS.GREEN_COLOR;
+        return COLORS.GREEN_COLOR;
       default:
-        return C.COLORS.TEXT_COLOR;
+        return COLORS.TEXT_COLOR;
     }
   }, [color]);
 
+  const handlePress = useCallback(() => {
+    if (onPress) onPress();
+  }, [onPress]);
+
   return (
-    <View>
-      <Text
-        style={[
-          {
-            fontWeight: weight,
-            fontSize: _size,
-            lineHeight: lineHeight,
-            textTransform: transform,
-            marginTop: marginTop,
-          },
-          styles.text,
-          { color: _color },
-        ]}
-      >
-        {text}
-      </Text>
-    </View>
+    <Text
+      onPress={handlePress}
+      style={[
+        {
+          fontWeight: weight,
+          fontSize: _size,
+          lineHeight: lineHeight,
+          textTransform: transform,
+          marginTop: marginTop,
+        },
+        styles.text,
+        { color: _color },
+      ]}
+    >
+      {children || text}
+    </Text>
   );
 };
 
@@ -96,6 +102,6 @@ export default memo(CustomText);
 
 const styles = StyleSheet.create({
   text: {
-    color: C.COLORS.TEXT_COLOR,
+    color: COLORS.TEXT_COLOR,
   },
 });
