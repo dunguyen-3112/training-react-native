@@ -2,7 +2,7 @@ import { StyleSheet, ImageSourcePropType, View, Image } from 'react-native';
 import React, { useMemo } from 'react';
 import { COLOR, COLORS } from '@constants';
 
-type Size = 'small' | 'large';
+type Size = 'medium' | 'large';
 
 interface FoodProps {
   imageUrl?: ImageSourcePropType | string;
@@ -10,7 +10,7 @@ interface FoodProps {
   size?: Size;
 }
 
-const FoodAvatar = ({ imageUrl, color, size = 'small' }: FoodProps) => {
+const FoodAvatar = ({ imageUrl, color, size = 'medium' }: FoodProps) => {
   const img = typeof imageUrl === 'string' ? { uri: imageUrl } : imageUrl;
 
   const [_color, blur_color] = useMemo(() => {

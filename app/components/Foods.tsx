@@ -5,12 +5,12 @@ import { useNavigation } from '@react-navigation/native';
 import Food, { FoodProps } from './Food';
 import CustomText from './CustomText';
 
-const foods: FoodProps[] = [
+const foodsFake: FoodProps[] = [
   {
     id: '1',
     name: 'Chicken',
     weight: 400,
-    cal: 500,
+    nutritional: { calories: 500 },
     color: 'red',
     imageUrl:
       'https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/a2.png?alt=media&token=abe65f60-e23e-48d9-a2c8-13c9e3ccb921',
@@ -19,7 +19,7 @@ const foods: FoodProps[] = [
     id: '2',
     name: 'Beef',
     weight: 400,
-    cal: 500,
+    nutritional: { calories: 500 },
     color: 'green',
     imageUrl:
       'https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/a4.png?alt=media&token=d05ef95d-eda9-4b9e-951b-13730a7d1086',
@@ -28,7 +28,7 @@ const foods: FoodProps[] = [
     id: '3',
     name: 'Pork',
     weight: 400,
-    cal: 500,
+    nutritional: { calories: 500 },
     color: 'purple',
     imageUrl:
       'https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/a1.png?alt=media&token=4e7e33d8-eb6e-4fbf-8ca9-d7cca5eb001c',
@@ -37,7 +37,7 @@ const foods: FoodProps[] = [
     id: '4',
     name: 'Fish',
     weight: 400,
-    cal: 500,
+    nutritional: { calories: 500 },
     color: 'yellow',
     imageUrl:
       'https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/a5.png?alt=media&token=af718429-aabf-4329-91e5-439cff65e187',
@@ -46,7 +46,7 @@ const foods: FoodProps[] = [
     id: '5',
     name: 'Bacon',
     weight: 400,
-    cal: 500,
+    nutritional: { calories: 500 },
     color: 'green',
     imageUrl:
       'https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/a6.png?alt=media&token=e16ecdc8-e597-464d-90ce-0c6b64e0c5a8',
@@ -56,7 +56,7 @@ const foods: FoodProps[] = [
     id: '6',
     name: 'Chicken',
     weight: 400,
-    cal: 500,
+    nutritional: { calories: 500 },
     color: 'red',
     imageUrl:
       'https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/a2.png?alt=media&token=abe65f60-e23e-48d9-a2c8-13c9e3ccb921',
@@ -65,7 +65,7 @@ const foods: FoodProps[] = [
     id: '7',
     name: 'Beef',
     weight: 400,
-    cal: 500,
+    nutritional: { calories: 500 },
     color: 'green',
     imageUrl:
       'https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/a6.png?alt=media&token=e16ecdc8-e597-464d-90ce-0c6b64e0c5a8',
@@ -74,7 +74,7 @@ const foods: FoodProps[] = [
     id: '8',
     name: 'Pork',
     weight: 400,
-    cal: 500,
+    nutritional: { calories: 500 },
     color: 'red',
     imageUrl:
       'https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/a2.png?alt=media&token=abe65f60-e23e-48d9-a2c8-13c9e3ccb921',
@@ -83,7 +83,7 @@ const foods: FoodProps[] = [
     id: '9',
     name: 'Fish',
     weight: 400,
-    cal: 500,
+    nutritional: { calories: 500 },
     color: 'orange',
     imageUrl:
       'https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/a2.png?alt=media&token=abe65f60-e23e-48d9-a2c8-13c9e3ccb921',
@@ -92,14 +92,21 @@ const foods: FoodProps[] = [
     id: '10',
     name: 'Bacon',
     weight: 400,
-    cal: 500,
     color: 'red',
+    nutritional: { calories: 500 },
     imageUrl:
       'https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/a2.png?alt=media&token=abe65f60-e23e-48d9-a2c8-13c9e3ccb921',
   },
 ];
 
-const Foods = ({ horizontal = false }: { horizontal?: boolean }) => {
+const Foods = ({
+  horizontal,
+  foods,
+}: {
+  horizontal?: boolean;
+  foods: FoodProps[];
+}) => {
+  foods = foodsFake;
   const navigation = useNavigation();
 
   const handlePressFood = useCallback(
@@ -113,14 +120,16 @@ const Foods = ({ horizontal = false }: { horizontal?: boolean }) => {
 
   return (
     <View style={styles.container}>
-      <CustomText
-        text="All Food"
-        size={20}
-        weight={'700'}
-        color={'gray'}
-        marginTop={22}
-      />
-      {horizontal === true ? (
+      {!horizontal && (
+        <CustomText
+          text="All Food"
+          size={20}
+          weight={'700'}
+          color={'gray'}
+          marginTop={22}
+        />
+      )}
+      {horizontal ? (
         <FlatList
           style={styles.list}
           data={foods}
@@ -155,23 +164,17 @@ export default Foods;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    width: '100%',
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
+    paddingHorizontal: 20,
     backgroundColor: '#FFFFFF',
   },
   list: {
     width: '100%',
     marginTop: 15,
-    height: 'auto',
-    flexWrap: 'wrap',
   },
   itemStyle: {
-    justifyContent: 'space-between',
-  },
-  name: {
-    fontSize: 20,
-  },
-  price: {
-    fontSize: 20,
+    justifyContent: 'space-evenly',
   },
 });
