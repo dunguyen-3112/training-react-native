@@ -9,7 +9,8 @@
       "@screens/*": ["./screens/*"],
       "@assets/*": ["./assets/*"],
       "@constants/*": ["./constants/*"],
-      "@layouts/*": ["./layouts/*"]
+      "@layouts/*": ["./layouts/*"],
+      "@utils/*": ["./utils/*"]
     }
   }
 }

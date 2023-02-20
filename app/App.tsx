@@ -1,10 +1,25 @@
 import { StyleSheet, View } from 'react-native';
-import React from 'react';
+import React, { useCallback } from 'react';
 import Navigation from './navigation';
+import { useFonts } from 'expo-font';
+import * as SplashScreen from 'expo-splash-screen';
 
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    Manrope: require('@assets/fonts/Manrope.ttf'),
+  });
+
+  const onLayoutRootView = useCallback(async () => {
+    if (fontsLoaded) {
+      await SplashScreen.hideAsync();
+    }
+  }, [fontsLoaded]);
+
+  if (!fontsLoaded) {
+    return null;
+  }
   return (
-    <View style={styles.container}>
+    <View style={styles.container} onLayout={onLayoutRootView}>
       <Navigation />
     </View>
   );
@@ -13,7 +28,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFFFFF',
   },
 });
 

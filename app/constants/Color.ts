@@ -3,6 +3,7 @@ export default {
   PURPLE_BLUR_COLOR: 'rgba(144, 89, 167, 0.2)',
   TEXT_COLOR: '#5C5C5C',
   ORANGE_COLOR: '#FF8473',
+  BLACK_COLOR: '#000000',
   ORANGE_BLUR_COLOR: 'rgba(255, 132 ,115 ,0.1)',
   GREEN_COLOR: '#1CC379',
   GREEN_BLUR_COLOR: 'rgba(111, 207, 151, 0.2)',
@@ -27,6 +28,8 @@ type COLOR =
   | 'yellow'
   | 'red'
   | 'purple'
-  | 'yellow_dark';
+  | 'black'
+  | 'yellow_dark'
+  | 'default';
 
 export { COLOR };

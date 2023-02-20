@@ -1,7 +1,7 @@
 import { StyleSheet, View } from 'react-native';
 import React from 'react';
 import { Header } from '../../../layouts';
-import { Foods, Search, Slide, Tags } from '@components';
+import { Foods, SearchCtr, Slide, Tags } from '@components';
 import { createStackNavigator } from '@react-navigation/stack';
 
 const Home = () => {
@@ -40,7 +40,7 @@ const Home = () => {
   return (
     <View style={styles.container}>
       <Header />
-      <Search />
+      <SearchCtr />
       <Tags marginTop={17} />
       <Slide marginTop={17} />
       <Foods />
@@ -53,7 +53,7 @@ export default Home;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 60,
+    paddingTop: 60,
     paddingHorizontal: 16,
     backgroundColor: '#FFFFFF',
   },
