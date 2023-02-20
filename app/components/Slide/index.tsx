@@ -39,6 +39,7 @@ const Slide = ({ marginTop = 0 }: { marginTop?: number }) => {
           />
         )}
       />
+      <View style={styles.separator}></View>
     </View>
   );
 };
@@ -50,6 +51,12 @@ const styles = StyleSheet.create({
   slide: {
     height: 'auto',
     flexWrap: 'wrap',
+  },
+  separator: {
+    height: 20,
+    width: '100%',
+    backgroundColor: '#ccc',
+    marginTop: 23,
   },
   item: {
     marginHorizontal: 16,

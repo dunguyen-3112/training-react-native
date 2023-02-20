@@ -3,11 +3,13 @@ import {
   View,
   ImageBackground,
   ImageSourcePropType,
+  Image,
+  Text,
 } from 'react-native';
 import React from 'react';
 import CustomText from '@components/CustomText';
 import { COLOR } from '@constants';
-import { ButtonReadNow } from '@components/Tags/Button';
+import CustomButton from '@components/CustomButton';
 
 interface SlideItemProps {
   title: string;
@@ -16,9 +18,6 @@ interface SlideItemProps {
 }
 
 const SlideItem = ({ image, color = 'green', title }: SlideItemProps) => {
-  //   const _color =
-  //     color === 'green' ? COLORS.GREEN_BLUR_LG_COLOR : COLORS.PURPLE_BLUR_COLOR;
-
   return (
     <ImageBackground source={image} style={styles.container}>
       <View style={styles.info}>
@@ -37,7 +36,18 @@ const SlideItem = ({ image, color = 'green', title }: SlideItemProps) => {
           lineHeight={24}
           marginTop={4}
         />
-        <ButtonReadNow marginTop={16} color={color} />
+        <CustomButton
+          backgroundColor="green"
+          paddingHorizontal={19}
+          paddingVertical={6}
+          marginTop={8}
+        >
+          <Text>Read now</Text>
+          <Image
+            source={require('@assets/icons/Arrow.png')}
+            style={styles.buttonIcon}
+          />
+        </CustomButton>
       </View>
     </ImageBackground>
   );
@@ -54,7 +64,7 @@ const styles = StyleSheet.create({
     padding: 32,
   },
   info: {
-    maxWidth: '55%',
+    maxWidth: '60%',
   },
   type: {
     textTransform: 'uppercase',
@@ -63,5 +73,8 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
+  },
+  buttonIcon: {
+    marginLeft: 7,
   },
 });
