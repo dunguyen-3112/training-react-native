@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text } from 'react-native';
 import React, { memo, ReactNode, useCallback, useMemo } from 'react';
 import { COLOR, COLORS } from '@constants';
 
@@ -23,7 +23,6 @@ type weight = '400' | '500' | '600' | '700' | '800';
 type transform = 'uppercase' | 'lowercase' | 'none' | 'capitalize';
 
 interface TextProps {
-  text?: string;
   size?: size;
   weight?: weight;
   color?: COLOR | string;
@@ -31,11 +30,11 @@ interface TextProps {
   transform?: transform;
   lineHeight?: number;
   marginTop?: number;
+  marginLeft?: number;
   children?: ReactNode | string;
 }
 
 const CustomText = ({
-  text,
   size = 'medium',
   weight = '400',
   color = 'default',
@@ -44,6 +43,7 @@ const CustomText = ({
   onPress,
   children,
   marginTop = 0,
+  marginLeft = 0,
 }: TextProps) => {
   const _size = useMemo(() => {
     if (typeof size === 'number') return size;
@@ -85,15 +85,16 @@ const CustomText = ({
         {
           fontWeight: weight,
           fontSize: _size,
-          lineHeight: lineHeight,
           textTransform: transform,
-          marginTop: marginTop,
+          lineHeight,
+          marginTop,
+          marginLeft,
         },
         styles.text,
         { color: _color },
       ]}
     >
-      {children || text}
+      {children}
     </Text>
   );
 };

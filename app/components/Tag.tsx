@@ -1,17 +1,17 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import React, { useCallback } from 'react';
 import { COLORS } from '@constants';
+import { Categories, IInfo } from '@types';
 
-interface TagProps {
-  id: string;
-  title: string;
+interface TagProps extends IInfo {
   isActive?: boolean;
-  onPress?: (id: string) => void;
+  name: Categories;
+  onPress?: (id: number) => void;
 }
 
 export { TagProps };
 
-const Tag = ({ title, id, isActive, onPress }: TagProps) => {
+const Tag = ({ name, id, isActive, onPress }: TagProps) => {
   const handlePress = useCallback(() => {
     onPress && onPress(id);
   }, [id, onPress]);
@@ -24,7 +24,7 @@ const Tag = ({ title, id, isActive, onPress }: TagProps) => {
       <Text
         style={[styles.title, isActive ? { color: COLORS.GREEN_COLOR } : {}]}
       >
-        {title}
+        {name}
       </Text>
     </TouchableOpacity>
   );

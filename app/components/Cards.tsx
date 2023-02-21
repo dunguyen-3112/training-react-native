@@ -1,23 +1,23 @@
 import { StyleSheet, View } from 'react-native';
 import React from 'react';
 import { FlatList } from 'react-native-gesture-handler';
-import Artcile from './base/ArtcileType';
-import SlideItem from './base/SlideItem';
+import SlideItem from './Card';
+import { IArtcile } from '@types';
 
 const Slide = ({ marginTop = 0 }: { marginTop?: number }) => {
-  const articles: Artcile[] = [
+  const articles: IArtcile[] = [
     {
-      id: '1',
+      id: 1,
       name: 'The pros and cons of fast food.',
       color: 'green',
-      image:
+      imgUrl:
         'https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/Group%2036209.png?alt=media&token=57ef4bf8-c2ec-4fb4-927d-1cf16b4bfaaa',
     },
     {
-      id: '2',
+      id: 2,
       name: 'The pros and cons of vegetable',
       color: 'orange',
-      image:
+      imgUrl:
         'https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/image1.png?alt=media&token=45bbf690-ea27-466c-b025-67e6fc7aed6a',
     },
   ];
@@ -26,7 +26,7 @@ const Slide = ({ marginTop = 0 }: { marginTop?: number }) => {
     <View style={styles.container}>
       <FlatList
         data={articles}
-        keyExtractor={(item) => item.id}
+        keyExtractor={(item) => item.id + ''}
         showsHorizontalScrollIndicator={false}
         style={[styles.slide, marginTop ? { marginTop: marginTop } : {}]}
         horizontal
@@ -35,7 +35,7 @@ const Slide = ({ marginTop = 0 }: { marginTop?: number }) => {
           <SlideItem
             color={item.color}
             title={item.name}
-            image={{ uri: item.image }}
+            image={{ uri: item.imgUrl }}
           />
         )}
       />

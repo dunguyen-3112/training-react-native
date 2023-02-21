@@ -1,42 +1,19 @@
-import { StyleSheet, Text, ImageSourcePropType } from 'react-native';
+import { StyleSheet, TouchableOpacity } from 'react-native';
 import React, { useCallback } from 'react';
-
-import { TouchableOpacity } from 'react-native-gesture-handler';
-import { COLOR, COLORS } from '@constants';
+import { IFood } from '@types';
 import FoodAvatar from './FoodAvatar';
 import CustomText from './CustomText';
-
-interface NutritionalProps {
-  calories?: number;
-  carbs?: number;
-  fat?: number;
-  protein?: number;
-}
-
-interface FoodProps {
-  id: string;
-  imageUrl?: ImageSourcePropType | string;
-  name: string;
-  nutritional: NutritionalProps;
-  category?: string;
-  weight: number;
-  color?: COLOR;
-  desc?: string;
-  ingredients?: string[];
-}
-
-export { FoodProps, NutritionalProps };
 
 const Food = ({
   food,
   size = 'medium',
   onPress,
 }: {
-  food: FoodProps;
+  food: IFood;
   size?: 'medium' | 'large';
-  onPress?: (id: string) => void;
+  onPress?: (id: number) => void;
 }) => {
-  const { name, weight, category = 'Food', nutritional } = food;
+  const { name, weight, category, nutritional } = food;
   const { calories } = nutritional;
   const handlePress = useCallback(() => {
     onPress && onPress(food.id);
@@ -52,19 +29,18 @@ const Food = ({
     >
       <FoodAvatar {...food} size={size} />
       <CustomText
-        text={name}
         marginTop={13}
         size={size === 'medium' ? 17 : 22}
         weight={'700'}
-      />
+      >
+        {name}
+      </CustomText>
       {size === 'medium' ? (
-        <CustomText
-          text={`${calories} cal/${weight} kg`}
-          size={13}
-          marginTop={size === 'medium' ? 2 : 10}
-        />
+        <CustomText size={13} marginTop={size === 'medium' ? 2 : 10}>
+          {`${calories} cal/${weight} kg`}
+        </CustomText>
       ) : (
-        <CustomText text={category} size={16} />
+        <CustomText size={16}>{category.name}</CustomText>
       )}
     </TouchableOpacity>
   );
@@ -84,5 +60,6 @@ const styles = StyleSheet.create({
     paddingBottom: 18,
     paddingHorizontal: 27,
     paddingVertical: 17,
+    height: 192,
   },
 });

@@ -22,20 +22,22 @@ const SlideItem = ({ image, color = 'green', title }: SlideItemProps) => {
     <ImageBackground source={image} style={styles.container}>
       <View style={styles.info}>
         <CustomText
-          text="Article"
           size={10}
           weight={'600'}
           color={color}
           transform="uppercase"
-        />
+        >
+          Article
+        </CustomText>
         <CustomText
-          text={title}
           size={17}
           weight={'600'}
           color={'gray'}
           lineHeight={24}
           marginTop={4}
-        />
+        >
+          {title}
+        </CustomText>
         <CustomButton
           backgroundColor="green"
           paddingHorizontal={19}
@@ -44,7 +46,7 @@ const SlideItem = ({ image, color = 'green', title }: SlideItemProps) => {
         >
           <Text>Read now</Text>
           <Image
-            source={require('@assets/icons/Arrow.png')}
+            source={require('@assets/icons/arrow.png')}
             style={styles.buttonIcon}
           />
         </CustomButton>

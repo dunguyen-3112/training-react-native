@@ -2,7 +2,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import React, { useState } from 'react';
 import { Foods, Loading, NotFound, SearchCtr } from '@components';
 
-const Favorite = () => {
+const FavoriteScreen = () => {
   const [foods, setFoods] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -19,7 +19,7 @@ const Favorite = () => {
   );
 };
 
-export default Favorite;
+export default FavoriteScreen;
 
 const styles = StyleSheet.create({
   container: {

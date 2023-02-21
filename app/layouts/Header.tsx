@@ -7,8 +7,12 @@ const Header = () => {
   return (
     <View style={styles.container}>
       <View>
-        <CustomText text="Want to eat" color="black" size={23} weight="800" />
-        <CustomText text="healthy Food?" color="black" size={23} weight="800" />
+        <CustomText color="black" size={23} weight="800">
+          Want to eat
+        </CustomText>
+        <CustomText color="black" size={23} weight="800">
+          healthy Food?
+        </CustomText>
       </View>
       <CustomButton
         width={35}

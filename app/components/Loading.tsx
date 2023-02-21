@@ -1,5 +1,5 @@
 import { StyleSheet, View, Animated, Easing } from 'react-native';
-import React, { useRef } from 'react';
+import React from 'react';
 import { Image } from 'react-native';
 
 const Loading = ({ marginTop }: { marginTop: number }) => {

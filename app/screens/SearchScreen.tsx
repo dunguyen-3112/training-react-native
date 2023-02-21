@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Header } from '@layouts';
 import { Empty, Foods, Loading, SearchCtr, Tags } from '@components';
 
-const Search = () => {
+const SearchScreen = () => {
   const [foods, setFoods] = useState([]);
   const [loading, setLoading] = useState(false);
   return (
@@ -22,7 +22,7 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default SearchScreen;
 
 const styles = StyleSheet.create({
   container: {

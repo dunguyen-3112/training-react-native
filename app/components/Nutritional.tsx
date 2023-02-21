@@ -1,15 +1,15 @@
-import { FlatList, SectionList, StyleSheet, Text, View } from 'react-native';
+import { FlatList, StyleSheet, View } from 'react-native';
 import React from 'react';
-import { NutritionalProps } from './Food';
 import { COLOR } from '@constants';
 import CustomText from './CustomText';
+import { TNutritional } from '@types';
 
 const Nutritional = ({
   nutritional,
   color,
   marginTop = 0,
 }: {
-  nutritional: NutritionalProps;
+  nutritional: TNutritional;
   color: COLOR;
   marginTop?: number;
 }) => {
@@ -36,8 +36,10 @@ const Nutritional = ({
 const NutritionalItem = ({ key1, value }: { key1: string; value: number }) => {
   return (
     <View>
-      <CustomText text={key1} size={16} />
-      <CustomText text={`${value}g`} size={24} color={'orange'} />
+      <CustomText size={16}>{key1}</CustomText>
+      <CustomText size={24} color={'orange'}>
+        {`${value}g`}
+      </CustomText>
     </View>
   );
 };

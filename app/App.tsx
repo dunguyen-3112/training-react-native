@@ -1,8 +1,9 @@
 import { StyleSheet, View } from 'react-native';
 import React, { useCallback } from 'react';
-import Navigation from './navigation';
+import { RootNavigator } from './navigation';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
+import { NavigationContainer } from '@react-navigation/native';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -19,9 +20,9 @@ export default function App() {
     return null;
   }
   return (
-    <View style={styles.container} onLayout={onLayoutRootView}>
-      <Navigation />
-    </View>
+    <NavigationContainer>
+      <RootNavigator />
+    </NavigationContainer>
   );
 }
 
@@ -30,5 +31,10 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 });
+
+{
+  /* <View style={styles.container} onLayout={onLayoutRootView}>
+      </View> */
+}
 
 // export { default } from './storybook';

@@ -19,7 +19,7 @@ const Back = ({ top, left, right, bottom }: BackProps) => {
   return (
     <TouchableOpacity onPress={handlePress}>
       <Image
-        source={require('@assets/icons/Back.png')}
+        source={require('@assets/icons/back.png')}
         style={[styles.icon, { top, left, right, bottom }]}
       />
     </TouchableOpacity>
