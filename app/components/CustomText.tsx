@@ -16,7 +16,8 @@ type size =
   | 20
   | 22
   | 23
-  | 24;
+  | 24
+  | 32;
 
 type weight = '400' | '500' | '600' | '700' | '800';
 
@@ -69,8 +70,10 @@ const CustomText = ({
         return COLORS.GRAY_COLOR;
       case 'green':
         return COLORS.GREEN_COLOR;
-      default:
+      case 'default':
         return COLORS.TEXT_COLOR;
+      default:
+        return color;
     }
   }, [color]);
 

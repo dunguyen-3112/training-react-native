@@ -25,7 +25,7 @@ const Food = ({
         styles.container,
         size === 'medium' ? { borderWidth: 1 } : { borderWidth: 0 },
       ]}
-      onLongPress={handlePress}
+      onPress={handlePress}
     >
       <FoodAvatar {...food} size={size} />
       <CustomText

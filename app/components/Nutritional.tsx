@@ -6,7 +6,6 @@ import { TNutritional } from '@types';
 
 const Nutritional = ({
   nutritional,
-  color,
   marginTop = 0,
 }: {
   nutritional: TNutritional;

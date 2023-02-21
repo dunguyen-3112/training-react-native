@@ -1,6 +1,6 @@
-import { StyleSheet, ImageSourcePropType, View, Image } from 'react-native';
+import { StyleSheet, View, Image } from 'react-native';
 import React, { useMemo } from 'react';
-import { COLOR, COLORS } from '@constants';
+import { COLORS } from '@constants';
 import { IFood } from '@types';
 
 type Size = 'medium' | 'large';

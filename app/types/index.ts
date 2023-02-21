@@ -1,4 +1,4 @@
-import { IInfo } from './common';
+import { IInfo, IFetchState } from './common';
 import {
   IFood,
   Ingredients,
@@ -12,6 +12,7 @@ import { IArtcile } from './Artcile';
 export {
   IFood,
   IArtcile,
+  IFetchState,
   Ingredients,
   IInfo,
   TCategory,

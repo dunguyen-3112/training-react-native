@@ -1,7 +1,6 @@
-import React, { useLayoutEffect } from 'react';
+import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { FavoriteScreen, HomeScreen, SearchScreen } from '@screens';
-import { useNavigation } from '@react-navigation/native';
 import { Image } from 'react-native';
 
 export type TabParamsList = {

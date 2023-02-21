@@ -1,10 +1,22 @@
 import { StyleSheet, View } from 'react-native';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Header } from '@layouts';
 import { Foods, SearchCtr, Slide, Tags } from '@components';
-import { createStackNavigator } from '@react-navigation/stack';
+import { IFood } from '@types';
+import { useFetch } from '@hooks';
 
 const HomeScreen = () => {
+  //   const { isLoading, data, error } = useFetch<IFood>({ url: 'foods' });
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch('http://192.168.86.77:3000/foods');
+      const json = await response.json();
+      console.log(json);
+    };
+    fetchData();
+  }, []);
+
   return (
     <View style={styles.container}>
       <Header />
