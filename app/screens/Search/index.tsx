@@ -1,18 +1,32 @@
 import { StyleSheet, View } from 'react-native';
-import React, { useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import { Empty, Foods, Header, Loading, Search, Tags } from '@components';
+import { useFetch } from '@hooks';
+import { IFood } from '@types';
 
 const SearchScreen = () => {
-  const [foods, setFoods] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [text, setText] = useState('');
+  const { isLoading, data, error } = useFetch<IFood[]>({
+    url: `foods?name_like=${text}`,
+  });
+
+  const foods = useMemo(() => {
+    if (text === '') return [];
+    return data;
+  }, [text, data]);
+
+  const handleChangeTextSearch = useCallback((text: string) => {
+    setText(text);
+  }, []);
+
   return (
     <View style={styles.container}>
       <Header />
-      <Search />
+      <Search value={text} onChangeText={handleChangeTextSearch} />
       <Tags marginTop={17} />
-      {loading ? (
+      {isLoading ? (
         <Loading marginTop={120} />
-      ) : foods.length === 0 ? (
+      ) : foods?.length === 0 ? (
         <Empty />
       ) : (
         <Foods foods={foods} horizontal />
@@ -28,5 +42,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#FFFFFF',
     paddingTop: 62,
+    padding: 16,
   },
 });

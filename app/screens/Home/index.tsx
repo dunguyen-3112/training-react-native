@@ -1,8 +1,9 @@
 import { StyleSheet, View } from 'react-native';
-import React from 'react';
+import React, { useCallback } from 'react';
 import { Foods, Header, Loading, Search, Cards, Tags } from '@components';
 import { IFood } from '@types';
 import { useFetch } from '@hooks';
+import { useNavigation } from '@react-navigation/native';
 
 const HomeScreen = () => {
   const { isLoading, data, error } = useFetch<IFood>({ url: 'foods' });

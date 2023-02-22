@@ -1,22 +1,30 @@
 import { StyleSheet, View, Image } from 'react-native';
-import React, { useState, useCallback, memo } from 'react';
+import React, { useCallback, memo } from 'react';
 
 import { COLORS } from '@constants';
 import { Input } from '@components/common';
 
-const Search = () => {
-  const [searchText, setSearchText] = useState('');
+interface SearchProps {
+  value?: string;
+  onChangeText?: (text: string) => void;
+  onFocus?: () => void;
+}
 
-  const handleChangeSearched = useCallback((value: string) => {
-    setSearchText(value);
-  }, []);
+const Search = ({ value = '', onChangeText, onFocus }: SearchProps) => {
+  const handleChangeSearched = useCallback(
+    (value: string) => {
+      onChangeText && onChangeText(value);
+    },
+    [onChangeText]
+  );
 
   return (
     <View style={styles.container}>
       <Input
         field="search"
         onChangeText={handleChangeSearched}
-        value={searchText}
+        onFocus={onFocus}
+        value={value}
         placeholder="Search for healthy food"
       />
       <Image

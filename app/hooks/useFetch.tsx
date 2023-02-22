@@ -5,7 +5,7 @@ import axios, { AxiosError } from 'axios';
 
 function useFetch<T>({ url }: { url: ROUTES }): IFetchState<T> {
   const [error, setError] = useState<AxiosError | null>(null);
-  const [data, setData] = useState<T | null>(null);
+  const [data, setData] = useState<T | T[] | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {

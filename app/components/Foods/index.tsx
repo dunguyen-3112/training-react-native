@@ -51,9 +51,11 @@ const Foods = ({
           columnWrapperStyle: styles.itemStyle,
         })}
         showsHorizontalScrollIndicator={false}
+        showsVerticalScrollIndicator={false}
         ItemSeparatorComponent={() => (
-          <View style={{ height: 18, marginLeft: 18 }} />
+          <View style={{ marginLeft: 18, height: 18 }} />
         )}
+        contentContainerStyle={{ paddingHorizontal: 27 }}
         renderItem={({ item }) => (
           <Food data={item} onPress={handlePressFood} />
         )}
@@ -67,7 +69,7 @@ export default memo(Foods);
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    width: '100%',
+    // width: '100%',
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
     paddingHorizontal: 4,
@@ -78,6 +80,6 @@ const styles = StyleSheet.create({
     marginTop: 15,
   },
   itemStyle: {
-    justifyContent: 'space-evenly',
+    justifyContent: 'space-between',
   },
 });
