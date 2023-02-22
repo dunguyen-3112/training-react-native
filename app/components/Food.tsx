@@ -1,52 +1,60 @@
 import { StyleSheet, TouchableOpacity } from 'react-native';
-import React, { useCallback } from 'react';
+import React, { memo, useCallback } from 'react';
 import { IFood } from '@types';
 import FoodAvatar from './FoodAvatar';
 import CustomText from './CustomText';
 
 const Food = ({
-  food,
+  data,
   size = 'medium',
   onPress,
 }: {
-  food: IFood;
+  data: IFood;
   size?: 'medium' | 'large';
   onPress?: (id: number) => void;
 }) => {
-  const { name, weight, category, nutritional } = food;
+  console.log(16, data);
+  const { name, weight, category, nutritional } = data;
   const { calories } = nutritional;
   const handlePress = useCallback(() => {
-    onPress && onPress(food.id);
-  }, [food.id, onPress]);
+    onPress && onPress(data.id);
+  }, [data.id, onPress]);
 
   return (
     <TouchableOpacity
       style={[
         styles.container,
-        size === 'medium' ? { borderWidth: 1 } : { borderWidth: 0 },
+        size === 'medium'
+          ? { borderWidth: 1 }
+          : {
+              borderWidth: 0,
+              height: 'auto',
+            },
       ]}
       onPress={handlePress}
     >
-      <FoodAvatar {...food} size={size} />
+      <FoodAvatar {...data} size={size} />
       <CustomText
-        marginTop={13}
+        marginTop={14}
         size={size === 'medium' ? 17 : 22}
         weight={'700'}
       >
         {name}
       </CustomText>
       {size === 'medium' ? (
-        <CustomText size={13} marginTop={size === 'medium' ? 2 : 10}>
+        <CustomText size={13} marginTop={10}>
           {`${calories} cal/${weight} kg`}
         </CustomText>
       ) : (
-        <CustomText size={16}>{category.name}</CustomText>
+        <CustomText marginTop={0} size={16}>
+          {category.name}
+        </CustomText>
       )}
     </TouchableOpacity>
   );
 };
 
-export default Food;
+export default memo(Food);
 
 const styles = StyleSheet.create({
   container: {

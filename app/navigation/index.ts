@@ -1,3 +1,4 @@
-import RootNavigator from './RootNavigator';
+import RootNavigator, { RootStackParamsList } from './RootNavigator';
+import { TabParamsList } from './TabNavigator';
 
-export { RootNavigator };
+export { RootNavigator, TabParamsList, RootStackParamsList };

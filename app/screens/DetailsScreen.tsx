@@ -1,14 +1,26 @@
-import { Button, StyleSheet, View } from 'react-native';
-import React, { useCallback, useState } from 'react';
+import { StyleSheet, View } from 'react-native';
+import React, { useCallback, useMemo, useState } from 'react';
 import { useRoute } from '@react-navigation/native';
+import { TabParamsList, RootStackParamsList } from '@navigation';
 
-import { Back, CustomButton, CustomText, Food, Nutritional } from '@components';
+import {
+  Back,
+  CustomButton,
+  CustomText,
+  Empty,
+  Food,
+  Loading,
+  Nutritional,
+} from '@components';
 import { IFood } from '@types';
+import { useFetch } from '@hooks';
 
 const Details = () => {
   const route = useRoute();
   const { id } = route.params;
+  const { isLoading, data, error } = useFetch<IFood>({ url: `foods/${id}` });
   const [isMore, setIsMore] = useState(false);
+  const [isAll, setIsAll] = useState(false);
 
   const food: IFood = {
     id,
@@ -26,20 +38,30 @@ const Details = () => {
     nutritional: { calories: 300, protein: 300, carbs: 300, fat: 200 },
   };
 
+  const ingrediants = useMemo(() => {
+    console.log(42, data);
+    const ingrediant = data?.ingredients;
+    if (ingrediant) {
+      return Object.entries(ingrediant);
+    }
+  }, [data]);
+
+  console.log(48, ingrediants);
+
+  const { color = 'default', nutritional, desc = '' } = food;
+
   const handleReadMore = useCallback(() => {
     setIsMore((prev) => !prev);
   }, []);
 
-  const { color = 'default', nutritional, desc = '' } = food;
+  if (isLoading) return <Loading marginTop={20} />;
+  if (data === null || error) return <Empty />;
+
   return (
     <View style={styles.container}>
       <Back left={20} />
       <View style={styles.avatar}>
-        <Food
-          food={food}
-          //   onPress={() => {}}
-          size="large"
-        />
+        <Food data={data} size="large" />
       </View>
       <Nutritional color={color} nutritional={nutritional} />
       <View style={styles.details}>
@@ -75,9 +97,17 @@ const Details = () => {
             </>
           )}
         </CustomText>
-        <CustomText weight="600" size={20} marginTop={20}>
-          Ingrediants
-        </CustomText>
+        <View style={styles.ingrediant}>
+          <View style={styles.ingrediantHeader}>
+            <CustomText weight="600" size={20}>
+              Ingrediants
+            </CustomText>
+            <CustomText size={11} weight="500" color="green">
+              See all
+            </CustomText>
+          </View>
+          <View></View>
+        </View>
 
         <CustomButton width={'100%'} paddingVertical={9} marginTop={27}>
           <CustomText size={20} weight="600" color="white">
@@ -106,5 +136,12 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     marginTop: 19,
   },
-  description: {},
+  ingrediant: {
+    marginTop: 20,
+  },
+  ingrediantHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
 });

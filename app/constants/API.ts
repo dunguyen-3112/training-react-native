@@ -1,3 +1,3 @@
-export const API_ENDPOINT = 'http://localhost:3000/api/v1';
+export const API_ENDPOINT = 'http://192.168.86.77:3000';
 
-export type ROUTES = 'foods' | 'article';
+export type ROUTES = 'foods' | 'article' | 'foods/$id' | string;

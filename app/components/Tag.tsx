@@ -1,5 +1,5 @@
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
-import React, { useCallback } from 'react';
+import React, { memo, useCallback } from 'react';
 import { COLORS } from '@constants';
 import { Categories, IInfo } from '@types';
 
@@ -30,7 +30,7 @@ const Tag = ({ name, id, isActive, onPress }: TagProps) => {
   );
 };
 
-export default Tag;
+export default memo(Tag);
 
 const styles = StyleSheet.create({
   container: {

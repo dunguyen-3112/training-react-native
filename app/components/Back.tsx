@@ -1,5 +1,5 @@
 import { StyleSheet, Image, TouchableOpacity } from 'react-native';
-import React, { useCallback } from 'react';
+import React, { memo, useCallback } from 'react';
 import { useNavigation } from '@react-navigation/native';
 
 interface BackProps {
@@ -26,7 +26,7 @@ const Back = ({ top, left, right, bottom }: BackProps) => {
   );
 };
 
-export default Back;
+export default memo(Back);
 
 const styles = StyleSheet.create({
   icon: {

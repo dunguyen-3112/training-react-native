@@ -1,5 +1,5 @@
 import { StyleSheet, View, Image } from 'react-native';
-import React, { useMemo } from 'react';
+import React, { memo, useMemo } from 'react';
 import { COLORS } from '@constants';
 import { IFood } from '@types';
 
@@ -63,7 +63,7 @@ const FoodAvatar = ({
   );
 };
 
-export default FoodAvatar;
+export default memo(FoodAvatar);
 
 const styles = StyleSheet.create({
   layer1: {

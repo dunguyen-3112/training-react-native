@@ -9,10 +9,10 @@
       "@screens/*": ["./screens/*"],
       "@assets/*": ["./assets/*"],
       "@constants/*": ["./constants/*"],
-      "@layouts/*": ["./layouts/*"],
       "@utils/*": ["./utils/*"],
       "@types/*": ["./types/*"],
-      "@hooks/*": ["./hooks/*"]
+      "@hooks/*": ["./hooks/*"],
+      "@navigation/*": ["./navigation/*"]
     }
   }
 }

@@ -1,5 +1,5 @@
 import { StyleSheet, View, Animated, Easing } from 'react-native';
-import React from 'react';
+import React, { memo } from 'react';
 import { Image } from 'react-native';
 
 const Loading = ({ marginTop }: { marginTop: number }) => {
@@ -28,7 +28,7 @@ const Loading = ({ marginTop }: { marginTop: number }) => {
   );
 };
 
-export default Loading;
+export default memo(Loading);
 
 const styles = StyleSheet.create({
   container: {

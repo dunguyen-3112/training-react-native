@@ -16,7 +16,6 @@ function useFetch<T>({ url }: { url: ROUTES }): IFetchState<T> {
         setIsLoading(false);
         setError(null);
       } catch (error: AxiosError | null | undefined | any) {
-        console.log(20, error);
         setError(error);
       } finally {
         setIsLoading(false);

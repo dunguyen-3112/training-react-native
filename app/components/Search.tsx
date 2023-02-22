@@ -1,5 +1,5 @@
 import { StyleSheet, View, Image } from 'react-native';
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, memo } from 'react';
 
 import { COLORS } from '@constants';
 import Input from './Input';
@@ -27,7 +27,7 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default memo(Search);
 
 const styles = StyleSheet.create({
   container: {

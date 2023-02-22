@@ -1,7 +1,7 @@
 import { StyleSheet, View } from 'react-native';
-import React from 'react';
+import React, { memo } from 'react';
 import { FlatList } from 'react-native-gesture-handler';
-import SlideItem from './Card';
+import Card from './Card';
 import { IArtcile } from '@types';
 
 const Slide = ({ marginTop = 0 }: { marginTop?: number }) => {
@@ -32,7 +32,7 @@ const Slide = ({ marginTop = 0 }: { marginTop?: number }) => {
         horizontal
         ItemSeparatorComponent={() => <View style={styles.item} />}
         renderItem={({ item }) => (
-          <SlideItem
+          <Card
             color={item.color}
             title={item.name}
             image={{ uri: item.imgUrl }}
@@ -44,7 +44,7 @@ const Slide = ({ marginTop = 0 }: { marginTop?: number }) => {
   );
 };
 
-export default Slide;
+export default memo(Slide);
 
 const styles = StyleSheet.create({
   container: {},

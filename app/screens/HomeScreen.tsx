@@ -1,29 +1,26 @@
 import { StyleSheet, View } from 'react-native';
 import React, { useEffect } from 'react';
 import { Header } from '@layouts';
-import { Foods, SearchCtr, Slide, Tags } from '@components';
+import { Foods, Loading, SearchCtr, Slide, Tags } from '@components';
 import { IFood } from '@types';
 import { useFetch } from '@hooks';
 
 const HomeScreen = () => {
-  //   const { isLoading, data, error } = useFetch<IFood>({ url: 'foods' });
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch('http://192.168.86.77:3000/foods');
-      const json = await response.json();
-      console.log(json);
-    };
-    fetchData();
-  }, []);
+  const { isLoading, data, error } = useFetch<IFood>({ url: 'foods' });
 
   return (
     <View style={styles.container}>
-      <Header />
-      <SearchCtr />
-      <Tags marginTop={17} />
-      <Slide marginTop={17} />
-      <Foods />
+      {isLoading ? (
+        <Loading marginTop={100} />
+      ) : (
+        <>
+          <Header />
+          <SearchCtr />
+          <Tags marginTop={17} />
+          <Slide marginTop={17} />
+          <Foods foods={data} />
+        </>
+      )}
     </View>
   );
 };

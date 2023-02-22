@@ -6,7 +6,7 @@ import {
   Image,
   Text,
 } from 'react-native';
-import React from 'react';
+import React, { memo } from 'react';
 import CustomText from '@components/CustomText';
 import { COLOR } from '@constants';
 import CustomButton from '@components/CustomButton';
@@ -17,7 +17,7 @@ interface SlideItemProps {
   image: ImageSourcePropType;
 }
 
-const SlideItem = ({ image, color = 'green', title }: SlideItemProps) => {
+const Card = ({ image, color = 'green', title }: SlideItemProps) => {
   return (
     <ImageBackground source={image} style={styles.container}>
       <View style={styles.info}>
@@ -55,7 +55,7 @@ const SlideItem = ({ image, color = 'green', title }: SlideItemProps) => {
   );
 };
 
-export default SlideItem;
+export default memo(Card);
 
 const styles = StyleSheet.create({
   container: {

@@ -1,5 +1,5 @@
 import { StyleSheet, TextInput, View } from 'react-native';
-import React, { useMemo, useCallback } from 'react';
+import React, { useMemo, useCallback, memo } from 'react';
 import CustomText from './CustomText';
 import { Font, COLOR } from '@constants';
 
@@ -85,7 +85,7 @@ const Input = ({
   );
 };
 
-export default Input;
+export default memo(Input);
 
 const styles = StyleSheet.create({
   input: {

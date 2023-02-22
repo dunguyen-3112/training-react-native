@@ -1,5 +1,5 @@
 import { StyleSheet, View } from 'react-native';
-import React from 'react';
+import React, { memo } from 'react';
 import { Image } from 'react-native';
 import CustomText from './CustomText';
 
@@ -20,7 +20,7 @@ const NotFound = ({ marginTop = 0 }: { marginTop: number }) => {
   );
 };
 
-export default NotFound;
+export default memo(NotFound);
 
 const styles = StyleSheet.create({
   container: {

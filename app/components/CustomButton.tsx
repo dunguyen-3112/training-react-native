@@ -1,5 +1,5 @@
 import { StyleSheet, TouchableOpacity } from 'react-native';
-import React, { ReactNode } from 'react';
+import React, { memo, ReactNode } from 'react';
 
 import { COLOR } from '@constants';
 import { getColor } from '@utils';
@@ -44,7 +44,7 @@ const CustomButton = ({
   );
 };
 
-export default CustomButton;
+export default memo(CustomButton);
 
 const styles = StyleSheet.create({
   button: {

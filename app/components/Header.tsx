@@ -1,6 +1,6 @@
 import { Image, StyleSheet, Text, View } from 'react-native';
-import React from 'react';
-import CustomText from '../components/CustomText';
+import React, { memo } from 'react';
+import CustomText from './CustomText';
 import { CustomButton } from '@components';
 
 const Header = () => {
@@ -26,7 +26,7 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default memo(Header);
 
 const styles = StyleSheet.create({
   container: {

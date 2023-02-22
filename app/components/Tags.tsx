@@ -1,5 +1,5 @@
 import { StyleSheet, FlatList, View, Alert } from 'react-native';
-import React, { useCallback, useState } from 'react';
+import React, { memo, useCallback, useState } from 'react';
 import Tag, { TagProps } from './Tag';
 
 const tags: TagProps[] = [
@@ -68,7 +68,7 @@ const Tags = ({ marginTop }: { marginTop: number }) => {
   );
 };
 
-export default Tags;
+export default memo(Tags);
 
 const styles = StyleSheet.create({
   container: {

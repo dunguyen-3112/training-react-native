@@ -1,5 +1,5 @@
 import { FlatList, StyleSheet, View } from 'react-native';
-import React from 'react';
+import React, { memo } from 'react';
 import { COLOR } from '@constants';
 import CustomText from './CustomText';
 import { TNutritional } from '@types';
@@ -16,8 +16,6 @@ const Nutritional = ({
     key1: x,
     value: y,
   }));
-
-  console.log(vi);
 
   return (
     <View style={[styles.container, { marginTop }]}>
@@ -43,7 +41,7 @@ const NutritionalItem = ({ key1, value }: { key1: string; value: number }) => {
   );
 };
 
-export default Nutritional;
+export default memo(Nutritional);
 
 const styles = StyleSheet.create({
   container: {
