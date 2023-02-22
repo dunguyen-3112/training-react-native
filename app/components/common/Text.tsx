@@ -29,7 +29,7 @@ interface TextProps {
   weight?: weight;
   color?: COLOR | string;
   onPress?: () => void;
-  center: boolean;
+  center?: boolean;
   transform?: transform;
   lineHeight?: number;
   marginTop?: number;
