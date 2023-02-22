@@ -1,7 +1,6 @@
 import { StyleSheet, View } from 'react-native';
 import React, { useState } from 'react';
-import { Header } from '@layouts';
-import { Empty, Foods, Loading, SearchCtr, Tags } from '@components';
+import { Empty, Foods, Header, Loading, Search, Tags } from '@components';
 
 const SearchScreen = () => {
   const [foods, setFoods] = useState([]);
@@ -9,7 +8,7 @@ const SearchScreen = () => {
   return (
     <View style={styles.container}>
       <Header />
-      <SearchCtr />
+      <Search />
       <Tags marginTop={17} />
       {loading ? (
         <Loading marginTop={120} />

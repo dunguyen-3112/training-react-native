@@ -1,14 +1,7 @@
-import {
-  Animated,
-  Easing,
-  Image,
-  ImageBackground,
-  StyleSheet,
-  Text,
-} from 'react-native';
+import { Animated, Easing, Image, StyleSheet } from 'react-native';
 import React, { useEffect, useRef } from 'react';
 import { LinearGradient } from 'expo-linear-gradient';
-import { CustomText } from '@components';
+import { Text } from '@components';
 import { useNavigation } from '@react-navigation/native';
 const SplashScreen = () => {
   const navigation = useNavigation();
@@ -37,7 +30,7 @@ const SplashScreen = () => {
           style={styles.topImage}
         />
         <Image source={require('@assets/images/loading.png')} />
-        <CustomText
+        <Text
           size={32}
           weight="800"
           color="#91C788"
@@ -45,13 +38,10 @@ const SplashScreen = () => {
           marginTop={20}
         >
           Laomica
-        </CustomText>
-        <CustomText weight="500" size={16} marginTop={12}>
-          Stay Heatlthy and beatifull with us!
-        </CustomText>
-        <CustomText weight="500" size={16}>
-          with us!
-        </CustomText>
+        </Text>
+        <Text weight="500" size={16} marginTop={12}>
+          Stay Heatlthy and beatifull with us!\nwith us!
+        </Text>
       </LinearGradient>
     </Animated.View>
   );

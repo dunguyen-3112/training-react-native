@@ -2,7 +2,7 @@ import { StyleSheet, TouchableOpacity } from 'react-native';
 import React, { memo, useCallback } from 'react';
 import { IFood } from '@types';
 import FoodAvatar from './FoodAvatar';
-import CustomText from './CustomText';
+import { Text } from '@components/common';
 
 const Food = ({
   data,
@@ -34,21 +34,17 @@ const Food = ({
       onPress={handlePress}
     >
       <FoodAvatar {...data} size={size} />
-      <CustomText
-        marginTop={14}
-        size={size === 'medium' ? 17 : 22}
-        weight={'700'}
-      >
+      <Text marginTop={14} size={size === 'medium' ? 17 : 22} weight={'700'}>
         {name}
-      </CustomText>
+      </Text>
       {size === 'medium' ? (
-        <CustomText size={13} marginTop={10}>
+        <Text size={13} marginTop={10}>
           {`${calories} cal/${weight} kg`}
-        </CustomText>
+        </Text>
       ) : (
-        <CustomText marginTop={0} size={16}>
+        <Text marginTop={0} size={16}>
           {category.name}
-        </CustomText>
+        </Text>
       )}
     </TouchableOpacity>
   );

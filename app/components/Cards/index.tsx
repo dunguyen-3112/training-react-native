@@ -1,7 +1,7 @@
 import { StyleSheet, View } from 'react-native';
 import React, { memo } from 'react';
 import { FlatList } from 'react-native-gesture-handler';
-import Card from './Card';
+import Card from './common/Card';
 import { IArtcile } from '@types';
 
 const Slide = ({ marginTop = 0 }: { marginTop?: number }) => {

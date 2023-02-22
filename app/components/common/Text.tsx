@@ -29,6 +29,7 @@ interface TextProps {
   weight?: weight;
   color?: COLOR | string;
   onPress?: () => void;
+  center: boolean;
   transform?: transform;
   lineHeight?: number;
   marginTop?: number;
@@ -40,6 +41,7 @@ const CustomText = ({
   size = 'medium',
   weight = '400',
   color = 'default',
+  center,
   transform = 'none',
   lineHeight,
   onPress,
@@ -95,6 +97,7 @@ const CustomText = ({
           marginLeft,
         },
         styles.text,
+        center && { textAlign: 'center' },
         { color: _color },
       ]}
     >

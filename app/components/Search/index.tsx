@@ -2,7 +2,7 @@ import { StyleSheet, View, Image } from 'react-native';
 import React, { useState, useCallback, memo } from 'react';
 
 import { COLORS } from '@constants';
-import Input from './Input';
+import { Input } from '@components/common';
 
 const Search = () => {
   const [searchText, setSearchText] = useState('');

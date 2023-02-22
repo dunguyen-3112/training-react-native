@@ -15,7 +15,7 @@ interface ButtonStyle {
   paddingHorizontal?: number;
 }
 
-const CustomButton = ({
+const Button = ({
   marginTop = 0,
   children,
   width,
@@ -44,7 +44,7 @@ const CustomButton = ({
   );
 };
 
-export default memo(CustomButton);
+export default memo(Button);
 
 const styles = StyleSheet.create({
   button: {

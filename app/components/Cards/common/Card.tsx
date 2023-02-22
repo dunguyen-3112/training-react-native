@@ -4,13 +4,10 @@ import {
   ImageBackground,
   ImageSourcePropType,
   Image,
-  Text,
 } from 'react-native';
 import React, { memo } from 'react';
-import CustomText from '@components/CustomText';
 import { COLOR } from '@constants';
-import CustomButton from '@components/CustomButton';
-
+import { Button, Text } from '@components';
 interface SlideItemProps {
   title: string;
   color: COLOR;
@@ -21,15 +18,10 @@ const Card = ({ image, color = 'green', title }: SlideItemProps) => {
   return (
     <ImageBackground source={image} style={styles.container}>
       <View style={styles.info}>
-        <CustomText
-          size={10}
-          weight={'600'}
-          color={color}
-          transform="uppercase"
-        >
+        <Text size={10} weight={'600'} color={color} transform="uppercase">
           Article
-        </CustomText>
-        <CustomText
+        </Text>
+        <Text
           size={17}
           weight={'600'}
           color={'gray'}
@@ -37,8 +29,8 @@ const Card = ({ image, color = 'green', title }: SlideItemProps) => {
           marginTop={4}
         >
           {title}
-        </CustomText>
-        <CustomButton
+        </Text>
+        <Button
           backgroundColor="green"
           paddingHorizontal={19}
           paddingVertical={6}
@@ -49,7 +41,7 @@ const Card = ({ image, color = 'green', title }: SlideItemProps) => {
             source={require('@assets/icons/arrow.png')}
             style={styles.buttonIcon}
           />
-        </CustomButton>
+        </Button>
       </View>
     </ImageBackground>
   );

@@ -1,8 +1,8 @@
-import HomeScreen from './HomeScreen';
-import SplashScreen from './SplashScreen';
-import DetailsScreen from './DetailsScreen';
-import SearchScreen from './SearchScreen';
-import FavoriteScreen from './FavoriteScreen';
+import HomeScreen from './Home';
+import SplashScreen from './Splash';
+import DetailsScreen from './Details';
+import SearchScreen from './Search';
+import FavoriteScreen from './Favorite';
 
 export {
   HomeScreen,

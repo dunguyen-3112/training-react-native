@@ -1,27 +1,29 @@
-import Food from './Food';
-import Foods from './Foods';
-import CustomText from './CustomText';
-import SearchCtr from './Search';
+import Foods, { Food, FoodAvatar } from './Foods';
+import { Text, Input, Button } from './common';
+import Search from './Search';
 import Tags from './Tags';
 import Slide from './Cards';
 import Back from './Back';
 import Nutritional from './Nutritional';
-import CustomButton from './CustomButton';
 import Loading from './Loading';
 import Empty from './Empty';
+import Header from './Header';
 import NotFound from './NotFound';
 
 export {
   Tags,
-  Food,
   Foods,
-  CustomText,
-  SearchCtr,
+  Text,
+  Search,
+  Header,
   Nutritional,
   Loading,
   Slide,
   Back,
+  Input,
   Empty,
+  Food,
+  FoodAvatar,
   NotFound,
-  CustomButton,
+  Button,
 };

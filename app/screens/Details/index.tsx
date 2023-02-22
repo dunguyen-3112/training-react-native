@@ -1,16 +1,15 @@
 import { StyleSheet, View } from 'react-native';
 import React, { useCallback, useMemo, useState } from 'react';
 import { useRoute } from '@react-navigation/native';
-import { TabParamsList, RootStackParamsList } from '@navigation';
 
 import {
   Back,
-  CustomButton,
-  CustomText,
+  Button,
   Empty,
   Food,
   Loading,
   Nutritional,
+  Text,
 } from '@components';
 import { IFood } from '@types';
 import { useFetch } from '@hooks';
@@ -65,14 +64,14 @@ const Details = () => {
       </View>
       <Nutritional color={color} nutritional={nutritional} />
       <View style={styles.details}>
-        <CustomText size={20} weight="600">
+        <Text size={20} weight="600">
           Details
-        </CustomText>
-        <CustomText size={15}>
+        </Text>
+        <Text size={15}>
           {isMore ? (
             <>
               {desc}
-              <CustomText
+              <Text
                 onPress={handleReadMore}
                 color="green"
                 size={15}
@@ -80,12 +79,12 @@ const Details = () => {
                 marginTop={4}
               >
                 Read less
-              </CustomText>
+              </Text>
             </>
           ) : (
             <>
               {desc?.substring(0, 150)}
-              <CustomText
+              <Text
                 onPress={handleReadMore}
                 color="green"
                 size={15}
@@ -93,27 +92,27 @@ const Details = () => {
                 marginTop={4}
               >
                 Read more...
-              </CustomText>
+              </Text>
             </>
           )}
-        </CustomText>
+        </Text>
         <View style={styles.ingrediant}>
           <View style={styles.ingrediantHeader}>
-            <CustomText weight="600" size={20}>
+            <Text weight="600" size={20}>
               Ingrediants
-            </CustomText>
-            <CustomText size={11} weight="500" color="green">
+            </Text>
+            <Text size={11} weight="500" color="green">
               See all
-            </CustomText>
+            </Text>
           </View>
           <View></View>
         </View>
 
-        <CustomButton width={'100%'} paddingVertical={9} marginTop={27}>
-          <CustomText size={20} weight="600" color="white">
+        <Button width={'100%'} paddingVertical={9} marginTop={27}>
+          <Text size={20} weight="600" color="white">
             Add to Favorites
-          </CustomText>
-        </CustomButton>
+          </Text>
+        </Button>
       </View>
     </View>
   );

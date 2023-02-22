@@ -1,6 +1,6 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import React, { useState } from 'react';
-import { Foods, Loading, NotFound, SearchCtr } from '@components';
+import { Foods, Loading, NotFound } from '@components';
 
 const FavoriteScreen = () => {
   const [foods, setFoods] = useState([]);

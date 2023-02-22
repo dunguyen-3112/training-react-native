@@ -2,9 +2,11 @@ import { FlatList, StyleSheet, View } from 'react-native';
 import React, { memo, useCallback } from 'react';
 import { useNavigation } from '@react-navigation/native';
 
-import Food from './Food';
-import CustomText from './CustomText';
 import { IFood } from '@types';
+import { Text } from '@components/common';
+import { Food, FoodAvatar } from './common';
+
+export { Food, FoodAvatar };
 
 const Foods = ({
   horizontal,
@@ -27,7 +29,7 @@ const Foods = ({
   return (
     <View style={styles.container}>
       {!horizontal && (
-        <CustomText
+        <Text
           size={20}
           weight={'700'}
           color={'gray'}
@@ -35,34 +37,27 @@ const Foods = ({
           marginLeft={8}
         >
           All Food
-        </CustomText>
+        </Text>
       )}
-      {horizontal ? (
-        <FlatList
-          style={styles.list}
-          data={foods}
-          keyExtractor={(item) => item.id + ''}
-          columnWrapperStyle={styles.itemStyle}
-          numColumns={2}
-          showsHorizontalScrollIndicator={false}
-          ItemSeparatorComponent={() => <View style={{ height: 18 }} />}
-          renderItem={({ item }) => (
-            <Food data={item} onPress={handlePressFood} />
-          )}
-        />
-      ) : (
-        <FlatList
-          style={styles.list}
-          showsHorizontalScrollIndicator={false}
-          data={foods}
-          horizontal
-          keyExtractor={(item) => item.id + ''}
-          ItemSeparatorComponent={() => <View style={{ marginRight: 18 }} />}
-          renderItem={({ item }) => (
-            <Food data={item} onPress={handlePressFood} />
-          )}
-        />
-      )}
+      <FlatList
+        style={styles.list}
+        data={foods}
+        keyExtractor={(item) => item.id + ''}
+        {...(!horizontal && {
+          horizontal: true,
+        })}
+        {...(horizontal && {
+          numColumns: 2,
+          columnWrapperStyle: styles.itemStyle,
+        })}
+        showsHorizontalScrollIndicator={false}
+        ItemSeparatorComponent={() => (
+          <View style={{ height: 18, marginLeft: 18 }} />
+        )}
+        renderItem={({ item }) => (
+          <Food data={item} onPress={handlePressFood} />
+        )}
+      />
     </View>
   );
 };

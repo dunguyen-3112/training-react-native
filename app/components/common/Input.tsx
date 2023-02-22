@@ -1,6 +1,6 @@
 import { StyleSheet, TextInput, View } from 'react-native';
 import React, { useMemo, useCallback, memo } from 'react';
-import CustomText from './CustomText';
+import Text from './Text';
 import { Font, COLOR } from '@constants';
 
 interface InputProps {
@@ -58,12 +58,13 @@ const Input = ({
   return (
     <View>
       {label && (
-        <CustomText
-          text={label}
+        <Text
           color={labelColor || 'black'}
           size={labelFont?.fontSize || 'small'}
           weight={labelFont?.fontWeight || '400'}
-        />
+        >
+          {label}
+        </Text>
       )}
       <TextInput
         value={value}

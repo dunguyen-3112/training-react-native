@@ -1,8 +1,8 @@
 import { FlatList, StyleSheet, View } from 'react-native';
 import React, { memo } from 'react';
 import { COLOR } from '@constants';
-import CustomText from './CustomText';
 import { TNutritional } from '@types';
+import NutritionalItem from './common/ButritionalItem';
 
 const Nutritional = ({
   nutritional,
@@ -26,17 +26,6 @@ const Nutritional = ({
         ItemSeparatorComponent={() => <View style={{ marginLeft: 40 }} />}
         keyExtractor={(item) => item.key1}
       />
-    </View>
-  );
-};
-
-const NutritionalItem = ({ key1, value }: { key1: string; value: number }) => {
-  return (
-    <View>
-      <CustomText size={16}>{key1}</CustomText>
-      <CustomText size={24} color={'orange'}>
-        {`${value}g`}
-      </CustomText>
     </View>
   );
 };
