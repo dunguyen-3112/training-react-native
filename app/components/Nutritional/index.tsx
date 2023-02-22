@@ -2,7 +2,7 @@ import { FlatList, StyleSheet, View } from 'react-native';
 import React, { memo } from 'react';
 import { COLOR } from '@constants';
 import { TNutritional } from '@types';
-import NutritionalItem from './common/ButritionalItem';
+import NutritionalItem from './base/ButritionalItem';
 
 const Nutritional = ({
   nutritional,

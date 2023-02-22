@@ -1,6 +1,6 @@
 import { StyleSheet, View } from 'react-native';
 import React from 'react';
-import { Foods, Header, Loading, Search, Slide, Tags } from '@components';
+import { Foods, Header, Loading, Search, Cards, Tags } from '@components';
 import { IFood } from '@types';
 import { useFetch } from '@hooks';
 
@@ -16,7 +16,7 @@ const HomeScreen = () => {
           <Header />
           <Search />
           <Tags marginTop={17} />
-          <Slide marginTop={17} />
+          <Cards marginTop={17} />
           <Foods foods={data} />
         </>
       )}

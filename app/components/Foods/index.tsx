@@ -4,7 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 
 import { IFood } from '@types';
 import { Text } from '@components/common';
-import { Food, FoodAvatar } from './common';
+import { Food, FoodAvatar } from './base';
 
 export { Food, FoodAvatar };
 

@@ -2,7 +2,7 @@ import Foods, { Food, FoodAvatar } from './Foods';
 import { Text, Input, Button } from './common';
 import Search from './Search';
 import Tags from './Tags';
-import Slide from './Cards';
+import Cards from './Cards';
 import Back from './Back';
 import Nutritional from './Nutritional';
 import Loading from './Loading';
@@ -11,6 +11,8 @@ import Header from './Header';
 import NotFound from './NotFound';
 
 export {
+  Food,
+  FoodAvatar,
   Tags,
   Foods,
   Text,
@@ -18,12 +20,10 @@ export {
   Header,
   Nutritional,
   Loading,
-  Slide,
+  Cards,
   Back,
   Input,
   Empty,
-  Food,
-  FoodAvatar,
   NotFound,
   Button,
 };

@@ -2,7 +2,7 @@ import { StyleSheet, TouchableOpacity } from 'react-native';
 import React, { memo, useCallback } from 'react';
 import { IFood } from '@types';
 import FoodAvatar from './FoodAvatar';
-import { Text } from '@components/common';
+import { Text } from '../../common';
 
 const Food = ({
   data,

@@ -1,6 +1,6 @@
 import { StyleSheet, FlatList, View, Alert } from 'react-native';
 import React, { memo, useCallback, useState } from 'react';
-import { Tag, TagProps } from './common';
+import { Tag, TagProps } from './base';
 
 const tags: TagProps[] = [
   {

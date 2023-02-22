@@ -39,8 +39,8 @@ const SplashScreen = () => {
         >
           Laomica
         </Text>
-        <Text weight="500" size={16} marginTop={12}>
-          Stay Heatlthy and beatifull with us!\nwith us!
+        <Text weight="500" size={16} marginTop={12} center>
+          {`Stay Heatlthy and beatifull with us!\nwith us!`}
         </Text>
       </LinearGradient>
     </Animated.View>
