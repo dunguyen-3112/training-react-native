@@ -24,6 +24,7 @@ interface Font {
   fontSize?: size;
   fontWeight?: weight;
   textTransform?: transform;
+  lineHeight?: number;
 }
 
 export { Font };

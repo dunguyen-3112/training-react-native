@@ -3,7 +3,6 @@ import React, { useCallback, useState } from 'react';
 import { Foods, Header, Loading, Search, Cards, Tags } from '@components';
 import { IFood } from '@types';
 import { useFetch } from '@hooks';
-import { Categories } from '@constants';
 
 const HomeScreen = () => {
   const [query, setQuery] = useState('foods');
@@ -18,17 +17,13 @@ const HomeScreen = () => {
 
   return (
     <View style={styles.container}>
-      {isLoading ? (
-        <Loading marginTop={100} />
-      ) : (
-        <>
-          <Header />
-          <Search />
-          <Tags marginTop={17} onSelect={handleChangeTagName} />
-          <Cards marginTop={17} />
-          {data && <Foods foods={data} />}
-        </>
-      )}
+      <>
+        <Header />
+        <Search />
+        <Tags marginTop={17} onSelect={handleChangeTagName} />
+        <Cards marginTop={17} />
+        {data && <Foods foods={data} />}
+      </>
     </View>
   );
 };

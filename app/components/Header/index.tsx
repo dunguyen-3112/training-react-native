@@ -6,7 +6,7 @@ import { Button } from '@components/common';
 const Header = () => {
   return (
     <View style={styles.container}>
-      <Text color="black" font={{ fontSize: 23, fontWeight: '800' }}>
+      <Text font={{ fontSize: 23, fontWeight: '800', lineHeight: 31 }}>
         {`Want to eat\nhealthy Food?`}
       </Text>
       <Button

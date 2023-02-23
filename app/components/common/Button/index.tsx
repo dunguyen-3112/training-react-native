@@ -3,16 +3,18 @@ import React, { memo, ReactNode } from 'react';
 
 import { COLOR, Font } from '@constants';
 import { getColor } from '@utils';
-import Text from '../Text';
+import Text, { TTextColor } from '../Text';
+
+export type TBottonColor = 'PRIMARY' | 'SECONDARY' | 'GREEN_DARK';
 
 interface ButtonStyle {
   label?: string;
-  labelColor?: COLOR;
+  labelColor?: TTextColor;
   labelFont?: Font;
   width?: number | string;
   height?: number;
   children?: ReactNode;
-  backgroundColor?: COLOR | string;
+  backgroundColor?: TBottonColor;
   borderRadius?: number;
   onPress?: () => void;
   marginTop?: number;
@@ -24,10 +26,9 @@ const Button = ({
   label,
   labelColor,
   labelFont,
-  marginTop = 0,
   children,
   width,
-  backgroundColor = 'green',
+  backgroundColor = 'PRIMARY',
   borderRadius,
   paddingVertical,
   paddingHorizontal,
@@ -41,12 +42,14 @@ const Button = ({
       onPress={onPress}
       style={[
         styles.button,
-        { backgroundColor: _color, marginTop: marginTop },
-        width ? { width } : {},
-        height ? { height } : { alignSelf: 'flex-start' },
-        borderRadius ? { borderRadius } : {},
-        paddingVertical ? { paddingVertical } : {},
-        paddingHorizontal ? { paddingHorizontal } : {},
+        {
+          backgroundColor: _color,
+          height,
+          paddingVertical,
+          paddingHorizontal,
+          borderRadius,
+          width,
+        },
       ]}
     >
       {children ? (

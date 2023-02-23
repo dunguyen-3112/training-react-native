@@ -32,13 +32,17 @@ const SplashScreen = () => {
         />
         <Image source={require('@assets/images/loading.png')} />
         <Text
-          font={{ fontSize: 12, fontWeight: '800', textTransform: 'uppercase' }}
-          color="#91C788"
-          marginTop={20}
+          font={{ fontSize: 32, fontWeight: '800', textTransform: 'uppercase' }}
+          color="primary"
+          customStyle={{ marginTop: 20 }}
         >
           Laomica
         </Text>
-        <Text font={{ fontSize: 16, fontWeight: '500' }} marginTop={12} center>
+        <Text
+          font={{ fontSize: 16, fontWeight: '500' }}
+          customStyle={{ marginTop: 12 }}
+          center
+        >
           {`Stay Heatlthy and beatifull with us!\nwith us!`}
         </Text>
       </LinearGradient>
