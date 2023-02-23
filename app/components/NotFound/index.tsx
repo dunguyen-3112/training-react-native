@@ -7,11 +7,17 @@ const NotFound = ({ marginTop = 0 }: { marginTop: number }) => {
   return (
     <View style={[styles.container, { marginTop }]}>
       <Image source={require('@assets/images/notfound.png')} />
-      <Text marginTop={29} weight="500" size={22} color="#696969">
+      <Text
+        customStyle={{ marginTop: 29, color: '#696969' }}
+        font={{ fontSize: 22, fontWeight: '500' }}
+      >
         No Foods Found
       </Text>
-      <Text size={13} color="#7e7e7e" marginTop={8} center>
-        {`You don&apos;t save any food. Go ahead, search\nand save your favorite food`}
+      <Text
+        font={{ fontSize: 13 }}
+        customStyle={{ marginTop: 8, textAlign: 'center', color: '#7e7e7e' }}
+      >
+        {`You don't save any food. Go ahead, search\nand save your favorite food`}
       </Text>
     </View>
   );

@@ -1,21 +1,29 @@
 import { StyleSheet, TouchableOpacity } from 'react-native';
 import React, { memo, ReactNode } from 'react';
 
-import { COLOR } from '@constants';
+import { COLOR, Font } from '@constants';
 import { getColor } from '@utils';
+import Text from '../Text';
 
 interface ButtonStyle {
+  label?: string;
+  labelColor?: COLOR;
+  labelFont?: Font;
   width?: number | string;
   height?: number;
   children?: ReactNode;
   backgroundColor?: COLOR | string;
   borderRadius?: number;
+  onPress?: () => void;
   marginTop?: number;
   paddingVertical?: number;
   paddingHorizontal?: number;
 }
 
 const Button = ({
+  label,
+  labelColor,
+  labelFont,
   marginTop = 0,
   children,
   width,
@@ -23,12 +31,14 @@ const Button = ({
   borderRadius,
   paddingVertical,
   paddingHorizontal,
+  onPress,
   height,
 }: ButtonStyle) => {
   const _color = getColor(backgroundColor);
 
   return (
     <TouchableOpacity
+      onPress={onPress}
       style={[
         styles.button,
         { backgroundColor: _color, marginTop: marginTop },
@@ -39,7 +49,13 @@ const Button = ({
         paddingHorizontal ? { paddingHorizontal } : {},
       ]}
     >
-      {children}
+      {children ? (
+        children
+      ) : (
+        <Text {...(labelFont && { font: labelFont })} color={labelColor}>
+          {label}
+        </Text>
+      )}
     </TouchableOpacity>
   );
 };

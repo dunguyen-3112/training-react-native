@@ -1,31 +1,43 @@
 import { StyleSheet, View } from 'react-native';
-import React, { useCallback } from 'react';
-import { Empty, Foods, Loading, NotFound, Search, Text } from '@components';
+import React, { useCallback, useEffect } from 'react';
+import { Foods, Loading, NotFound, Search } from '@components';
 import { useFetch } from '@hooks';
 import { IFood } from '@types';
 import { useState } from 'react';
 
 const FavoriteScreen = () => {
   const [text, setText] = useState('');
-  const { isLoading, data, error } = useFetch<IFood[]>({
+  const { isLoading, data } = useFetch<IFood[]>({
     url: `foods?favorite=1&name_like=${text}`,
   });
+
+  const [foods, setFoods] = useState<IFood[]>();
+
+  useEffect(() => {
+    if (data) setFoods(data);
+  }, [data]);
 
   const handleChangeTextSearch = useCallback((text: string) => {
     setText(text);
   }, []);
 
+  const handleChangeFoods = useCallback((foods: IFood[]) => {
+    if (foods) {
+      setFoods(foods);
+    }
+  }, []);
+
   return (
     <View style={styles.container}>
       <Search value={text} onChangeText={handleChangeTextSearch} />
-      {data?.length === 0 ? (
+      {foods === undefined || foods?.length === 0 ? (
         <View style={styles.container}>
           <NotFound marginTop={200} />
         </View>
       ) : isLoading ? (
         <Loading marginTop={120} />
       ) : (
-        <Foods horizontal foods={data} />
+        <Foods horizontal foods={foods} onChange={handleChangeFoods} />
       )}
     </View>
   );

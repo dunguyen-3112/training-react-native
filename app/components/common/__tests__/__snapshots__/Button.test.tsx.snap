@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button has a default 1`] = `
+<View
+  accessible={true}
+  collapsable={false}
+  focusable={false}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "alignSelf": "flex-start",
+      "backgroundColor": "#1CC379",
+      "borderRadius": 8,
+      "flexDirection": "row",
+      "justifyContent": "center",
+      "marginTop": 0,
+      "opacity": 1,
+    }
+  }
+>
+  <Text
+    onPress={[Function]}
+    style={
+      Array [
+        Object {
+          "fontSize": 14,
+          "fontWeight": "400",
+          "lineHeight": undefined,
+          "marginLeft": 0,
+          "marginTop": 0,
+          "textTransform": "lowercase",
+        },
+        Object {
+          "color": "#5C5C5C",
+        },
+        undefined,
+        Object {
+          "color": "#5C5C5C",
+        },
+      ]
+    }
+  />
+</View>
+`;

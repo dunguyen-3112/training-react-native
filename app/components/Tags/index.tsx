@@ -1,65 +1,33 @@
-import { StyleSheet, FlatList, View, Alert } from 'react-native';
+import { StyleSheet, FlatList, View } from 'react-native';
 import React, { memo, useCallback, useState } from 'react';
-import { Tag, TagProps } from './base';
+import Tag, { TagProps } from './Tag';
+import { Categories } from '@constants';
 
-const tags: TagProps[] = [
-  {
-    id: 1,
-    name: 'Breakfast',
-  },
-  {
-    id: 2,
-    name: 'Dinner',
-  },
-  {
-    id: 3,
-    name: 'Dry fruits',
-  },
-  {
-    id: 4,
-    name: 'Fast Food',
-  },
-  {
-    id: 5,
-    name: 'Non-Veg',
-  },
-  {
-    id: 6,
-    name: 'Vegetables',
-  },
-  {
-    id: 7,
-    name: 'Lunch',
-  },
-  {
-    id: 8,
-    name: 'Greenish',
-  },
-  {
-    id: 9,
-    name: 'Fruits',
-  },
-];
+const Tags = ({
+  marginTop,
+  onSelect,
+}: {
+  marginTop: number;
+  onSelect: (id: number) => void;
+}) => {
+  const [tag, setTag] = useState<number>();
 
-const Tags = ({ marginTop }: { marginTop: number }) => {
-  const [tag, setTag] = useState(tags[0].id);
-
-  const handlePressTag = useCallback((id: number) => {
-    setTag(id);
-    Alert.alert(
-      'Information',
-      `ID: ${id}, Name: ${tags.find((tag) => tag.id === id)?.name}`
-    );
-  }, []);
+  const handlePressTag = useCallback(
+    (id: number) => {
+      onSelect(id);
+      setTag(id);
+    },
+    [onSelect]
+  );
 
   return (
     <View style={[styles.container, { marginTop: marginTop }]}>
       <FlatList
-        data={tags}
+        data={Categories}
         showsHorizontalScrollIndicator={false}
         horizontal
         ItemSeparatorComponent={() => <View style={styles.item} />}
-        keyExtractor={(item) => item.id + ''}
+        keyExtractor={(item, index) => index + ''}
         renderItem={({ item }: { item: TagProps }) => (
           <Tag {...item} onPress={handlePressTag} isActive={tag === item.id} />
         )}

@@ -4,69 +4,117 @@
       "id": "123",
       "name": "Pizza",
       "weight": 200,
-      "ingredient": { "id": 1, "name": "Bread" },
+      "ingredients": [
+        {
+          "name": "Bread",
+          "value": 200
+        },
+        {
+          "id": 2,
+          "name": "Meat (Chicken)",
+          "value": 500
+        },
+        {
+          "id": 3,
+          "name": "Cacumber",
+          "value": 300
+        },
+        {
+          "id": 4,
+          "name": "Onion",
+          "value": 200
+        }
+      ],
       "nutritional": {
-        "id": 1,
         "calories": 100,
         "carbs": 100,
         "protein": 100,
         "fat": 100
       },
-      "favorite": 0,
-      "category": { "id": 1, "name": "Fast Food" },
-      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/a2.png?alt=media&token=abe65f60-e23e-48d9-a2c8-13c9e3ccb921"
+      "category": "Fast Food",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/a2.png?alt=media&token=abe65f60-e23e-48d9-a2c8-13c9e3ccb921",
+      "desc": "Note that in TypeScript, you can define the return type of the function using a colon (:) after the function parameter list. In this example, we don't explicitly define the return type, but TypeScript will infer that the return type is a Promise that resolves to a JSON object.",
+      "favorite": 1
     },
     {
       "id": 1,
       "name": "Chicken",
       "weight": 400,
       "color": "red",
+      "desc": "Note that in TypeScript, you can define the return type of the function using a colon (:) after the function parameter list. In this example, we don't explicitly define the return type, but TypeScript will infer that the return type is a Promise that resolves to a JSON object.",
       "nutritional": {
         "calories": 200,
         "carbs": 100,
         "fat": 100,
         "protein": 100
       },
-      "favorite": 1,
-      "category": {
-        "id": 1,
-        "name": "Dry fruits"
-      },
+      "category": "Dry fruits",
       "ingredients": [
         {
-          "id": 1,
-          "name": "Bread"
+          "name": "Bread",
+          "value": 200
+        },
+        {
+          "id": 2,
+          "name": "Meat (Chicken)",
+          "value": 500
+        },
+        {
+          "id": 3,
+          "name": "Cacumber",
+          "value": 300
+        },
+        {
+          "id": 4,
+          "name": "Onion",
+          "value": 200
         }
       ],
-      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/a2.png?alt=media&token=abe65f60-e23e-48d9-a2c8-13c9e3ccb921"
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/a2.png?alt=media&token=abe65f60-e23e-48d9-a2c8-13c9e3ccb921",
+      "favorite": 0
     },
     {
       "id": 2,
       "name": "Beef",
       "weight": 400,
       "color": "green",
+      "desc": "Note that in TypeScript, you can define the return type of the function using a colon (:) after the function parameter list. In this example, we don't explicitly define the return type, but TypeScript will infer that the return type is a Promise that resolves to a JSON object.",
       "nutritional": {
         "calories": 200,
         "carbs": 100,
         "fat": 100,
         "protein": 100
       },
-      "favorite": 0,
-      "category": {
-        "id": 1,
-        "name": "Dry fruits"
-      },
+      "category": "Dry fruits",
       "ingredients": [
         {
           "id": 1,
-          "name": "Bread"
+          "name": "Bread",
+          "value": 200
+        },
+        {
+          "id": 2,
+          "name": "Meat (Chicken)",
+          "value": 500
+        },
+        {
+          "id": 3,
+          "name": "Cacumber",
+          "value": 300
+        },
+        {
+          "id": 4,
+          "name": "Onion",
+          "value": 200
         }
       ],
-      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/a4.png?alt=media&token=d05ef95d-eda9-4b9e-951b-13730a7d1086"
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/a4.png?alt=media&token=d05ef95d-eda9-4b9e-951b-13730a7d1086",
+      "favorite": 1
     },
     {
       "id": 3,
       "name": "Pork",
+      "desc": "Note that in TypeScript, you can define the return type of the function using a colon (:) after the function parameter list. In this example, we don't explicitly define the return type, but TypeScript will infer that the return type is a Promise that resolves to a JSON object.",
       "weight": 400,
       "color": "purple",
       "nutritional": {
@@ -75,21 +123,35 @@
         "fat": 100,
         "protein": 100
       },
-      "favorite": 0,
-      "category": {
-        "id": 1,
-        "name": "Dry fruits"
-      },
+      "category": "Dry fruits",
       "ingredients": [
         {
           "id": 1,
-          "name": "Bread"
+          "name": "Bread",
+          "value": 200
+        },
+        {
+          "id": 2,
+          "name": "Meat (Chicken)",
+          "value": 500
+        },
+        {
+          "id": 3,
+          "name": "Cacumber",
+          "value": 300
+        },
+        {
+          "id": 4,
+          "name": "Onion",
+          "value": 200
         }
       ],
-      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/a1.png?alt=media&token=4e7e33d8-eb6e-4fbf-8ca9-d7cca5eb001c"
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/a1.png?alt=media&token=4e7e33d8-eb6e-4fbf-8ca9-d7cca5eb001c",
+      "favorite": 0
     },
     {
       "id": 4,
+      "desc": "Note that in TypeScript, you can define the return type of the function using a colon (:) after the function parameter list. In this example, we don't explicitly define the return type, but TypeScript will infer that the return type is a Promise that resolves to a JSON object.",
       "name": "Fish",
       "weight": 400,
       "color": "yellow",
@@ -99,49 +161,76 @@
         "fat": 100,
         "protein": 100
       },
-      "favorite": 1,
-      "category": {
-        "id": 1,
-        "name": "Dry fruits"
-      },
+      "category": "Lunch",
       "ingredients": [
         {
           "id": 1,
-          "name": "Bread"
+          "name": "Bread",
+          "value": 200
+        },
+        {
+          "id": 2,
+          "name": "Meat (Chicken)",
+          "value": 500
+        },
+        {
+          "id": 3,
+          "name": "Cacumber",
+          "value": 300
+        },
+        {
+          "id": 4,
+          "name": "Onion",
+          "value": 200
         }
       ],
-      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/a5.png?alt=media&token=af718429-aabf-4329-91e5-439cff65e187"
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/a5.png?alt=media&token=af718429-aabf-4329-91e5-439cff65e187",
+      "favorite": 0
     },
     {
       "id": 5,
       "name": "Bacon",
       "weight": 400,
       "color": "green",
+      "desc": "Note that in TypeScript, you can define the return type of the function using a colon (:) after the function parameter list. In this example, we don't explicitly define the return type, but TypeScript will infer that the return type is a Promise that resolves to a JSON object.",
       "nutritional": {
         "calories": 200,
         "carbs": 100,
         "fat": 100,
         "protein": 100
       },
-      "favorite": 1,
-      "category": {
-        "id": 1,
-        "name": "Dry fruits"
-      },
+      "category": "Lunch",
       "ingredients": [
         {
           "id": 1,
-          "name": "Bread"
+          "name": "Bread",
+          "value": 200
+        },
+        {
+          "id": 2,
+          "name": "Meat (Chicken)",
+          "value": 500
+        },
+        {
+          "id": 3,
+          "name": "Cacumber",
+          "value": 300
+        },
+        {
+          "id": 4,
+          "name": "Onion",
+          "value": 200
         }
       ],
-      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/a6.png?alt=media&token=e16ecdc8-e597-464d-90ce-0c6b64e0c5a8"
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/a6.png?alt=media&token=e16ecdc8-e597-464d-90ce-0c6b64e0c5a8",
+      "favorite": 0
     },
-
     {
       "id": 6,
       "name": "Chicken",
       "weight": 400,
       "color": "red",
+      "desc": "Note that in TypeScript, you can define the return type of the function using a colon (:) after the function parameter list. In this example, we don't explicitly define the return type, but TypeScript will infer that the return type is a Promise that resolves to a JSON object.",
       "nutritional": {
         "calories": 200,
         "carbs": 100,
@@ -149,20 +238,34 @@
         "protein": 100
       },
       "favorite": 0,
-      "category": {
-        "id": 1,
-        "name": "Dry fruits"
-      },
+      "category": "Breakfast",
       "ingredients": [
         {
           "id": 1,
-          "name": "Bread"
+          "name": "Bread",
+          "value": 200
+        },
+        {
+          "id": 2,
+          "name": "Meat (Chicken)",
+          "value": 500
+        },
+        {
+          "id": 3,
+          "name": "Cacumber",
+          "value": 300
+        },
+        {
+          "id": 4,
+          "name": "Onion",
+          "value": 200
         }
       ],
       "imgUrl": "https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/a2.png?alt=media&token=abe65f60-e23e-48d9-a2c8-13c9e3ccb921"
     },
     {
       "id": 7,
+      "desc": "Note that in TypeScript, you can define the return type of the function using a colon (:) after the function parameter list. In this example, we don't explicitly define the return type, but TypeScript will infer that the return type is a Promise that resolves to a JSON object.",
       "name": "Beef",
       "weight": 400,
       "color": "green",
@@ -172,21 +275,35 @@
         "fat": 100,
         "protein": 100
       },
-      "favorite": 1,
-      "category": {
-        "id": 1,
-        "name": "Dry fruits"
-      },
+      "category": "Breakfast",
       "ingredients": [
         {
           "id": 1,
-          "name": "Bread"
+          "name": "Bread",
+          "value": 200
+        },
+        {
+          "id": 2,
+          "name": "Meat (Chicken)",
+          "value": 500
+        },
+        {
+          "id": 3,
+          "name": "Cacumber",
+          "value": 300
+        },
+        {
+          "id": 4,
+          "name": "Onion",
+          "value": 200
         }
       ],
-      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/a6.png?alt=media&token=e16ecdc8-e597-464d-90ce-0c6b64e0c5a8"
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/a6.png?alt=media&token=e16ecdc8-e597-464d-90ce-0c6b64e0c5a8",
+      "favorite": 0
     },
     {
       "id": 8,
+      "desc": "Note that in TypeScript, you can define the return type of the function using a colon (:) after the function parameter list. In this example, we don't explicitly define the return type, but TypeScript will infer that the return type is a Promise that resolves to a JSON object.",
       "name": "Pork",
       "weight": 400,
       "color": "red",
@@ -196,21 +313,35 @@
         "fat": 100,
         "protein": 100
       },
-      "favorite": 1,
-      "category": {
-        "id": 1,
-        "name": "Dry fruits"
-      },
+      "category": "Vegetables",
       "ingredients": [
         {
           "id": 1,
-          "name": "Bread"
+          "name": "Bread",
+          "value": 200
+        },
+        {
+          "id": 2,
+          "name": "Meat (Chicken)",
+          "value": 500
+        },
+        {
+          "id": 3,
+          "name": "Cacumber",
+          "value": 300
+        },
+        {
+          "id": 4,
+          "name": "Onion",
+          "value": 200
         }
       ],
-      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/a2.png?alt=media&token=abe65f60-e23e-48d9-a2c8-13c9e3ccb921"
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/a2.png?alt=media&token=abe65f60-e23e-48d9-a2c8-13c9e3ccb921",
+      "favorite": 0
     },
     {
       "id": 9,
+      "desc": "Note that in TypeScript, you can define the return type of the function using a colon (:) after the function parameter list. In this example, we don't explicitly define the return type, but TypeScript will infer that the return type is a Promise that resolves to a JSON object.",
       "name": "Fish",
       "weight": 400,
       "color": "orange",
@@ -221,14 +352,27 @@
         "protein": 100
       },
       "favorite": 0,
-      "category": {
-        "id": 1,
-        "name": "Dry fruits"
-      },
+      "category": "Vegetables",
       "ingredients": [
         {
           "id": 1,
-          "name": "Bread"
+          "name": "Bread",
+          "value": 200
+        },
+        {
+          "id": 2,
+          "name": "Meat (Chicken)",
+          "value": 500
+        },
+        {
+          "id": 3,
+          "name": "Cacumber",
+          "value": 300
+        },
+        {
+          "id": 4,
+          "name": "Onion",
+          "value": 200
         }
       ],
       "imgUrl": "https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/a2.png?alt=media&token=abe65f60-e23e-48d9-a2c8-13c9e3ccb921"
@@ -244,40 +388,91 @@
         "fat": 100,
         "protein": 100
       },
-      "favorite": 0,
-      "category": {
-        "id": 1,
-        "name": "Dry fruits"
-      },
+      "category": "Dry fruits",
       "ingredients": [
         {
           "id": 1,
-          "name": "Bread"
+          "name": "Bread",
+          "value": 200
+        },
+        {
+          "id": 2,
+          "name": "Meat (Chicken)",
+          "value": 500
+        },
+        {
+          "id": 3,
+          "name": "Cacumber",
+          "value": 300
+        },
+        {
+          "id": 4,
+          "name": "Onion",
+          "value": 200
         }
       ],
-      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/a2.png?alt=media&token=abe65f60-e23e-48d9-a2c8-13c9e3ccb921"
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/a2.png?alt=media&token=abe65f60-e23e-48d9-a2c8-13c9e3ccb921",
+      "favorite": 0
     }
   ],
   "categories": [
-    { "id": 1, "name": "Fast Food" },
-    { "id": 2, "name": "Breakfast" },
-    { "id": 3, "name": "Lunch" },
-    { "id": 4, "name": "Dinner" },
-    { "id": 5, "name": "Fruits" },
-    { "id": 6, "name": "Vegetables" },
-    { "id": 7, "name": "Dry fruits" },
-    { "id": 8, "name": "Non-Veg" },
-    { "id": 9, "name": "Greenish" }
+    {
+      "id": 1,
+      "name": "Fast Food"
+    },
+    {
+      "id": 2,
+      "name": "Breakfast"
+    },
+    {
+      "id": 3,
+      "name": "Lunch"
+    },
+    {
+      "id": 4,
+      "name": "Dinner"
+    },
+    {
+      "id": 5,
+      "name": "Fruits"
+    },
+    {
+      "id": 6,
+      "name": "Vegetables"
+    },
+    {
+      "id": 7,
+      "name": "Dry fruits"
+    },
+    {
+      "id": 8,
+      "name": "Non-Veg"
+    },
+    {
+      "id": 9,
+      "name": "Greenish"
+    }
   ],
   "ingredients": [
-    { "id": 1, "name": "Bread" },
-    { "id": 2, "name": "Meat (Chicken)" },
-    { "id": 3, "name": "Cacumber" },
-    { "id": 4, "name": "Onion" }
+    {
+      "id": 1,
+      "name": "Bread"
+    },
+    {
+      "id": 2,
+      "name": "Meat (Chicken)"
+    },
+    {
+      "id": 3,
+      "name": "Cacumber"
+    },
+    {
+      "id": 4,
+      "name": "Onion"
+    }
   ],
   "nutritionals": [
     {
-      "id": 1,
       "calories": 100,
       "carbs": 100,
       "protein": 100,

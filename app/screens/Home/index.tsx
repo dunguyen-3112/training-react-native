@@ -1,12 +1,20 @@
 import { StyleSheet, View } from 'react-native';
-import React, { useCallback } from 'react';
+import React, { useCallback, useState } from 'react';
 import { Foods, Header, Loading, Search, Cards, Tags } from '@components';
 import { IFood } from '@types';
 import { useFetch } from '@hooks';
-import { useNavigation } from '@react-navigation/native';
+import { Categories } from '@constants';
 
 const HomeScreen = () => {
-  const { isLoading, data, error } = useFetch<IFood>({ url: 'foods' });
+  const [query, setQuery] = useState('foods');
+  const { isLoading, data } = useFetch<IFood[]>({
+    url: query,
+  });
+
+  const handleChangeTagName = useCallback((id: number) => {
+    if (id) setQuery(`foods?category=${id}`);
+    else setQuery('foods');
+  }, []);
 
   return (
     <View style={styles.container}>
@@ -16,9 +24,9 @@ const HomeScreen = () => {
         <>
           <Header />
           <Search />
-          <Tags marginTop={17} />
+          <Tags marginTop={17} onSelect={handleChangeTagName} />
           <Cards marginTop={17} />
-          <Foods foods={data} />
+          {data && <Foods foods={data} />}
         </>
       )}
     </View>

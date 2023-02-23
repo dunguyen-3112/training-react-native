@@ -6,10 +6,17 @@ const Empty = () => {
   return (
     <View style={styles.container}>
       <Image source={require('@assets/images/empty.png')} />
-      <Text weight="500" size={22} marginTop={24} color="#696969">
+      <Text
+        font={{ fontSize: 22, fontWeight: '500' }}
+        customStyle={{ marginTop: 24, color: '#696969' }}
+      >
         No Results Found
       </Text>
-      <Text color="#7e7e7e" size={13} marginTop={8} center>
+      <Text
+        color="#7e7e7e"
+        font={{ fontSize: 13 }}
+        customStyle={{ marginTop: 8, textAlign: 'center' }}
+      >
         {`Try search for a different keywork or\n tweek your search a little`}
       </Text>
     </View>

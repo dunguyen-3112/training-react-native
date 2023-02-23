@@ -3,6 +3,7 @@ type size =
   | 'large'
   | 'small'
   | 10
+  | 11
   | 12
   | 13
   | 14
@@ -12,15 +13,17 @@ type size =
   | 20
   | 22
   | 23
-  | 24;
+  | 24
+  | 32;
 
-type COLOR = 'white' | 'black' | 'orange' | 'green';
+type weight = '400' | '500' | '600' | '700' | '800';
 
-type weight = '400' | '500' | '600' | '800';
+type transform = 'uppercase' | 'lowercase' | 'none' | 'capitalize';
 
 interface Font {
-  fontSize: size;
-  fontWeight: weight;
+  fontSize?: size;
+  fontWeight?: weight;
+  textTransform?: transform;
 }
 
 export { Font };

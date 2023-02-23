@@ -20,9 +20,11 @@ export default function App() {
     return null;
   }
   return (
-    <NavigationContainer>
-      <RootNavigator />
-    </NavigationContainer>
+    <View style={styles.container} onLayout={onLayoutRootView}>
+      <NavigationContainer>
+        <RootNavigator />
+      </NavigationContainer>
+    </View>
   );
 }
 
@@ -31,10 +33,5 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 });
-
-{
-  /* <View style={styles.container} onLayout={onLayoutRootView}>
-      </View> */
-}
 
 // export { default } from './storybook';

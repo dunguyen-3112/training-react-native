@@ -5,8 +5,8 @@ import { View } from 'react-native';
 const NutritionalItem = ({ key1, value }: { key1: string; value: number }) => {
   return (
     <View>
-      <Text size={16}>{key1}</Text>
-      <Text size={24} color={'orange'}>
+      <Text font={{ fontSize: 16, textTransform: 'capitalize' }}>{key1}</Text>
+      <Text font={{ fontSize: 24 }} color={'orange'}>
         {`${value}g`}
       </Text>
     </View>

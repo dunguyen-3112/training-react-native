@@ -1,8 +1,8 @@
 import { StyleSheet, TouchableOpacity } from 'react-native';
-import React, { memo, useCallback } from 'react';
+import React, { memo, useCallback, useMemo } from 'react';
 import { IFood } from '@types';
 import FoodAvatar from './FoodAvatar';
-import { Text } from '../../common';
+import { Text } from '../common';
 
 const Food = ({
   data,
@@ -13,9 +13,13 @@ const Food = ({
   size?: 'medium' | 'large';
   onPress?: (id: number) => void;
 }) => {
-  console.log(16, data);
   const { name, weight, category, nutritional } = data;
-  const { calories } = nutritional;
+  const { calories } = nutritional || { calories: {} };
+
+  const nameSize = useMemo(() => {
+    return size === 'medium' ? 17 : 22;
+  }, [size]);
+
   const handlePress = useCallback(() => {
     onPress && onPress(data.id);
   }, [data.id, onPress]);
@@ -34,17 +38,15 @@ const Food = ({
       onPress={handlePress}
     >
       <FoodAvatar {...data} size={size} />
-      <Text marginTop={14} size={size === 'medium' ? 17 : 22} weight={'700'}>
+      <Text marginTop={14} font={{ fontWeight: '700', fontSize: nameSize }}>
         {name}
       </Text>
       {size === 'medium' ? (
-        <Text size={13} marginTop={10}>
+        <Text font={{ fontSize: 13 }} marginTop={10}>
           {`${calories} cal/${weight} kg`}
         </Text>
       ) : (
-        <Text marginTop={0} size={16}>
-          {category.name}
-        </Text>
+        <Text font={{ fontSize: 16 }}>{category}</Text>
       )}
     </TouchableOpacity>
   );

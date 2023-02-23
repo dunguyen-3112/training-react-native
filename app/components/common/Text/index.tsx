@@ -1,57 +1,33 @@
-import { StyleSheet, Text } from 'react-native';
+import { StyleSheet, Text, TextStyle, ViewStyle } from 'react-native';
 import React, { memo, ReactNode, useCallback, useMemo } from 'react';
-import { COLOR, COLORS } from '@constants';
-
-type size =
-  | 'medium'
-  | 'large'
-  | 'small'
-  | 10
-  | 11
-  | 12
-  | 13
-  | 14
-  | 15
-  | 16
-  | 17
-  | 20
-  | 22
-  | 23
-  | 24
-  | 32;
-
-type weight = '400' | '500' | '600' | '700' | '800';
-
-type transform = 'uppercase' | 'lowercase' | 'none' | 'capitalize';
+import { COLOR, COLORS, Font } from '@constants';
 
 interface TextProps {
-  size?: size;
-  weight?: weight;
+  font?: Font;
   color?: COLOR | string;
   onPress?: () => void;
   center?: boolean;
-  transform?: transform;
-  lineHeight?: number;
-  marginTop?: number;
-  marginLeft?: number;
+  customStyle?: ViewStyle | TextStyle;
   children?: ReactNode | string;
 }
 
 const CustomText = ({
-  size = 'medium',
-  weight = '400',
+  font,
   color = 'default',
   center,
-  transform = 'none',
-  lineHeight,
   onPress,
   children,
-  marginTop = 0,
-  marginLeft = 0,
+  customStyle,
 }: TextProps) => {
+  const { fontSize, fontWeight, textTransform } = font || {
+    fontSize: 14,
+    fontWeight: '400',
+    textTransform: 'lowercase',
+  };
+
   const _size = useMemo(() => {
-    if (typeof size === 'number') return size;
-    switch (size) {
+    if (typeof fontSize === 'number') return fontSize;
+    switch (fontSize) {
       case 'large':
         return 24;
       case 'medium':
@@ -61,7 +37,7 @@ const CustomText = ({
       default:
         return 12;
     }
-  }, [size]);
+  }, [fontSize]);
 
   const _color = useMemo(() => {
     switch (color) {
@@ -88,17 +64,15 @@ const CustomText = ({
     <Text
       onPress={handlePress}
       style={[
-        {
-          fontWeight: weight,
-          fontSize: _size,
-          textTransform: transform,
-          lineHeight,
-          marginTop,
-          marginLeft,
-        },
         styles.text,
-        center && { textAlign: 'center' },
-        { color: _color },
+        {
+          fontWeight: fontWeight,
+          fontSize: _size,
+          textTransform: textTransform,
+          color: _color,
+          borderColor: _color,
+        },
+        { ...customStyle },
       ]}
     >
       {children}

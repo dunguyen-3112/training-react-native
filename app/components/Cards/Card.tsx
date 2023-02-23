@@ -18,12 +18,14 @@ const Card = ({ image, color = 'green', title }: SlideItemProps) => {
   return (
     <ImageBackground source={image} style={styles.container}>
       <View style={styles.info}>
-        <Text size={10} weight={'600'} color={color} transform="uppercase">
+        <Text
+          font={{ fontSize: 10, fontWeight: '600', textTransform: 'uppercase' }}
+          color={color}
+        >
           Article
         </Text>
         <Text
-          size={17}
-          weight={'600'}
+          font={{ fontSize: 17, fontWeight: '600' }}
           color={'gray'}
           lineHeight={24}
           marginTop={4}

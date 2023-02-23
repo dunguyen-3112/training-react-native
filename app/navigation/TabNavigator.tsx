@@ -13,7 +13,7 @@ const TabNavigator = () => {
 
   return (
     <Tab.Navigator
-      screenOptions={({ route, navigation }) => ({
+      screenOptions={({ route }) => ({
         headerShown: false,
         tabBarLabel: '',
         tabBarStyle: { height: 80 },
@@ -38,6 +38,7 @@ const TabNavigator = () => {
           }
           return <Image source={icon} />;
         },
+        unmountOnBlur: true,
       })}
     >
       <Tab.Screen name="Home" component={HomeScreen} />

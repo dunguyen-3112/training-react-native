@@ -1,7 +1,7 @@
 import { StyleSheet, View } from 'react-native';
 import React, { memo } from 'react';
 import { FlatList } from 'react-native-gesture-handler';
-import Card from './base/Card';
+import Card from './Card';
 import { IArtcile } from '@types';
 
 const Slide = ({ marginTop = 0 }: { marginTop?: number }) => {
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
   separator: {
     height: 20,
     width: '100%',
-    backgroundColor: '#ccc',
+    backgroundColor: '#FFFFFF',
     marginTop: 23,
   },
   item: {

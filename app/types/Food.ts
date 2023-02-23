@@ -1,4 +1,5 @@
 import { COLOR } from '@constants';
+import TCategory from './Category';
 import { IInfo } from './common';
 
 export type Ingredients = 'Bread' | 'Meat (Chicken)' | 'Cacumber' | 'Onion';
@@ -18,10 +19,6 @@ export type TIngredient = IInfo & {
   value: number;
 };
 
-export type TCategory = IInfo & {
-  name: Categories;
-};
-
 export type TNutritional = {
   calories: number;
   fat: number;
@@ -30,11 +27,12 @@ export type TNutritional = {
 };
 
 export interface IFood extends IInfo {
-  category: TCategory;
-  weight: number;
+  category?: TCategory;
+  weight?: number;
   color?: COLOR;
   desc?: string;
-  imgUrl: string;
-  nutritional: TNutritional;
-  ingredients: TIngredient[];
+  imgUrl?: string;
+  favorite?: 0 | 1;
+  nutritional?: TNutritional;
+  ingredients?: TIngredient[];
 }

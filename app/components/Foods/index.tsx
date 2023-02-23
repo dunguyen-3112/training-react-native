@@ -1,12 +1,12 @@
 import { FlatList, StyleSheet, View } from 'react-native';
 import React, { memo, useCallback } from 'react';
-import { useNavigation } from '@react-navigation/native';
 
 import { IFood } from '@types';
 import { Text } from '@components/common';
-import { Food, FoodAvatar } from './base';
-
-export { Food, FoodAvatar };
+import Food from './Food';
+import FoodAvatar from './FoodAvatar';
+import { MainScreenNavigationProps } from '@navigation';
+import { useNavigation } from '@react-navigation/native';
 
 const Foods = ({
   horizontal,
@@ -14,14 +14,13 @@ const Foods = ({
 }: {
   horizontal?: boolean;
   foods: IFood[];
+  onChange?: (foods: IFood[]) => void;
 }) => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<MainScreenNavigationProps>();
 
-  const handlePressFood = useCallback(
+  const handleMoveDetailScreen = useCallback(
     (id: number) => {
-      navigation.navigate('Details', {
-        id,
-      });
+      navigation.navigate('Details', { id });
     },
     [navigation]
   );
@@ -30,8 +29,7 @@ const Foods = ({
     <View style={styles.container}>
       {!horizontal && (
         <Text
-          size={20}
-          weight={'700'}
+          font={{ fontSize: 20, fontWeight: '700' }}
           color={'gray'}
           marginTop={22}
           marginLeft={8}
@@ -55,9 +53,8 @@ const Foods = ({
         ItemSeparatorComponent={() => (
           <View style={{ marginLeft: 18, height: 18 }} />
         )}
-        contentContainerStyle={{ paddingHorizontal: 27 }}
         renderItem={({ item }) => (
-          <Food data={item} onPress={handlePressFood} />
+          <Food data={item} onPress={handleMoveDetailScreen} />
         )}
       />
     </View>
@@ -69,10 +66,8 @@ export default memo(Foods);
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // width: '100%',
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
-    paddingHorizontal: 4,
     backgroundColor: '#FFFFFF',
   },
   list: {
@@ -83,3 +78,5 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
 });
+
+export { Food, FoodAvatar };

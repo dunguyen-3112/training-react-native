@@ -2,12 +2,12 @@ import { IInfo, IFetchState } from './common';
 import {
   IFood,
   Ingredients,
-  TCategory,
   Categories,
   TNutritional,
   TIngredient,
 } from './Food';
 import { IArtcile } from './Artcile';
+import { ICategory, TCategoryName } from './Category';
 
 export {
   IFood,
@@ -15,8 +15,9 @@ export {
   IFetchState,
   Ingredients,
   IInfo,
-  TCategory,
   Categories,
+  ICategory,
+  TCategoryName,
   TNutritional,
   TIngredient,
 };

@@ -1,3 +1,4 @@
 import { getColor } from './Color';
+import { fetchData } from './API';
 
-export { getColor };
+export { getColor, fetchData };

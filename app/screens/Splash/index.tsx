@@ -3,8 +3,9 @@ import React, { useEffect, useRef } from 'react';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Text } from '@components';
 import { useNavigation } from '@react-navigation/native';
+import { MainScreenNavigationProps } from '@navigation';
 const SplashScreen = () => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<MainScreenNavigationProps>();
   const animation = useRef(new Animated.Value(1)).current;
 
   useEffect(() => {
@@ -31,15 +32,13 @@ const SplashScreen = () => {
         />
         <Image source={require('@assets/images/loading.png')} />
         <Text
-          size={32}
-          weight="800"
+          font={{ fontSize: 12, fontWeight: '800', textTransform: 'uppercase' }}
           color="#91C788"
-          transform="uppercase"
           marginTop={20}
         >
           Laomica
         </Text>
-        <Text weight="500" size={16} marginTop={12} center>
+        <Text font={{ fontSize: 16, fontWeight: '500' }} marginTop={12} center>
           {`Stay Heatlthy and beatifull with us!\nwith us!`}
         </Text>
       </LinearGradient>

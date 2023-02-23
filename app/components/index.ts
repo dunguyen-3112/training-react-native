@@ -9,6 +9,7 @@ import Loading from './Loading';
 import Empty from './Empty';
 import Header from './Header';
 import NotFound from './NotFound';
+import ListText from './ListText';
 
 export {
   Food,
@@ -25,5 +26,6 @@ export {
   Input,
   Empty,
   NotFound,
+  ListText,
   Button,
 };
