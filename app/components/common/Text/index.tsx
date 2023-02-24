@@ -1,8 +1,9 @@
 import { Text, TextStyle, ViewStyle } from 'react-native';
 import React, { memo, ReactNode, useCallback, useMemo } from 'react';
-import { COLORS, COLORS1, Font } from '@constants';
+import { COLOR, COLORS, Font } from '@constants';
 
-export type TTextColor = 'DEFAULT' | 'PRIMATY' | 'WHITE';
+export type TTextColor = COLOR;
+
 interface TextProps {
   font?: Font;
   color?: TTextColor;
@@ -38,14 +39,18 @@ const CustomText = ({
 
   const codeColor = useMemo(() => {
     switch (color) {
-      case 'PRIMATY':
-        return COLORS1.PRIMARY_COLOR;
-      case 'DEFAULT':
-        return COLORS1.GRAY_COLOR;
       case 'WHITE':
-        return COLORS1.WHITE_COLOR;
+        return COLORS.WHITE;
+      case 'PRIMARY':
+        return COLORS.PRIMARY;
+      case 'SECONDARY':
+        return COLORS.SECONDARY;
+      case 'BLACK':
+        return COLORS.BLACK;
+      case 'LIGHT_BLACK':
+        return COLORS.LIGHT_BLACK;
       default:
-        return color;
+        return COLORS.GRAY;
     }
   }, [color]);
 

@@ -19,17 +19,3 @@ export default {
   GRAY_COLOR: '#330600',
   GREEN_GRAY_COLOR: '#91C788',
 };
-
-type COLOR =
-  | 'white'
-  | 'gray'
-  | 'orange'
-  | 'green'
-  | 'yellow'
-  | 'red'
-  | 'purple'
-  | 'black'
-  | 'yellow_dark'
-  | 'default';
-
-export { COLOR };

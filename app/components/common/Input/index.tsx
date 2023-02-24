@@ -12,7 +12,7 @@ interface InputProps {
   inputFont?: Font;
   inputColor?: COLOR;
   placeholder?: string;
-  placeholderColor?: string;
+  placeholderColor?: COLOR;
   error?: string;
   errorColor?: string;
   onChangeText: (value: string, field?: string) => void;
@@ -26,8 +26,9 @@ const Input = ({
   labelFont,
   labelColor,
   inputFont,
-  inputColor,
+  inputColor = 'BLACK',
   placeholder,
+  placeholderColor = 'BLACK',
   onChangeText,
   onBlur,
   onFocus,
@@ -58,13 +59,14 @@ const Input = ({
   return (
     <View>
       {label && (
-        <Text color={labelColor || 'black'} font={labelFont}>
+        <Text color={labelColor} font={labelFont}>
           {label}
         </Text>
       )}
       <TextInput
         value={value}
         placeholder={placeholder}
+        placeholderTextColor={placeholderColor}
         onBlur={onBlur}
         onFocus={onFocus}
         onChangeText={handleChangeInput}
@@ -73,7 +75,7 @@ const Input = ({
             ? {
                 color: inputColor,
                 fontSize: _size,
-                fontWeight: inputFont?.fontWeight || '400',
+                fontWeight: inputFont?.fontWeight,
               }
             : styles.input,
         ]}

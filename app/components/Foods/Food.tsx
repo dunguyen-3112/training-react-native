@@ -38,11 +38,14 @@ const Food = ({
       onPress={handlePress}
     >
       <FoodAvatar {...data} size={size} />
-      <Text marginTop={14} font={{ fontWeight: '700', fontSize: nameSize }}>
+      <Text
+        customStyle={{ marginTop: 14 }}
+        font={{ fontWeight: '700', fontSize: nameSize }}
+      >
         {name}
       </Text>
       {size === 'medium' ? (
-        <Text font={{ fontSize: 13 }} marginTop={10}>
+        <Text font={{ fontSize: 13 }} customStyle={{ marginTop: 10 }}>
           {`${calories} cal/${weight} kg`}
         </Text>
       ) : (

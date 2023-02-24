@@ -10,22 +10,20 @@ const FoodAvatar = ({
   color,
   size = 'medium',
 }: IFood & { size: Size }) => {
-  const [_color, blur_color] = useMemo(() => {
+  const _color = useMemo(() => {
     switch (color) {
-      case 'red':
-        return [COLORS.RED_COLOR, COLORS.RED_BLUR_COLOR];
-      case 'purple':
-        return [COLORS.PURPLE_COLOR, COLORS.PURPLE_BLUR_COLOR];
-      case 'orange':
-        return [COLORS.ORANGE_COLOR, COLORS.ORANGE_BLUR_COLOR];
-      case 'yellow':
-        return [COLORS.YELLOW_COLOR, COLORS.YELLOW_BLUR_COLOR];
-      case 'green':
-        return [COLORS.GREEN_COLOR, COLORS.GREEN_BLUR_COLOR];
-      case 'yellow_dark':
-        return [COLORS.YELLOW_DARK_COLOR, COLORS.YELLOW_DARK_BLUR_COLOR];
-      default:
-        return [COLORS.RED_COLOR, COLORS.RED_BLUR_COLOR];
+      case 'RED':
+        return COLORS.RED;
+      case 'PURPLE':
+        return COLORS.PURPLE;
+      case 'ORANGE':
+        return COLORS.ORANGE;
+      case 'YELLOW':
+        return COLORS.YELLOW;
+      case 'GREEN':
+        return COLORS.GREEN;
+      case 'PRIMARY':
+        return COLORS.PRIMARY;
     }
   }, [color]);
 
@@ -35,17 +33,19 @@ const FoodAvatar = ({
       : [92, 68, { width: 100, height: 80 }];
 
   return (
-    <View
-      style={[
-        styles.layer1,
-        {
-          backgroundColor: blur_color,
-          width: _size1,
-          height: _size1,
-          borderRadius: _size1 / 2,
-        },
-      ]}
-    >
+    <View>
+      <View
+        style={[
+          styles.layer1,
+          {
+            backgroundColor: _color,
+            opacity: 0.2,
+            width: _size1,
+            height: _size1,
+            borderRadius: _size1 / 2,
+          },
+        ]}
+      ></View>
       <View
         style={[
           styles.layer2,
@@ -54,6 +54,8 @@ const FoodAvatar = ({
             width: _size2,
             height: _size2,
             borderRadius: _size2 / 2,
+            top: (_size1 - _size2) / 2,
+            left: (_size1 - _size2) / 2,
           },
         ]}
       >
@@ -66,13 +68,17 @@ const FoodAvatar = ({
 export default memo(FoodAvatar);
 
 const styles = StyleSheet.create({
+  container: {
+    position: 'relative',
+    zIndex: 1,
+  },
   layer1: {
     justifyContent: 'center',
     alignItems: 'center',
   },
   layer2: {
     zIndex: 1,
-    position: 'relative',
+    position: 'absolute',
   },
   image: {
     position: 'absolute',

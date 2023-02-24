@@ -1,11 +1,10 @@
-import { StyleSheet, TouchableOpacity } from 'react-native';
-import React, { memo, ReactNode } from 'react';
+import { StyleSheet, TouchableOpacity, ViewStyle } from 'react-native';
+import React, { memo, ReactNode, useMemo } from 'react';
 
-import { COLOR, Font } from '@constants';
-import { getColor } from '@utils';
+import { COLORS, Font } from '@constants';
 import Text, { TTextColor } from '../Text';
 
-export type TBottonColor = 'PRIMARY' | 'SECONDARY' | 'GREEN_DARK';
+export type TBottonColor = 'PRIMARY' | 'SECONDARY' | 'GRAY' | 'GREEN_DARK';
 
 interface ButtonStyle {
   label?: string;
@@ -20,6 +19,7 @@ interface ButtonStyle {
   marginTop?: number;
   paddingVertical?: number;
   paddingHorizontal?: number;
+  customStyle?: ViewStyle;
 }
 
 const Button = ({
@@ -27,15 +27,26 @@ const Button = ({
   labelColor,
   labelFont,
   children,
-  width,
   backgroundColor = 'PRIMARY',
   borderRadius,
   paddingVertical,
   paddingHorizontal,
+  customStyle,
   onPress,
-  height,
 }: ButtonStyle) => {
-  const _color = getColor(backgroundColor);
+  const bgColor = useMemo(() => {
+    switch (backgroundColor) {
+      case 'GREEN_DARK':
+        return COLORS.DARK_GREEN;
+      case 'SECONDARY':
+        return COLORS.SECONDARY;
+      case 'GRAY':
+        return COLORS.LIGHT_GRAY;
+
+      default:
+        return COLORS.PRIMARY;
+    }
+  }, [backgroundColor]);
 
   return (
     <TouchableOpacity
@@ -43,12 +54,11 @@ const Button = ({
       style={[
         styles.button,
         {
-          backgroundColor: _color,
-          height,
+          backgroundColor: bgColor,
           paddingVertical,
           paddingHorizontal,
           borderRadius,
-          width,
+          ...customStyle,
         },
       ]}
     >
@@ -71,6 +81,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     justifyContent: 'center',
     alignItems: 'center',
+    alignSelf: 'flex-start',
   },
   icon: {
     marginLeft: 8,

@@ -1,0 +1,36 @@
+export const COLORS = {
+  PRIMARY: '#91C788',
+  WHITE: '#FFFFFF',
+  GRAY: '#5C5C5C',
+  PINK: '#91C788',
+  LIGHT_GRAY: '#ECECEC',
+  RED: '#EA1502',
+  PURPLE: '#9059A7',
+  BLACK: '#000000',
+  LIGHT_BLACK: '#330600',
+  WARNING: '#DA6317',
+  LIGHT_PUPLE: '#FFF3F1',
+  GREEN: '#27AE60',
+  ORANGE: '#D89E4A',
+  YELLOW: '#F2C94C',
+  LIGHT_GREEN: '#6FCF97',
+  DARK_GREEN: '#1CC379',
+  SECONDARY: '#FF8473',
+};
+
+type COLOR =
+  | 'WHITE'
+  | 'GRAY'
+  | 'ORANGE'
+  | 'GREEN'
+  | 'BLACK'
+  | 'YELLOW'
+  | 'RED'
+  | 'PURPLE'
+  | 'DEFAULT'
+  | 'LIGHT_GREEN'
+  | 'LIGHT_BLACK'
+  | 'PRIMARY'
+  | 'SECONDARY';
+
+export { COLOR };

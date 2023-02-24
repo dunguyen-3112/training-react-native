@@ -6,15 +6,15 @@ import {
   Image,
 } from 'react-native';
 import React, { memo } from 'react';
-import { COLOR } from '@constants';
 import { Button, Text } from '@components';
+import { COLOR } from '@constants';
 interface SlideItemProps {
   title: string;
   color: COLOR;
   image: ImageSourcePropType;
 }
 
-const Card = ({ image, color = 'green', title }: SlideItemProps) => {
+const Card = ({ image, color = 'PRIMARY', title }: SlideItemProps) => {
   return (
     <ImageBackground source={image} style={styles.container}>
       <View style={styles.info}>
@@ -25,20 +25,22 @@ const Card = ({ image, color = 'green', title }: SlideItemProps) => {
           Article
         </Text>
         <Text
-          font={{ fontSize: 17, fontWeight: '600' }}
-          color={'gray'}
-          lineHeight={24}
-          marginTop={4}
+          font={{ fontSize: 17, fontWeight: '600', lineHeight: 24 }}
+          color="RED"
+          customStyle={{ marginTop: 4 }}
         >
           {title}
         </Text>
         <Button
-          backgroundColor="green"
+          backgroundColor="GREEN_DARK"
           paddingHorizontal={19}
           paddingVertical={6}
-          marginTop={8}
+          borderRadius={8}
+          customStyle={{ marginTop: 8 }}
         >
-          <Text>Read now</Text>
+          <Text font={{ fontSize: 12, fontWeight: '600' }} color="WHITE">
+            Read now
+          </Text>
           <Image
             source={require('@assets/icons/arrow.png')}
             style={styles.buttonIcon}
@@ -61,14 +63,6 @@ const styles = StyleSheet.create({
   },
   info: {
     maxWidth: '60%',
-  },
-  type: {
-    textTransform: 'uppercase',
-  },
-  title: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
   },
   buttonIcon: {
     marginLeft: 7,

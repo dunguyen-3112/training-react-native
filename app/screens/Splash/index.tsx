@@ -33,7 +33,7 @@ const SplashScreen = () => {
         <Image source={require('@assets/images/loading.png')} />
         <Text
           font={{ fontSize: 32, fontWeight: '800', textTransform: 'uppercase' }}
-          color="primary"
+          color="PRIMARY"
           customStyle={{ marginTop: 20 }}
         >
           Laomica

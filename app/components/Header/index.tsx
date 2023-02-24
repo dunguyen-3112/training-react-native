@@ -10,10 +10,9 @@ const Header = () => {
         {`Want to eat\nhealthy Food?`}
       </Text>
       <Button
-        width={35}
-        height={35}
+        customStyle={{ width: 35, height: 35 }}
         borderRadius={35 / 2}
-        backgroundColor="rgba(0,0,0,0.1)"
+        backgroundColor="GRAY"
       >
         <Image source={require('@assets/icons/question.png')} />
       </Button>

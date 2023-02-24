@@ -87,10 +87,9 @@ const Details = () => {
           {isMore ? food.desc : food.desc?.substring(0, 150) + '...'}
           <Text
             onPress={handleReadMore}
-            color="green"
-            font={{ fontSize: 15 }}
-            lineHeight={22}
-            marginTop={4}
+            color="PRIMARY"
+            font={{ fontSize: 15, lineHeight: 22 }}
+            customStyle={{ marginTop: 4 }}
           >
             {isMore ? `\bRead less.` : `\bRead more.`}
           </Text>
@@ -103,7 +102,7 @@ const Details = () => {
             <Text font={{ fontSize: 20, fontWeight: '600' }}>Ingrediants</Text>
             <Text
               font={{ fontSize: 11, fontWeight: '500' }}
-              color="green"
+              color="PRIMARY"
               onPress={handleSeeAll}
             >
               {isAll ? 'See less' : 'See All'}
@@ -117,18 +116,13 @@ const Details = () => {
 
         <Button
           width={'100%'}
-          label={`${food.favorite === 1 ? 'Remove' : 'Add'} to Favorites`}
-          labelColor={'white'}
+          label={food.favorite === 1 ? 'Remove Favorite' : 'Add to Favorites'}
+          labelColor="WHITE"
           labelFont={{ fontSize: 20, fontWeight: '600' }}
-          paddingVertical={9}
-          marginTop={27}
+          borderRadius={9}
+          customStyle={{ paddingVertical: 9, width: '100%', marginTop: 27 }}
           onPress={handleFavorite}
         />
-
-        {/* <Text size={20} weight="600" color="white">
-           
-          </Text> */}
-        {/* </Button> */}
       </View>
     </View>
   );

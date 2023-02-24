@@ -40,7 +40,7 @@ export default memo(Search);
 const styles = StyleSheet.create({
   container: {
     position: 'relative',
-    backgroundColor: COLORS.ORANGE_BLUR_COLOR,
+    backgroundColor: COLORS.LIGHT_PUPLE,
     borderRadius: 15,
     zIndex: 1,
     marginTop: 14,
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 13,
     fontWeight: '400',
-    color: '#DA6317',
+    color: COLORS.WARNING,
     paddingVertical: 14,
     paddingHorizontal: 60,
   },
