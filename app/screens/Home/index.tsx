@@ -22,7 +22,7 @@ const HomeScreen = () => {
         <Search />
         <Tags marginTop={17} onSelect={handleChangeTagName} />
         <Cards marginTop={17} />
-        {data && <Foods foods={data} />}
+        {data && <Foods foods={data} horizontal />}
       </>
     </View>
   );

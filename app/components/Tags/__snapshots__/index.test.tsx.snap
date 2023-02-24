@@ -1,0 +1,413 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component snapshot 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "height": 26,
+      },
+      Object {
+        "marginTop": undefined,
+      },
+    ]
+  }
+>
+  <RCTScrollView
+    ItemSeparatorComponent={[Function]}
+    data={
+      Array [
+        Object {
+          "id": 1,
+          "name": "Breakfast",
+        },
+        Object {
+          "id": 2,
+          "name": "Dinner",
+        },
+        Object {
+          "id": 3,
+          "name": "Dryfruits",
+        },
+        Object {
+          "id": 4,
+          "name": "Lunch",
+        },
+        Object {
+          "id": 5,
+          "name": "Vegetables",
+        },
+        Object {
+          "id": 6,
+          "name": "Greenich",
+        },
+        Object {
+          "id": 7,
+          "name": "Non-Veg",
+        },
+        Object {
+          "id": 8,
+          "name": "Fast Food",
+        },
+      ]
+    }
+    getItem={[Function]}
+    getItemCount={[Function]}
+    horizontal={true}
+    keyExtractor={[Function]}
+    onContentSizeChange={[Function]}
+    onLayout={[Function]}
+    onMomentumScrollBegin={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEventThrottle={50}
+    showsHorizontalScrollIndicator={false}
+    stickyHeaderIndices={Array []}
+    viewabilityConfigCallbackPairs={Array []}
+  >
+    <View>
+      <View
+        onLayout={[Function]}
+        style={
+          Array [
+            Object {
+              "flexDirection": "row",
+            },
+            null,
+          ]
+        }
+      >
+        <Text
+          onPress={[Function]}
+          style={
+            Array [
+              Object {
+                "borderColor": "#5C5C5C",
+                "color": "#5C5C5C",
+                "fontSize": 13,
+                "fontWeight": "400",
+                "textTransform": "none",
+              },
+              undefined,
+              Object {
+                "backgroundColor": "#ECEDEC",
+                "borderRadius": 8,
+                "maxHeight": 26,
+                "paddingHorizontal": 10,
+                "paddingVertical": 4,
+              },
+            ]
+          }
+        >
+          Breakfast
+        </Text>
+        <View
+          style={
+            Object {
+              "marginLeft": 7,
+            }
+          }
+        />
+      </View>
+      <View
+        onLayout={[Function]}
+        style={
+          Array [
+            Object {
+              "flexDirection": "row",
+            },
+            null,
+          ]
+        }
+      >
+        <Text
+          onPress={[Function]}
+          style={
+            Array [
+              Object {
+                "borderColor": "#5C5C5C",
+                "color": "#5C5C5C",
+                "fontSize": 13,
+                "fontWeight": "400",
+                "textTransform": "none",
+              },
+              undefined,
+              Object {
+                "backgroundColor": "#ECEDEC",
+                "borderRadius": 8,
+                "maxHeight": 26,
+                "paddingHorizontal": 10,
+                "paddingVertical": 4,
+              },
+            ]
+          }
+        >
+          Dinner
+        </Text>
+        <View
+          style={
+            Object {
+              "marginLeft": 7,
+            }
+          }
+        />
+      </View>
+      <View
+        onLayout={[Function]}
+        style={
+          Array [
+            Object {
+              "flexDirection": "row",
+            },
+            null,
+          ]
+        }
+      >
+        <Text
+          onPress={[Function]}
+          style={
+            Array [
+              Object {
+                "borderColor": "#5C5C5C",
+                "color": "#5C5C5C",
+                "fontSize": 13,
+                "fontWeight": "400",
+                "textTransform": "none",
+              },
+              undefined,
+              Object {
+                "backgroundColor": "#ECEDEC",
+                "borderRadius": 8,
+                "maxHeight": 26,
+                "paddingHorizontal": 10,
+                "paddingVertical": 4,
+              },
+            ]
+          }
+        >
+          Dryfruits
+        </Text>
+        <View
+          style={
+            Object {
+              "marginLeft": 7,
+            }
+          }
+        />
+      </View>
+      <View
+        onLayout={[Function]}
+        style={
+          Array [
+            Object {
+              "flexDirection": "row",
+            },
+            null,
+          ]
+        }
+      >
+        <Text
+          onPress={[Function]}
+          style={
+            Array [
+              Object {
+                "borderColor": "#5C5C5C",
+                "color": "#5C5C5C",
+                "fontSize": 13,
+                "fontWeight": "400",
+                "textTransform": "none",
+              },
+              undefined,
+              Object {
+                "backgroundColor": "#ECEDEC",
+                "borderRadius": 8,
+                "maxHeight": 26,
+                "paddingHorizontal": 10,
+                "paddingVertical": 4,
+              },
+            ]
+          }
+        >
+          Lunch
+        </Text>
+        <View
+          style={
+            Object {
+              "marginLeft": 7,
+            }
+          }
+        />
+      </View>
+      <View
+        onLayout={[Function]}
+        style={
+          Array [
+            Object {
+              "flexDirection": "row",
+            },
+            null,
+          ]
+        }
+      >
+        <Text
+          onPress={[Function]}
+          style={
+            Array [
+              Object {
+                "borderColor": "#5C5C5C",
+                "color": "#5C5C5C",
+                "fontSize": 13,
+                "fontWeight": "400",
+                "textTransform": "none",
+              },
+              undefined,
+              Object {
+                "backgroundColor": "#ECEDEC",
+                "borderRadius": 8,
+                "maxHeight": 26,
+                "paddingHorizontal": 10,
+                "paddingVertical": 4,
+              },
+            ]
+          }
+        >
+          Vegetables
+        </Text>
+        <View
+          style={
+            Object {
+              "marginLeft": 7,
+            }
+          }
+        />
+      </View>
+      <View
+        onLayout={[Function]}
+        style={
+          Array [
+            Object {
+              "flexDirection": "row",
+            },
+            null,
+          ]
+        }
+      >
+        <Text
+          onPress={[Function]}
+          style={
+            Array [
+              Object {
+                "borderColor": "#5C5C5C",
+                "color": "#5C5C5C",
+                "fontSize": 13,
+                "fontWeight": "400",
+                "textTransform": "none",
+              },
+              undefined,
+              Object {
+                "backgroundColor": "#ECEDEC",
+                "borderRadius": 8,
+                "maxHeight": 26,
+                "paddingHorizontal": 10,
+                "paddingVertical": 4,
+              },
+            ]
+          }
+        >
+          Greenich
+        </Text>
+        <View
+          style={
+            Object {
+              "marginLeft": 7,
+            }
+          }
+        />
+      </View>
+      <View
+        onLayout={[Function]}
+        style={
+          Array [
+            Object {
+              "flexDirection": "row",
+            },
+            null,
+          ]
+        }
+      >
+        <Text
+          onPress={[Function]}
+          style={
+            Array [
+              Object {
+                "borderColor": "#5C5C5C",
+                "color": "#5C5C5C",
+                "fontSize": 13,
+                "fontWeight": "400",
+                "textTransform": "none",
+              },
+              undefined,
+              Object {
+                "backgroundColor": "#ECEDEC",
+                "borderRadius": 8,
+                "maxHeight": 26,
+                "paddingHorizontal": 10,
+                "paddingVertical": 4,
+              },
+            ]
+          }
+        >
+          Non-Veg
+        </Text>
+        <View
+          style={
+            Object {
+              "marginLeft": 7,
+            }
+          }
+        />
+      </View>
+      <View
+        onLayout={[Function]}
+        style={
+          Array [
+            Object {
+              "flexDirection": "row",
+            },
+            null,
+          ]
+        }
+      >
+        <Text
+          onPress={[Function]}
+          style={
+            Array [
+              Object {
+                "borderColor": "#5C5C5C",
+                "color": "#5C5C5C",
+                "fontSize": 13,
+                "fontWeight": "400",
+                "textTransform": "none",
+              },
+              undefined,
+              Object {
+                "backgroundColor": "#ECEDEC",
+                "borderRadius": 8,
+                "maxHeight": 26,
+                "paddingHorizontal": 10,
+                "paddingVertical": 4,
+              },
+            ]
+          }
+        >
+          Fast Food
+        </Text>
+      </View>
+    </View>
+  </RCTScrollView>
+</View>
+`;

@@ -23,7 +23,8 @@ const FavoriteScreen = () => {
 
   const handleChangeFoods = useCallback((foods: IFood[]) => {
     if (foods) {
-      setFoods(foods);
+      const newFoods = foods.filter((food: IFood) => food.favorite === 1);
+      setFoods(newFoods);
     }
   }, []);
 
@@ -37,7 +38,7 @@ const FavoriteScreen = () => {
       ) : isLoading ? (
         <Loading marginTop={120} />
       ) : (
-        <Foods horizontal foods={foods} onChange={handleChangeFoods} />
+        <Foods foods={foods} onChange={handleChangeFoods} />
       )}
     </View>
   );

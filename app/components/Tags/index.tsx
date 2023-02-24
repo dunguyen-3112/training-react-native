@@ -7,14 +7,14 @@ const Tags = ({
   marginTop,
   onSelect,
 }: {
-  marginTop: number;
-  onSelect: (id: number) => void;
+  marginTop?: number;
+  onSelect?: (id: number) => void;
 }) => {
   const [tag, setTag] = useState<number>();
 
   const handlePressTag = useCallback(
     (id: number) => {
-      onSelect(id);
+      onSelect && onSelect(id);
       setTag(id);
     },
     [onSelect]

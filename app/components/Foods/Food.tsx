@@ -1,16 +1,19 @@
-import { StyleSheet, TouchableOpacity } from 'react-native';
+import { Pressable, StyleSheet } from 'react-native';
 import React, { memo, useCallback, useMemo } from 'react';
 import { IFood } from '@types';
 import FoodAvatar from './FoodAvatar';
 import { Text } from '../common';
+import { COLORS } from '@constants';
 
 const Food = ({
   data,
   size = 'medium',
+  disabled = false,
   onPress,
 }: {
   data: IFood;
   size?: 'medium' | 'large';
+  disabled?: boolean;
   onPress?: (id: number) => void;
 }) => {
   const { name, weight, category, nutritional } = data;
@@ -25,7 +28,8 @@ const Food = ({
   }, [data.id, onPress]);
 
   return (
-    <TouchableOpacity
+    <Pressable
+      {...(disabled && { disabled })}
       style={[
         styles.container,
         size === 'medium'
@@ -51,7 +55,7 @@ const Food = ({
       ) : (
         <Text font={{ fontSize: 16 }}>{category}</Text>
       )}
-    </TouchableOpacity>
+    </Pressable>
   );
 };
 
@@ -60,7 +64,7 @@ export default memo(Food);
 const styles = StyleSheet.create({
   container: {
     borderRadius: 20,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: COLORS.WHITE,
     borderColor: '#DBDBDB',
     borderWidth: 1,
     alignItems: 'center',
@@ -70,5 +74,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 27,
     paddingVertical: 17,
     height: 192,
+    width: 154,
   },
 });

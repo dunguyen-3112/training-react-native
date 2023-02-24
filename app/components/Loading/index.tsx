@@ -2,7 +2,7 @@ import { StyleSheet, View, Animated, Easing } from 'react-native';
 import React, { memo } from 'react';
 import { Image } from 'react-native';
 
-const Loading = ({ marginTop }: { marginTop: number }) => {
+const Loading = ({ marginTop }: { marginTop?: number }) => {
   const rotation = new Animated.Value(0);
 
   Animated.loop(

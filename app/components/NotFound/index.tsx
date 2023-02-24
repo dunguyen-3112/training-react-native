@@ -3,7 +3,7 @@ import React, { memo } from 'react';
 import { Image } from 'react-native';
 import { Text } from '@components/common';
 
-const NotFound = ({ marginTop = 0 }: { marginTop: number }) => {
+const NotFound = ({ marginTop = 0 }: { marginTop?: number }) => {
   return (
     <View style={[styles.container, { marginTop }]}>
       <Image source={require('@assets/images/notfound.png')} />

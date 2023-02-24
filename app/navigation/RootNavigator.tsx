@@ -1,12 +1,13 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { DetailsScreen, SplashScreen } from '@screens';
+import { IFood } from '@types';
 import React from 'react';
 import TabNavigator from './TabNavigator';
 
 export type RootStackParamsList = {
   Main: undefined;
   Splash: undefined;
-  Details: { id: number };
+  Details: { id: number; onChange: (food: IFood) => void };
 };
 
 const RootNavigator = () => {

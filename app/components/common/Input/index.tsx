@@ -2,6 +2,7 @@ import { StyleSheet, TextInput, View } from 'react-native';
 import React, { useMemo, useCallback, memo } from 'react';
 import Text from '../Text';
 import { Font, COLOR } from '@constants';
+import { getColor } from '@utils';
 
 interface InputProps {
   field: string;
@@ -56,6 +57,10 @@ const Input = ({
     [field, onChangeText]
   );
 
+  const [inColor, plhColor] = useMemo(() => {
+    return [getColor(inputColor), getColor(placeholderColor)];
+  }, [inputColor, placeholderColor]);
+
   return (
     <View>
       {label && (
@@ -66,18 +71,18 @@ const Input = ({
       <TextInput
         value={value}
         placeholder={placeholder}
-        placeholderTextColor={placeholderColor}
+        placeholderTextColor={plhColor}
         onBlur={onBlur}
         onFocus={onFocus}
         onChangeText={handleChangeInput}
         style={[
           inputFont
             ? {
-                color: inputColor,
                 fontSize: _size,
                 fontWeight: inputFont?.fontWeight,
               }
             : styles.input,
+          { color: inColor },
         ]}
       />
     </View>

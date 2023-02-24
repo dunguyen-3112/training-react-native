@@ -21,7 +21,7 @@ type DetailRoute = RouteProp<RootStackParamsList, 'Details'>;
 
 const Details = () => {
   const route = useRoute<DetailRoute>();
-  const { id } = route.params;
+  const { id, onChange } = route.params;
   const { isLoading, data, error } = useFetch<IFood>({ url: `foods/${id}` });
   const [food, setFood] = useState<IFood>();
   const [isMore, setIsMore] = useState(false);
@@ -51,8 +51,9 @@ const Details = () => {
         },
       });
       setFood(newData);
+      onChange(newData);
     }
-  }, [food, id]);
+  }, [food, id, onChange]);
 
   const ingrediants = useMemo(() => {
     const ingrediant = food?.ingredients;
@@ -70,15 +71,10 @@ const Details = () => {
       <Back left={20} />
 
       <View style={styles.avatar}>
-        <Food data={food} size="large" />
+        <Food data={food} size="large" disabled />
       </View>
 
-      {food.nutritional && (
-        <Nutritional
-          color={food?.color || 'default'}
-          nutritional={food.nutritional}
-        />
-      )}
+      {food.nutritional && <Nutritional nutritional={food.nutritional} />}
 
       <View style={styles.details}>
         <Text font={{ fontSize: 20, fontWeight: '600' }}>Details</Text>
@@ -116,12 +112,17 @@ const Details = () => {
 
         <Button
           width={'100%'}
-          label={food.favorite === 1 ? 'Remove Favorite' : 'Add to Favorites'}
           labelColor="WHITE"
           labelFont={{ fontSize: 20, fontWeight: '600' }}
           borderRadius={9}
           customStyle={{ paddingVertical: 9, width: '100%', marginTop: 27 }}
           onPress={handleFavorite}
+          {...(food.favorite
+            ? {
+                backgroundColor: 'SECONDARY',
+                label: 'UnFavorite',
+              }
+            : { backgroundColor: 'PRIMARY', label: 'Add to Favorite' })}
         />
       </View>
     </View>

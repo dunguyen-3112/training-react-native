@@ -24,6 +24,8 @@ const Search = ({ value = '', onChangeText, onFocus }: SearchProps) => {
         field="search"
         onChangeText={handleChangeSearched}
         onFocus={onFocus}
+        placeholderColor="SECONDARY"
+        inputColor="BLACK"
         value={value}
         placeholder="Search for healthy food"
       />

@@ -7,16 +7,23 @@ import {
 } from 'react-native';
 import React, { memo } from 'react';
 import { Button, Text } from '@components';
-import { COLOR } from '@constants';
+import { COLOR, COLORS } from '@constants';
 interface SlideItemProps {
   title: string;
   color: COLOR;
-  image: ImageSourcePropType;
+  image: string;
 }
 
-const Card = ({ image, color = 'PRIMARY', title }: SlideItemProps) => {
+const Card = (props: SlideItemProps | null) => {
+  const { image = '', color = 'GRAY', title = '' } = props || {};
   return (
-    <ImageBackground source={image} style={styles.container}>
+    <ImageBackground
+      source={{ uri: image }}
+      style={[
+        styles.container,
+        { ...(image === '' && { backgroundColor: COLORS.LIGHT_GRAY }) },
+      ]}
+    >
       <View style={styles.info}>
         <Text
           font={{ fontSize: 10, fontWeight: '600', textTransform: 'uppercase' }}
@@ -32,10 +39,10 @@ const Card = ({ image, color = 'PRIMARY', title }: SlideItemProps) => {
           {title}
         </Text>
         <Button
-          backgroundColor="GREEN_DARK"
+          {...(title === '' ? { borderRadius: 0 } : { borderRadius: 8 })}
+          backgroundColor={title !== '' ? 'GREEN_DARK' : 'WHITE'}
           paddingHorizontal={19}
           paddingVertical={6}
-          borderRadius={8}
           customStyle={{ marginTop: 8 }}
         >
           <Text font={{ fontSize: 12, fontWeight: '600' }} color="WHITE">
@@ -57,9 +64,9 @@ const styles = StyleSheet.create({
   container: {
     height: 169,
     width: 320,
-    justifyContent: 'center',
-    alignItems: 'flex-start',
+    justifyContent: 'space-between',
     padding: 32,
+    borderRadius: 32,
   },
   info: {
     maxWidth: '60%',

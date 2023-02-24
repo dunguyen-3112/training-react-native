@@ -19,17 +19,21 @@ const SearchScreen = () => {
     setText(text);
   }, []);
 
+  const handleSelectTag = useCallback((id: number) => {
+    console.log(id);
+  }, []);
+
   return (
     <View style={styles.container}>
       <Header />
       <Search value={text} onChangeText={handleChangeTextSearch} />
-      <Tags marginTop={17} />
+      <Tags marginTop={17} onSelect={handleSelectTag} />
       {isLoading ? (
         <Loading marginTop={120} />
       ) : foods?.length === 0 ? (
         <Empty />
       ) : (
-        <Foods foods={foods} horizontal />
+        <Foods foods={foods} />
       )}
     </View>
   );

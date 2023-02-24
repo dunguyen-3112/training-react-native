@@ -1,4 +1,4 @@
-import { FlatList, StyleSheet, View } from 'react-native';
+import { FlatList, StyleSheet, View, ViewStyle } from 'react-native';
 import React, { memo } from 'react';
 import { COLOR } from '@constants';
 import { TNutritional } from '@types';
@@ -6,11 +6,11 @@ import NutritionalItem from './NutritionalItem';
 
 const Nutritional = ({
   nutritional,
-  marginTop = 0,
+  customStyles,
 }: {
   nutritional: TNutritional;
-  color: COLOR;
-  marginTop?: number;
+  color?: COLOR;
+  customStyles?: ViewStyle;
 }) => {
   const vi = Object.entries(nutritional).map(([x, y]) => ({
     key1: x,
@@ -18,7 +18,7 @@ const Nutritional = ({
   }));
 
   return (
-    <View style={[styles.container, { marginTop }]}>
+    <View style={[styles.container, customStyles]}>
       <FlatList
         data={vi}
         horizontal

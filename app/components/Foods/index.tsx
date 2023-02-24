@@ -11,23 +11,42 @@ import { useNavigation } from '@react-navigation/native';
 const Foods = ({
   horizontal,
   foods,
+  onChange,
 }: {
   horizontal?: boolean;
-  foods: IFood[];
+  foods: IFood[] | null;
   onChange?: (foods: IFood[]) => void;
 }) => {
   const navigation = useNavigation<MainScreenNavigationProps>();
 
+  const handleChangeItem = useCallback(
+    (food: IFood) => {
+      const newFoods = foods?.filter((_food) => _food.id !== food.id);
+      if (newFoods) {
+        newFoods.push(food);
+        onChange && onChange(newFoods);
+      }
+    },
+    [foods, onChange]
+  );
+
   const handleMoveDetailScreen = useCallback(
     (id: number) => {
-      navigation.navigate('Details', { id });
+      navigation.navigate('Details', { id, onChange: handleChangeItem });
     },
-    [navigation]
+    [navigation, handleChangeItem]
   );
 
   return (
-    <View style={styles.container}>
-      {!horizontal && (
+    <View
+      style={[
+        styles.container,
+        {
+          ...(!horizontal && { alignItems: 'center' }),
+        },
+      ]}
+    >
+      {horizontal && (
         <Text
           font={{ fontSize: 20, fontWeight: '700' }}
           color="DEFAULT"
@@ -40,13 +59,9 @@ const Foods = ({
         style={styles.list}
         data={foods}
         keyExtractor={(item) => item.id + ''}
-        {...(!horizontal && {
-          horizontal: true,
-        })}
-        {...(horizontal && {
-          numColumns: 2,
-          columnWrapperStyle: styles.itemStyle,
-        })}
+        {...(horizontal
+          ? { horizontal }
+          : { ...styles.vertical, columnWrapperStyle: styles.itemStyle })}
         showsHorizontalScrollIndicator={false}
         showsVerticalScrollIndicator={false}
         ItemSeparatorComponent={() => (
@@ -65,14 +80,18 @@ export default memo(Foods);
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'flex-start',
     alignItems: 'flex-start',
     backgroundColor: '#FFFFFF',
   },
   list: {
-    width: '100%',
     marginTop: 15,
   },
+  vertical: {
+    numColumns: 2,
+    width: 326,
+    justifyContent: 'space-between',
+  },
+  horizontal: {},
   itemStyle: {
     justifyContent: 'space-between',
   },

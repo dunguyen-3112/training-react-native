@@ -20,6 +20,7 @@ export const COLORS = {
 
 type COLOR =
   | 'WHITE'
+  | 'LIGHT_GRAY'
   | 'GRAY'
   | 'ORANGE'
   | 'GREEN'

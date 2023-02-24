@@ -1,0 +1,136 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Screen snapshot 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#FFFFFF",
+      "flex": 1,
+      "paddingHorizontal": 16,
+      "paddingTop": 62,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#FFF3F1",
+        "borderRadius": 15,
+        "marginTop": 14,
+        "position": "relative",
+        "zIndex": 1,
+      }
+    }
+  >
+    <View>
+      <TextInput
+        onChangeText={[Function]}
+        placeholder="Search for healthy food"
+        placeholderTextColor="#FF8473"
+        style={
+          Array [
+            Object {
+              "color": "#DA6317",
+              "fontSize": 13,
+              "fontWeight": "400",
+              "paddingHorizontal": 60,
+              "paddingVertical": 14,
+            },
+            Object {
+              "color": "#000000",
+            },
+          ]
+        }
+        value=""
+      />
+    </View>
+    <Image
+      source={1}
+      style={
+        Object {
+          "left": 21,
+          "position": "absolute",
+          "top": "50%",
+          "transform": Array [
+            Object {
+              "translateY": -10,
+            },
+          ],
+        }
+      }
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#FFFFFF",
+        "flex": 1,
+        "paddingHorizontal": 16,
+        "paddingTop": 62,
+      }
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+          },
+          Object {
+            "marginTop": 200,
+          },
+        ]
+      }
+    >
+      <Image
+        source={1}
+      />
+      <Text
+        onPress={[Function]}
+        style={
+          Array [
+            Object {
+              "borderColor": "#5C5C5C",
+              "color": "#5C5C5C",
+              "fontSize": 22,
+              "fontWeight": "500",
+              "textTransform": "none",
+            },
+            undefined,
+            Object {
+              "color": "#696969",
+              "marginTop": 29,
+            },
+          ]
+        }
+      >
+        No Foods Found
+      </Text>
+      <Text
+        onPress={[Function]}
+        style={
+          Array [
+            Object {
+              "borderColor": "#5C5C5C",
+              "color": "#5C5C5C",
+              "fontSize": 13,
+              "fontWeight": "400",
+              "textTransform": "none",
+            },
+            undefined,
+            Object {
+              "color": "#7e7e7e",
+              "marginTop": 8,
+              "textAlign": "center",
+            },
+          ]
+        }
+      >
+        You don't save any food. Go ahead, search
+and save your favorite food
+      </Text>
+    </View>
+  </View>
+</View>
+`;

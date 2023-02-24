@@ -1,10 +1,15 @@
-import { StyleSheet, TouchableOpacity, ViewStyle } from 'react-native';
+import { Pressable, StyleSheet, ViewStyle } from 'react-native';
 import React, { memo, ReactNode, useMemo } from 'react';
 
 import { COLORS, Font } from '@constants';
 import Text, { TTextColor } from '../Text';
 
-export type TBottonColor = 'PRIMARY' | 'SECONDARY' | 'GRAY' | 'GREEN_DARK';
+export type TBottonColor =
+  | 'PRIMARY'
+  | 'SECONDARY'
+  | 'GRAY'
+  | 'GREEN_DARK'
+  | 'WHITE';
 
 interface ButtonStyle {
   label?: string;
@@ -42,6 +47,8 @@ const Button = ({
         return COLORS.SECONDARY;
       case 'GRAY':
         return COLORS.LIGHT_GRAY;
+      case 'WHITE':
+        return COLORS.WHITE;
 
       default:
         return COLORS.PRIMARY;
@@ -49,7 +56,7 @@ const Button = ({
   }, [backgroundColor]);
 
   return (
-    <TouchableOpacity
+    <Pressable
       onPress={onPress}
       style={[
         styles.button,
@@ -69,7 +76,7 @@ const Button = ({
           {label}
         </Text>
       )}
-    </TouchableOpacity>
+    </Pressable>
   );
 };
 

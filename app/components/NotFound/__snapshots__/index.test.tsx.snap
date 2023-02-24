@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component snapshot 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+      },
+      Object {
+        "marginTop": 0,
+      },
+    ]
+  }
+>
+  <Image
+    source={1}
+  />
+  <Text
+    onPress={[Function]}
+    style={
+      Array [
+        Object {
+          "borderColor": "#5C5C5C",
+          "color": "#5C5C5C",
+          "fontSize": 22,
+          "fontWeight": "500",
+          "textTransform": "none",
+        },
+        undefined,
+        Object {
+          "color": "#696969",
+          "marginTop": 29,
+        },
+      ]
+    }
+  >
+    No Foods Found
+  </Text>
+  <Text
+    onPress={[Function]}
+    style={
+      Array [
+        Object {
+          "borderColor": "#5C5C5C",
+          "color": "#5C5C5C",
+          "fontSize": 13,
+          "fontWeight": "400",
+          "textTransform": "none",
+        },
+        undefined,
+        Object {
+          "color": "#7e7e7e",
+          "marginTop": 8,
+          "textAlign": "center",
+        },
+      ]
+    }
+  >
+    You don't save any food. Go ahead, search
+and save your favorite food
+  </Text>
+</View>
+`;
