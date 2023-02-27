@@ -3,11 +3,11 @@
 exports[`Component snapshot 1`] = `
 <View
   style={
-    Array [
-      Object {
+    [
+      {
         "height": 26,
       },
-      Object {
+      {
         "marginTop": undefined,
       },
     ]
@@ -16,36 +16,36 @@ exports[`Component snapshot 1`] = `
   <RCTScrollView
     ItemSeparatorComponent={[Function]}
     data={
-      Array [
-        Object {
+      [
+        {
           "id": 1,
           "name": "Breakfast",
         },
-        Object {
+        {
           "id": 2,
           "name": "Dinner",
         },
-        Object {
+        {
           "id": 3,
           "name": "Dryfruits",
         },
-        Object {
+        {
           "id": 4,
           "name": "Lunch",
         },
-        Object {
+        {
           "id": 5,
           "name": "Vegetables",
         },
-        Object {
+        {
           "id": 6,
           "name": "Greenich",
         },
-        Object {
+        {
           "id": 7,
           "name": "Non-Veg",
         },
-        Object {
+        {
           "id": 8,
           "name": "Fast Food",
         },
@@ -66,15 +66,15 @@ exports[`Component snapshot 1`] = `
     renderItem={[Function]}
     scrollEventThrottle={50}
     showsHorizontalScrollIndicator={false}
-    stickyHeaderIndices={Array []}
-    viewabilityConfigCallbackPairs={Array []}
+    stickyHeaderIndices={[]}
+    viewabilityConfigCallbackPairs={[]}
   >
     <View>
       <View
         onLayout={[Function]}
         style={
-          Array [
-            Object {
+          [
+            {
               "flexDirection": "row",
             },
             null,
@@ -84,8 +84,8 @@ exports[`Component snapshot 1`] = `
         <Text
           onPress={[Function]}
           style={
-            Array [
-              Object {
+            [
+              {
                 "borderColor": "#5C5C5C",
                 "color": "#5C5C5C",
                 "fontSize": 13,
@@ -93,7 +93,7 @@ exports[`Component snapshot 1`] = `
                 "textTransform": "none",
               },
               undefined,
-              Object {
+              {
                 "backgroundColor": "#ECEDEC",
                 "borderRadius": 8,
                 "maxHeight": 26,
@@ -107,7 +107,7 @@ exports[`Component snapshot 1`] = `
         </Text>
         <View
           style={
-            Object {
+            {
               "marginLeft": 7,
             }
           }
@@ -116,8 +116,8 @@ exports[`Component snapshot 1`] = `
       <View
         onLayout={[Function]}
         style={
-          Array [
-            Object {
+          [
+            {
               "flexDirection": "row",
             },
             null,
@@ -127,8 +127,8 @@ exports[`Component snapshot 1`] = `
         <Text
           onPress={[Function]}
           style={
-            Array [
-              Object {
+            [
+              {
                 "borderColor": "#5C5C5C",
                 "color": "#5C5C5C",
                 "fontSize": 13,
@@ -136,7 +136,7 @@ exports[`Component snapshot 1`] = `
                 "textTransform": "none",
               },
               undefined,
-              Object {
+              {
                 "backgroundColor": "#ECEDEC",
                 "borderRadius": 8,
                 "maxHeight": 26,
@@ -150,7 +150,7 @@ exports[`Component snapshot 1`] = `
         </Text>
         <View
           style={
-            Object {
+            {
               "marginLeft": 7,
             }
           }
@@ -159,8 +159,8 @@ exports[`Component snapshot 1`] = `
       <View
         onLayout={[Function]}
         style={
-          Array [
-            Object {
+          [
+            {
               "flexDirection": "row",
             },
             null,
@@ -170,8 +170,8 @@ exports[`Component snapshot 1`] = `
         <Text
           onPress={[Function]}
           style={
-            Array [
-              Object {
+            [
+              {
                 "borderColor": "#5C5C5C",
                 "color": "#5C5C5C",
                 "fontSize": 13,
@@ -179,7 +179,7 @@ exports[`Component snapshot 1`] = `
                 "textTransform": "none",
               },
               undefined,
-              Object {
+              {
                 "backgroundColor": "#ECEDEC",
                 "borderRadius": 8,
                 "maxHeight": 26,
@@ -193,7 +193,7 @@ exports[`Component snapshot 1`] = `
         </Text>
         <View
           style={
-            Object {
+            {
               "marginLeft": 7,
             }
           }
@@ -202,8 +202,8 @@ exports[`Component snapshot 1`] = `
       <View
         onLayout={[Function]}
         style={
-          Array [
-            Object {
+          [
+            {
               "flexDirection": "row",
             },
             null,
@@ -213,8 +213,8 @@ exports[`Component snapshot 1`] = `
         <Text
           onPress={[Function]}
           style={
-            Array [
-              Object {
+            [
+              {
                 "borderColor": "#5C5C5C",
                 "color": "#5C5C5C",
                 "fontSize": 13,
@@ -222,7 +222,7 @@ exports[`Component snapshot 1`] = `
                 "textTransform": "none",
               },
               undefined,
-              Object {
+              {
                 "backgroundColor": "#ECEDEC",
                 "borderRadius": 8,
                 "maxHeight": 26,
@@ -236,7 +236,7 @@ exports[`Component snapshot 1`] = `
         </Text>
         <View
           style={
-            Object {
+            {
               "marginLeft": 7,
             }
           }
@@ -245,8 +245,8 @@ exports[`Component snapshot 1`] = `
       <View
         onLayout={[Function]}
         style={
-          Array [
-            Object {
+          [
+            {
               "flexDirection": "row",
             },
             null,
@@ -256,8 +256,8 @@ exports[`Component snapshot 1`] = `
         <Text
           onPress={[Function]}
           style={
-            Array [
-              Object {
+            [
+              {
                 "borderColor": "#5C5C5C",
                 "color": "#5C5C5C",
                 "fontSize": 13,
@@ -265,7 +265,7 @@ exports[`Component snapshot 1`] = `
                 "textTransform": "none",
               },
               undefined,
-              Object {
+              {
                 "backgroundColor": "#ECEDEC",
                 "borderRadius": 8,
                 "maxHeight": 26,
@@ -279,7 +279,7 @@ exports[`Component snapshot 1`] = `
         </Text>
         <View
           style={
-            Object {
+            {
               "marginLeft": 7,
             }
           }
@@ -288,8 +288,8 @@ exports[`Component snapshot 1`] = `
       <View
         onLayout={[Function]}
         style={
-          Array [
-            Object {
+          [
+            {
               "flexDirection": "row",
             },
             null,
@@ -299,8 +299,8 @@ exports[`Component snapshot 1`] = `
         <Text
           onPress={[Function]}
           style={
-            Array [
-              Object {
+            [
+              {
                 "borderColor": "#5C5C5C",
                 "color": "#5C5C5C",
                 "fontSize": 13,
@@ -308,7 +308,7 @@ exports[`Component snapshot 1`] = `
                 "textTransform": "none",
               },
               undefined,
-              Object {
+              {
                 "backgroundColor": "#ECEDEC",
                 "borderRadius": 8,
                 "maxHeight": 26,
@@ -322,7 +322,7 @@ exports[`Component snapshot 1`] = `
         </Text>
         <View
           style={
-            Object {
+            {
               "marginLeft": 7,
             }
           }
@@ -331,8 +331,8 @@ exports[`Component snapshot 1`] = `
       <View
         onLayout={[Function]}
         style={
-          Array [
-            Object {
+          [
+            {
               "flexDirection": "row",
             },
             null,
@@ -342,8 +342,8 @@ exports[`Component snapshot 1`] = `
         <Text
           onPress={[Function]}
           style={
-            Array [
-              Object {
+            [
+              {
                 "borderColor": "#5C5C5C",
                 "color": "#5C5C5C",
                 "fontSize": 13,
@@ -351,7 +351,7 @@ exports[`Component snapshot 1`] = `
                 "textTransform": "none",
               },
               undefined,
-              Object {
+              {
                 "backgroundColor": "#ECEDEC",
                 "borderRadius": 8,
                 "maxHeight": 26,
@@ -365,7 +365,7 @@ exports[`Component snapshot 1`] = `
         </Text>
         <View
           style={
-            Object {
+            {
               "marginLeft": 7,
             }
           }
@@ -374,8 +374,8 @@ exports[`Component snapshot 1`] = `
       <View
         onLayout={[Function]}
         style={
-          Array [
-            Object {
+          [
+            {
               "flexDirection": "row",
             },
             null,
@@ -385,8 +385,8 @@ exports[`Component snapshot 1`] = `
         <Text
           onPress={[Function]}
           style={
-            Array [
-              Object {
+            [
+              {
                 "borderColor": "#5C5C5C",
                 "color": "#5C5C5C",
                 "fontSize": 13,
@@ -394,7 +394,7 @@ exports[`Component snapshot 1`] = `
                 "textTransform": "none",
               },
               undefined,
-              Object {
+              {
                 "backgroundColor": "#ECEDEC",
                 "borderRadius": 8,
                 "maxHeight": 26,

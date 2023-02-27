@@ -1,12 +1,6 @@
-import {
-  StyleSheet,
-  View,
-  ImageBackground,
-  ImageSourcePropType,
-  Image,
-} from 'react-native';
 import React, { memo } from 'react';
-import { Button, Text } from '@components';
+import { StyleSheet, View, ImageBackground, Image } from 'react-native';
+import { Button, Text } from '../common';
 import { COLOR, COLORS } from '@constants';
 interface SlideItemProps {
   title: string;

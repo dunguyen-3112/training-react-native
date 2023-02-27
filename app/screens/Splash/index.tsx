@@ -1,31 +1,25 @@
-import { Animated, Easing, Image, StyleSheet } from 'react-native';
+import { Animated, Easing, Image, StyleSheet, View } from 'react-native';
 import React, { useEffect, useRef } from 'react';
-import { LinearGradient } from 'expo-linear-gradient';
 import { Text } from '@components';
+import { RootScreenNavigationProps } from '@navigation';
 import { useNavigation } from '@react-navigation/native';
-import { MainScreenNavigationProps } from '@navigation';
 const SplashScreen = () => {
-  const navigation = useNavigation<MainScreenNavigationProps>();
+  const navigation = useNavigation<RootScreenNavigationProps<'Splash'>>();
   const animation = useRef(new Animated.Value(1)).current;
 
   useEffect(() => {
     Animated.timing(animation, {
       toValue: 0,
       duration: 3000,
-      useNativeDriver: true,
+      useNativeDriver: false, // not supported in expo
       easing: Easing.inOut(Easing.ease),
     }).start(() => {
-      navigation.navigate('Main');
+      navigation.navigate('Root');
     });
   }, [navigation, animation]);
   return (
     <Animated.View style={[styles.container, { opacity: animation }]}>
-      <LinearGradient
-        colors={['#FFFFFF', 'rgba(255,255,255,1)']}
-        start={[0, 0.5]}
-        end={[1, 0.5]}
-        style={styles.background}
-      >
+      <View style={styles.background}>
         <Image
           source={require('@assets/images/pattern.png')}
           style={styles.topImage}
@@ -45,7 +39,7 @@ const SplashScreen = () => {
         >
           {`Stay Heatlthy and beatifull with us!\nwith us!`}
         </Text>
-      </LinearGradient>
+      </View>
     </Animated.View>
   );
 };

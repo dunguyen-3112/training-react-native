@@ -1,8 +1,8 @@
 import { FlatList, StyleSheet, View, ViewStyle } from 'react-native';
-import React, { memo } from 'react';
+import React, { memo, useMemo } from 'react';
 import { COLOR } from '@constants';
 import { TNutritional } from '@types';
-import NutritionalItem from './NutritionalItem';
+import { Text } from '@components/common';
 
 const Nutritional = ({
   nutritional,
@@ -12,19 +12,30 @@ const Nutritional = ({
   color?: COLOR;
   customStyles?: ViewStyle;
 }) => {
-  const vi = Object.entries(nutritional).map(([x, y]) => ({
-    key1: x,
-    value: y,
-  }));
+  const vi = useMemo(() => {
+    return Object.entries(nutritional).map(([x, y]) => ({
+      title: x,
+      value: y,
+    }));
+  }, [nutritional]);
+
+  const Item = ({ title, value }: { title: string; value: number }) => (
+    <View>
+      <Text font={{ fontSize: 16, textTransform: 'capitalize' }}>{title}</Text>
+      <Text font={{ fontSize: 24 }} color="SECONDARY">
+        {`${value}g`}
+      </Text>
+    </View>
+  );
 
   return (
     <View style={[styles.container, customStyles]}>
       <FlatList
         data={vi}
         horizontal
-        renderItem={({ item }) => <NutritionalItem {...item} />}
+        renderItem={({ item }) => <Item {...item} />}
         ItemSeparatorComponent={() => <View style={{ marginLeft: 40 }} />}
-        keyExtractor={(item) => item.key1}
+        keyExtractor={(item) => item.title}
       />
     </View>
   );

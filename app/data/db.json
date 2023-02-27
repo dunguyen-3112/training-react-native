@@ -1,7 +1,7 @@
 {
   "foods": [
     {
-      "id": "123",
+      "id": 22,
       "name": "Pizza",
       "weight": 200,
       "ingredients": [
@@ -75,82 +75,6 @@
       "favorite": 0
     },
     {
-      "id": 2,
-      "name": "Beef",
-      "weight": 400,
-      "color": "GREEN",
-      "desc": "Note that in TypeScript, you can define the return type of the function using a colon (:) after the function parameter list. In this example, we don't explicitly define the return type, but TypeScript will infer that the return type is a Promise that resolves to a JSON object.",
-      "nutritional": {
-        "calories": 200,
-        "carbs": 100,
-        "fat": 100,
-        "protein": 100
-      },
-      "category": "Dry fruits",
-      "ingredients": [
-        {
-          "id": 1,
-          "name": "Bread",
-          "value": 200
-        },
-        {
-          "id": 2,
-          "name": "Meat (Chicken)",
-          "value": 500
-        },
-        {
-          "id": 3,
-          "name": "Cacumber",
-          "value": 300
-        },
-        {
-          "id": 4,
-          "name": "Onion",
-          "value": 200
-        }
-      ],
-      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/a4.png?alt=media&token=d05ef95d-eda9-4b9e-951b-13730a7d1086",
-      "favorite": 0
-    },
-    {
-      "id": 3,
-      "name": "Pork",
-      "desc": "Note that in TypeScript, you can define the return type of the function using a colon (:) after the function parameter list. In this example, we don't explicitly define the return type, but TypeScript will infer that the return type is a Promise that resolves to a JSON object.",
-      "weight": 400,
-      "color": "PURPLE",
-      "nutritional": {
-        "calories": 200,
-        "carbs": 100,
-        "fat": 100,
-        "protein": 100
-      },
-      "category": "Dry fruits",
-      "ingredients": [
-        {
-          "id": 1,
-          "name": "Bread",
-          "value": 200
-        },
-        {
-          "id": 2,
-          "name": "Meat (Chicken)",
-          "value": 500
-        },
-        {
-          "id": 3,
-          "name": "Cacumber",
-          "value": 300
-        },
-        {
-          "id": 4,
-          "name": "Onion",
-          "value": 200
-        }
-      ],
-      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/a1.png?alt=media&token=4e7e33d8-eb6e-4fbf-8ca9-d7cca5eb001c",
-      "favorite": 0
-    },
-    {
       "id": 4,
       "desc": "Note that in TypeScript, you can define the return type of the function using a colon (:) after the function parameter list. In this example, we don't explicitly define the return type, but TypeScript will infer that the return type is a Promise that resolves to a JSON object.",
       "name": "Fish",
@@ -186,7 +110,7 @@
         }
       ],
       "imgUrl": "https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/a5.png?alt=media&token=af718429-aabf-4329-91e5-439cff65e187",
-      "favorite": 0
+      "favorite": 1
     },
     {
       "id": 5,
@@ -377,43 +301,6 @@
         }
       ],
       "imgUrl": "https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/a2.png?alt=media&token=abe65f60-e23e-48d9-a2c8-13c9e3ccb921"
-    },
-    {
-      "id": 10,
-      "name": "Bacon",
-      "weight": 400,
-      "color": "RED",
-      "nutritional": {
-        "calories": 200,
-        "carbs": 100,
-        "fat": 100,
-        "protein": 100
-      },
-      "category": "Dry fruits",
-      "ingredients": [
-        {
-          "id": 1,
-          "name": "Bread",
-          "value": 200
-        },
-        {
-          "id": 2,
-          "name": "Meat (Chicken)",
-          "value": 500
-        },
-        {
-          "id": 3,
-          "name": "Cacumber",
-          "value": 300
-        },
-        {
-          "id": 4,
-          "name": "Onion",
-          "value": 200
-        }
-      ],
-      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/a2.png?alt=media&token=abe65f60-e23e-48d9-a2c8-13c9e3ccb921",
-      "favorite": 0
     }
   ],
   "categories": [

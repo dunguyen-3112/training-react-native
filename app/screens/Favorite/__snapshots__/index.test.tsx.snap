@@ -3,7 +3,7 @@
 exports[`Screen snapshot 1`] = `
 <View
   style={
-    Object {
+    {
       "backgroundColor": "#FFFFFF",
       "flex": 1,
       "paddingHorizontal": 16,
@@ -13,7 +13,7 @@ exports[`Screen snapshot 1`] = `
 >
   <View
     style={
-      Object {
+      {
         "backgroundColor": "#FFF3F1",
         "borderRadius": 15,
         "marginTop": 14,
@@ -28,15 +28,15 @@ exports[`Screen snapshot 1`] = `
         placeholder="Search for healthy food"
         placeholderTextColor="#FF8473"
         style={
-          Array [
-            Object {
+          [
+            {
               "color": "#DA6317",
               "fontSize": 13,
               "fontWeight": "400",
               "paddingHorizontal": 60,
               "paddingVertical": 14,
             },
-            Object {
+            {
               "color": "#000000",
             },
           ]
@@ -45,14 +45,18 @@ exports[`Screen snapshot 1`] = `
       />
     </View>
     <Image
-      source={1}
+      source={
+        {
+          "testUri": "../../../assets/icons/iconsearch.png",
+        }
+      }
       style={
-        Object {
+        {
           "left": 21,
           "position": "absolute",
           "top": "50%",
-          "transform": Array [
-            Object {
+          "transform": [
+            {
               "translateY": -10,
             },
           ],
@@ -62,7 +66,7 @@ exports[`Screen snapshot 1`] = `
   </View>
   <View
     style={
-      Object {
+      {
         "backgroundColor": "#FFFFFF",
         "flex": 1,
         "paddingHorizontal": 16,
@@ -72,25 +76,29 @@ exports[`Screen snapshot 1`] = `
   >
     <View
       style={
-        Array [
-          Object {
+        [
+          {
             "alignItems": "center",
             "flex": 1,
           },
-          Object {
+          {
             "marginTop": 200,
           },
         ]
       }
     >
       <Image
-        source={1}
+        source={
+          {
+            "testUri": "../../../assets/images/notfound.png",
+          }
+        }
       />
       <Text
         onPress={[Function]}
         style={
-          Array [
-            Object {
+          [
+            {
               "borderColor": "#5C5C5C",
               "color": "#5C5C5C",
               "fontSize": 22,
@@ -98,7 +106,7 @@ exports[`Screen snapshot 1`] = `
               "textTransform": "none",
             },
             undefined,
-            Object {
+            {
               "color": "#696969",
               "marginTop": 29,
             },
@@ -110,8 +118,8 @@ exports[`Screen snapshot 1`] = `
       <Text
         onPress={[Function]}
         style={
-          Array [
-            Object {
+          [
+            {
               "borderColor": "#5C5C5C",
               "color": "#5C5C5C",
               "fontSize": 13,
@@ -119,7 +127,7 @@ exports[`Screen snapshot 1`] = `
               "textTransform": "none",
             },
             undefined,
-            Object {
+            {
               "color": "#7e7e7e",
               "marginTop": 8,
               "textAlign": "center",

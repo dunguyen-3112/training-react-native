@@ -15,15 +15,15 @@ exports[`Button has a default 1`] = `
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
   style={
-    Array [
-      Object {
+    [
+      {
         "alignItems": "center",
         "alignSelf": "flex-start",
         "borderRadius": 8,
         "flexDirection": "row",
         "justifyContent": "center",
       },
-      Object {
+      {
         "backgroundColor": "#91C788",
         "borderRadius": undefined,
         "paddingHorizontal": undefined,
@@ -35,8 +35,8 @@ exports[`Button has a default 1`] = `
   <Text
     onPress={[Function]}
     style={
-      Array [
-        Object {
+      [
+        {
           "borderColor": "#5C5C5C",
           "color": "#5C5C5C",
           "fontSize": 14,
@@ -44,7 +44,7 @@ exports[`Button has a default 1`] = `
           "textTransform": "none",
         },
         undefined,
-        Object {},
+        {},
       ]
     }
   />

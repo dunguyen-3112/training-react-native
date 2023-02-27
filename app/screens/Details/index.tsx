@@ -1,59 +1,56 @@
 import { StyleSheet, View } from 'react-native';
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import { RouteProp, useRoute } from '@react-navigation/native';
 
 import {
   Back,
   Button,
-  Empty,
   Food,
   ListText,
   Loading,
   Nutritional,
   Text,
 } from '@components';
-import { IFood } from '@types';
-import { useFetch } from '@hooks';
 import { RootStackParamsList } from '@navigation';
-import { fetchData } from '@utils';
+import { useFood, useFoodFavorite } from '@hooks';
 
 type DetailRoute = RouteProp<RootStackParamsList, 'Details'>;
 
 const Details = () => {
   const route = useRoute<DetailRoute>();
   const { id, onChange } = route.params;
-  const { isLoading, data, error } = useFetch<IFood>({ url: `foods/${id}` });
-  const [food, setFood] = useState<IFood>();
+  const { loading, food, error, fetch } = useFood(id);
+  const { addFavorite, removeFavorite } = useFoodFavorite();
+
   const [isMore, setIsMore] = useState(false);
   const [isAll, setIsAll] = useState(false);
-
-  useEffect(() => {
-    if (data) setFood(data);
-  }, [data]);
 
   const handleReadMore = useCallback(() => {
     setIsMore((prev) => !prev);
   }, []);
 
+  const handlePress = useCallback(async () => {
+    let status;
+    if (food) {
+      if (!food.favorite) {
+        if (addFavorite) {
+          status = await addFavorite(id);
+        }
+      } else {
+        if (removeFavorite) {
+          status = await removeFavorite(id);
+        }
+      }
+      if (status) {
+        onChange && onChange();
+        fetch && fetch();
+      }
+    }
+  }, [addFavorite, fetch, food, id, onChange, removeFavorite]);
+
   const handleSeeAll = useCallback(() => {
     setIsAll((prev) => !prev);
   }, []);
-
-  const handleFavorite = useCallback(async () => {
-    if (food) {
-      const check = food.favorite == 1 ? 0 : 1;
-      const obj: IFood = { ...food, favorite: check };
-      const newData = await fetchData<IFood>({
-        url: `foods/${id}`,
-        options: {
-          method: 'PUT',
-          body: obj,
-        },
-      });
-      setFood(newData);
-      onChange(newData);
-    }
-  }, [food, id, onChange]);
 
   const ingrediants = useMemo(() => {
     const ingrediant = food?.ingredients;
@@ -63,8 +60,9 @@ const Details = () => {
     }
   }, [food?.ingredients, isAll]);
 
-  if (isLoading) return <Loading marginTop={20} />;
-  if (food === undefined || error) return <Empty />;
+  if (food === undefined) {
+    return <Loading />;
+  }
 
   return (
     <View style={styles.container}>
@@ -115,8 +113,8 @@ const Details = () => {
           labelColor="WHITE"
           labelFont={{ fontSize: 20, fontWeight: '600' }}
           borderRadius={9}
+          onPress={handlePress}
           customStyle={{ paddingVertical: 9, width: '100%', marginTop: 27 }}
-          onPress={handleFavorite}
           {...(food.favorite
             ? {
                 backgroundColor: 'SECONDARY',
