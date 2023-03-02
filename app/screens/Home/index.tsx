@@ -1,7 +1,7 @@
 import { StyleSheet, View } from 'react-native';
 import React, { useCallback } from 'react';
 import { Foods, Header, Search, Cards, Tags } from '@components';
-import { RootScreenNavigationProps } from '@navigation';
+import { RootScreenNavigationProps, RootStackParamsList } from '@navigation';
 import { useNavigation } from '@react-navigation/native';
 import { useFoods } from '@hooks';
 

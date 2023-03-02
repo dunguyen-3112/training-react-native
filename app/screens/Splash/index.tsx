@@ -37,7 +37,7 @@ const SplashScreen = () => {
           customStyle={{ marginTop: 12 }}
           center
         >
-          {`Stay Heatlthy and beatifull with us!\nwith us!`}
+          {`Stay Heatlthy and beatifull\nwith us!`}
         </Text>
       </View>
     </Animated.View>

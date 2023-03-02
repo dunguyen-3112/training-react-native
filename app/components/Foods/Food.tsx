@@ -4,6 +4,7 @@ import { IFood } from '@types';
 import FoodAvatar from './FoodAvatar';
 import { Text } from '../common';
 import { COLORS } from '@constants';
+import { Categories } from '@constants';
 
 const Food = ({
   data,
@@ -53,7 +54,9 @@ const Food = ({
           {`${calories} cal/${weight} kg`}
         </Text>
       ) : (
-        <Text font={{ fontSize: 16 }}>{category}</Text>
+        <Text font={{ fontSize: 16 }}>
+          {Categories.find(({ id }) => id === category)?.name}
+        </Text>
       )}
     </Pressable>
   );

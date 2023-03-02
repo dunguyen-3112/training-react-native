@@ -9,7 +9,7 @@ const Loading = ({ marginTop }: { marginTop?: number }) => {
     Animated.timing(rotation, {
       toValue: 1,
       duration: 1000,
-      useNativeDriver: true,
+      useNativeDriver: false,
       easing: Easing.linear,
     })
   ).start();

@@ -27,7 +27,7 @@ export type TNutritional = {
 };
 
 export interface IFood extends IInfo {
-  category?: TCategoryName;
+  category?: number;
   weight?: number;
   color?: COLOR;
   desc?: string;

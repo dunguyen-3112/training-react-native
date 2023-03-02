@@ -12,7 +12,8 @@
       "@utils/*": ["./utils/*"],
       "@types/*": ["./types/*"],
       "@hooks/*": ["./hooks/*"],
-      "@navigation/*": ["./navigation/*"]
+      "@navigation/*": ["./navigation/*"],
+      "@__mock__/*": ["./__mock__/*"]
     }
   }
 }

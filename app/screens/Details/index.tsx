@@ -19,7 +19,7 @@ type DetailRoute = RouteProp<RootStackParamsList, 'Details'>;
 const Details = () => {
   const route = useRoute<DetailRoute>();
   const { id, onChange } = route.params;
-  const { loading, food, error, fetch } = useFood(id);
+  const { food, fetch } = useFood(id);
   const { addFavorite, removeFavorite } = useFoodFavorite();
 
   const [isMore, setIsMore] = useState(false);

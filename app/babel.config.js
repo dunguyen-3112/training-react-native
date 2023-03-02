@@ -16,6 +16,7 @@ module.exports = function (api) {
             '@types': './types',
             '@hooks': './hooks',
             '@navigation': './navigation',
+            '@__mock__': './__mock__',
           },
         },
       ],
