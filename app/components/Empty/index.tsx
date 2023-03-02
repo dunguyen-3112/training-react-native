@@ -13,7 +13,7 @@ const Empty = () => {
         No Results Found
       </Text>
       <Text
-        color="#7e7e7e"
+        color="LIGHT_GRAY"
         font={{ fontSize: 13 }}
         customStyle={{ marginTop: 8, textAlign: 'center' }}
       >
