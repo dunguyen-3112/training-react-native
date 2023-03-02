@@ -1,9 +1,8 @@
 import { StyleSheet, View, Image } from 'react-native';
-import React, { useCallback, memo, useRef, useEffect } from 'react';
+import React, { useCallback, memo } from 'react';
 
 import { COLORS } from '@constants';
 import { Input } from '@components/common';
-import { TextInput } from 'react-native-gesture-handler';
 
 interface SearchProps {
   value?: string;
@@ -13,8 +12,6 @@ interface SearchProps {
 }
 
 const Search = ({ value = '', onChangeText, onFocus }: SearchProps) => {
-  const inputRef = useRef<TextInput>(null);
-
   const handleChangeSearched = useCallback(
     (value: string) => {
       onChangeText && onChangeText(value);
@@ -26,7 +23,6 @@ const Search = ({ value = '', onChangeText, onFocus }: SearchProps) => {
     <View style={styles.container}>
       <Input
         field="search"
-        ref={inputRef}
         onChangeText={handleChangeSearched}
         onFocus={onFocus}
         placeholderColor="SECONDARY"

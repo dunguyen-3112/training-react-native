@@ -75,16 +75,18 @@ const useFoodFavorite = () => {
   const [query, setQuery] = useState('foods?favorite=1');
 
   async function addFavorite(id: number) {
-    const food = await fetchData<IFood>({ url: `${query}&id=${id}` });
-
-    const status = await fetchData<IFood>({
-      url: `foods/${id}`,
-      method: 'PUT',
-      body: { ...food, favorite: 1 },
-    })
-      .then(() => true)
-      .catch(() => false);
-    setLoading(true);
+    const food = await fetchData<IFood>({ url: `foods/${id}` });
+    let status = false;
+    if (food) {
+      status = await fetchData<IFood>({
+        url: `foods/${id}`,
+        method: 'PUT',
+        body: { ...food, favorite: 1 },
+      })
+        .then(() => true)
+        .catch(() => false);
+      setLoading(true);
+    }
 
     return status;
   }
