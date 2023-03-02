@@ -1,4 +1,4 @@
-import { Alert, StyleSheet, TouchableOpacity } from 'react-native';
+import { StyleSheet } from 'react-native';
 import React, { memo, useCallback } from 'react';
 import { Categories, COLORS } from '@constants';
 import { ICategory } from '@types';
@@ -20,8 +20,7 @@ const Tag = ({ id, isActive, onPress }: TagProps) => {
     <Text
       onPress={handlePress}
       font={{ fontSize: 13 }}
-      customStyle={styles.tag}
-      {...(isActive && { color: COLORS.GREEN_COLOR })}
+      customStyle={isActive ? stylesActive : styles.tag}
     >
       {Categories.find((c) => c.id === id)?.name}
     </Text>
@@ -39,8 +38,11 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
   },
   active: {
-    backgroundColor: COLORS.GREEN_BLUR_COLOR,
-    borderColor: COLORS.GREEN_COLOR,
+    backgroundColor: 'rgba(28, 195, 121, 0.09)',
+    borderColor: COLORS.GREEN,
     borderWidth: 1,
+    color: COLORS.GREEN,
   },
 });
+
+const stylesActive = StyleSheet.flatten([styles.tag, styles.active]);

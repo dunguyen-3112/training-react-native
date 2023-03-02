@@ -28,7 +28,11 @@ exports[`Component snapshot 1`] = `
     }
   >
     <Image
-      source={1}
+      source={
+        Object {
+          "testUri": "../../../assets/images/loading.png",
+        }
+      }
     />
   </View>
 </View>

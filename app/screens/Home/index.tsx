@@ -1,28 +1,43 @@
 import { StyleSheet, View } from 'react-native';
-import React, { useCallback, useState } from 'react';
-import { Foods, Header, Loading, Search, Cards, Tags } from '@components';
-import { IFood } from '@types';
-import { useFetch } from '@hooks';
+import React, { useCallback } from 'react';
+import { Foods, Header, Search, Cards, Tags } from '@components';
+import { RootScreenNavigationProps } from '@navigation';
+import { useNavigation } from '@react-navigation/native';
+import { useFoods } from '@hooks';
 
 const HomeScreen = () => {
-  const [query, setQuery] = useState('foods');
-  const { isLoading, data } = useFetch<IFood[]>({
-    url: query,
-  });
+  const { navigate } = useNavigation<RootScreenNavigationProps<'Home'>>();
+  const { foods, fetch, setQuery } = useFoods();
 
-  const handleChangeTagName = useCallback((id: number) => {
-    if (id) setQuery(`foods?category=${id}`);
-    else setQuery('foods');
-  }, []);
+  const handlePressItem = useCallback(
+    (id: number) => {
+      navigate('Details', { id, onChange: () => fetch() });
+    },
+    [fetch, navigate]
+  );
+
+  const handleChangeTagName = useCallback(
+    (id: number) => {
+      if (id) setQuery({ category: { id: id } });
+    },
+    [setQuery]
+  );
+
+  const handleFocusSearch = useCallback(() => {
+    navigate('Search');
+    return false;
+  }, [navigate]);
 
   return (
     <View style={styles.container}>
       <>
         <Header />
-        <Search />
+        <Search onFocus={handleFocusSearch} isFocus={false} />
         <Tags marginTop={17} onSelect={handleChangeTagName} />
         <Cards marginTop={17} />
-        {data && <Foods foods={data} horizontal />}
+        {foods && (
+          <Foods foods={foods} horizontal onPressItem={handlePressItem} />
+        )}
       </>
     </View>
   );

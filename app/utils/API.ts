@@ -1,25 +1,21 @@
 import { API_ENDPOINT } from './../constants/API';
-import { ROUTES } from '@constants';
 
-type METHOD = 'GET' | 'POST' | 'PUT' | 'DELETE';
-export async function fetchData<T>({
-  url,
-  options,
-}: {
-  url: ROUTES;
-  options: {
-    method: METHOD;
-    body: T;
-  };
-}) {
-  const { body, method } = options;
+export type METHOD = 'GET' | 'POST' | 'PUT' | 'DELETE';
+
+export interface Options<T> {
+  method?: METHOD;
+  body?: T;
+  url: string;
+}
+export async function fetchData<T>(options: Options<T>) {
+  const { body, method = 'GET', url } = options;
   let response, data: T;
   try {
     switch (method) {
       case 'GET':
         response = await fetch(`${API_ENDPOINT}/${url}`, { method });
         data = await response.json();
-        return data;
+        break;
 
       case 'POST':
         response = await fetch(`${API_ENDPOINT}/${url}`, {
@@ -30,7 +26,7 @@ export async function fetchData<T>({
           },
         });
         data = await response.json();
-        return data;
+        break;
       case 'PUT':
         response = await fetch(`${API_ENDPOINT}/${url}`, {
           method,
@@ -40,7 +36,6 @@ export async function fetchData<T>({
           },
         });
         data = await response.json();
-        return data;
         break;
       case 'DELETE':
         response = await fetch(`${API_ENDPOINT}/${url}`, {
@@ -50,12 +45,10 @@ export async function fetchData<T>({
           },
         });
         data = await response.json();
-        return data;
-
-      default:
-        throw new Error('Invalid method');
+        break;
     }
-  } catch (error) {
-    throw new Error('Failed to connect to server!');
+    return data;
+  } catch (e) {
+    throw new Error('Failed to fetch data from server: ');
   }
 }

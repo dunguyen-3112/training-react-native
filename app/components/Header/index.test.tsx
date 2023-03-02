@@ -1,11 +1,17 @@
-import { render } from '@testing-library/react-native';
 import React from 'react';
-import Component from './index';
+import { render, screen, fireEvent } from '@utils/test-utils';
 
-describe('Component', () => {
-  const view = render(<Component />);
+import Header from './index';
 
-  it('snapshot', () => {
-    expect(view).toMatchSnapshot();
+// jest.mock('react-native/Libraries/Animated/NativeAnimatedHelper');
+
+describe('Test Header', () => {
+  test('should', async () => {
+    render(<Header />, {
+      wrapper: undefined,
+    });
+
+    const title = await screen.findByText(`Want to eat\nhealthy Food?`);
+    expect(title).toBeDefined();
   });
 });

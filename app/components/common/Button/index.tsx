@@ -1,5 +1,5 @@
 import { Pressable, StyleSheet, ViewStyle } from 'react-native';
-import React, { memo, ReactNode, useMemo } from 'react';
+import React, { memo, ReactNode, useCallback, useMemo } from 'react';
 
 import { COLORS, Font } from '@constants';
 import Text, { TTextColor } from '../Text';
@@ -55,9 +55,13 @@ const Button = ({
     }
   }, [backgroundColor]);
 
+  const handlePress = useCallback(() => {
+    onPress && onPress();
+  }, [onPress]);
+
   return (
     <Pressable
-      onPress={onPress}
+      onPress={handlePress}
       style={[
         styles.button,
         {
@@ -89,8 +93,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     alignSelf: 'flex-start',
-  },
-  icon: {
-    marginLeft: 8,
   },
 });

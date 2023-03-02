@@ -3,21 +3,25 @@
 exports[`Component snapshot 1`] = `
 <View
   style={
-    Object {
-      "marginTop": 4,
-    }
+    Array [
+      Object {
+        "alignItems": "flex-start",
+        "backgroundColor": "#FFFFFF",
+        "flex": 1,
+      },
+      Object {
+        "alignItems": "center",
+      },
+    ]
   }
 >
   <RCTScrollView
-    collapsable={false}
+    ItemSeparatorComponent={[Function]}
     getItem={[Function]}
     getItemCount={[Function]}
-    handlerTag={1}
-    handlerType="NativeViewGestureHandler"
+    justifyContent="space-between"
     keyExtractor={[Function]}
     onContentSizeChange={[Function]}
-    onGestureHandlerEvent={[Function]}
-    onGestureHandlerStateChange={[Function]}
     onLayout={[Function]}
     onMomentumScrollBegin={[Function]}
     onMomentumScrollEnd={[Function]}
@@ -26,20 +30,17 @@ exports[`Component snapshot 1`] = `
     onScrollEndDrag={[Function]}
     removeClippedSubviews={false}
     renderItem={[Function]}
-    renderScrollComponent={[Function]}
     scrollEventThrottle={50}
+    showsHorizontalScrollIndicator={false}
+    showsVerticalScrollIndicator={false}
     stickyHeaderIndices={Array []}
-    viewabilityConfigCallbackPairs={Array []}
-    waitFor={
-      Array [
-        Object {
-          "current": null,
-        },
-        Object {
-          "current": null,
-        },
-      ]
+    style={
+      Object {
+        "marginTop": 15,
+      }
     }
+    viewabilityConfigCallbackPairs={Array []}
+    width={326}
   >
     <View />
   </RCTScrollView>

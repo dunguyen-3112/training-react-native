@@ -1,5 +1,5 @@
 import { StyleSheet, TextInput, View } from 'react-native';
-import React, { useMemo, useCallback, memo } from 'react';
+import React, { useMemo, useCallback, memo, useRef, useEffect } from 'react';
 import Text from '../Text';
 import { Font, COLOR } from '@constants';
 import { getColor } from '@utils';
@@ -8,6 +8,7 @@ interface InputProps {
   field: string;
   value: string;
   label?: string;
+  ref?: TextInput;
   labelFont?: Font;
   labelColor?: COLOR;
   inputFont?: Font;
@@ -22,6 +23,7 @@ interface InputProps {
 }
 const Input = ({
   field,
+  ref,
   value,
   label,
   labelFont,
@@ -34,6 +36,7 @@ const Input = ({
   onBlur,
   onFocus,
 }: InputProps) => {
+  const inputRef = useRef<TextInput>(ref || null);
   const size = inputFont?.fontSize;
 
   const _size = useMemo(() => {
@@ -73,6 +76,7 @@ const Input = ({
         placeholder={placeholder}
         placeholderTextColor={plhColor}
         onBlur={onBlur}
+        ref={inputRef}
         onFocus={onFocus}
         onChangeText={handleChangeInput}
         style={[

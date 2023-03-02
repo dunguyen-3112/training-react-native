@@ -8,6 +8,7 @@ export type TabParamsList = {
   Home: undefined;
   Search: undefined;
 };
+
 const TabNavigator = () => {
   const Tab = createBottomTabNavigator<TabParamsList>();
 

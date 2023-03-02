@@ -35,7 +35,11 @@ exports[`Component snapshot 1`] = `
     />
   </View>
   <Image
-    source={1}
+    source={
+      Object {
+        "testUri": "../../../assets/icons/iconsearch.png",
+      }
+    }
     style={
       Object {
         "left": 21,

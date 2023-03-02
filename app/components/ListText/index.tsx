@@ -1,6 +1,5 @@
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, FlatList } from 'react-native';
 import React, { memo } from 'react';
-import { FlatList } from 'react-native-gesture-handler';
 import { TIngredient } from '@types';
 import Item from './Item';
 

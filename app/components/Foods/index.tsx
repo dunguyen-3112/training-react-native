@@ -1,42 +1,20 @@
 import { FlatList, StyleSheet, View } from 'react-native';
-import React, { memo, useCallback } from 'react';
+import React, { memo } from 'react';
 
 import { IFood } from '@types';
 import { Text } from '@components/common';
 import Food from './Food';
 import FoodAvatar from './FoodAvatar';
-import { MainScreenNavigationProps } from '@navigation';
-import { useNavigation } from '@react-navigation/native';
 
 const Foods = ({
   horizontal,
   foods,
-  onChange,
+  onPressItem,
 }: {
   horizontal?: boolean;
   foods: IFood[] | null;
-  onChange?: (foods: IFood[]) => void;
+  onPressItem?: (id: number) => void;
 }) => {
-  const navigation = useNavigation<MainScreenNavigationProps>();
-
-  const handleChangeItem = useCallback(
-    (food: IFood) => {
-      const newFoods = foods?.filter((_food) => _food.id !== food.id);
-      if (newFoods) {
-        newFoods.push(food);
-        onChange && onChange(newFoods);
-      }
-    },
-    [foods, onChange]
-  );
-
-  const handleMoveDetailScreen = useCallback(
-    (id: number) => {
-      navigation.navigate('Details', { id, onChange: handleChangeItem });
-    },
-    [navigation, handleChangeItem]
-  );
-
   return (
     <View
       style={[
@@ -67,9 +45,7 @@ const Foods = ({
         ItemSeparatorComponent={() => (
           <View style={{ marginLeft: 18, height: 18 }} />
         )}
-        renderItem={({ item }) => (
-          <Food data={item} onPress={handleMoveDetailScreen} />
-        )}
+        renderItem={({ item }) => <Food data={item} onPress={onPressItem} />}
       />
     </View>
   );

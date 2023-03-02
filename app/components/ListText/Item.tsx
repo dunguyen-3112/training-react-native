@@ -1,15 +1,15 @@
 import { StyleSheet, View } from 'react-native';
 import React, { memo } from 'react';
 import { TIngredient } from '@types';
-import { Text } from '@components';
+import { Text } from '../common';
 
 const Item = ({ name, value }: TIngredient) => {
   return (
     <View style={styles.container}>
-      <Text font={{ fontWeight: '600', fontSize: 15 }} color="#7E7E7E">
+      <Text font={{ fontWeight: '600', fontSize: 15 }} color="GRAY">
         {name}
       </Text>
-      <Text font={{ fontWeight: '600', fontSize: 15 }} color="#7E7E7E">
+      <Text font={{ fontWeight: '600', fontSize: 15 }} color="GRAY">
         {`${value} cal`}
       </Text>
     </View>

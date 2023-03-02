@@ -1,6 +1,6 @@
 export type IInfo = {
   id: number;
-  name: string;
+  name?: string;
 };
 
 export interface IFetchState<T> {
