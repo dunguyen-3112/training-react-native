@@ -1,39 +1,48 @@
 import { StyleSheet, View } from 'react-native';
-import React, { useCallback, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Empty, Foods, Header, Loading, Search, Tags } from '@components';
-import { useFetch } from '@hooks';
-import { IFood } from '@types';
+import { useFoods } from '@hooks';
+import { useNavigation } from '@react-navigation/native';
+import { RootScreenNavigationProps } from '@navigation';
 
 const SearchScreen = () => {
+  const { navigate } = useNavigation<RootScreenNavigationProps<'Search'>>();
   const [text, setText] = useState('');
-  const { isLoading, data, error } = useFetch<IFood[]>({
-    url: `foods?name_like=${text}`,
-  });
+  const { loading, foods, setQuery, fetch } = useFoods();
 
-  const foods = useMemo(() => {
-    if (text === '') return [];
-    return data;
-  }, [text, data]);
+  useEffect(() => {
+    setQuery({ name: text });
+  }, [setQuery, text]);
 
   const handleChangeTextSearch = useCallback((text: string) => {
     setText(text);
   }, []);
 
-  const handleSelectTag = useCallback((id: number) => {
-    console.log(id);
-  }, []);
+  const handleSelectTag = useCallback(
+    (id: number) => {
+      setQuery({ category: { id: id } });
+    },
+    [setQuery]
+  );
+
+  const handlePressItem = useCallback(
+    (id: number) => {
+      navigate('Details', { id, onChange: () => fetch() });
+    },
+    [fetch, navigate]
+  );
 
   return (
     <View style={styles.container}>
       <Header />
       <Search value={text} onChangeText={handleChangeTextSearch} />
       <Tags marginTop={17} onSelect={handleSelectTag} />
-      {isLoading ? (
+      {loading ? (
         <Loading marginTop={120} />
-      ) : foods?.length === 0 ? (
+      ) : !foods ? (
         <Empty />
       ) : (
-        <Foods foods={foods} />
+        <Foods foods={foods} onPressItem={handlePressItem} />
       )}
     </View>
   );

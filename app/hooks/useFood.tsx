@@ -7,27 +7,16 @@ interface Options {
   category?: ICategory;
 }
 
-const useFoods = (options?: Options) => {
+const useFoods = () => {
   const [reload, setReload] = useState(false);
   const [foods, setFoods] = useState<IFood[]>();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
-  const url = useMemo(() => {
-    if (options) {
-      const { name, category } = options;
-      return `foods?${
-        name
-          ? `name_like=${name}` + `${category ? `&category=${category}` : ''}`
-          : `${category ? `&category=${category}` : 'foods'}`
-      }`;
-    }
-    return `foods`;
-  }, [options]);
+  const [query, setQuery] = useState('foods');
 
   useEffect(() => {
     setLoading(true);
-    fetchData<IFood[]>({ url })
+    fetchData<IFood[]>({ url: query })
       .then((data) => {
         setFoods(data);
         setLoading(false);
@@ -36,11 +25,20 @@ const useFoods = (options?: Options) => {
         setError(error);
         setLoading(false);
       });
-  }, [url, reload]);
+  }, [query, reload]);
 
   const fetch = useCallback(() => setReload((prev) => !prev), []);
 
-  return { foods, loading, error, fetch };
+  const search = useCallback((options: Options) => {
+    const { category, name } = options;
+    let query = 'foods';
+    name && (query += `?name_like=${name}`);
+    category &&
+      (query += `${query.includes('?') ? '&' : '?'}category=${category.id}`);
+    setQuery(query);
+  }, []);
+
+  return { foods, loading, error, setQuery: search, fetch, query };
 };
 
 const useFood = (id: number) => {
@@ -72,17 +70,17 @@ const useFood = (id: number) => {
 const useFoodFavorite = () => {
   const [reload, setReload] = useState(false);
   const [data, setData] = useState<IFood[]>();
-  const [dataF, setDataF] = useState<IFood[]>();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [query, setQuery] = useState('foods?favorite=1');
 
   async function addFavorite(id: number) {
-    const food = data?.find((item) => item.id === id);
+    const food = await fetchData<IFood>({ url: `${query}&id=${id}` });
 
     const status = await fetchData<IFood>({
       url: `foods/${id}`,
       method: 'PUT',
-      body: { id, ...food, favorite: 1 },
+      body: { ...food, favorite: 1 },
     })
       .then(() => true)
       .catch(() => false);
@@ -108,25 +106,35 @@ const useFoodFavorite = () => {
     return status;
   }
 
+  const handleSearch = useCallback((text: string) => {
+    setQuery(`foods?favorite=1&name_like=${text}`);
+  }, []);
+
   useEffect(() => {
     setLoading(true);
     fetchData<IFood[]>({
-      url: `foods`,
+      url: query,
       method: 'GET',
     })
       .then((data) => {
         setData(data);
-        const fData = data.filter((food) => food.favorite === 1);
-        setDataF(fData);
         setLoading(false);
       })
       .catch((error) => {
         setError(error);
         setLoading(false);
       });
-  }, [reload]);
+  }, [reload, query]);
 
-  return { data: dataF, loading, error, addFavorite, removeFavorite, fetch };
+  return {
+    data,
+    loading,
+    error,
+    addFavorite,
+    removeFavorite,
+    fetch,
+    search: handleSearch,
+  };
 };
 
 export { useFoods, useFood, useFoodFavorite };

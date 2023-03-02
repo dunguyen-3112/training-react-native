@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component snapshot 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "flex-start",
+        "backgroundColor": "#FFFFFF",
+        "flex": 1,
+      },
+      Object {
+        "alignItems": "center",
+      },
+    ]
+  }
+>
+  <RCTScrollView
+    ItemSeparatorComponent={[Function]}
+    getItem={[Function]}
+    getItemCount={[Function]}
+    justifyContent="space-between"
+    keyExtractor={[Function]}
+    onContentSizeChange={[Function]}
+    onLayout={[Function]}
+    onMomentumScrollBegin={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEventThrottle={50}
+    showsHorizontalScrollIndicator={false}
+    showsVerticalScrollIndicator={false}
+    stickyHeaderIndices={Array []}
+    style={
+      Object {
+        "marginTop": 15,
+      }
+    }
+    viewabilityConfigCallbackPairs={Array []}
+    width={326}
+  >
+    <View />
+  </RCTScrollView>
+</View>
+`;

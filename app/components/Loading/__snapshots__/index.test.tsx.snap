@@ -3,13 +3,13 @@
 exports[`Component snapshot 1`] = `
 <View
   style={
-    [
-      {
+    Array [
+      Object {
         "alignItems": "center",
         "justifyContent": "flex-start",
         "width": "100%",
       },
-      {
+      Object {
         "marginTop": undefined,
       },
     ]
@@ -18,9 +18,9 @@ exports[`Component snapshot 1`] = `
   <View
     collapsable={false}
     style={
-      {
-        "transform": [
-          {
+      Object {
+        "transform": Array [
+          Object {
             "rotate": "0deg",
           },
         ],
@@ -29,7 +29,7 @@ exports[`Component snapshot 1`] = `
   >
     <Image
       source={
-        {
+        Object {
           "testUri": "../../../assets/images/loading.png",
         }
       }

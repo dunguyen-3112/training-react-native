@@ -1,16 +1,13 @@
 import { StyleSheet, View } from 'react-native';
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback } from 'react';
 import { Foods, Header, Search, Cards, Tags } from '@components';
 import { RootScreenNavigationProps } from '@navigation';
 import { useNavigation } from '@react-navigation/native';
 import { useFoods } from '@hooks';
-import useFetch from '@hooks/useFetch';
 
 const HomeScreen = () => {
   const { navigate } = useNavigation<RootScreenNavigationProps<'Home'>>();
-  const { loading, foods, fetch } = useFoods();
-
-  //   const [data, setData] = useState(foods);
+  const { foods, fetch, setQuery } = useFoods();
 
   const handlePressItem = useCallback(
     (id: number) => {
@@ -19,16 +16,23 @@ const HomeScreen = () => {
     [fetch, navigate]
   );
 
-  const handleChangeTagName = useCallback((id: number) => {
-    // if (id) setQuery(`foods?category=${id}`);
-    // else setQuery('foods');
-  }, []);
+  const handleChangeTagName = useCallback(
+    (id: number) => {
+      if (id) setQuery({ category: { id: id } });
+    },
+    [setQuery]
+  );
+
+  const handleFocusSearch = useCallback(() => {
+    navigate('Search');
+    return false;
+  }, [navigate]);
 
   return (
     <View style={styles.container}>
       <>
         <Header />
-        <Search />
+        <Search onFocus={handleFocusSearch} isFocus={false} />
         <Tags marginTop={17} onSelect={handleChangeTagName} />
         <Cards marginTop={17} />
         {foods && (

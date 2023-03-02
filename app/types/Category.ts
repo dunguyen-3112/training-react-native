@@ -10,7 +10,7 @@ type TCategoryName =
 
 interface ICategory {
   id: number;
-  name: TCategoryName;
+  name?: TCategoryName;
 }
 
 export { TCategoryName, ICategory };
