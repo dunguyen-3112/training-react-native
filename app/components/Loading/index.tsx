@@ -1,6 +1,6 @@
 import { StyleSheet, View, Animated, Easing } from 'react-native';
 import React, { memo } from 'react';
-import { Image } from 'react-native';
+import { LoadingImage } from '@constants/Image';
 
 const Loading = ({ marginTop }: { marginTop?: number }) => {
   const rotation = new Animated.Value(0);
@@ -22,7 +22,7 @@ const Loading = ({ marginTop }: { marginTop?: number }) => {
   return (
     <View style={[styles.container, { marginTop }]}>
       <Animated.View style={{ transform: [{ rotate: spin }] }}>
-        <Image source={require('@assets/images/loading.png')} />
+        <LoadingImage />
       </Animated.View>
     </View>
   );

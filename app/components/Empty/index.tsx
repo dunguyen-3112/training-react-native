@@ -1,20 +1,22 @@
-import { StyleSheet, View, Image } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import React, { memo } from 'react';
 import { Text } from '@components/common';
+import { EmptyImage } from '@constants/Image';
 
 const Empty = () => {
   return (
     <View style={styles.container}>
-      <Image source={require('@assets/images/empty.png')} />
+      <EmptyImage />
       <Text
-        font={{ fontSize: 22, fontWeight: '500' }}
+        fontSize="xxl-2"
+        fontWeight="500"
         customStyle={{ marginTop: 24, color: '#696969' }}
       >
         No Results Found
       </Text>
       <Text
-        color="LIGHT_GRAY"
-        font={{ fontSize: 13 }}
+        color="gray"
+        fontSize="ms-3"
         customStyle={{ marginTop: 8, textAlign: 'center' }}
       >
         {`Try search for a different keywork or\n tweek your search a little`}

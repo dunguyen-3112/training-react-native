@@ -1,20 +1,17 @@
-import { Image, StyleSheet, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import React, { memo } from 'react';
 import { Text } from '@components/common';
 import { Button } from '@components/common';
+import { QuestionIcon } from '@constants/Image';
 
 const Header = () => {
   return (
     <View style={styles.container}>
-      <Text font={{ fontSize: 23, fontWeight: '800', lineHeight: 31 }}>
+      <Text fontSize="xxl-3" fontWeight="800">
         {`Want to eat\nhealthy Food?`}
       </Text>
-      <Button
-        customStyle={{ width: 35, height: 35 }}
-        borderRadius={35 / 2}
-        backgroundColor="GRAY"
-      >
-        <Image source={require('@assets/icons/question.png')} />
+      <Button customStyle={styles.buttonHelp}>
+        <QuestionIcon />
       </Button>
     </View>
   );
@@ -29,5 +26,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'row',
     paddingHorizontal: 20,
+  },
+  buttonHelp: {
+    width: 35,
+    height: 35,
+    borderRadius: 35 / 2,
   },
 });

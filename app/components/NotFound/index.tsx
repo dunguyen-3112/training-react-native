@@ -1,21 +1,23 @@
 import { StyleSheet, View } from 'react-native';
 import React, { memo } from 'react';
-import { Image } from 'react-native';
 import { Text } from '@components/common';
+import { NotFoundImage } from '@constants/Image';
 
-const NotFound = ({ marginTop = 0 }: { marginTop?: number }) => {
+const NotFound = ({ marginTop }: { marginTop?: number }) => {
   return (
     <View style={[styles.container, { marginTop }]}>
-      <Image source={require('@assets/images/notfound.png')} />
+      <NotFoundImage />
       <Text
-        customStyle={{ marginTop: 29, color: '#696969' }}
-        font={{ fontSize: 22, fontWeight: '500' }}
+        customStyle={{ marginTop: 24, color: '#696969' }}
+        fontSize="xxl-2"
+        fontWeight="500"
       >
         No Foods Found
       </Text>
       <Text
-        font={{ fontSize: 13 }}
-        customStyle={{ marginTop: 8, textAlign: 'center', color: '#7e7e7e' }}
+        fontSize="ms-3"
+        color="gray"
+        customStyle={{ marginTop: 8, textAlign: 'center' }}
       >
         {`You don't save any food. Go ahead, search\nand save your favorite food`}
       </Text>

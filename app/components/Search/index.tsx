@@ -1,8 +1,9 @@
-import { StyleSheet, View, Image } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import React, { useCallback, memo } from 'react';
 
 import { COLORS } from '@constants';
 import { Input } from '@components/common';
+import { SearchIcon } from '@constants/Image';
 
 interface SearchProps {
   value?: string;
@@ -25,15 +26,12 @@ const Search = ({ value = '', onChangeText, onFocus }: SearchProps) => {
         field="search"
         onChangeText={handleChangeSearched}
         onFocus={onFocus}
-        placeholderColor="SECONDARY"
-        inputColor="BLACK"
         value={value}
         placeholder="Search for healthy food"
       />
-      <Image
-        source={require('@assets/icons/iconsearch.png')}
-        style={styles.iconSearch}
-      />
+      <View style={styles.iconSearch}>
+        <SearchIcon />
+      </View>
     </View>
   );
 };
