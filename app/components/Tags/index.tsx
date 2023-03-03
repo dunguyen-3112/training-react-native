@@ -1,7 +1,8 @@
 import { StyleSheet, FlatList, View } from 'react-native';
 import React, { memo, useCallback, useState } from 'react';
-import Tag, { TagProps } from './Tag';
-import { Categories } from '@constants';
+import { Categories, COLORS } from '@constants';
+import { ICategory } from '@types';
+import { Button } from '@components/common';
 
 const Tags = ({
   marginTop,
@@ -20,17 +21,41 @@ const Tags = ({
     [onSelect]
   );
 
+  const handleItemSeparatorComponent = useCallback(
+    () => <View style={styles.item} />,
+    []
+  );
+
+  //   <Tag {...item} onPress={handlePressTag} isActive={tag === item.id} />
+  const handleKeyExtractor = useCallback((item: ICategory) => item.id + '', []);
+  const handleRenderItem = useCallback(
+    ({ item }: { item: ICategory }) => {
+      const { id, name } = item;
+
+      return (
+        <Button
+          label={name}
+          type={id === tag ? 'active' : 'default'}
+          customStyle={{
+            ...styles.tag,
+            ...(id === tag && { ...styles.active }),
+          }}
+          onPress={() => handlePressTag(id)}
+        />
+      );
+    },
+    [handlePressTag, tag]
+  );
+
   return (
     <View style={[styles.container, { marginTop: marginTop }]}>
       <FlatList
         data={Categories}
         showsHorizontalScrollIndicator={false}
         horizontal
-        ItemSeparatorComponent={() => <View style={styles.item} />}
-        keyExtractor={(item, index) => index + ''}
-        renderItem={({ item }: { item: TagProps }) => (
-          <Tag {...item} onPress={handlePressTag} isActive={tag === item.id} />
-        )}
+        ItemSeparatorComponent={handleItemSeparatorComponent}
+        keyExtractor={handleKeyExtractor}
+        renderItem={handleRenderItem}
       />
     </View>
   );
@@ -44,5 +69,15 @@ const styles = StyleSheet.create({
   },
   item: {
     marginLeft: 7,
+  },
+  tag: {
+    borderRadius: 8,
+    paddingVertical: 4,
+    paddingHorizontal: 10,
+  },
+  active: {
+    backgroundColor: 'rgba(28, 195, 121, 0.1)',
+    borderWidth: 1,
+    borderColor: COLORS.GREEN,
   },
 });

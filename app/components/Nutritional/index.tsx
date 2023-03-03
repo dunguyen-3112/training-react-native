@@ -21,8 +21,8 @@ const Nutritional = ({
 
   const Item = ({ title, value }: { title: string; value: number }) => (
     <View>
-      <Text font={{ fontSize: 16, textTransform: 'capitalize' }}>{title}</Text>
-      <Text font={{ fontSize: 24 }} color="SECONDARY">
+      <Text fontSize="xl-6">{title}</Text>
+      <Text fontSize="xxl-4" color="SECONDARY">
         {`${value}g`}
       </Text>
     </View>

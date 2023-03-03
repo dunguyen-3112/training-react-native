@@ -5,9 +5,9 @@ import {
   Categories,
   TNutritional,
   TIngredient,
+  ICategory,
+  IArtcile,
 } from './Food';
-import { IArtcile } from './Artcile';
-import { ICategory, TCategoryName } from './Category';
 
 export {
   IFood,
@@ -17,7 +17,6 @@ export {
   IInfo,
   Categories,
   ICategory,
-  TCategoryName,
   TNutritional,
   TIngredient,
 };

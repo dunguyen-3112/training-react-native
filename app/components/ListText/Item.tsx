@@ -6,10 +6,10 @@ import { Text } from '../common';
 const Item = ({ name, value }: TIngredient) => {
   return (
     <View style={styles.container}>
-      <Text font={{ fontWeight: '600', fontSize: 15 }} color="GRAY">
+      <Text fontSize="xl-5" fontWeight="b" color="GRAY">
         {name}
       </Text>
-      <Text font={{ fontWeight: '600', fontSize: 15 }} color="GRAY">
+      <Text fontSize="xl-5" fontWeight="b" color="GRAY">
         {`${value} cal`}
       </Text>
     </View>

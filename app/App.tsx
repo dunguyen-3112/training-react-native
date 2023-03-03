@@ -5,7 +5,7 @@ import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import { NavigationContainer } from '@react-navigation/native';
 
-export default function App() {
+const App = () => {
   const [fontsLoaded] = useFonts({
     Manrope: require('@assets/fonts/Manrope.ttf'),
   });
@@ -26,7 +26,7 @@ export default function App() {
       </NavigationContainer>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -34,4 +34,5 @@ const styles = StyleSheet.create({
   },
 });
 
+export default App;
 // export { default } from './storybook';

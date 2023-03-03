@@ -4,6 +4,7 @@ export const COLORS = {
   GRAY: '#5C5C5C',
   PINK: '#91C788',
   LIGHT_GRAY: '#ECECEC',
+  LIGHT_1_GRAY: '#7E7E7E',
   RED: '#EA1502',
   PURPLE: '#9059A7',
   BLACK: '#000000',
@@ -13,7 +14,7 @@ export const COLORS = {
   GREEN: '#27AE60',
   ORANGE: '#D89E4A',
   YELLOW: '#F2C94C',
-  LIGHT_GREEN: '#6FCF97',
+  LIGHT_GREEN: 'rgba(28, 195, 121, 0.1)',
   DARK_GREEN: '#1CC379',
   SECONDARY: '#FF8473',
 };

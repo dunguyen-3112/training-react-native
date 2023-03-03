@@ -1,51 +1,39 @@
 import React, { memo } from 'react';
-import { StyleSheet, View, ImageBackground, Image } from 'react-native';
+import { StyleSheet, View, ImageBackground } from 'react-native';
 import { Button, Text } from '../common';
-import { COLOR, COLORS } from '@constants';
+import { COLORS } from '@constants';
+import { ArrowICon } from '@constants/Image';
 interface SlideItemProps {
   title: string;
-  color: COLOR;
   image: string;
+  type: CARD_TYPES;
 }
 
+type CARD_TYPES = 'green' | 'secondary';
+
 const Card = (props: SlideItemProps | null) => {
-  const { image = '', color = 'GRAY', title = '' } = props || {};
+  const { image = '', type = 'green', title = '' } = props || {};
+
   return (
-    <ImageBackground
-      source={{ uri: image }}
-      style={[
-        styles.container,
-        { ...(image === '' && { backgroundColor: COLORS.LIGHT_GRAY }) },
-      ]}
-    >
+    <ImageBackground source={{ uri: image }} style={[styles.container]}>
       <View style={styles.info}>
-        <Text
-          font={{ fontSize: 10, fontWeight: '600', textTransform: 'uppercase' }}
-          color={color}
-        >
+        <Text fontSize="ms-0" fontWeight="600" color={type}>
           Article
         </Text>
-        <Text
-          font={{ fontSize: 17, fontWeight: '600', lineHeight: 24 }}
-          color="RED"
-          customStyle={{ marginTop: 4 }}
-        >
+        <Text fontSize="xl-7" fontWeight="600" customStyle={{ marginTop: 4 }}>
           {title}
         </Text>
         <Button
-          {...(title === '' ? { borderRadius: 0 } : { borderRadius: 8 })}
-          backgroundColor={title !== '' ? 'GREEN_DARK' : 'WHITE'}
           paddingHorizontal={19}
           paddingVertical={6}
           customStyle={{ marginTop: 8 }}
+          borderRadius={8}
+          type={type}
         >
-          <Text font={{ fontSize: 12, fontWeight: '600' }} color="WHITE">
+          <Text fontSize="ms" fontWeight="600" color="white">
             Read now
           </Text>
-          <Image
-            source={require('@assets/icons/arrow.png')}
-            style={styles.buttonIcon}
-          />
+          <ArrowICon />
         </Button>
       </View>
     </ImageBackground>
@@ -64,8 +52,6 @@ const styles = StyleSheet.create({
   },
   info: {
     maxWidth: '60%',
-  },
-  buttonIcon: {
-    marginLeft: 7,
+    color: COLORS.LIGHT_BLACK,
   },
 });

@@ -1,41 +1,44 @@
-import { Animated, Easing, Image, StyleSheet, View } from 'react-native';
+import { Animated, Easing, StyleSheet, View } from 'react-native';
 import React, { useEffect, useRef } from 'react';
 import { Text } from '@components';
 import { RootScreenNavigationProps } from '@navigation';
 import { useNavigation } from '@react-navigation/native';
+import { LoadingImage, SplashImage } from '@constants/Image';
 const SplashScreen = () => {
   const navigation = useNavigation<RootScreenNavigationProps<'Splash'>>();
   const animation = useRef(new Animated.Value(1)).current;
 
   useEffect(() => {
     Animated.timing(animation, {
-      toValue: 0,
+      toValue: 1,
       duration: 3000,
       useNativeDriver: false, // not supported in expo
       easing: Easing.inOut(Easing.ease),
     }).start(() => {
-      navigation.navigate('Root');
+      //   navigation.navigate('Root');
     });
   }, [navigation, animation]);
   return (
     <Animated.View style={[styles.container, { opacity: animation }]}>
       <View style={styles.background}>
-        <Image
-          source={require('@assets/images/pattern.png')}
-          style={styles.topImage}
-        />
-        <Image source={require('@assets/images/loading.png')} />
+        <SplashImage />
+        <LoadingImage />
         <Text
-          font={{ fontSize: 32, fontWeight: '800', textTransform: 'uppercase' }}
-          color="PRIMARY"
-          customStyle={{ marginTop: 20 }}
+          fontSize="xxl"
+          fontWeight="800"
+          color="primary"
+          customStyle={{
+            marginTop: 20,
+            textTransform: 'uppercase',
+            textAlign: 'center',
+          }}
         >
           Laomica
         </Text>
         <Text
-          font={{ fontSize: 16, fontWeight: '500' }}
-          customStyle={{ marginTop: 12 }}
-          center
+          fontWeight="500"
+          fontSize="xl-6"
+          customStyle={{ marginTop: 12, textAlign: 'center' }}
         >
           {`Stay Heatlthy and beatifull\nwith us!`}
         </Text>
@@ -56,9 +59,5 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'flex-start',
     alignItems: 'center',
-  },
-  topImage: {
-    width: '100%',
-    resizeMode: 'cover',
   },
 });

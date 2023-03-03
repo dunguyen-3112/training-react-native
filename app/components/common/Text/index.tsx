@@ -1,75 +1,57 @@
 import { Text, TextStyle, ViewStyle } from 'react-native';
-import React, { memo, ReactNode, useCallback, useMemo } from 'react';
-import { COLOR, COLORS, Font } from '@constants';
+import React, { memo, ReactNode } from 'react';
+import {
+  COLORS,
+  FONT_SIZES,
+  FONT_SIZE_TYPE,
+  FONT_WEIGHT_TYPE,
+} from '@constants';
 
-export type TTextColor = COLOR;
+export type COLOR_TYPES =
+  | 'primary'
+  | 'regular'
+  | 'white'
+  | 'secondary'
+  | 'black'
+  | 'gray'
+  | 'green';
+
+export const TEXT_COLOR = {
+  primary: COLORS.PRIMARY,
+  regular: COLORS.GRAY,
+  white: COLORS.WHITE,
+  secondary: COLORS.ORANGE,
+  black: COLORS.BLACK,
+  gray: COLORS.LIGHT_1_GRAY,
+  green: COLORS.DARK_GREEN,
+};
 
 interface TextProps {
-  font?: Font;
-  color?: TTextColor;
+  color?: COLOR_TYPES;
   onPress?: () => void;
-  center?: boolean;
+  textAlign?: boolean;
+  fontSize?: FONT_SIZE_TYPE;
+  fontWeight?: FONT_WEIGHT_TYPE;
   customStyle?: ViewStyle | TextStyle;
   children?: ReactNode | string;
 }
 
 const CustomText = ({
-  font,
-  color = 'DEFAULT',
-  center,
+  fontSize,
+  fontWeight,
+  color = 'regular',
   onPress,
   children,
   customStyle,
 }: TextProps) => {
-  let { fontSize = 14 } = font || {};
-
-  const { fontWeight = '400', textTransform = 'none' } = font || {};
-
-  fontSize = useMemo(() => {
-    if (typeof fontSize === 'number') return fontSize;
-    switch (fontSize) {
-      case 'large':
-        return 24;
-      case 'medium':
-        return 16;
-      case 'small':
-        return 10;
-    }
-  }, [fontSize]);
-
-  const codeColor = useMemo(() => {
-    switch (color) {
-      case 'WHITE':
-        return COLORS.WHITE;
-      case 'PRIMARY':
-        return COLORS.PRIMARY;
-      case 'SECONDARY':
-        return COLORS.SECONDARY;
-      case 'BLACK':
-        return COLORS.BLACK;
-      case 'LIGHT_BLACK':
-        return COLORS.LIGHT_BLACK;
-      default:
-        return COLORS.GRAY;
-    }
-  }, [color]);
-
-  const handlePress = useCallback(() => {
-    if (onPress) onPress();
-  }, [onPress]);
+  const _fontSize = fontSize ? FONT_SIZES[fontSize] : 14;
+  const _color = TEXT_COLOR[color];
 
   return (
     <Text
-      onPress={handlePress}
+      onPress={onPress}
       style={[
-        {
-          fontWeight,
-          fontSize,
-          textTransform,
-          color: codeColor,
-          borderColor: codeColor,
-        },
-        center && { textAlign: 'center' },
+        { fontSize: _fontSize, fontWeight, color: _color },
         { ...customStyle },
       ]}
     >

@@ -69,20 +69,22 @@ const Details = () => {
       <Back left={20} />
 
       <View style={styles.avatar}>
-        <Food data={food} size="large" disabled />
+        <Food data={food} type="large" disabled />
       </View>
 
       {food.nutritional && <Nutritional nutritional={food.nutritional} />}
 
       <View style={styles.details}>
-        <Text font={{ fontSize: 20, fontWeight: '600' }}>Details</Text>
+        <Text fontSize="xxl-0" fontWeight="600">
+          Details
+        </Text>
 
-        <Text font={{ fontSize: 15 }}>
+        <Text fontSize="xl-5">
           {isMore ? food.desc : food.desc?.substring(0, 150) + '...'}
           <Text
             onPress={handleReadMore}
-            color="PRIMARY"
-            font={{ fontSize: 15, lineHeight: 22 }}
+            fontSize="xl-5"
+            color="primary"
             customStyle={{ marginTop: 4 }}
           >
             {isMore ? `\bRead less.` : `\bRead more.`}
@@ -93,10 +95,13 @@ const Details = () => {
 
         <View style={styles.ingrediant}>
           <View style={styles.ingrediantHeader}>
-            <Text font={{ fontSize: 20, fontWeight: '600' }}>Ingrediants</Text>
+            <Text fontSize="xxl-0" fontWeight="600">
+              Ingrediants
+            </Text>
             <Text
-              font={{ fontSize: 11, fontWeight: '500' }}
-              color="PRIMARY"
+              fontSize="ms-1"
+              fontWeight="500"
+              color="primary"
               onPress={handleSeeAll}
             >
               {isAll ? 'See less' : 'See All'}
@@ -110,17 +115,15 @@ const Details = () => {
 
         <Button
           width={'100%'}
-          labelColor="WHITE"
-          labelFont={{ fontSize: 20, fontWeight: '600' }}
           borderRadius={9}
           onPress={handlePress}
           customStyle={{ paddingVertical: 9, width: '100%', marginTop: 27 }}
           {...(food.favorite
             ? {
-                backgroundColor: 'SECONDARY',
+                type: 'secondary',
                 label: 'UnFavorite',
               }
-            : { backgroundColor: 'PRIMARY', label: 'Add to Favorite' })}
+            : { type: 'primary', label: 'Add to Favorite' })}
         />
       </View>
     </View>

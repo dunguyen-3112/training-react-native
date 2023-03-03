@@ -13,7 +13,8 @@
       "@types/*": ["./types/*"],
       "@hooks/*": ["./hooks/*"],
       "@navigation/*": ["./navigation/*"],
-      "@__mock__/*": ["./__mock__/*"]
+      "@__mock__/*": ["./__mock__/*"],
+      "@helpers/*": ["./helpers/*"]
     }
   }
 }

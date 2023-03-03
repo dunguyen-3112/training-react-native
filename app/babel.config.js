@@ -17,6 +17,7 @@ module.exports = function (api) {
             '@hooks': './hooks',
             '@navigation': './navigation',
             '@__mock__': './__mock__',
+            '@helpers': './helpers',
           },
         },
       ],

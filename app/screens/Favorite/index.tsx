@@ -33,7 +33,7 @@ const FavoriteScreen = () => {
   return (
     <View style={styles.container}>
       <Search value={text} onChangeText={handleChangeTextSearch} />
-      {data === undefined ? (
+      {data === undefined || data.length === 0 ? (
         <View style={styles.container}>
           <NotFound marginTop={200} />
         </View>

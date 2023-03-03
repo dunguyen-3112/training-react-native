@@ -1,7 +1,7 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { FavoriteScreen, HomeScreen, SearchScreen } from '@screens';
-import { Image } from 'react-native';
+import { FavoriteMenu, HomeMenu, SearchMenu } from '@constants/Image';
 
 export type TabParamsList = {
   Favorite: undefined;
@@ -18,26 +18,15 @@ const TabNavigator = () => {
         headerShown: false,
         tabBarLabel: '',
         tabBarStyle: { height: 80 },
-        tabBarIcon: ({ focused, color, size }) => {
-          let icon;
+        tabBarIcon: ({ focused }) => {
           switch (route.name) {
             case 'Favorite':
-              icon = focused
-                ? require('@assets/icons/favoritefill.png')
-                : require('@assets/icons/favorite.png');
-              break;
+              return <FavoriteMenu isFill={focused} />;
             case 'Home':
-              icon = focused
-                ? require('@assets/icons/homefill.png')
-                : require('@assets/icons/home.png');
-              break;
+              return <HomeMenu isFill={focused} />;
             case 'Search':
-              icon = focused
-                ? require('@assets/icons/searchfill.png')
-                : require('@assets/icons/search.png');
-              break;
+              return <SearchMenu isFill={focused} />;
           }
-          return <Image source={icon} />;
         },
         unmountOnBlur: true,
       })}

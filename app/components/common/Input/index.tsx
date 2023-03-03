@@ -1,22 +1,25 @@
 import { StyleSheet, TextInput, View } from 'react-native';
-import React, { useMemo, useCallback, memo, useRef, useEffect } from 'react';
+import React, { useCallback, memo, useRef } from 'react';
 import Text from '../Text';
-import { Font, COLOR } from '@constants';
-import { getColor } from '@utils';
+import { COLORS } from '@constants';
+
+const INPUT_STYLES = {
+  default: {
+    color: COLORS.BLACK,
+    placeholderTextColor: COLORS.SECONDARY,
+    backgroundColor: COLORS.SECONDARY,
+  },
+};
+
+type INPUT_TYPES = 'default';
 
 interface InputProps {
   field: string;
   value: string;
   label?: string;
   ref?: TextInput;
-  labelFont?: Font;
-  labelColor?: COLOR;
-  inputFont?: Font;
-  inputColor?: COLOR;
   placeholder?: string;
-  placeholderColor?: COLOR;
-  error?: string;
-  errorColor?: string;
+  type?: INPUT_TYPES;
   onChangeText: (value: string, field?: string) => void;
   onBlur?: () => void;
   onFocus?: () => void;
@@ -26,32 +29,13 @@ const Input = ({
   ref,
   value,
   label,
-  labelFont,
-  labelColor,
-  inputFont,
-  inputColor = 'BLACK',
   placeholder,
-  placeholderColor = 'BLACK',
+  type = 'default',
   onChangeText,
   onBlur,
   onFocus,
 }: InputProps) => {
   const inputRef = useRef<TextInput>(ref || null);
-  const size = inputFont?.fontSize;
-
-  const _size = useMemo(() => {
-    if (typeof size === 'number') return size;
-    switch (size) {
-      case 'large':
-        return 24;
-      case 'medium':
-        return 14;
-      case 'small':
-        return 10;
-      default:
-        return 12;
-    }
-  }, [size]);
 
   const handleChangeInput = useCallback(
     (value: string) => {
@@ -60,34 +44,28 @@ const Input = ({
     [field, onChangeText]
   );
 
-  const [inColor, plhColor] = useMemo(() => {
-    return [getColor(inputColor), getColor(placeholderColor)];
-  }, [inputColor, placeholderColor]);
+  const inputType = INPUT_STYLES[type];
 
   return (
     <View>
       {label && (
-        <Text color={labelColor} font={labelFont}>
+        <Text
+          fontSize="m"
+          fontWeight="400"
+          customStyle={{ color: inputType.color }}
+        >
           {label}
         </Text>
       )}
       <TextInput
         value={value}
         placeholder={placeholder}
-        placeholderTextColor={plhColor}
         onBlur={onBlur}
         ref={inputRef}
+        placeholderTextColor={inputType.placeholderTextColor}
         onFocus={onFocus}
         onChangeText={handleChangeInput}
-        style={[
-          inputFont
-            ? {
-                fontSize: _size,
-                fontWeight: inputFont?.fontWeight,
-              }
-            : styles.input,
-          { color: inColor },
-        ]}
+        style={[styles.input, { color: inputType.color }]}
       />
     </View>
   );
@@ -99,7 +77,6 @@ const styles = StyleSheet.create({
   input: {
     fontSize: 13,
     fontWeight: '400',
-    color: '#DA6317',
     paddingVertical: 14,
     paddingHorizontal: 60,
   },

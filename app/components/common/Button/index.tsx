@@ -1,24 +1,56 @@
-import { Pressable, StyleSheet, ViewStyle } from 'react-native';
-import React, { memo, ReactNode, useCallback, useMemo } from 'react';
+import { Pressable, StyleSheet, Text, ViewStyle } from 'react-native';
+import React, { memo, ReactNode, useMemo } from 'react';
+import { COLORS, FONT_SIZES, FONT_WEIGHTS } from '@constants';
+import { getFont } from '@helpers';
 
-import { COLORS, Font } from '@constants';
-import Text, { TTextColor } from '../Text';
+const BASE_STYLE = {
+  fontSize: FONT_SIZES['ms-3'],
+  fontWeight: FONT_WEIGHTS.m,
+  color: COLORS.GRAY,
+};
+const BUTTON_TYPES = {
+  primary: {
+    backgroundColor: COLORS.PRIMARY,
+    color: COLORS.WHITE,
+    fontSize: FONT_SIZES['xxl-0'],
+    fontWeight: FONT_WEIGHTS.b,
+  },
+  green: {
+    backgroundColor: COLORS.GREEN,
+    color: COLORS.WHITE,
+    fontSize: FONT_SIZES.ms,
+    fontWeight: FONT_WEIGHTS.b,
+  },
+  default: {
+    backgroundColor: COLORS.LIGHT_GRAY,
+    ...BASE_STYLE,
+  },
+  secondary: {
+    backgroundColor: COLORS.SECONDARY,
+    color: COLORS.WHITE,
+    fontSize: FONT_SIZES['xxl-0'],
+    fontWeight: FONT_WEIGHTS.b,
+  },
+  active: {
+    backgroundColor: COLORS.LIGHT_GREEN,
+    ...BASE_STYLE,
+    color: COLORS.PRIMARY,
+  },
+};
 
-export type TBottonColor =
-  | 'PRIMARY'
-  | 'SECONDARY'
-  | 'GRAY'
-  | 'GREEN_DARK'
-  | 'WHITE';
+export type BUTTON_TYPE =
+  | 'primary'
+  | 'secondary'
+  | 'active'
+  | 'default'
+  | 'green';
 
 interface ButtonStyle {
   label?: string;
-  labelColor?: TTextColor;
-  labelFont?: Font;
   width?: number | string;
+  type?: BUTTON_TYPE;
   height?: number;
   children?: ReactNode;
-  backgroundColor?: TBottonColor;
   borderRadius?: number;
   onPress?: () => void;
   marginTop?: number;
@@ -29,43 +61,26 @@ interface ButtonStyle {
 
 const Button = ({
   label,
-  labelColor,
-  labelFont,
+  type = 'default',
   children,
-  backgroundColor = 'PRIMARY',
   borderRadius,
   paddingVertical,
   paddingHorizontal,
   customStyle,
   onPress,
 }: ButtonStyle) => {
-  const bgColor = useMemo(() => {
-    switch (backgroundColor) {
-      case 'GREEN_DARK':
-        return COLORS.DARK_GREEN;
-      case 'SECONDARY':
-        return COLORS.SECONDARY;
-      case 'GRAY':
-        return COLORS.LIGHT_GRAY;
-      case 'WHITE':
-        return COLORS.WHITE;
+  const TB = BUTTON_TYPES[type];
+  const { fontWeight } = TB;
 
-      default:
-        return COLORS.PRIMARY;
-    }
-  }, [backgroundColor]);
-
-  const handlePress = useCallback(() => {
-    onPress && onPress();
-  }, [onPress]);
+  const _fontWeight = useMemo(() => getFont(fontWeight), [fontWeight]);
 
   return (
     <Pressable
-      onPress={handlePress}
+      onPress={onPress}
       style={[
         styles.button,
         {
-          backgroundColor: bgColor,
+          ...TB,
           paddingVertical,
           paddingHorizontal,
           borderRadius,
@@ -76,9 +91,7 @@ const Button = ({
       {children ? (
         children
       ) : (
-        <Text {...(labelFont && { font: labelFont })} color={labelColor}>
-          {label}
-        </Text>
+        <Text style={{ ...TB, fontWeight: _fontWeight }}>{label}</Text>
       )}
     </Pressable>
   );

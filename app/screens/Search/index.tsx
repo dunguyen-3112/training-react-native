@@ -39,7 +39,7 @@ const SearchScreen = () => {
       <Tags marginTop={17} onSelect={handleSelectTag} />
       {loading ? (
         <Loading marginTop={120} />
-      ) : !foods ? (
+      ) : foods === undefined || foods.length === 0 ? (
         <Empty />
       ) : (
         <Foods foods={foods} onPressItem={handlePressItem} />

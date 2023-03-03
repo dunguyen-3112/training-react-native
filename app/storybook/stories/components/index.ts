@@ -1,1 +1,1 @@
-import './Slide.stories';
+import './Card.stories';

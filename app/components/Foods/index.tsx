@@ -26,8 +26,8 @@ const Foods = ({
     >
       {horizontal && (
         <Text
-          font={{ fontSize: 20, fontWeight: '700' }}
-          color="DEFAULT"
+          fontSize="xxl-0"
+          fontWeight="700"
           customStyle={{ marginTop: 22, marginLeft: 8 }}
         >
           All Food
