@@ -5,6 +5,7 @@ import { useFoods } from '@hooks';
 import { useNavigation } from '@react-navigation/native';
 import { RootScreenNavigationProps } from '@navigation';
 import { Empty, Foods, Header, Loading, Search, Tags } from '@components';
+import { CATEGORIES } from '@constants';
 
 const SearchScreen = () => {
   const { navigate } = useNavigation<RootScreenNavigationProps<'Search'>>();
@@ -39,7 +40,7 @@ const SearchScreen = () => {
 
       <Search value={text} onChangeText={handleChangeTextSearch} />
 
-      <Tags marginTop={17} onSelect={handleSelectTag} />
+      <Tags marginTop={17} onSelect={handleSelectTag} categories={CATEGORIES} />
 
       {loading ? (
         <Loading marginTop={120} />

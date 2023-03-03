@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Component snapshot 1`] = `
+exports[`Categories should render List 1`] = `
 <View
   style={
     Array [
@@ -27,7 +27,7 @@ exports[`Component snapshot 1`] = `
         },
         Object {
           "id": 3,
-          "name": "Dryfruits",
+          "name": "Dry fruits",
         },
         Object {
           "id": 4,
@@ -39,7 +39,7 @@ exports[`Component snapshot 1`] = `
         },
         Object {
           "id": 6,
-          "name": "Greenich",
+          "name": "Greenish",
         },
         Object {
           "id": 7,
@@ -81,30 +81,53 @@ exports[`Component snapshot 1`] = `
           ]
         }
       >
-        <Text
-          onPress={[Function]}
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
           style={
             Array [
               Object {
-                "borderColor": "#5C5C5C",
+                "alignItems": "center",
+                "alignSelf": "flex-start",
+                "borderRadius": 8,
+                "flexDirection": "row",
+                "justifyContent": "center",
+              },
+              Object {
+                "backgroundColor": "#ECECEC",
+                "borderRadius": 8,
                 "color": "#5C5C5C",
                 "fontSize": 13,
                 "fontWeight": "400",
-                "textTransform": "none",
-              },
-              undefined,
-              Object {
-                "backgroundColor": "#ECEDEC",
-                "borderRadius": 8,
-                "maxHeight": 26,
                 "paddingHorizontal": 10,
                 "paddingVertical": 4,
               },
             ]
           }
         >
-          Breakfast
-        </Text>
+          <Text
+            style={
+              Object {
+                "backgroundColor": "#ECECEC",
+                "color": "#5C5C5C",
+                "fontSize": 13,
+                "fontWeight": "400",
+              }
+            }
+          >
+            Breakfast
+          </Text>
+        </View>
         <View
           style={
             Object {
@@ -124,30 +147,53 @@ exports[`Component snapshot 1`] = `
           ]
         }
       >
-        <Text
-          onPress={[Function]}
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
           style={
             Array [
               Object {
-                "borderColor": "#5C5C5C",
+                "alignItems": "center",
+                "alignSelf": "flex-start",
+                "borderRadius": 8,
+                "flexDirection": "row",
+                "justifyContent": "center",
+              },
+              Object {
+                "backgroundColor": "#ECECEC",
+                "borderRadius": 8,
                 "color": "#5C5C5C",
                 "fontSize": 13,
                 "fontWeight": "400",
-                "textTransform": "none",
-              },
-              undefined,
-              Object {
-                "backgroundColor": "#ECEDEC",
-                "borderRadius": 8,
-                "maxHeight": 26,
                 "paddingHorizontal": 10,
                 "paddingVertical": 4,
               },
             ]
           }
         >
-          Dinner
-        </Text>
+          <Text
+            style={
+              Object {
+                "backgroundColor": "#ECECEC",
+                "color": "#5C5C5C",
+                "fontSize": 13,
+                "fontWeight": "400",
+              }
+            }
+          >
+            Dinner
+          </Text>
+        </View>
         <View
           style={
             Object {
@@ -167,30 +213,53 @@ exports[`Component snapshot 1`] = `
           ]
         }
       >
-        <Text
-          onPress={[Function]}
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
           style={
             Array [
               Object {
-                "borderColor": "#5C5C5C",
+                "alignItems": "center",
+                "alignSelf": "flex-start",
+                "borderRadius": 8,
+                "flexDirection": "row",
+                "justifyContent": "center",
+              },
+              Object {
+                "backgroundColor": "#ECECEC",
+                "borderRadius": 8,
                 "color": "#5C5C5C",
                 "fontSize": 13,
                 "fontWeight": "400",
-                "textTransform": "none",
-              },
-              undefined,
-              Object {
-                "backgroundColor": "#ECEDEC",
-                "borderRadius": 8,
-                "maxHeight": 26,
                 "paddingHorizontal": 10,
                 "paddingVertical": 4,
               },
             ]
           }
         >
-          Dryfruits
-        </Text>
+          <Text
+            style={
+              Object {
+                "backgroundColor": "#ECECEC",
+                "color": "#5C5C5C",
+                "fontSize": 13,
+                "fontWeight": "400",
+              }
+            }
+          >
+            Dry fruits
+          </Text>
+        </View>
         <View
           style={
             Object {
@@ -210,30 +279,53 @@ exports[`Component snapshot 1`] = `
           ]
         }
       >
-        <Text
-          onPress={[Function]}
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
           style={
             Array [
               Object {
-                "borderColor": "#5C5C5C",
+                "alignItems": "center",
+                "alignSelf": "flex-start",
+                "borderRadius": 8,
+                "flexDirection": "row",
+                "justifyContent": "center",
+              },
+              Object {
+                "backgroundColor": "#ECECEC",
+                "borderRadius": 8,
                 "color": "#5C5C5C",
                 "fontSize": 13,
                 "fontWeight": "400",
-                "textTransform": "none",
-              },
-              undefined,
-              Object {
-                "backgroundColor": "#ECEDEC",
-                "borderRadius": 8,
-                "maxHeight": 26,
                 "paddingHorizontal": 10,
                 "paddingVertical": 4,
               },
             ]
           }
         >
-          Lunch
-        </Text>
+          <Text
+            style={
+              Object {
+                "backgroundColor": "#ECECEC",
+                "color": "#5C5C5C",
+                "fontSize": 13,
+                "fontWeight": "400",
+              }
+            }
+          >
+            Lunch
+          </Text>
+        </View>
         <View
           style={
             Object {
@@ -253,30 +345,53 @@ exports[`Component snapshot 1`] = `
           ]
         }
       >
-        <Text
-          onPress={[Function]}
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
           style={
             Array [
               Object {
-                "borderColor": "#5C5C5C",
+                "alignItems": "center",
+                "alignSelf": "flex-start",
+                "borderRadius": 8,
+                "flexDirection": "row",
+                "justifyContent": "center",
+              },
+              Object {
+                "backgroundColor": "#ECECEC",
+                "borderRadius": 8,
                 "color": "#5C5C5C",
                 "fontSize": 13,
                 "fontWeight": "400",
-                "textTransform": "none",
-              },
-              undefined,
-              Object {
-                "backgroundColor": "#ECEDEC",
-                "borderRadius": 8,
-                "maxHeight": 26,
                 "paddingHorizontal": 10,
                 "paddingVertical": 4,
               },
             ]
           }
         >
-          Vegetables
-        </Text>
+          <Text
+            style={
+              Object {
+                "backgroundColor": "#ECECEC",
+                "color": "#5C5C5C",
+                "fontSize": 13,
+                "fontWeight": "400",
+              }
+            }
+          >
+            Vegetables
+          </Text>
+        </View>
         <View
           style={
             Object {
@@ -296,30 +411,53 @@ exports[`Component snapshot 1`] = `
           ]
         }
       >
-        <Text
-          onPress={[Function]}
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
           style={
             Array [
               Object {
-                "borderColor": "#5C5C5C",
+                "alignItems": "center",
+                "alignSelf": "flex-start",
+                "borderRadius": 8,
+                "flexDirection": "row",
+                "justifyContent": "center",
+              },
+              Object {
+                "backgroundColor": "#ECECEC",
+                "borderRadius": 8,
                 "color": "#5C5C5C",
                 "fontSize": 13,
                 "fontWeight": "400",
-                "textTransform": "none",
-              },
-              undefined,
-              Object {
-                "backgroundColor": "#ECEDEC",
-                "borderRadius": 8,
-                "maxHeight": 26,
                 "paddingHorizontal": 10,
                 "paddingVertical": 4,
               },
             ]
           }
         >
-          Greenich
-        </Text>
+          <Text
+            style={
+              Object {
+                "backgroundColor": "#ECECEC",
+                "color": "#5C5C5C",
+                "fontSize": 13,
+                "fontWeight": "400",
+              }
+            }
+          >
+            Greenish
+          </Text>
+        </View>
         <View
           style={
             Object {
@@ -339,30 +477,53 @@ exports[`Component snapshot 1`] = `
           ]
         }
       >
-        <Text
-          onPress={[Function]}
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
           style={
             Array [
               Object {
-                "borderColor": "#5C5C5C",
+                "alignItems": "center",
+                "alignSelf": "flex-start",
+                "borderRadius": 8,
+                "flexDirection": "row",
+                "justifyContent": "center",
+              },
+              Object {
+                "backgroundColor": "#ECECEC",
+                "borderRadius": 8,
                 "color": "#5C5C5C",
                 "fontSize": 13,
                 "fontWeight": "400",
-                "textTransform": "none",
-              },
-              undefined,
-              Object {
-                "backgroundColor": "#ECEDEC",
-                "borderRadius": 8,
-                "maxHeight": 26,
                 "paddingHorizontal": 10,
                 "paddingVertical": 4,
               },
             ]
           }
         >
-          Non-Veg
-        </Text>
+          <Text
+            style={
+              Object {
+                "backgroundColor": "#ECECEC",
+                "color": "#5C5C5C",
+                "fontSize": 13,
+                "fontWeight": "400",
+              }
+            }
+          >
+            Non-Veg
+          </Text>
+        </View>
         <View
           style={
             Object {
@@ -382,30 +543,53 @@ exports[`Component snapshot 1`] = `
           ]
         }
       >
-        <Text
-          onPress={[Function]}
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
           style={
             Array [
               Object {
-                "borderColor": "#5C5C5C",
+                "alignItems": "center",
+                "alignSelf": "flex-start",
+                "borderRadius": 8,
+                "flexDirection": "row",
+                "justifyContent": "center",
+              },
+              Object {
+                "backgroundColor": "#ECECEC",
+                "borderRadius": 8,
                 "color": "#5C5C5C",
                 "fontSize": 13,
                 "fontWeight": "400",
-                "textTransform": "none",
-              },
-              undefined,
-              Object {
-                "backgroundColor": "#ECEDEC",
-                "borderRadius": 8,
-                "maxHeight": 26,
                 "paddingHorizontal": 10,
                 "paddingVertical": 4,
               },
             ]
           }
         >
-          Fast Food
-        </Text>
+          <Text
+            style={
+              Object {
+                "backgroundColor": "#ECECEC",
+                "color": "#5C5C5C",
+                "fontSize": 13,
+                "fontWeight": "400",
+              }
+            }
+          >
+            Fast Food
+          </Text>
+        </View>
       </View>
     </View>
   </RCTScrollView>

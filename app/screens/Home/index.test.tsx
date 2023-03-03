@@ -13,8 +13,8 @@ describe('Home', () => {
 
     render(<Home />);
 
-    MOCK_FOODS.forEach((food) => {
-      expect(screen.getByText(food.name)).toBeTruthy();
+    MOCK_FOODS.forEach(({ name }) => {
+      if (name) expect(screen.getByText(name)).toBeTruthy();
     });
   });
 });

@@ -1,10 +1,13 @@
-export const MOCK_FOODS = [
+import { IFood } from '@types';
+
+export const MOCK_FOODS: IFood[] = [
   {
     id: 22,
     name: 'Pizza',
     weight: 200,
     ingredients: [
       {
+        id: 1,
         name: 'Bread',
         value: 200,
       },
@@ -52,6 +55,7 @@ export const MOCK_FOODS = [
     category: 7,
     ingredients: [
       {
+        id: 1,
         name: 'Bread',
         value: 200,
       },

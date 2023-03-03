@@ -3,7 +3,7 @@ import { Pressable, StyleSheet } from 'react-native';
 
 import { IFood } from '@types';
 import { Text } from '../common';
-import { Categories, COLORS } from '@constants';
+import { CATEGORIES, COLORS } from '@constants';
 import FoodImage from './FoodImage';
 
 type FOOD_TYPES = 'medium' | 'large';
@@ -67,7 +67,7 @@ const Food = ({
         </Text>
       ) : (
         <Text customStyle={{ marginTop: 0, ...subtitle }}>
-          {Categories.find(({ id }) => id === category)?.name}
+          {CATEGORIES.find(({ id }) => id === category)?.name}
         </Text>
       )}
     </Pressable>

@@ -1,16 +1,16 @@
 import { StyleSheet, FlatList, View } from 'react-native';
 import React, { memo, useCallback, useState } from 'react';
-import { Categories, COLORS } from '@constants';
+import { COLORS } from '@constants';
 import { ICategory } from '@types';
 import { Button } from '@components/common';
 
-const Tags = ({
-  marginTop,
-  onSelect,
-}: {
+export interface ICategories {
   marginTop?: number;
+  categories: ICategory[];
   onSelect?: (id: number) => void;
-}) => {
+}
+
+const Tags = ({ marginTop, categories, onSelect }: ICategories) => {
   const [tag, setTag] = useState<number>();
 
   const handlePressTag = useCallback(
@@ -50,7 +50,7 @@ const Tags = ({
   return (
     <View style={[styles.container, { marginTop: marginTop }]}>
       <FlatList
-        data={Categories}
+        data={categories}
         showsHorizontalScrollIndicator={false}
         horizontal
         ItemSeparatorComponent={handleItemSeparatorComponent}

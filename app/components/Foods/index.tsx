@@ -6,7 +6,7 @@ import { Text } from '@components/common';
 import Food from './Food';
 import FoodImage from './FoodImage';
 
-interface FoodsProps {
+export interface FoodsProps {
   horizontal?: boolean;
   foods: IFood[] | null;
   onPressItem?: (id: number) => void;

@@ -5,6 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 import { useFoods } from '@hooks';
 import { RootScreenNavigationProps } from '@navigation';
 import { Foods, Header, Search, Cards, Tags } from '@components';
+import { CATEGORIES } from '@constants';
 
 const HomeScreen = () => {
   const { navigate } = useNavigation<RootScreenNavigationProps<'Home'>>();
@@ -34,7 +35,11 @@ const HomeScreen = () => {
       <>
         <Header />
         <Search onFocus={handleFocusSearch} isFocus={false} />
-        <Tags marginTop={17} onSelect={handleChangeTagName} />
+        <Tags
+          marginTop={17}
+          onSelect={handleChangeTagName}
+          categories={CATEGORIES}
+        />
         <Cards marginTop={17} />
         {foods && (
           <Foods foods={foods} horizontal onPressItem={handlePressItem} />

@@ -47,7 +47,7 @@ export type BUTTON_TYPE =
   | 'default'
   | 'green';
 
-interface ButtonStyle {
+export interface ButtonProps {
   label?: string;
   width?: number | string;
   type?: BUTTON_TYPE;
@@ -70,7 +70,7 @@ const Button = ({
   paddingHorizontal,
   customStyle,
   onPress,
-}: ButtonStyle) => {
+}: ButtonProps) => {
   const TB = BUTTON_TYPES[type];
   const { fontWeight } = TB;
 

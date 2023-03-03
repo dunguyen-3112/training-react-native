@@ -20,7 +20,6 @@ exports[`Component snapshot 1`] = `
       style={
         Array [
           Object {
-            "color": "#DA6317",
             "fontSize": 13,
             "fontWeight": "400",
             "paddingHorizontal": 60,
@@ -34,12 +33,7 @@ exports[`Component snapshot 1`] = `
       value=""
     />
   </View>
-  <Image
-    source={
-      Object {
-        "testUri": "../../../assets/icons/iconsearch.png",
-      }
-    }
+  <View
     style={
       Object {
         "left": 21,
@@ -52,6 +46,14 @@ exports[`Component snapshot 1`] = `
         ],
       }
     }
-  />
+  >
+    <Image
+      source={
+        Object {
+          "testUri": "../../../assets/icons/iconsearch.png",
+        }
+      }
+    />
+  </View>
 </View>
 `;

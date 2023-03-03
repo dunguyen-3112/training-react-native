@@ -14,22 +14,24 @@ exports[`Component snapshot 1`] = `
   <Image
     source={
       Object {
-        "testUri": "../../../assets/images/empty.png",
+        "testUri": "../../../assets/images/empty_2x.png",
+      }
+    }
+    style={
+      Object {
+        "height": 96,
+        "width": 108,
       }
     }
   />
   <Text
-    onPress={[Function]}
     style={
       Array [
         Object {
-          "borderColor": "#5C5C5C",
           "color": "#5C5C5C",
           "fontSize": 22,
           "fontWeight": "500",
-          "textTransform": "none",
         },
-        undefined,
         Object {
           "color": "#696969",
           "marginTop": 24,
@@ -40,17 +42,13 @@ exports[`Component snapshot 1`] = `
     No Results Found
   </Text>
   <Text
-    onPress={[Function]}
     style={
       Array [
         Object {
-          "borderColor": "#5C5C5C",
-          "color": "#5C5C5C",
+          "color": "#7E7E7E",
           "fontSize": 13,
-          "fontWeight": "400",
-          "textTransform": "none",
+          "fontWeight": undefined,
         },
-        undefined,
         Object {
           "marginTop": 8,
           "textAlign": "center",

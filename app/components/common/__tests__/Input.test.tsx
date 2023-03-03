@@ -1,16 +1,22 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
 import Input from '../Input';
+import { render, screen } from '@utils/test-utils';
 
 const fakeInput = {
   field: 'Name',
-  value: 'User Name',
+  value: 'Du Nguyen',
+  label: 'User Name',
   onChangeText: jest.fn(),
 };
 
 describe('Input', () => {
-  const input = renderer.create(<Input {...fakeInput} />);
-  it('renders correctly', () => {
-    expect(input).toMatchSnapshot();
+  it('should render correctly', () => {
+    render(<Input {...fakeInput} />);
+    expect(screen.getByText(fakeInput.label)).toBeTruthy();
+  });
+
+  it('should render correctly', () => {
+    render(<Input {...fakeInput} />);
+    expect(screen.getByDisplayValue(fakeInput.value)).toBeTruthy();
   });
 });
