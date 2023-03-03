@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react-native';
+import { render, screen } from '@utils/test-utils';
 import React from 'react';
 import Component from './index';
 

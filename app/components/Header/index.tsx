@@ -1,8 +1,8 @@
-import { StyleSheet, View } from 'react-native';
 import React, { memo } from 'react';
-import { Text } from '@components/common';
-import { Button } from '@components/common';
-import { QuestionIcon } from '@constants/Image';
+import { StyleSheet, View } from 'react-native';
+
+import { Text, Button } from '@components/common';
+import { QuestionIcon } from '@constants';
 
 const Header = () => {
   return (
@@ -10,6 +10,7 @@ const Header = () => {
       <Text fontSize="xxl-3" fontWeight="800">
         {`Want to eat\nhealthy Food?`}
       </Text>
+
       <Button customStyle={styles.buttonHelp}>
         <QuestionIcon />
       </Button>

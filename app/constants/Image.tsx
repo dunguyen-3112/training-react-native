@@ -1,9 +1,10 @@
-import { Image, StyleSheet } from 'react-native';
 import React from 'react';
+import { Image, StyleSheet } from 'react-native';
 
 const EmptyImage = () => (
   <Image source={require('@assets/images/empty_2x.png')} style={styles.empty} />
 );
+
 const NotFoundImage = () => (
   <Image
     source={require('@assets/images/not_found_2x.png')}

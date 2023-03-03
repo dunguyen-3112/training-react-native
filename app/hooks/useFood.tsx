@@ -1,6 +1,7 @@
+import { useCallback, useEffect, useState } from 'react';
+
 import { ICategory, IFood } from '@types';
 import { fetchData } from '@utils';
-import { useCallback, useEffect, useMemo, useState } from 'react';
 
 interface Options {
   name?: string;
@@ -47,11 +48,9 @@ const useFood = (id: number) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const url = useMemo(() => `foods/${id}`, [id]);
-
   useEffect(() => {
     setLoading(true);
-    fetchData<IFood>({ url })
+    fetchData<IFood>({ url: `foods/${id}` })
       .then((data) => {
         setFood(data);
         setLoading(false);
@@ -60,7 +59,7 @@ const useFood = (id: number) => {
         setError(error);
         setLoading(false);
       });
-  }, [url, reload]);
+  }, [id, reload]);
 
   const fetch = useCallback(() => setReload((prev) => !prev), []);
 
@@ -91,8 +90,6 @@ const useFoodFavorite = () => {
     return status;
   }
 
-  const fetch = useCallback(() => setReload((prev) => !prev), []);
-
   async function removeFavorite(id: number) {
     const food = data?.find((item) => item.id === id);
 
@@ -107,10 +104,6 @@ const useFoodFavorite = () => {
 
     return status;
   }
-
-  const handleSearch = useCallback((text: string) => {
-    setQuery(`foods?favorite=1&name_like=${text}`);
-  }, []);
 
   useEffect(() => {
     setLoading(true);
@@ -127,6 +120,12 @@ const useFoodFavorite = () => {
         setLoading(false);
       });
   }, [reload, query]);
+
+  const fetch = useCallback(() => setReload((prev) => !prev), []);
+
+  const handleSearch = useCallback((text: string) => {
+    setQuery(`foods?favorite=1&name_like=${text}`);
+  }, []);
 
   return {
     data,

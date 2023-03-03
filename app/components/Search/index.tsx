@@ -3,7 +3,7 @@ import React, { useCallback, memo } from 'react';
 
 import { COLORS } from '@constants';
 import { Input } from '@components/common';
-import { SearchIcon } from '@constants/Image';
+import { SearchIcon } from '@constants';
 
 interface SearchProps {
   value?: string;
@@ -29,6 +29,7 @@ const Search = ({ value = '', onChangeText, onFocus }: SearchProps) => {
         value={value}
         placeholder="Search for healthy food"
       />
+
       <View style={styles.iconSearch}>
         <SearchIcon />
       </View>

@@ -1,5 +1,6 @@
-import { Pressable, StyleSheet, Text, ViewStyle } from 'react-native';
 import React, { memo, ReactNode, useMemo } from 'react';
+import { Pressable, StyleSheet, Text, ViewStyle } from 'react-native';
+
 import { COLORS, FONT_SIZES, FONT_WEIGHTS } from '@constants';
 import { getFont } from '@helpers';
 
@@ -8,6 +9,7 @@ const BASE_STYLE = {
   fontWeight: FONT_WEIGHTS.m,
   color: COLORS.GRAY,
 };
+
 const BUTTON_TYPES = {
   primary: {
     backgroundColor: COLORS.PRIMARY,

@@ -1,9 +1,10 @@
-import { StyleSheet, View } from 'react-native';
 import React, { useCallback } from 'react';
-import { Foods, Header, Search, Cards, Tags } from '@components';
-import { RootScreenNavigationProps } from '@navigation';
+import { StyleSheet, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+
 import { useFoods } from '@hooks';
+import { RootScreenNavigationProps } from '@navigation';
+import { Foods, Header, Search, Cards, Tags } from '@components';
 
 const HomeScreen = () => {
   const { navigate } = useNavigation<RootScreenNavigationProps<'Home'>>();

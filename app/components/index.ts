@@ -1,4 +1,4 @@
-import Foods, { Food, FoodAvatar } from './Foods';
+import Foods, { Food, FoodImage } from './Foods';
 import { Text, Input, Button } from './common';
 import Search from './Search';
 import Tags from './Tags';
@@ -9,11 +9,11 @@ import Loading from './Loading';
 import Empty from './Empty';
 import Header from './Header';
 import NotFound from './NotFound';
-import ListText from './ListText';
+import Ingredients from './Ingredients';
 
 export {
   Food,
-  FoodAvatar,
+  FoodImage,
   Tags,
   Foods,
   Text,
@@ -27,6 +27,6 @@ export {
   Input,
   Empty,
   NotFound,
-  ListText,
+  Ingredients,
   Button,
 };

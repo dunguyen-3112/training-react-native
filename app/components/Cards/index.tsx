@@ -1,8 +1,8 @@
+import React, { memo, useCallback } from 'react';
 import { StyleSheet, View, FlatList } from 'react-native';
-import React, { memo } from 'react';
+
 import Card from './Card';
 import { IArtcile } from '@types';
-export { Card };
 
 const articles: IArtcile[] = [
   {
@@ -24,17 +24,30 @@ const articles: IArtcile[] = [
 ];
 
 const Cards = ({ marginTop = 0 }: { marginTop?: number }) => {
+  const handleItemSeparatorComponent = useCallback(
+    () => <View style={styles.item} />,
+    []
+  );
+
+  const handleRenderItem = useCallback(
+    ({ item }: { item: IArtcile }) => <Card {...item} type={item.color} />,
+    []
+  );
+
+  const handleKeyExtractor = useCallback((item: IArtcile) => item.id + '', []);
+
   return (
     <View style={styles.container}>
       <FlatList
         data={articles}
-        keyExtractor={(item) => item.id + ''}
-        showsHorizontalScrollIndicator={false}
-        style={[styles.slide, marginTop ? { marginTop: marginTop } : {}]}
+        keyExtractor={handleKeyExtractor}
+        renderItem={handleRenderItem}
         horizontal
-        ItemSeparatorComponent={() => <View style={styles.item} />}
-        renderItem={({ item }) => <Card {...item} type={item.color} />}
+        showsHorizontalScrollIndicator={false}
+        ItemSeparatorComponent={handleItemSeparatorComponent}
+        style={[styles.slide, marginTop ? { marginTop: marginTop } : {}]}
       />
+
       <View style={styles.separator}></View>
     </View>
   );
@@ -58,3 +71,5 @@ const styles = StyleSheet.create({
     marginHorizontal: 16,
   },
 });
+
+export { Card };

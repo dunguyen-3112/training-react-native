@@ -1,6 +1,7 @@
+import { useEffect, useState } from 'react';
+
 import { API_ENDPOINT, ROUTES } from '@constants';
 import { IFetchState } from '@types';
-import { useEffect, useState } from 'react';
 
 function useFetch<T>({ url }: { url: ROUTES }): IFetchState<T> {
   const [error, setError] = useState<Error | null>(null);

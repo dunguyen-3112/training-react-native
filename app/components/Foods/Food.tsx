@@ -1,10 +1,10 @@
-import { Pressable, StyleSheet } from 'react-native';
 import React, { memo, useCallback } from 'react';
+import { Pressable, StyleSheet } from 'react-native';
+
 import { IFood } from '@types';
-import FoodAvatar from './FoodAvatar';
 import { Text } from '../common';
-import { COLORS } from '@constants';
-import { Categories } from '@constants';
+import { Categories, COLORS } from '@constants';
+import FoodImage from './FoodImage';
 
 type FOOD_TYPES = 'medium' | 'large';
 
@@ -42,12 +42,12 @@ const Food = ({
   disabled?: boolean;
   onPress?: (id: number) => void;
 }) => {
-  const { name, weight, category, nutritional } = data;
+  const { name, weight, category, nutritional, id } = data;
   const { calories } = nutritional || { calories: {} };
 
   const handlePress = useCallback(() => {
-    onPress && onPress(data.id);
-  }, [data.id, onPress]);
+    onPress && onPress(id);
+  }, [id, onPress]);
 
   const { subtitle, title } = FOOD_STYLE[type];
 
@@ -57,8 +57,10 @@ const Food = ({
       style={[styles.container, styles[type]]}
       onPress={handlePress}
     >
-      <FoodAvatar {...data} size={type} />
+      <FoodImage {...data} type={type} />
+
       <Text customStyle={{ marginTop: 14, ...title }}>{name}</Text>
+
       {type === 'medium' ? (
         <Text customStyle={{ marginTop: 10, ...subtitle }}>
           {`${calories} cal/${weight} kg`}

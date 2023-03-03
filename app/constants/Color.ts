@@ -19,7 +19,7 @@ export const COLORS = {
   SECONDARY: '#FF8473',
 };
 
-type COLOR =
+export type COLOR =
   | 'WHITE'
   | 'LIGHT_GRAY'
   | 'GRAY'
@@ -34,5 +34,3 @@ type COLOR =
   | 'LIGHT_BLACK'
   | 'PRIMARY'
   | 'SECONDARY';
-
-export { COLOR };

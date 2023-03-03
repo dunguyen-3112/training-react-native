@@ -1,15 +1,35 @@
-import { StyleSheet, View, Image } from 'react-native';
 import React, { memo, useMemo } from 'react';
+import { StyleSheet, View, Image } from 'react-native';
+
 import { COLORS } from '@constants';
 import { IFood } from '@types';
 
 type Size = 'medium' | 'large';
 
-const FoodAvatar = ({
+const TYPE_STYLES = {
+  medium: {
+    layer1: 92,
+    layer2: 68,
+    image: {
+      width: 100,
+      height: 80,
+    },
+  },
+  large: {
+    layer1: 157,
+    layer2: 116,
+    image: {
+      width: 140,
+      height: 110,
+    },
+  },
+};
+
+const FoodImage = ({
   imgUrl,
   color,
-  size = 'medium',
-}: IFood & { size: Size }) => {
+  type = 'medium',
+}: IFood & { type: Size }) => {
   const _color = useMemo(() => {
     switch (color) {
       case 'RED':
@@ -27,10 +47,7 @@ const FoodAvatar = ({
     }
   }, [color]);
 
-  const [_size1, _size2, imS] =
-    size === 'large'
-      ? [157, 116, { width: 140, height: 110 }]
-      : [92, 68, { width: 100, height: 80 }];
+  const { layer2, image, layer1 } = TYPE_STYLES[type];
 
   return (
     <View>
@@ -40,9 +57,9 @@ const FoodAvatar = ({
           {
             backgroundColor: _color,
             opacity: 0.2,
-            width: _size1,
-            height: _size1,
-            borderRadius: _size1 / 2,
+            height: layer1,
+            width: layer1,
+            borderRadius: layer1 / 2,
           },
         ]}
       ></View>
@@ -51,21 +68,21 @@ const FoodAvatar = ({
           styles.layer2,
           {
             backgroundColor: _color,
-            width: _size2,
-            height: _size2,
-            borderRadius: _size2 / 2,
-            top: (_size1 - _size2) / 2,
-            left: (_size1 - _size2) / 2,
+            width: layer2,
+            height: layer2,
+            borderRadius: layer2 / 2,
+            top: (layer1 - layer2) / 2,
+            left: (layer1 - layer2) / 2,
           },
         ]}
       >
-        <Image source={{ uri: imgUrl }} style={[styles.image, { ...imS }]} />
+        <Image source={{ uri: imgUrl }} style={[styles.image, { ...image }]} />
       </View>
     </View>
   );
 };
 
-export default memo(FoodAvatar);
+export default memo(FoodImage);
 
 const styles = StyleSheet.create({
   container: {

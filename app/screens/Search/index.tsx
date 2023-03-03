@@ -1,9 +1,10 @@
 import { StyleSheet, View } from 'react-native';
 import React, { useCallback, useEffect, useState } from 'react';
-import { Empty, Foods, Header, Loading, Search, Tags } from '@components';
+
 import { useFoods } from '@hooks';
 import { useNavigation } from '@react-navigation/native';
 import { RootScreenNavigationProps } from '@navigation';
+import { Empty, Foods, Header, Loading, Search, Tags } from '@components';
 
 const SearchScreen = () => {
   const { navigate } = useNavigation<RootScreenNavigationProps<'Search'>>();
@@ -35,8 +36,11 @@ const SearchScreen = () => {
   return (
     <View style={styles.container}>
       <Header />
+
       <Search value={text} onChangeText={handleChangeTextSearch} />
+
       <Tags marginTop={17} onSelect={handleSelectTag} />
+
       {loading ? (
         <Loading marginTop={120} />
       ) : foods === undefined || foods.length === 0 ? (

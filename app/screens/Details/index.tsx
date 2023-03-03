@@ -1,24 +1,26 @@
-import { StyleSheet, View } from 'react-native';
 import React, { useCallback, useMemo, useState } from 'react';
+import { StyleSheet, View } from 'react-native';
 import { RouteProp, useRoute } from '@react-navigation/native';
 
+import { RootStackParamsList } from '@navigation';
+import { useFood, useFoodFavorite } from '@hooks';
 import {
   Back,
   Button,
   Food,
-  ListText,
+  Ingredients,
   Loading,
   Nutritional,
   Text,
 } from '@components';
-import { RootStackParamsList } from '@navigation';
-import { useFood, useFoodFavorite } from '@hooks';
 
 type DetailRoute = RouteProp<RootStackParamsList, 'Details'>;
 
 const Details = () => {
   const route = useRoute<DetailRoute>();
+
   const { id, onChange } = route.params;
+
   const { food, fetch } = useFood(id);
   const { addFavorite, removeFavorite } = useFoodFavorite();
 
@@ -54,6 +56,7 @@ const Details = () => {
 
   const ingrediants = useMemo(() => {
     const ingrediant = food?.ingredients;
+
     if (ingrediant) {
       const ingrediants = Object.values(ingrediant);
       return isAll ? ingrediants : ingrediants.slice(0, 2);
@@ -91,7 +94,7 @@ const Details = () => {
           </Text>
         </Text>
 
-        {/* Displau Ingrediants */}
+        {/* Display Ingrediants */}
 
         <View style={styles.ingrediant}>
           <View style={styles.ingrediantHeader}>
@@ -109,7 +112,7 @@ const Details = () => {
           </View>
           <View></View>
         </View>
-        {ingrediants && <ListText data={ingrediants} />}
+        {ingrediants && <Ingredients data={ingrediants} />}
 
         {/* add Favorite */}
 

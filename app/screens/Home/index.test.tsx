@@ -10,7 +10,9 @@ jest.mock('@hooks/useFood');
 describe('Home', () => {
   it('renders list food', () => {
     (useFoods as jest.Mock).mockReturnValue({ foods: MOCK_FOODS });
+
     render(<Home />);
+
     MOCK_FOODS.forEach((food) => {
       expect(screen.getByText(food.name)).toBeTruthy();
     });

@@ -1,8 +1,14 @@
+import React, { memo, useCallback, useMemo } from 'react';
 import { FlatList, StyleSheet, View, ViewStyle } from 'react-native';
-import React, { memo, useMemo } from 'react';
+
 import { COLOR } from '@constants';
 import { TNutritional } from '@types';
 import { Text } from '@components/common';
+
+interface INatritional {
+  title: string;
+  value: number;
+}
 
 const Nutritional = ({
   nutritional,
@@ -19,13 +25,30 @@ const Nutritional = ({
     }));
   }, [nutritional]);
 
-  const Item = ({ title, value }: { title: string; value: number }) => (
+  const Item = ({ title, value }: INatritional) => (
     <View>
-      <Text fontSize="xl-6">{title}</Text>
-      <Text fontSize="xxl-4" color="SECONDARY">
+      <Text fontSize="xl-6" customStyle={{ textTransform: 'capitalize' }}>
+        {title}
+      </Text>
+
+      <Text fontSize="xxl-4" color="secondary">
         {`${value}g`}
       </Text>
     </View>
+  );
+
+  const handleItemSeparatorComponent = useCallback(
+    () => <View style={{ marginLeft: 40 }} />,
+    []
+  );
+
+  const handleRenderItem = useCallback(({ item }: { item: INatritional }) => {
+    return <Item {...item} />;
+  }, []);
+
+  const handleKeyExtractor = useCallback(
+    (item: INatritional) => item.title + '',
+    []
   );
 
   return (
@@ -33,9 +56,9 @@ const Nutritional = ({
       <FlatList
         data={vi}
         horizontal
-        renderItem={({ item }) => <Item {...item} />}
-        ItemSeparatorComponent={() => <View style={{ marginLeft: 40 }} />}
-        keyExtractor={(item) => item.title}
+        renderItem={handleRenderItem}
+        ItemSeparatorComponent={handleItemSeparatorComponent}
+        keyExtractor={handleKeyExtractor}
       />
     </View>
   );

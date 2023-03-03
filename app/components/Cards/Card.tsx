@@ -1,8 +1,8 @@
 import React, { memo } from 'react';
 import { StyleSheet, View, ImageBackground } from 'react-native';
+
 import { Button, Text } from '../common';
-import { COLORS } from '@constants';
-import { ArrowICon } from '@constants/Image';
+import { ArrowICon, COLORS } from '@constants';
 interface SlideItemProps {
   title: string;
   image: string;
@@ -20,9 +20,11 @@ const Card = (props: SlideItemProps | null) => {
         <Text fontSize="ms-0" fontWeight="600" color={type}>
           Article
         </Text>
+
         <Text fontSize="xl-7" fontWeight="600" customStyle={{ marginTop: 4 }}>
           {title}
         </Text>
+
         <Button
           paddingHorizontal={19}
           paddingVertical={6}

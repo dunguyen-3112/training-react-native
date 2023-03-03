@@ -1,20 +1,30 @@
+import React, { memo, useCallback } from 'react';
 import { FlatList, StyleSheet, View } from 'react-native';
-import React, { memo } from 'react';
 
 import { IFood } from '@types';
 import { Text } from '@components/common';
 import Food from './Food';
-import FoodAvatar from './FoodAvatar';
+import FoodImage from './FoodImage';
 
-const Foods = ({
-  horizontal,
-  foods,
-  onPressItem,
-}: {
+interface FoodsProps {
   horizontal?: boolean;
   foods: IFood[] | null;
   onPressItem?: (id: number) => void;
-}) => {
+}
+
+const Foods = ({ horizontal, foods, onPressItem }: FoodsProps) => {
+  const handleItemSeparatorComponent = useCallback(
+    () => <View style={{ marginLeft: 18, height: 18 }} />,
+    []
+  );
+
+  const handleRenderItem = useCallback(
+    ({ item }: { item: IFood }) => <Food data={item} onPress={onPressItem} />,
+    [onPressItem]
+  );
+
+  const handleKeyExtractor = useCallback((item: IFood) => item.id + '', []);
+
   return (
     <View
       style={[
@@ -36,16 +46,14 @@ const Foods = ({
       <FlatList
         style={styles.list}
         data={foods}
-        keyExtractor={(item) => item.id + ''}
+        keyExtractor={handleKeyExtractor}
+        renderItem={handleRenderItem}
+        showsHorizontalScrollIndicator={false}
+        showsVerticalScrollIndicator={false}
+        ItemSeparatorComponent={handleItemSeparatorComponent}
         {...(horizontal
           ? { horizontal }
           : { ...styles.vertical, columnWrapperStyle: styles.itemStyle })}
-        showsHorizontalScrollIndicator={false}
-        showsVerticalScrollIndicator={false}
-        ItemSeparatorComponent={() => (
-          <View style={{ marginLeft: 18, height: 18 }} />
-        )}
-        renderItem={({ item }) => <Food data={item} onPress={onPressItem} />}
       />
     </View>
   );
@@ -73,4 +81,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export { Food, FoodAvatar };
+export { Food, FoodImage };

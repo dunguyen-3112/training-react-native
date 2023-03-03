@@ -1,5 +1,6 @@
-import { StyleSheet, TextInput, View } from 'react-native';
 import React, { useCallback, memo, useRef } from 'react';
+import { StyleSheet, TextInput, View } from 'react-native';
+
 import Text from '../Text';
 import { COLORS } from '@constants';
 

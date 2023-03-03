@@ -1,10 +1,10 @@
 import { StyleSheet, View } from 'react-native';
-import React, { useCallback, useEffect } from 'react';
-import { Foods, NotFound, Search } from '@components';
-import { useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { RootScreenNavigationProps } from '@navigation';
+import React, { useCallback, useEffect, useState } from 'react';
+
 import { useFoodFavorite } from '@hooks';
+import { Foods, NotFound, Search } from '@components';
+import { RootScreenNavigationProps } from '@navigation';
 
 const FavoriteScreen = () => {
   const { navigate } = useNavigation<RootScreenNavigationProps<'Favorite'>>();
@@ -33,6 +33,7 @@ const FavoriteScreen = () => {
   return (
     <View style={styles.container}>
       <Search value={text} onChangeText={handleChangeTextSearch} />
+
       {data === undefined || data.length === 0 ? (
         <View style={styles.container}>
           <NotFound marginTop={200} />

@@ -1,12 +1,14 @@
-import { StyleSheet, View } from 'react-native';
 import React, { memo } from 'react';
+import { StyleSheet, View } from 'react-native';
+
 import { Text } from '@components/common';
-import { NotFoundImage } from '@constants/Image';
+import { NotFoundImage } from '@constants';
 
 const NotFound = ({ marginTop }: { marginTop?: number }) => {
   return (
     <View style={[styles.container, { marginTop }]}>
       <NotFoundImage />
+
       <Text
         customStyle={{ marginTop: 24, color: '#696969' }}
         fontSize="xxl-2"
@@ -14,6 +16,7 @@ const NotFound = ({ marginTop }: { marginTop?: number }) => {
       >
         No Foods Found
       </Text>
+
       <Text
         fontSize="ms-3"
         color="gray"

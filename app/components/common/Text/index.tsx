@@ -1,5 +1,5 @@
-import { Text, TextStyle, ViewStyle } from 'react-native';
 import React, { memo, ReactNode } from 'react';
+import { Text, TextStyle, ViewStyle } from 'react-native';
 import {
   COLORS,
   FONT_SIZES,

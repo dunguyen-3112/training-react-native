@@ -1,12 +1,14 @@
-import { StyleSheet, View } from 'react-native';
 import React, { memo } from 'react';
+import { StyleSheet, View } from 'react-native';
+
 import { Text } from '@components/common';
-import { EmptyImage } from '@constants/Image';
+import { EmptyImage } from '@constants';
 
 const Empty = () => {
   return (
     <View style={styles.container}>
       <EmptyImage />
+
       <Text
         fontSize="xxl-2"
         fontWeight="500"
@@ -14,6 +16,7 @@ const Empty = () => {
       >
         No Results Found
       </Text>
+
       <Text
         color="gray"
         fontSize="ms-3"

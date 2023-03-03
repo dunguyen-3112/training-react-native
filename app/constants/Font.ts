@@ -1,4 +1,4 @@
-const FONT_SIZES = {
+export const FONT_SIZES = {
   xxl: 32,
   'xxl-4': 24,
   'xxl-3': 23,
@@ -15,7 +15,7 @@ const FONT_SIZES = {
   'ms-0': 10,
 };
 
-type FONT_SIZE_TYPE =
+export type FONT_SIZE_TYPE =
   | 'xxl'
   | 'xxl-4'
   | 'xxl-3'
@@ -31,7 +31,7 @@ type FONT_SIZE_TYPE =
   | 'ms-1'
   | 'ms-0';
 
-const FONT_WEIGHTS = {
+export const FONT_WEIGHTS = {
   xxb: '800',
   xb: '700',
   b: '600',
@@ -39,6 +39,4 @@ const FONT_WEIGHTS = {
   m: '400',
 };
 
-type FONT_WEIGHT_TYPE = '800' | '700' | '600' | '500' | '400';
-
-export { FONT_SIZES, FONT_WEIGHTS, FONT_SIZE_TYPE, FONT_WEIGHT_TYPE };
+export type FONT_WEIGHT_TYPE = '800' | '700' | '600' | '500' | '400';
