@@ -1,3 +1,5 @@
-export const API_ENDPOINT = 'http://192.168.86.77:3000';
+import Constants from 'expo-constants';
 
-export type ROUTES = 'foods' | 'article' | string;
+const ip = Constants.expoConfig?.extra?.ip;
+
+export const API_ENDPOINT = `http://${ip}:3000`;

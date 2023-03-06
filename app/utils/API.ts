@@ -1,4 +1,7 @@
-import { API_ENDPOINT } from './../constants/API';
+import expoConfig from 'expo-constants';
+
+const ip = expoConfig?.extra?.ip;
+const API_ENDPOINT = `http://${ip}:3000`;
 
 export type METHOD = 'GET' | 'POST' | 'PUT' | 'DELETE';
 

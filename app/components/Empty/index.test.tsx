@@ -1,11 +1,15 @@
-import { render } from '@testing-library/react-native';
+import { render, screen } from '@utils/test-utils';
 import React from 'react';
 import Component from './index';
 
+function setup() {
+  const component = render(<Component />);
+  expect(component).toMatchSnapshot();
+}
 describe('Component', () => {
-  const view = render(<Component />);
-
-  it('snapshot', () => {
-    expect(view).toMatchSnapshot();
+  setup();
+  it('Check Title', () => {
+    const title = screen.getByText('No Results Found');
+    expect(title).toBeTruthy();
   });
 });

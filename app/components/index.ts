@@ -1,7 +1,7 @@
 import Foods, { Food, FoodImage } from './Foods';
 import { Text, Input, Button } from './common';
 import Search from './Search';
-import Tags from './Tags';
+import Tags from './Categories';
 import Cards, { Card } from './Cards';
 import Back from './Back';
 import Nutritional from './Nutritional';

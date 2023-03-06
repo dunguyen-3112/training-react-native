@@ -29,7 +29,6 @@ const TabNavigator = () => {
               return <SearchMenu isFill={focused} />;
           }
         },
-        unmountOnBlur: true,
       })}
     >
       <Tab.Screen name="Home" component={HomeScreen} />

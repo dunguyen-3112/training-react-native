@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
-import { Animated, Easing, StyleSheet, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { Animated, Easing, StyleSheet, View } from 'react-native';
 
 import { Text } from '@components';
 import { RootScreenNavigationProps } from '@navigation';

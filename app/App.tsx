@@ -1,9 +1,12 @@
 import { StyleSheet, View } from 'react-native';
-import React, { useCallback } from 'react';
-import { RootNavigator } from './navigation';
-import { useFonts } from 'expo-font';
-import * as SplashScreen from 'expo-splash-screen';
 import { NavigationContainer } from '@react-navigation/native';
+import React, { useCallback } from 'react';
+import { useFonts } from 'expo-font';
+import Constants from 'expo-constants';
+import Storybook from './storybook';
+
+import { RootNavigator } from './navigation';
+import * as SplashScreen from 'expo-splash-screen';
 
 const App = () => {
   const [fontsLoaded] = useFonts({
@@ -33,6 +36,10 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 });
+
+// export default Constants.expoConfig?.extra?.storybook === false
+//   ? App
+//   : Storybook;
 
 export default App;
 // export { default } from './storybook';

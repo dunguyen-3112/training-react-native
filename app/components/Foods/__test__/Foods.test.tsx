@@ -20,12 +20,13 @@ describe('Component', () => {
       if (name) expect(screen.getByText(name)).toBeTruthy();
     });
 
-    const item = MOCK_FOODS[0];
+    const item = MOCK_FOODS[1];
     if (item.name) {
-      const select = component.getByText(item.name).parent;
+      const select = component.getByText(item.name);
+      console.log(select);
       if (select) {
         fireEvent.press(select);
-        // expect(mockFoodOnPress).toHaveBeenCalledWith(item.id);
+        expect(mockFoodOnPress).toHaveBeenCalledWith(item.id);
       }
     }
   });

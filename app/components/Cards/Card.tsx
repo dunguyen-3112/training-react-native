@@ -3,15 +3,15 @@ import { StyleSheet, View, ImageBackground } from 'react-native';
 
 import { Button, Text } from '../common';
 import { ArrowICon, COLORS } from '@constants';
-interface SlideItemProps {
+export interface CardProps {
   title: string;
   image: string;
-  type: CARD_TYPES;
+  type?: CARD_TYPES;
 }
 
 type CARD_TYPES = 'green' | 'secondary';
 
-const Card = (props: SlideItemProps | null) => {
+const Card = (props: CardProps | null) => {
   const { image = '', type = 'green', title = '' } = props || {};
 
   return (
