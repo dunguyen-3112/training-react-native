@@ -62,7 +62,13 @@
 
 -   Run application:
 
-*   Get ipv4 system and change and :
+*   If use ubuntu only run:
+
+    > ```
+    > ./run.bash
+    > ```
+
+*   Get ipv4 system:
 
     > ```
     >   // line 5 in constants/API.ts
@@ -85,16 +91,10 @@
     >
     > ```
 
--   Type cmd to run application:
+-   Type commandline to run application:
 
     > ```
     > yarn server & yarn android
-    > ```
-
--   use ubuntu:
-
-    > ```
-    > ./run.bash
     > ```
 
 ## 6. Author
