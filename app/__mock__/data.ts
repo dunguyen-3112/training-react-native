@@ -1,4 +1,4 @@
-import { IArtcile, IFood } from '@types';
+import { IArtcile, IFood, TIngredient, TNutritional } from '@types';
 
 export const MOCK_FOODS: IFood[] = [
   {
@@ -331,5 +331,37 @@ export const MOCK_ACTICLES: IArtcile[] = [
     name: 'Article',
     image:
       'https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/image1.png?alt=media&token=45bbf690-ea27-466c-b025-67e6fc7aed6a',
+  },
+];
+
+export const MOCK_INGREDIENTS: TIngredient[] = [
+  {
+    id: 1,
+    value: 200,
+    name: 'Bread',
+  },
+  {
+    id: 2,
+    name: 'Meat (Chicken)',
+    value: 200,
+  },
+  {
+    id: 3,
+    name: 'Cacumber',
+    value: 200,
+  },
+  {
+    id: 4,
+    name: 'Onion',
+    value: 200,
+  },
+];
+
+export const MOCK_NUTRITIONAL: TNutritional[] = [
+  {
+    calories: 12,
+    carbs: 105,
+    protein: 10,
+    fat: 18,
   },
 ];

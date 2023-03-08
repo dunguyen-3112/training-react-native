@@ -98,6 +98,7 @@ exports[`Categories should render List 1`] = `
             Array [
               Object {
                 "alignItems": "center",
+                "alignSelf": "flex-start",
                 "borderRadius": 8,
                 "flexDirection": "row",
                 "justifyContent": "center",
@@ -163,6 +164,7 @@ exports[`Categories should render List 1`] = `
             Array [
               Object {
                 "alignItems": "center",
+                "alignSelf": "flex-start",
                 "borderRadius": 8,
                 "flexDirection": "row",
                 "justifyContent": "center",
@@ -228,6 +230,7 @@ exports[`Categories should render List 1`] = `
             Array [
               Object {
                 "alignItems": "center",
+                "alignSelf": "flex-start",
                 "borderRadius": 8,
                 "flexDirection": "row",
                 "justifyContent": "center",
@@ -293,6 +296,7 @@ exports[`Categories should render List 1`] = `
             Array [
               Object {
                 "alignItems": "center",
+                "alignSelf": "flex-start",
                 "borderRadius": 8,
                 "flexDirection": "row",
                 "justifyContent": "center",
@@ -358,6 +362,7 @@ exports[`Categories should render List 1`] = `
             Array [
               Object {
                 "alignItems": "center",
+                "alignSelf": "flex-start",
                 "borderRadius": 8,
                 "flexDirection": "row",
                 "justifyContent": "center",
@@ -423,6 +428,7 @@ exports[`Categories should render List 1`] = `
             Array [
               Object {
                 "alignItems": "center",
+                "alignSelf": "flex-start",
                 "borderRadius": 8,
                 "flexDirection": "row",
                 "justifyContent": "center",
@@ -488,6 +494,7 @@ exports[`Categories should render List 1`] = `
             Array [
               Object {
                 "alignItems": "center",
+                "alignSelf": "flex-start",
                 "borderRadius": 8,
                 "flexDirection": "row",
                 "justifyContent": "center",
@@ -553,6 +560,7 @@ exports[`Categories should render List 1`] = `
             Array [
               Object {
                 "alignItems": "center",
+                "alignSelf": "flex-start",
                 "borderRadius": 8,
                 "flexDirection": "row",
                 "justifyContent": "center",

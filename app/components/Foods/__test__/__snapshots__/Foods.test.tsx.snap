@@ -9,12 +9,27 @@ exports[`Component renders correctly 1`] = `
         "backgroundColor": "#FFFFFF",
         "flex": 1,
       },
-      Object {
-        "alignItems": "center",
-      },
+      Object {},
     ]
   }
 >
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#5C5C5C",
+          "fontSize": 20,
+          "fontWeight": "700",
+        },
+        Object {
+          "marginLeft": 8,
+          "marginTop": 22,
+        },
+      ]
+    }
+  >
+    All Food
+  </Text>
   <RCTScrollView
     ItemSeparatorComponent={[Function]}
     data={
@@ -327,7 +342,7 @@ exports[`Component renders correctly 1`] = `
     }
     getItem={[Function]}
     getItemCount={[Function]}
-    justifyContent="space-between"
+    horizontal={true}
     keyExtractor={[Function]}
     onContentSizeChange={[Function]}
     onLayout={[Function]}
@@ -348,287 +363,149 @@ exports[`Component renders correctly 1`] = `
       }
     }
     viewabilityConfigCallbackPairs={Array []}
-    width={326}
   >
     <View>
       <View
         onLayout={[Function]}
-        style={null}
+        style={
+          Array [
+            Object {
+              "flexDirection": "row",
+            },
+            null,
+          ]
+        }
       >
         <View
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
           style={
             Array [
               Object {
-                "flexDirection": "row",
+                "alignItems": "center",
+                "backgroundColor": "#FFFFFF",
+                "borderRadius": 20,
+                "justifyContent": "space-around",
+                "paddingBottom": 18,
+                "paddingHorizontal": 27,
+                "paddingTop": 17,
+                "paddingVertical": 17,
               },
               Object {
-                "justifyContent": "space-between",
+                "borderColor": "#DBDBDB",
+                "borderWidth": 1,
+                "height": 192,
+                "width": 154,
               },
             ]
           }
         >
-          <View
-            accessible={true}
-            collapsable={false}
-            focusable={true}
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Array [
-                Object {
-                  "alignItems": "center",
-                  "backgroundColor": "#FFFFFF",
-                  "borderRadius": 20,
-                  "justifyContent": "space-around",
-                  "paddingBottom": 18,
-                  "paddingHorizontal": 27,
-                  "paddingTop": 17,
-                  "paddingVertical": 17,
-                },
-                Object {
-                  "borderColor": "#DBDBDB",
-                  "borderWidth": 1,
-                  "height": 192,
-                  "width": 154,
-                },
-              ]
-            }
-          >
-            <View>
-              <View
+          <View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "justifyContent": "center",
+                  },
+                  Object {
+                    "backgroundColor": "#EA1502",
+                    "borderRadius": 46,
+                    "height": 92,
+                    "opacity": 0.2,
+                    "width": 92,
+                  },
+                ]
+              }
+            />
+            <View
+              style={
+                Array [
+                  Object {
+                    "position": "absolute",
+                    "zIndex": 1,
+                  },
+                  Object {
+                    "backgroundColor": "#EA1502",
+                    "borderRadius": 34,
+                    "height": 68,
+                    "left": 12,
+                    "top": 12,
+                    "width": 68,
+                  },
+                ]
+              }
+            >
+              <Image
+                source={
+                  Object {
+                    "uri": "https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/a2.png?alt=media&token=abe65f60-e23e-48d9-a2c8-13c9e3ccb921",
+                  }
+                }
                 style={
                   Array [
                     Object {
-                      "alignItems": "center",
-                      "justifyContent": "center",
+                      "bottom": -10,
+                      "position": "absolute",
+                      "resizeMode": "contain",
+                      "right": -20,
+                      "zIndex": 2,
                     },
                     Object {
-                      "backgroundColor": "#EA1502",
-                      "borderRadius": 46,
-                      "height": 92,
-                      "opacity": 0.2,
-                      "width": 92,
+                      "height": 80,
+                      "width": 100,
                     },
                   ]
                 }
               />
-              <View
-                style={
-                  Array [
-                    Object {
-                      "position": "absolute",
-                      "zIndex": 1,
-                    },
-                    Object {
-                      "backgroundColor": "#EA1502",
-                      "borderRadius": 34,
-                      "height": 68,
-                      "left": 12,
-                      "top": 12,
-                      "width": 68,
-                    },
-                  ]
-                }
-              >
-                <Image
-                  source={
-                    Object {
-                      "uri": "https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/a2.png?alt=media&token=abe65f60-e23e-48d9-a2c8-13c9e3ccb921",
-                    }
-                  }
-                  style={
-                    Array [
-                      Object {
-                        "bottom": -10,
-                        "position": "absolute",
-                        "resizeMode": "contain",
-                        "right": -20,
-                        "zIndex": 2,
-                      },
-                      Object {
-                        "height": 80,
-                        "width": 100,
-                      },
-                    ]
-                  }
-                />
-              </View>
             </View>
-            <Text
-              style={
-                Array [
-                  Object {
-                    "color": "#5C5C5C",
-                    "fontSize": 14,
-                    "fontWeight": undefined,
-                  },
-                  Object {
-                    "fontSize": 17,
-                    "fontWeight": "700",
-                    "marginTop": 14,
-                  },
-                ]
-              }
-            >
-              Pizza
-            </Text>
-            <Text
-              style={
-                Array [
-                  Object {
-                    "color": "#5C5C5C",
-                    "fontSize": 14,
-                    "fontWeight": undefined,
-                  },
-                  Object {
-                    "fontSize": 13,
-                    "fontWeight": "400",
-                    "marginTop": 10,
-                  },
-                ]
-              }
-            >
-              100 cal/200 kg
-            </Text>
           </View>
-          <View
-            accessible={true}
-            collapsable={false}
-            focusable={true}
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
+          <Text
             style={
               Array [
                 Object {
-                  "alignItems": "center",
-                  "backgroundColor": "#FFFFFF",
-                  "borderRadius": 20,
-                  "justifyContent": "space-around",
-                  "paddingBottom": 18,
-                  "paddingHorizontal": 27,
-                  "paddingTop": 17,
-                  "paddingVertical": 17,
+                  "color": "#5C5C5C",
+                  "fontSize": 14,
+                  "fontWeight": undefined,
                 },
                 Object {
-                  "borderColor": "#DBDBDB",
-                  "borderWidth": 1,
-                  "height": 192,
-                  "width": 154,
+                  "fontSize": 17,
+                  "fontWeight": "700",
+                  "marginTop": 14,
                 },
               ]
             }
           >
-            <View>
-              <View
-                style={
-                  Array [
-                    Object {
-                      "alignItems": "center",
-                      "justifyContent": "center",
-                    },
-                    Object {
-                      "backgroundColor": "#EA1502",
-                      "borderRadius": 46,
-                      "height": 92,
-                      "opacity": 0.2,
-                      "width": 92,
-                    },
-                  ]
-                }
-              />
-              <View
-                style={
-                  Array [
-                    Object {
-                      "position": "absolute",
-                      "zIndex": 1,
-                    },
-                    Object {
-                      "backgroundColor": "#EA1502",
-                      "borderRadius": 34,
-                      "height": 68,
-                      "left": 12,
-                      "top": 12,
-                      "width": 68,
-                    },
-                  ]
-                }
-              >
-                <Image
-                  source={
-                    Object {
-                      "uri": "https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/a2.png?alt=media&token=abe65f60-e23e-48d9-a2c8-13c9e3ccb921",
-                    }
-                  }
-                  style={
-                    Array [
-                      Object {
-                        "bottom": -10,
-                        "position": "absolute",
-                        "resizeMode": "contain",
-                        "right": -20,
-                        "zIndex": 2,
-                      },
-                      Object {
-                        "height": 80,
-                        "width": 100,
-                      },
-                    ]
-                  }
-                />
-              </View>
-            </View>
-            <Text
-              style={
-                Array [
-                  Object {
-                    "color": "#5C5C5C",
-                    "fontSize": 14,
-                    "fontWeight": undefined,
-                  },
-                  Object {
-                    "fontSize": 17,
-                    "fontWeight": "700",
-                    "marginTop": 14,
-                  },
-                ]
-              }
-            >
-              Chicken 1
-            </Text>
-            <Text
-              style={
-                Array [
-                  Object {
-                    "color": "#5C5C5C",
-                    "fontSize": 14,
-                    "fontWeight": undefined,
-                  },
-                  Object {
-                    "fontSize": 13,
-                    "fontWeight": "400",
-                    "marginTop": 10,
-                  },
-                ]
-              }
-            >
-              200 cal/400 kg
-            </Text>
-          </View>
+            Pizza
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#5C5C5C",
+                  "fontSize": 14,
+                  "fontWeight": undefined,
+                },
+                Object {
+                  "fontSize": 13,
+                  "fontWeight": "400",
+                  "marginTop": 10,
+                },
+              ]
+            }
+          >
+            100 cal/200 kg
+          </Text>
         </View>
         <View
           style={
@@ -641,282 +518,145 @@ exports[`Component renders correctly 1`] = `
       </View>
       <View
         onLayout={[Function]}
-        style={null}
+        style={
+          Array [
+            Object {
+              "flexDirection": "row",
+            },
+            null,
+          ]
+        }
       >
         <View
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
           style={
             Array [
               Object {
-                "flexDirection": "row",
+                "alignItems": "center",
+                "backgroundColor": "#FFFFFF",
+                "borderRadius": 20,
+                "justifyContent": "space-around",
+                "paddingBottom": 18,
+                "paddingHorizontal": 27,
+                "paddingTop": 17,
+                "paddingVertical": 17,
               },
               Object {
-                "justifyContent": "space-between",
+                "borderColor": "#DBDBDB",
+                "borderWidth": 1,
+                "height": 192,
+                "width": 154,
               },
             ]
           }
         >
-          <View
-            accessible={true}
-            collapsable={false}
-            focusable={true}
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Array [
-                Object {
-                  "alignItems": "center",
-                  "backgroundColor": "#FFFFFF",
-                  "borderRadius": 20,
-                  "justifyContent": "space-around",
-                  "paddingBottom": 18,
-                  "paddingHorizontal": 27,
-                  "paddingTop": 17,
-                  "paddingVertical": 17,
-                },
-                Object {
-                  "borderColor": "#DBDBDB",
-                  "borderWidth": 1,
-                  "height": 192,
-                  "width": 154,
-                },
-              ]
-            }
-          >
-            <View>
-              <View
+          <View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "justifyContent": "center",
+                  },
+                  Object {
+                    "backgroundColor": "#EA1502",
+                    "borderRadius": 46,
+                    "height": 92,
+                    "opacity": 0.2,
+                    "width": 92,
+                  },
+                ]
+              }
+            />
+            <View
+              style={
+                Array [
+                  Object {
+                    "position": "absolute",
+                    "zIndex": 1,
+                  },
+                  Object {
+                    "backgroundColor": "#EA1502",
+                    "borderRadius": 34,
+                    "height": 68,
+                    "left": 12,
+                    "top": 12,
+                    "width": 68,
+                  },
+                ]
+              }
+            >
+              <Image
+                source={
+                  Object {
+                    "uri": "https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/a2.png?alt=media&token=abe65f60-e23e-48d9-a2c8-13c9e3ccb921",
+                  }
+                }
                 style={
                   Array [
                     Object {
-                      "alignItems": "center",
-                      "justifyContent": "center",
+                      "bottom": -10,
+                      "position": "absolute",
+                      "resizeMode": "contain",
+                      "right": -20,
+                      "zIndex": 2,
                     },
                     Object {
-                      "backgroundColor": "#F2C94C",
-                      "borderRadius": 46,
-                      "height": 92,
-                      "opacity": 0.2,
-                      "width": 92,
+                      "height": 80,
+                      "width": 100,
                     },
                   ]
                 }
               />
-              <View
-                style={
-                  Array [
-                    Object {
-                      "position": "absolute",
-                      "zIndex": 1,
-                    },
-                    Object {
-                      "backgroundColor": "#F2C94C",
-                      "borderRadius": 34,
-                      "height": 68,
-                      "left": 12,
-                      "top": 12,
-                      "width": 68,
-                    },
-                  ]
-                }
-              >
-                <Image
-                  source={
-                    Object {
-                      "uri": "https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/a5.png?alt=media&token=af718429-aabf-4329-91e5-439cff65e187",
-                    }
-                  }
-                  style={
-                    Array [
-                      Object {
-                        "bottom": -10,
-                        "position": "absolute",
-                        "resizeMode": "contain",
-                        "right": -20,
-                        "zIndex": 2,
-                      },
-                      Object {
-                        "height": 80,
-                        "width": 100,
-                      },
-                    ]
-                  }
-                />
-              </View>
             </View>
-            <Text
-              style={
-                Array [
-                  Object {
-                    "color": "#5C5C5C",
-                    "fontSize": 14,
-                    "fontWeight": undefined,
-                  },
-                  Object {
-                    "fontSize": 17,
-                    "fontWeight": "700",
-                    "marginTop": 14,
-                  },
-                ]
-              }
-            >
-              Fish
-            </Text>
-            <Text
-              style={
-                Array [
-                  Object {
-                    "color": "#5C5C5C",
-                    "fontSize": 14,
-                    "fontWeight": undefined,
-                  },
-                  Object {
-                    "fontSize": 13,
-                    "fontWeight": "400",
-                    "marginTop": 10,
-                  },
-                ]
-              }
-            >
-              200 cal/400 kg
-            </Text>
           </View>
-          <View
-            accessible={true}
-            collapsable={false}
-            focusable={true}
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
+          <Text
             style={
               Array [
                 Object {
-                  "alignItems": "center",
-                  "backgroundColor": "#FFFFFF",
-                  "borderRadius": 20,
-                  "justifyContent": "space-around",
-                  "paddingBottom": 18,
-                  "paddingHorizontal": 27,
-                  "paddingTop": 17,
-                  "paddingVertical": 17,
+                  "color": "#5C5C5C",
+                  "fontSize": 14,
+                  "fontWeight": undefined,
                 },
                 Object {
-                  "borderColor": "#DBDBDB",
-                  "borderWidth": 1,
-                  "height": 192,
-                  "width": 154,
+                  "fontSize": 17,
+                  "fontWeight": "700",
+                  "marginTop": 14,
                 },
               ]
             }
           >
-            <View>
-              <View
-                style={
-                  Array [
-                    Object {
-                      "alignItems": "center",
-                      "justifyContent": "center",
-                    },
-                    Object {
-                      "backgroundColor": "#27AE60",
-                      "borderRadius": 46,
-                      "height": 92,
-                      "opacity": 0.2,
-                      "width": 92,
-                    },
-                  ]
-                }
-              />
-              <View
-                style={
-                  Array [
-                    Object {
-                      "position": "absolute",
-                      "zIndex": 1,
-                    },
-                    Object {
-                      "backgroundColor": "#27AE60",
-                      "borderRadius": 34,
-                      "height": 68,
-                      "left": 12,
-                      "top": 12,
-                      "width": 68,
-                    },
-                  ]
-                }
-              >
-                <Image
-                  source={
-                    Object {
-                      "uri": "https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/a6.png?alt=media&token=e16ecdc8-e597-464d-90ce-0c6b64e0c5a8",
-                    }
-                  }
-                  style={
-                    Array [
-                      Object {
-                        "bottom": -10,
-                        "position": "absolute",
-                        "resizeMode": "contain",
-                        "right": -20,
-                        "zIndex": 2,
-                      },
-                      Object {
-                        "height": 80,
-                        "width": 100,
-                      },
-                    ]
-                  }
-                />
-              </View>
-            </View>
-            <Text
-              style={
-                Array [
-                  Object {
-                    "color": "#5C5C5C",
-                    "fontSize": 14,
-                    "fontWeight": undefined,
-                  },
-                  Object {
-                    "fontSize": 17,
-                    "fontWeight": "700",
-                    "marginTop": 14,
-                  },
-                ]
-              }
-            >
-              Bacon
-            </Text>
-            <Text
-              style={
-                Array [
-                  Object {
-                    "color": "#5C5C5C",
-                    "fontSize": 14,
-                    "fontWeight": undefined,
-                  },
-                  Object {
-                    "fontSize": 13,
-                    "fontWeight": "400",
-                    "marginTop": 10,
-                  },
-                ]
-              }
-            >
-              200 cal/400 kg
-            </Text>
-          </View>
+            Chicken 1
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#5C5C5C",
+                  "fontSize": 14,
+                  "fontWeight": undefined,
+                },
+                Object {
+                  "fontSize": 13,
+                  "fontWeight": "400",
+                  "marginTop": 10,
+                },
+              ]
+            }
+          >
+            200 cal/400 kg
+          </Text>
         </View>
         <View
           style={
@@ -929,282 +669,145 @@ exports[`Component renders correctly 1`] = `
       </View>
       <View
         onLayout={[Function]}
-        style={null}
+        style={
+          Array [
+            Object {
+              "flexDirection": "row",
+            },
+            null,
+          ]
+        }
       >
         <View
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
           style={
             Array [
               Object {
-                "flexDirection": "row",
+                "alignItems": "center",
+                "backgroundColor": "#FFFFFF",
+                "borderRadius": 20,
+                "justifyContent": "space-around",
+                "paddingBottom": 18,
+                "paddingHorizontal": 27,
+                "paddingTop": 17,
+                "paddingVertical": 17,
               },
               Object {
-                "justifyContent": "space-between",
+                "borderColor": "#DBDBDB",
+                "borderWidth": 1,
+                "height": 192,
+                "width": 154,
               },
             ]
           }
         >
-          <View
-            accessible={true}
-            collapsable={false}
-            focusable={true}
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Array [
-                Object {
-                  "alignItems": "center",
-                  "backgroundColor": "#FFFFFF",
-                  "borderRadius": 20,
-                  "justifyContent": "space-around",
-                  "paddingBottom": 18,
-                  "paddingHorizontal": 27,
-                  "paddingTop": 17,
-                  "paddingVertical": 17,
-                },
-                Object {
-                  "borderColor": "#DBDBDB",
-                  "borderWidth": 1,
-                  "height": 192,
-                  "width": 154,
-                },
-              ]
-            }
-          >
-            <View>
-              <View
+          <View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "justifyContent": "center",
+                  },
+                  Object {
+                    "backgroundColor": "#F2C94C",
+                    "borderRadius": 46,
+                    "height": 92,
+                    "opacity": 0.2,
+                    "width": 92,
+                  },
+                ]
+              }
+            />
+            <View
+              style={
+                Array [
+                  Object {
+                    "position": "absolute",
+                    "zIndex": 1,
+                  },
+                  Object {
+                    "backgroundColor": "#F2C94C",
+                    "borderRadius": 34,
+                    "height": 68,
+                    "left": 12,
+                    "top": 12,
+                    "width": 68,
+                  },
+                ]
+              }
+            >
+              <Image
+                source={
+                  Object {
+                    "uri": "https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/a5.png?alt=media&token=af718429-aabf-4329-91e5-439cff65e187",
+                  }
+                }
                 style={
                   Array [
                     Object {
-                      "alignItems": "center",
-                      "justifyContent": "center",
+                      "bottom": -10,
+                      "position": "absolute",
+                      "resizeMode": "contain",
+                      "right": -20,
+                      "zIndex": 2,
                     },
                     Object {
-                      "backgroundColor": "#EA1502",
-                      "borderRadius": 46,
-                      "height": 92,
-                      "opacity": 0.2,
-                      "width": 92,
+                      "height": 80,
+                      "width": 100,
                     },
                   ]
                 }
               />
-              <View
-                style={
-                  Array [
-                    Object {
-                      "position": "absolute",
-                      "zIndex": 1,
-                    },
-                    Object {
-                      "backgroundColor": "#EA1502",
-                      "borderRadius": 34,
-                      "height": 68,
-                      "left": 12,
-                      "top": 12,
-                      "width": 68,
-                    },
-                  ]
-                }
-              >
-                <Image
-                  source={
-                    Object {
-                      "uri": "https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/a2.png?alt=media&token=abe65f60-e23e-48d9-a2c8-13c9e3ccb921",
-                    }
-                  }
-                  style={
-                    Array [
-                      Object {
-                        "bottom": -10,
-                        "position": "absolute",
-                        "resizeMode": "contain",
-                        "right": -20,
-                        "zIndex": 2,
-                      },
-                      Object {
-                        "height": 80,
-                        "width": 100,
-                      },
-                    ]
-                  }
-                />
-              </View>
             </View>
-            <Text
-              style={
-                Array [
-                  Object {
-                    "color": "#5C5C5C",
-                    "fontSize": 14,
-                    "fontWeight": undefined,
-                  },
-                  Object {
-                    "fontSize": 17,
-                    "fontWeight": "700",
-                    "marginTop": 14,
-                  },
-                ]
-              }
-            >
-              Chicken 2
-            </Text>
-            <Text
-              style={
-                Array [
-                  Object {
-                    "color": "#5C5C5C",
-                    "fontSize": 14,
-                    "fontWeight": undefined,
-                  },
-                  Object {
-                    "fontSize": 13,
-                    "fontWeight": "400",
-                    "marginTop": 10,
-                  },
-                ]
-              }
-            >
-              200 cal/400 kg
-            </Text>
           </View>
-          <View
-            accessible={true}
-            collapsable={false}
-            focusable={true}
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
+          <Text
             style={
               Array [
                 Object {
-                  "alignItems": "center",
-                  "backgroundColor": "#FFFFFF",
-                  "borderRadius": 20,
-                  "justifyContent": "space-around",
-                  "paddingBottom": 18,
-                  "paddingHorizontal": 27,
-                  "paddingTop": 17,
-                  "paddingVertical": 17,
+                  "color": "#5C5C5C",
+                  "fontSize": 14,
+                  "fontWeight": undefined,
                 },
                 Object {
-                  "borderColor": "#DBDBDB",
-                  "borderWidth": 1,
-                  "height": 192,
-                  "width": 154,
+                  "fontSize": 17,
+                  "fontWeight": "700",
+                  "marginTop": 14,
                 },
               ]
             }
           >
-            <View>
-              <View
-                style={
-                  Array [
-                    Object {
-                      "alignItems": "center",
-                      "justifyContent": "center",
-                    },
-                    Object {
-                      "backgroundColor": "#27AE60",
-                      "borderRadius": 46,
-                      "height": 92,
-                      "opacity": 0.2,
-                      "width": 92,
-                    },
-                  ]
-                }
-              />
-              <View
-                style={
-                  Array [
-                    Object {
-                      "position": "absolute",
-                      "zIndex": 1,
-                    },
-                    Object {
-                      "backgroundColor": "#27AE60",
-                      "borderRadius": 34,
-                      "height": 68,
-                      "left": 12,
-                      "top": 12,
-                      "width": 68,
-                    },
-                  ]
-                }
-              >
-                <Image
-                  source={
-                    Object {
-                      "uri": "https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/a6.png?alt=media&token=e16ecdc8-e597-464d-90ce-0c6b64e0c5a8",
-                    }
-                  }
-                  style={
-                    Array [
-                      Object {
-                        "bottom": -10,
-                        "position": "absolute",
-                        "resizeMode": "contain",
-                        "right": -20,
-                        "zIndex": 2,
-                      },
-                      Object {
-                        "height": 80,
-                        "width": 100,
-                      },
-                    ]
-                  }
-                />
-              </View>
-            </View>
-            <Text
-              style={
-                Array [
-                  Object {
-                    "color": "#5C5C5C",
-                    "fontSize": 14,
-                    "fontWeight": undefined,
-                  },
-                  Object {
-                    "fontSize": 17,
-                    "fontWeight": "700",
-                    "marginTop": 14,
-                  },
-                ]
-              }
-            >
-              Beef
-            </Text>
-            <Text
-              style={
-                Array [
-                  Object {
-                    "color": "#5C5C5C",
-                    "fontSize": 14,
-                    "fontWeight": undefined,
-                  },
-                  Object {
-                    "fontSize": 13,
-                    "fontWeight": "400",
-                    "marginTop": 10,
-                  },
-                ]
-              }
-            >
-              200 cal/400 kg
-            </Text>
-          </View>
+            Fish
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#5C5C5C",
+                  "fontSize": 14,
+                  "fontWeight": undefined,
+                },
+                Object {
+                  "fontSize": 13,
+                  "fontWeight": "400",
+                  "marginTop": 10,
+                },
+              ]
+            }
+          >
+            200 cal/400 kg
+          </Text>
         </View>
         <View
           style={
@@ -1217,282 +820,749 @@ exports[`Component renders correctly 1`] = `
       </View>
       <View
         onLayout={[Function]}
-        style={null}
+        style={
+          Array [
+            Object {
+              "flexDirection": "row",
+            },
+            null,
+          ]
+        }
       >
         <View
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
           style={
             Array [
               Object {
-                "flexDirection": "row",
+                "alignItems": "center",
+                "backgroundColor": "#FFFFFF",
+                "borderRadius": 20,
+                "justifyContent": "space-around",
+                "paddingBottom": 18,
+                "paddingHorizontal": 27,
+                "paddingTop": 17,
+                "paddingVertical": 17,
               },
               Object {
-                "justifyContent": "space-between",
+                "borderColor": "#DBDBDB",
+                "borderWidth": 1,
+                "height": 192,
+                "width": 154,
               },
             ]
           }
         >
-          <View
-            accessible={true}
-            collapsable={false}
-            focusable={true}
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              Array [
-                Object {
-                  "alignItems": "center",
-                  "backgroundColor": "#FFFFFF",
-                  "borderRadius": 20,
-                  "justifyContent": "space-around",
-                  "paddingBottom": 18,
-                  "paddingHorizontal": 27,
-                  "paddingTop": 17,
-                  "paddingVertical": 17,
-                },
-                Object {
-                  "borderColor": "#DBDBDB",
-                  "borderWidth": 1,
-                  "height": 192,
-                  "width": 154,
-                },
-              ]
-            }
-          >
-            <View>
-              <View
+          <View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "justifyContent": "center",
+                  },
+                  Object {
+                    "backgroundColor": "#27AE60",
+                    "borderRadius": 46,
+                    "height": 92,
+                    "opacity": 0.2,
+                    "width": 92,
+                  },
+                ]
+              }
+            />
+            <View
+              style={
+                Array [
+                  Object {
+                    "position": "absolute",
+                    "zIndex": 1,
+                  },
+                  Object {
+                    "backgroundColor": "#27AE60",
+                    "borderRadius": 34,
+                    "height": 68,
+                    "left": 12,
+                    "top": 12,
+                    "width": 68,
+                  },
+                ]
+              }
+            >
+              <Image
+                source={
+                  Object {
+                    "uri": "https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/a6.png?alt=media&token=e16ecdc8-e597-464d-90ce-0c6b64e0c5a8",
+                  }
+                }
                 style={
                   Array [
                     Object {
-                      "alignItems": "center",
-                      "justifyContent": "center",
+                      "bottom": -10,
+                      "position": "absolute",
+                      "resizeMode": "contain",
+                      "right": -20,
+                      "zIndex": 2,
                     },
                     Object {
-                      "backgroundColor": "#EA1502",
-                      "borderRadius": 46,
-                      "height": 92,
-                      "opacity": 0.2,
-                      "width": 92,
+                      "height": 80,
+                      "width": 100,
                     },
                   ]
                 }
               />
-              <View
-                style={
-                  Array [
-                    Object {
-                      "position": "absolute",
-                      "zIndex": 1,
-                    },
-                    Object {
-                      "backgroundColor": "#EA1502",
-                      "borderRadius": 34,
-                      "height": 68,
-                      "left": 12,
-                      "top": 12,
-                      "width": 68,
-                    },
-                  ]
-                }
-              >
-                <Image
-                  source={
-                    Object {
-                      "uri": "https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/a2.png?alt=media&token=abe65f60-e23e-48d9-a2c8-13c9e3ccb921",
-                    }
-                  }
-                  style={
-                    Array [
-                      Object {
-                        "bottom": -10,
-                        "position": "absolute",
-                        "resizeMode": "contain",
-                        "right": -20,
-                        "zIndex": 2,
-                      },
-                      Object {
-                        "height": 80,
-                        "width": 100,
-                      },
-                    ]
-                  }
-                />
-              </View>
             </View>
-            <Text
-              style={
-                Array [
-                  Object {
-                    "color": "#5C5C5C",
-                    "fontSize": 14,
-                    "fontWeight": undefined,
-                  },
-                  Object {
-                    "fontSize": 17,
-                    "fontWeight": "700",
-                    "marginTop": 14,
-                  },
-                ]
-              }
-            >
-              Pork
-            </Text>
-            <Text
-              style={
-                Array [
-                  Object {
-                    "color": "#5C5C5C",
-                    "fontSize": 14,
-                    "fontWeight": undefined,
-                  },
-                  Object {
-                    "fontSize": 13,
-                    "fontWeight": "400",
-                    "marginTop": 10,
-                  },
-                ]
-              }
-            >
-              200 cal/400 kg
-            </Text>
           </View>
-          <View
-            accessible={true}
-            collapsable={false}
-            focusable={true}
-            onBlur={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
+          <Text
             style={
               Array [
                 Object {
-                  "alignItems": "center",
-                  "backgroundColor": "#FFFFFF",
-                  "borderRadius": 20,
-                  "justifyContent": "space-around",
-                  "paddingBottom": 18,
-                  "paddingHorizontal": 27,
-                  "paddingTop": 17,
-                  "paddingVertical": 17,
+                  "color": "#5C5C5C",
+                  "fontSize": 14,
+                  "fontWeight": undefined,
                 },
                 Object {
-                  "borderColor": "#DBDBDB",
-                  "borderWidth": 1,
-                  "height": 192,
-                  "width": 154,
+                  "fontSize": 17,
+                  "fontWeight": "700",
+                  "marginTop": 14,
                 },
               ]
             }
           >
-            <View>
-              <View
+            Bacon
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#5C5C5C",
+                  "fontSize": 14,
+                  "fontWeight": undefined,
+                },
+                Object {
+                  "fontSize": 13,
+                  "fontWeight": "400",
+                  "marginTop": 10,
+                },
+              ]
+            }
+          >
+            200 cal/400 kg
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "height": 18,
+              "marginLeft": 18,
+            }
+          }
+        />
+      </View>
+      <View
+        onLayout={[Function]}
+        style={
+          Array [
+            Object {
+              "flexDirection": "row",
+            },
+            null,
+          ]
+        }
+      >
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#FFFFFF",
+                "borderRadius": 20,
+                "justifyContent": "space-around",
+                "paddingBottom": 18,
+                "paddingHorizontal": 27,
+                "paddingTop": 17,
+                "paddingVertical": 17,
+              },
+              Object {
+                "borderColor": "#DBDBDB",
+                "borderWidth": 1,
+                "height": 192,
+                "width": 154,
+              },
+            ]
+          }
+        >
+          <View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "justifyContent": "center",
+                  },
+                  Object {
+                    "backgroundColor": "#EA1502",
+                    "borderRadius": 46,
+                    "height": 92,
+                    "opacity": 0.2,
+                    "width": 92,
+                  },
+                ]
+              }
+            />
+            <View
+              style={
+                Array [
+                  Object {
+                    "position": "absolute",
+                    "zIndex": 1,
+                  },
+                  Object {
+                    "backgroundColor": "#EA1502",
+                    "borderRadius": 34,
+                    "height": 68,
+                    "left": 12,
+                    "top": 12,
+                    "width": 68,
+                  },
+                ]
+              }
+            >
+              <Image
+                source={
+                  Object {
+                    "uri": "https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/a2.png?alt=media&token=abe65f60-e23e-48d9-a2c8-13c9e3ccb921",
+                  }
+                }
                 style={
                   Array [
                     Object {
-                      "alignItems": "center",
-                      "justifyContent": "center",
+                      "bottom": -10,
+                      "position": "absolute",
+                      "resizeMode": "contain",
+                      "right": -20,
+                      "zIndex": 2,
                     },
                     Object {
-                      "backgroundColor": "#D89E4A",
-                      "borderRadius": 46,
-                      "height": 92,
-                      "opacity": 0.2,
-                      "width": 92,
+                      "height": 80,
+                      "width": 100,
                     },
                   ]
                 }
               />
-              <View
+            </View>
+          </View>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#5C5C5C",
+                  "fontSize": 14,
+                  "fontWeight": undefined,
+                },
+                Object {
+                  "fontSize": 17,
+                  "fontWeight": "700",
+                  "marginTop": 14,
+                },
+              ]
+            }
+          >
+            Chicken 2
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#5C5C5C",
+                  "fontSize": 14,
+                  "fontWeight": undefined,
+                },
+                Object {
+                  "fontSize": 13,
+                  "fontWeight": "400",
+                  "marginTop": 10,
+                },
+              ]
+            }
+          >
+            200 cal/400 kg
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "height": 18,
+              "marginLeft": 18,
+            }
+          }
+        />
+      </View>
+      <View
+        onLayout={[Function]}
+        style={
+          Array [
+            Object {
+              "flexDirection": "row",
+            },
+            null,
+          ]
+        }
+      >
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#FFFFFF",
+                "borderRadius": 20,
+                "justifyContent": "space-around",
+                "paddingBottom": 18,
+                "paddingHorizontal": 27,
+                "paddingTop": 17,
+                "paddingVertical": 17,
+              },
+              Object {
+                "borderColor": "#DBDBDB",
+                "borderWidth": 1,
+                "height": 192,
+                "width": 154,
+              },
+            ]
+          }
+        >
+          <View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "justifyContent": "center",
+                  },
+                  Object {
+                    "backgroundColor": "#27AE60",
+                    "borderRadius": 46,
+                    "height": 92,
+                    "opacity": 0.2,
+                    "width": 92,
+                  },
+                ]
+              }
+            />
+            <View
+              style={
+                Array [
+                  Object {
+                    "position": "absolute",
+                    "zIndex": 1,
+                  },
+                  Object {
+                    "backgroundColor": "#27AE60",
+                    "borderRadius": 34,
+                    "height": 68,
+                    "left": 12,
+                    "top": 12,
+                    "width": 68,
+                  },
+                ]
+              }
+            >
+              <Image
+                source={
+                  Object {
+                    "uri": "https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/a6.png?alt=media&token=e16ecdc8-e597-464d-90ce-0c6b64e0c5a8",
+                  }
+                }
                 style={
                   Array [
                     Object {
+                      "bottom": -10,
                       "position": "absolute",
-                      "zIndex": 1,
+                      "resizeMode": "contain",
+                      "right": -20,
+                      "zIndex": 2,
                     },
                     Object {
-                      "backgroundColor": "#D89E4A",
-                      "borderRadius": 34,
-                      "height": 68,
-                      "left": 12,
-                      "top": 12,
-                      "width": 68,
+                      "height": 80,
+                      "width": 100,
                     },
                   ]
                 }
-              >
-                <Image
-                  source={
-                    Object {
-                      "uri": "https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/a2.png?alt=media&token=abe65f60-e23e-48d9-a2c8-13c9e3ccb921",
-                    }
-                  }
-                  style={
-                    Array [
-                      Object {
-                        "bottom": -10,
-                        "position": "absolute",
-                        "resizeMode": "contain",
-                        "right": -20,
-                        "zIndex": 2,
-                      },
-                      Object {
-                        "height": 80,
-                        "width": 100,
-                      },
-                    ]
-                  }
-                />
-              </View>
+              />
             </View>
-            <Text
-              style={
-                Array [
-                  Object {
-                    "color": "#5C5C5C",
-                    "fontSize": 14,
-                    "fontWeight": undefined,
-                  },
-                  Object {
-                    "fontSize": 17,
-                    "fontWeight": "700",
-                    "marginTop": 14,
-                  },
-                ]
-              }
-            >
-              Fish 2
-            </Text>
-            <Text
-              style={
-                Array [
-                  Object {
-                    "color": "#5C5C5C",
-                    "fontSize": 14,
-                    "fontWeight": undefined,
-                  },
-                  Object {
-                    "fontSize": 13,
-                    "fontWeight": "400",
-                    "marginTop": 10,
-                  },
-                ]
-              }
-            >
-              200 cal/400 kg
-            </Text>
           </View>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#5C5C5C",
+                  "fontSize": 14,
+                  "fontWeight": undefined,
+                },
+                Object {
+                  "fontSize": 17,
+                  "fontWeight": "700",
+                  "marginTop": 14,
+                },
+              ]
+            }
+          >
+            Beef
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#5C5C5C",
+                  "fontSize": 14,
+                  "fontWeight": undefined,
+                },
+                Object {
+                  "fontSize": 13,
+                  "fontWeight": "400",
+                  "marginTop": 10,
+                },
+              ]
+            }
+          >
+            200 cal/400 kg
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "height": 18,
+              "marginLeft": 18,
+            }
+          }
+        />
+      </View>
+      <View
+        onLayout={[Function]}
+        style={
+          Array [
+            Object {
+              "flexDirection": "row",
+            },
+            null,
+          ]
+        }
+      >
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#FFFFFF",
+                "borderRadius": 20,
+                "justifyContent": "space-around",
+                "paddingBottom": 18,
+                "paddingHorizontal": 27,
+                "paddingTop": 17,
+                "paddingVertical": 17,
+              },
+              Object {
+                "borderColor": "#DBDBDB",
+                "borderWidth": 1,
+                "height": 192,
+                "width": 154,
+              },
+            ]
+          }
+        >
+          <View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "justifyContent": "center",
+                  },
+                  Object {
+                    "backgroundColor": "#EA1502",
+                    "borderRadius": 46,
+                    "height": 92,
+                    "opacity": 0.2,
+                    "width": 92,
+                  },
+                ]
+              }
+            />
+            <View
+              style={
+                Array [
+                  Object {
+                    "position": "absolute",
+                    "zIndex": 1,
+                  },
+                  Object {
+                    "backgroundColor": "#EA1502",
+                    "borderRadius": 34,
+                    "height": 68,
+                    "left": 12,
+                    "top": 12,
+                    "width": 68,
+                  },
+                ]
+              }
+            >
+              <Image
+                source={
+                  Object {
+                    "uri": "https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/a2.png?alt=media&token=abe65f60-e23e-48d9-a2c8-13c9e3ccb921",
+                  }
+                }
+                style={
+                  Array [
+                    Object {
+                      "bottom": -10,
+                      "position": "absolute",
+                      "resizeMode": "contain",
+                      "right": -20,
+                      "zIndex": 2,
+                    },
+                    Object {
+                      "height": 80,
+                      "width": 100,
+                    },
+                  ]
+                }
+              />
+            </View>
+          </View>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#5C5C5C",
+                  "fontSize": 14,
+                  "fontWeight": undefined,
+                },
+                Object {
+                  "fontSize": 17,
+                  "fontWeight": "700",
+                  "marginTop": 14,
+                },
+              ]
+            }
+          >
+            Pork
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#5C5C5C",
+                  "fontSize": 14,
+                  "fontWeight": undefined,
+                },
+                Object {
+                  "fontSize": 13,
+                  "fontWeight": "400",
+                  "marginTop": 10,
+                },
+              ]
+            }
+          >
+            200 cal/400 kg
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "height": 18,
+              "marginLeft": 18,
+            }
+          }
+        />
+      </View>
+      <View
+        onLayout={[Function]}
+        style={
+          Array [
+            Object {
+              "flexDirection": "row",
+            },
+            null,
+          ]
+        }
+      >
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#FFFFFF",
+                "borderRadius": 20,
+                "justifyContent": "space-around",
+                "paddingBottom": 18,
+                "paddingHorizontal": 27,
+                "paddingTop": 17,
+                "paddingVertical": 17,
+              },
+              Object {
+                "borderColor": "#DBDBDB",
+                "borderWidth": 1,
+                "height": 192,
+                "width": 154,
+              },
+            ]
+          }
+        >
+          <View>
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "justifyContent": "center",
+                  },
+                  Object {
+                    "backgroundColor": "#D89E4A",
+                    "borderRadius": 46,
+                    "height": 92,
+                    "opacity": 0.2,
+                    "width": 92,
+                  },
+                ]
+              }
+            />
+            <View
+              style={
+                Array [
+                  Object {
+                    "position": "absolute",
+                    "zIndex": 1,
+                  },
+                  Object {
+                    "backgroundColor": "#D89E4A",
+                    "borderRadius": 34,
+                    "height": 68,
+                    "left": 12,
+                    "top": 12,
+                    "width": 68,
+                  },
+                ]
+              }
+            >
+              <Image
+                source={
+                  Object {
+                    "uri": "https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/a2.png?alt=media&token=abe65f60-e23e-48d9-a2c8-13c9e3ccb921",
+                  }
+                }
+                style={
+                  Array [
+                    Object {
+                      "bottom": -10,
+                      "position": "absolute",
+                      "resizeMode": "contain",
+                      "right": -20,
+                      "zIndex": 2,
+                    },
+                    Object {
+                      "height": 80,
+                      "width": 100,
+                    },
+                  ]
+                }
+              />
+            </View>
+          </View>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#5C5C5C",
+                  "fontSize": 14,
+                  "fontWeight": undefined,
+                },
+                Object {
+                  "fontSize": 17,
+                  "fontWeight": "700",
+                  "marginTop": 14,
+                },
+              ]
+            }
+          >
+            Fish 2
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#5C5C5C",
+                  "fontSize": 14,
+                  "fontWeight": undefined,
+                },
+                Object {
+                  "fontSize": 13,
+                  "fontWeight": "400",
+                  "marginTop": 10,
+                },
+              ]
+            }
+          >
+            200 cal/400 kg
+          </Text>
         </View>
       </View>
     </View>

@@ -26,7 +26,6 @@ const Details = () => {
   const { data, addFavorite, removeFavorite, fetch } = useFood<IFood>({ id });
 
   const [isMore, setIsMore] = useState(false);
-  const [isAll, setIsAll] = useState(false);
 
   const handleReadMore = useCallback(() => {
     setIsMore((prev) => !prev);
@@ -49,21 +48,6 @@ const Details = () => {
       }
     }
   }, [addFavorite, data, fetch, id, onChange, removeFavorite]);
-
-  const handleSeeAll = useCallback(() => {
-    setIsAll((prev) => !prev);
-  }, []);
-
-  const ingrediants = useMemo(() => {
-    if (data) {
-      const { ingredients } = data;
-
-      if (ingredients) {
-        const ingrediants = Object.values(ingredients);
-        return isAll ? ingrediants : ingrediants.slice(0, 2);
-      }
-    }
-  }, [data, isAll]);
 
   if (data === undefined) {
     return <Loading />;
@@ -98,23 +82,7 @@ const Details = () => {
 
         {/* Display Ingrediants */}
 
-        <View style={styles.ingrediant}>
-          <View style={styles.ingrediantHeader}>
-            <Text fontSize="xxl-0" fontWeight="600">
-              Ingrediants
-            </Text>
-            <Text
-              fontSize="ms-1"
-              fontWeight="500"
-              color="primary"
-              onPress={handleSeeAll}
-            >
-              {isAll ? 'See less' : 'See All'}
-            </Text>
-          </View>
-          <View></View>
-        </View>
-        {ingrediants && <Ingredients data={ingrediants} />}
+        {data.ingredients && <Ingredients data={data.ingredients} />}
 
         {/* add Favorite */}
 
@@ -151,13 +119,5 @@ const styles = StyleSheet.create({
   details: {
     paddingHorizontal: 20,
     marginTop: 19,
-  },
-  ingrediant: {
-    marginTop: 20,
-  },
-  ingrediantHeader: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
   },
 });
