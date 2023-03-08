@@ -7,7 +7,8 @@ import { RootScreenNavigationProps } from '@navigation';
 import { LoadingImage, ROOT, SPLASH, SplashImage } from '@constants';
 
 const SplashScreen = () => {
-  const navigation = useNavigation<RootScreenNavigationProps<typeof SPLASH>>();
+  const { navigate } =
+    useNavigation<RootScreenNavigationProps<typeof SPLASH>>();
   const animation = useRef(new Animated.Value(1)).current;
 
   useEffect(() => {
@@ -17,9 +18,9 @@ const SplashScreen = () => {
       useNativeDriver: false, // not supported in expo
       easing: Easing.inOut(Easing.ease),
     }).start(() => {
-      navigation.navigate(ROOT);
+      navigate(ROOT);
     });
-  }, [navigation, animation]);
+  }, [navigate, animation]);
 
   return (
     <Animated.View style={[styles.container, { opacity: animation }]}>

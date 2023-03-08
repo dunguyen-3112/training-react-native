@@ -18,6 +18,7 @@ module.exports = function (api) {
             '@navigation': './navigation',
             '@__mock__': './__mock__',
             '@helpers': './helpers',
+            '@mstorybook': './storybook',
           },
         },
       ],

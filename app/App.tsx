@@ -37,9 +37,5 @@ const styles = StyleSheet.create({
   },
 });
 
-// export default Constants.expoConfig?.extra?.storybook === false
-//   ? App
-//   : Storybook;
-
 export default App;
 // export { default } from './storybook';

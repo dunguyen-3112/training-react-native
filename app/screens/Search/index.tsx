@@ -9,7 +9,7 @@ import { DETAIL, SEARCH } from '@constants';
 import { IFood } from '@types';
 
 const SearchScreen = () => {
-  const { navigate } =
+  const { navigate, goBack } =
     useNavigation<RootScreenNavigationProps<typeof SEARCH>>();
   const { loading, data, setQuery, query, fetch } = useFood<IFood[]>();
 
@@ -29,9 +29,9 @@ const SearchScreen = () => {
 
   const handlePressItem = useCallback(
     (id: number) => {
-      navigate(DETAIL, { id, onChange: () => fetch() });
+      navigate(DETAIL, { id, onChange: () => fetch(), onBack: () => goBack() });
     },
-    [fetch, navigate]
+    [fetch, navigate, goBack]
   );
 
   return (

@@ -9,14 +9,15 @@ import { DETAIL, SEARCH, HOME } from '@constants';
 import { IFood } from '@types';
 
 const HomeScreen = () => {
-  const { navigate } = useNavigation<RootScreenNavigationProps<typeof HOME>>();
+  const { navigate, goBack } =
+    useNavigation<RootScreenNavigationProps<typeof HOME>>();
   const { data, fetch, setQuery } = useFood<IFood[]>();
 
   const handlePressItem = useCallback(
     (id: number) => {
-      navigate(DETAIL, { id, onChange: () => fetch() });
+      navigate(DETAIL, { id, onChange: () => fetch(), onBack: () => goBack() });
     },
-    [fetch, navigate]
+    [fetch, goBack, navigate]
   );
 
   const handleChangeTag = useCallback(

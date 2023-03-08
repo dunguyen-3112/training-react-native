@@ -18,7 +18,7 @@ import { IFood } from '@types';
 
 type DetailRoute = RouteProp<RootStackParamsList, typeof DETAIL>;
 
-const Details = () => {
+const Details = ({ onBack }: { onBack?: () => void }) => {
   const route = useRoute<DetailRoute>();
 
   const { id, onChange } = route.params;
@@ -71,7 +71,7 @@ const Details = () => {
 
   return (
     <View style={styles.container}>
-      <Back left={20} />
+      <Back left={20} onPress={onBack} />
 
       <View style={styles.avatar}>
         <Food data={data} type="large" disabled />

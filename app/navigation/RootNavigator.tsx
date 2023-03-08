@@ -11,6 +11,7 @@ export type RootStackParamsList = {
   [DETAIL]: {
     id: number;
     onChange?: () => void;
+    onBack?: () => void;
   };
 } & TabParamsList;
 
