@@ -62,7 +62,7 @@
 
 -   Run application:
 
-*   If use ubuntu only run:
+*   If use **ubuntu** only run:
 
     > ```
     > ./run.bash
