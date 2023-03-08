@@ -93,9 +93,16 @@
 
 -   Type commandline to run application:
 
-    > ```
-    > yarn server & yarn android
-    > ```
+    -   Run Server
+
+        > ```
+        > yarn server
+        > ```
+
+    -   Run App
+        > ```
+        > yarn android
+        > ```
 
 ## 6. Author
 
