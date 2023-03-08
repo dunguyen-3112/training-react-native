@@ -39,18 +39,17 @@
 
 -   Check out the branch: develop
 
-    > ````
+    > ```
     > git checkout develop
-    > > ```
-    > ````
+    > ```
 
-        > ```
-        > cd app
-        > ```
+    > ```
+    > cd app
+    > ```
 
 -   Install package dependencies:
 
-*   use npm:
+*   Use npm:
 
     > ```
     > npm install
@@ -65,29 +64,28 @@
 
 *   Get ipv4 system and change and :
 
-```
-    // line 5 in constants/API.ts
-    const ip = <ipv4>
-    //Example: const ip = '192.168.1.8'
+    > ```
+    >   // line 5 in constants/API.ts
+    >   const ip = <ipv4>
+    >   //Example: const ip = '192.168.1.8'
+    >
+    >   // line 8 in file packages.json
+    >
+    >   {
+    >       ...
+    >       scripts:{
+    >           ...
+    >
+    >           "server": "npx json-server --host <ipv4> ./data/db.json",
+    >           ...
+    >       }
+    >       ...
+    >
+    >   }
+    >
+    > ```
 
-    // line 8 in file packages.json
-```
-
-{
-...
-scripts:{
-...
-
-        "server": "npx json-server --host <ipv4> ./data/db.json",
-        ...
-    }
-    ...
-
-}
-
-````
-
-* Type cmd to run application:
+-   Type cmd to run application:
 
     > ```
     > yarn server & yarn android
@@ -95,11 +93,10 @@ scripts:{
 
 -   use ubuntu:
 
-> ```
-> ./run.bash
-> ```
+    > ```
+    > ./run.bash
+    > ```
 
 ## 6. Author
 
 -   Du Nguyen
-````
