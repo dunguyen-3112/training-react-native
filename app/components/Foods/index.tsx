@@ -7,12 +7,15 @@ import Food from './Food';
 import FoodImage from './FoodImage';
 
 export interface FoodsProps {
-  horizontal?: boolean;
   foods: IFood[] | null;
   onPressItem?: (id: number) => void;
 }
 
-const Foods = ({ horizontal, foods, onPressItem }: FoodsProps) => {
+const Foods = ({
+  horizontal,
+  foods,
+  onPressItem,
+}: FoodsProps & { horizontal?: boolean }) => {
   const handleItemSeparatorComponent = useCallback(
     () => <View style={{ marginLeft: 18, height: 18 }} />,
     []
@@ -59,7 +62,10 @@ const Foods = ({ horizontal, foods, onPressItem }: FoodsProps) => {
   );
 };
 
-export default memo(Foods);
+export const FoodsVertical = (props: FoodsProps) => <Foods {...props} />;
+export const FoodsHorizontal = (props: FoodsProps) => (
+  <Foods {...props} horizontal />
+);
 
 const styles = StyleSheet.create({
   container: {

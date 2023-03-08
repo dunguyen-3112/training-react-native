@@ -3,7 +3,7 @@ import { useNavigation } from '@react-navigation/native';
 import React, { useCallback } from 'react';
 
 import { useFood } from '@hooks';
-import { Foods, NotFound, Search } from '@components';
+import { FoodsVertical, NotFound, Search } from '@components';
 import { RootScreenNavigationProps } from '@navigation';
 import { DETAIL, FAVORITE } from '@constants';
 import { IFood } from '@types';
@@ -43,7 +43,7 @@ const FavoriteScreen = () => {
           <NotFound marginTop={200} />
         </View>
       ) : (
-        <Foods foods={data} onPressItem={handlePressItem} />
+        <FoodsVertical foods={data} onPressItem={handlePressItem} />
       )}
     </View>
   );

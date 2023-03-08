@@ -1,4 +1,4 @@
-import Foods, { Food, FoodImage } from './Foods';
+import { Food, FoodImage, FoodsHorizontal, FoodsVertical } from './Foods';
 import { Text, Input, Button } from './common';
 import Search from './Search';
 import Categories from './Categories';
@@ -15,7 +15,8 @@ export {
   Food,
   FoodImage,
   Categories,
-  Foods,
+  FoodsHorizontal,
+  FoodsVertical,
   Text,
   Search,
   Header,

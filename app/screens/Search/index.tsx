@@ -4,7 +4,14 @@ import React, { useCallback } from 'react';
 import { useFood } from '@hooks';
 import { useNavigation } from '@react-navigation/native';
 import { RootScreenNavigationProps } from '@navigation';
-import { Empty, Foods, Header, Loading, Search, Categories } from '@components';
+import {
+  Empty,
+  FoodsVertical,
+  Header,
+  Loading,
+  Search,
+  Categories,
+} from '@components';
 import { DETAIL, SEARCH } from '@constants';
 import { IFood } from '@types';
 
@@ -47,7 +54,7 @@ const SearchScreen = () => {
       ) : data === undefined || data.length === 0 ? (
         <Empty />
       ) : (
-        <Foods foods={data} onPressItem={handlePressItem} />
+        <FoodsVertical foods={data} onPressItem={handlePressItem} />
       )}
     </View>
   );

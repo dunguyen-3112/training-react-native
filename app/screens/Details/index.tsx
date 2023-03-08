@@ -18,10 +18,10 @@ import { IFood } from '@types';
 
 type DetailRoute = RouteProp<RootStackParamsList, typeof DETAIL>;
 
-const Details = ({ onBack }: { onBack?: () => void }) => {
+const Details = () => {
   const route = useRoute<DetailRoute>();
 
-  const { id, onChange } = route.params;
+  const { id, onChange, onBack } = route.params;
 
   const { data, addFavorite, removeFavorite, fetch } = useFood<IFood>({ id });
 
