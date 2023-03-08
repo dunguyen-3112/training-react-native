@@ -5,7 +5,8 @@
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
-    "server": "npx json-server --host 192.168.86.77 ./data/db.json",
+    "server": "npx json-server --host 192.168.62.141 ./data/db.json",
+    "run-app": "yarn start | yarn server",
     "ios": "expo start --ios",
     "web": "expo start --web",
     "storybook": "start-storybook -p 7007",
