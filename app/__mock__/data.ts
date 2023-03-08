@@ -45,7 +45,7 @@ export const MOCK_FOODS: IFood[] = [
     name: 'Chicken 1',
     weight: 400,
     color: 'RED',
-    desc: "Note that in TypeScript, you can define the return type of the function using a colon (:) after the function parameter list. In this example, we don't explicitly define the return type, but TypeScript will infer that the return type is a Promise that resolves to a JSON object.",
+    desc: "Note that in TypeScript, you can define the return type of the function using a colon after the function parameter list. In this example, we don't explicitly define the return type, but TypeScript will infer that the return type is a Promise that resolves to a JSON object.",
     nutritional: {
       calories: 200,
       carbs: 100,

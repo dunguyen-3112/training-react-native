@@ -2,12 +2,19 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import { FavoriteScreen, HomeScreen, SearchScreen } from '@screens';
-import { FavoriteMenu, HomeMenu, SearchMenu } from '@constants';
+import {
+  FAVORITE,
+  FavoriteMenu,
+  HOME,
+  HomeMenu,
+  SEARCH,
+  SearchMenu,
+} from '@constants';
 
 export type TabParamsList = {
-  Favorite: undefined;
-  Home: undefined;
-  Search: undefined;
+  [FAVORITE]: undefined;
+  [HOME]: undefined;
+  [SEARCH]: undefined;
 };
 
 const TabNavigator = () => {
@@ -21,19 +28,20 @@ const TabNavigator = () => {
         tabBarStyle: { height: 80 },
         tabBarIcon: ({ focused }) => {
           switch (route.name) {
-            case 'Favorite':
+            case FAVORITE:
               return <FavoriteMenu isFill={focused} />;
-            case 'Home':
+            case HOME:
               return <HomeMenu isFill={focused} />;
-            case 'Search':
+            case SEARCH:
               return <SearchMenu isFill={focused} />;
           }
         },
+        unmountOnBlur: true,
       })}
     >
-      <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Search" component={SearchScreen} />
-      <Tab.Screen name="Favorite" component={FavoriteScreen} />
+      <Tab.Screen name={HOME} component={HomeScreen} />
+      <Tab.Screen name={SEARCH} component={SearchScreen} />
+      <Tab.Screen name={FAVORITE} component={FavoriteScreen} />
     </Tab.Navigator>
   );
 };

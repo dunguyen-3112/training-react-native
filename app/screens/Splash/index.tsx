@@ -4,10 +4,10 @@ import { Animated, Easing, StyleSheet, View } from 'react-native';
 
 import { Text } from '@components';
 import { RootScreenNavigationProps } from '@navigation';
-import { LoadingImage, SplashImage } from '@constants';
+import { LoadingImage, ROOT, SPLASH, SplashImage } from '@constants';
 
 const SplashScreen = () => {
-  const navigation = useNavigation<RootScreenNavigationProps<'Splash'>>();
+  const navigation = useNavigation<RootScreenNavigationProps<typeof SPLASH>>();
   const animation = useRef(new Animated.Value(1)).current;
 
   useEffect(() => {
@@ -17,7 +17,7 @@ const SplashScreen = () => {
       useNativeDriver: false, // not supported in expo
       easing: Easing.inOut(Easing.ease),
     }).start(() => {
-      navigation.navigate('Root');
+      navigation.navigate(ROOT);
     });
   }, [navigation, animation]);
 

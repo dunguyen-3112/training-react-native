@@ -1,35 +1,35 @@
 import { StyleSheet, View } from 'react-native';
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback } from 'react';
 
-import { useFoods } from '@hooks';
+import { useFood } from '@hooks';
 import { useNavigation } from '@react-navigation/native';
 import { RootScreenNavigationProps } from '@navigation';
-import { Empty, Foods, Header, Loading, Search, Tags } from '@components';
-import { CATEGORIES } from '@constants';
+import { Empty, Foods, Header, Loading, Search, Categories } from '@components';
+import { DETAIL, SEARCH } from '@constants';
+import { IFood } from '@types';
 
 const SearchScreen = () => {
-  const { navigate } = useNavigation<RootScreenNavigationProps<'Search'>>();
-  const [text, setText] = useState('');
-  const { loading, foods, setQuery, fetch } = useFoods();
+  const { navigate } =
+    useNavigation<RootScreenNavigationProps<typeof SEARCH>>();
+  const { loading, data, setQuery, query, fetch } = useFood<IFood[]>();
 
-  useEffect(() => {
-    setQuery({ name: text });
-  }, [setQuery, text]);
-
-  const handleChangeTextSearch = useCallback((text: string) => {
-    setText(text);
-  }, []);
+  const handleChangeTextSearch = useCallback(
+    (text: string) => {
+      setQuery((prev) => ({ ...prev, name: text }));
+    },
+    [setQuery]
+  );
 
   const handleSelectTag = useCallback(
-    (id: number) => {
-      setQuery({ category: { id: id } });
+    (ids: number[]) => {
+      if (ids) setQuery((prev) => ({ ...prev, categories: ids }));
     },
     [setQuery]
   );
 
   const handlePressItem = useCallback(
     (id: number) => {
-      navigate('Details', { id, onChange: () => fetch() });
+      navigate(DETAIL, { id, onChange: () => fetch() });
     },
     [fetch, navigate]
   );
@@ -38,16 +38,16 @@ const SearchScreen = () => {
     <View style={styles.container}>
       <Header />
 
-      <Search value={text} onChangeText={handleChangeTextSearch} />
+      <Search value={query?.name} onChangeText={handleChangeTextSearch} />
 
-      <Tags marginTop={17} onSelect={handleSelectTag} categories={CATEGORIES} />
+      <Categories marginTop={17} onSelect={handleSelectTag} />
 
       {loading ? (
         <Loading marginTop={120} />
-      ) : foods === undefined || foods.length === 0 ? (
+      ) : data === undefined || data.length === 0 ? (
         <Empty />
       ) : (
-        <Foods foods={foods} onPressItem={handlePressItem} />
+        <Foods foods={data} onPressItem={handlePressItem} />
       )}
     </View>
   );

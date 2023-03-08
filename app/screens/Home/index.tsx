@@ -2,30 +2,32 @@ import React, { useCallback } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-import { useFoods } from '@hooks';
+import { useFood } from '@hooks';
 import { RootScreenNavigationProps } from '@navigation';
-import { Foods, Header, Search, Cards, Tags } from '@components';
+import { Foods, Header, Search, Cards, Categories } from '@components';
+import { DETAIL, SEARCH, HOME } from '@constants';
+import { IFood } from '@types';
 
 const HomeScreen = () => {
-  const { navigate } = useNavigation<RootScreenNavigationProps<'Home'>>();
-  const { foods, fetch, setQuery } = useFoods();
+  const { navigate } = useNavigation<RootScreenNavigationProps<typeof HOME>>();
+  const { data, fetch, setQuery } = useFood<IFood[]>();
 
   const handlePressItem = useCallback(
     (id: number) => {
-      navigate('Details', { id, onChange: () => fetch() });
+      navigate(DETAIL, { id, onChange: () => fetch() });
     },
     [fetch, navigate]
   );
 
-  const handleChangeTagName = useCallback(
-    (id: number) => {
-      if (id) setQuery({ category: { id: id } });
+  const handleChangeTag = useCallback(
+    (ids: number[]) => {
+      if (ids) setQuery({ categories: ids });
     },
     [setQuery]
   );
 
   const handleFocusSearch = useCallback(() => {
-    navigate('Search');
+    navigate(SEARCH);
     return false;
   }, [navigate]);
 
@@ -33,11 +35,9 @@ const HomeScreen = () => {
     <View style={styles.container}>
       <Header />
       <Search onFocus={handleFocusSearch} isFocus={false} />
-      <Tags marginTop={17} onSelect={handleChangeTagName} />
+      <Categories marginTop={17} onSelect={handleChangeTag} />
       <Cards marginTop={17} />
-      {foods && (
-        <Foods foods={foods} horizontal onPressItem={handlePressItem} />
-      )}
+      {data && <Foods foods={data} horizontal onPressItem={handlePressItem} />}
     </View>
   );
 };

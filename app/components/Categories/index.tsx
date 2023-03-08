@@ -8,18 +8,21 @@ import { CATEGORIES } from '@constants';
 
 export interface ICategories {
   marginTop?: number;
-  onSelect?: (id: number) => void;
+  onSelect?: (ids: number[]) => void;
 }
 
 const Categories = ({ marginTop, onSelect }: ICategories) => {
-  const [tag, setTag] = useState<number>();
+  const [tags, setTags] = useState<number[]>([]);
 
   const handlePressTag = useCallback(
     (id: number) => {
-      onSelect && onSelect(id);
-      setTag(id);
+      let newTags;
+      if (tags.includes(id)) newTags = tags.filter((item) => item !== id);
+      else newTags = [...tags, id];
+      onSelect && onSelect(newTags);
+      setTags(newTags);
     },
-    [onSelect]
+    [onSelect, tags]
   );
 
   const handleItemSeparatorComponent = useCallback(
@@ -27,25 +30,27 @@ const Categories = ({ marginTop, onSelect }: ICategories) => {
     []
   );
 
-  //   <Tag {...item} onPress={handlePressTag} isActive={tag === item.id} />
   const handleKeyExtractor = useCallback((item: ICategory) => item.id + '', []);
+
   const handleRenderItem = useCallback(
     ({ item }: { item: ICategory }) => {
       const { id, name } = item;
 
+      const isActive = tags.includes(id);
+
       return (
         <Button
           label={name}
-          type={id === tag ? 'active' : 'default'}
+          type={isActive ? 'active' : 'default'}
           customStyle={{
             ...styles.tag,
-            ...(id === tag && { ...styles.active }),
+            ...(isActive && { ...styles.active }),
           }}
           onPress={() => handlePressTag(id)}
         />
       );
     },
-    [handlePressTag, tag]
+    [handlePressTag, tags]
   );
 
   return (

@@ -3,7 +3,7 @@ import { StyleSheet, View } from 'react-native';
 import { RouteProp, useRoute } from '@react-navigation/native';
 
 import { RootStackParamsList } from '@navigation';
-import { useFood, useFoodFavorite } from '@hooks';
+import { useFood } from '@hooks';
 import {
   Back,
   Button,
@@ -13,16 +13,17 @@ import {
   Nutritional,
   Text,
 } from '@components';
+import { DETAIL } from '@constants';
+import { IFood } from '@types';
 
-type DetailRoute = RouteProp<RootStackParamsList, 'Details'>;
+type DetailRoute = RouteProp<RootStackParamsList, typeof DETAIL>;
 
 const Details = () => {
   const route = useRoute<DetailRoute>();
 
   const { id, onChange } = route.params;
 
-  const { food, fetch } = useFood(id);
-  const { addFavorite, removeFavorite } = useFoodFavorite();
+  const { data, addFavorite, removeFavorite, fetch } = useFood<IFood>({ id });
 
   const [isMore, setIsMore] = useState(false);
   const [isAll, setIsAll] = useState(false);
@@ -32,38 +33,39 @@ const Details = () => {
   }, []);
 
   const handlePress = useCallback(async () => {
-    let status;
-    if (food) {
-      if (!food.favorite) {
-        if (addFavorite) {
-          status = await addFavorite(id);
-        }
-      } else {
-        if (removeFavorite) {
-          status = await removeFavorite(id);
-        }
+    let newData;
+    if (data) {
+      const { favorite } = data;
+
+      if (favorite === 0) {
+        if (addFavorite) newData = await addFavorite(id);
+      } else if (removeFavorite) {
+        newData = await removeFavorite(id);
       }
-      if (status) {
-        onChange && onChange();
+
+      if (newData && onChange) {
         fetch && fetch();
+        onChange();
       }
     }
-  }, [addFavorite, fetch, food, id, onChange, removeFavorite]);
+  }, [addFavorite, data, fetch, id, onChange, removeFavorite]);
 
   const handleSeeAll = useCallback(() => {
     setIsAll((prev) => !prev);
   }, []);
 
   const ingrediants = useMemo(() => {
-    const ingrediant = food?.ingredients;
+    if (data) {
+      const { ingredients } = data;
 
-    if (ingrediant) {
-      const ingrediants = Object.values(ingrediant);
-      return isAll ? ingrediants : ingrediants.slice(0, 2);
+      if (ingredients) {
+        const ingrediants = Object.values(ingredients);
+        return isAll ? ingrediants : ingrediants.slice(0, 2);
+      }
     }
-  }, [food?.ingredients, isAll]);
+  }, [data, isAll]);
 
-  if (food === undefined) {
+  if (data === undefined) {
     return <Loading />;
   }
 
@@ -72,10 +74,10 @@ const Details = () => {
       <Back left={20} />
 
       <View style={styles.avatar}>
-        <Food data={food} type="large" disabled />
+        <Food data={data} type="large" disabled />
       </View>
 
-      {food.nutritional && <Nutritional nutritional={food.nutritional} />}
+      {data.nutritional && <Nutritional nutritional={data.nutritional} />}
 
       <View style={styles.details}>
         <Text fontSize="xxl-0" fontWeight="600">
@@ -83,7 +85,7 @@ const Details = () => {
         </Text>
 
         <Text fontSize="xl-5">
-          {isMore ? food.desc : food.desc?.substring(0, 150) + '...'}
+          {isMore ? data.desc : data.desc?.substring(0, 150) + '...'}
           <Text
             onPress={handleReadMore}
             fontSize="xl-5"
@@ -121,7 +123,7 @@ const Details = () => {
           borderRadius={9}
           onPress={handlePress}
           customStyle={{ paddingVertical: 9, width: '100%', marginTop: 27 }}
-          {...(food.favorite
+          {...(data.favorite
             ? {
                 type: 'secondary',
                 label: 'UnFavorite',
