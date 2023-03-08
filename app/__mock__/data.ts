@@ -1,4 +1,4 @@
-import { IFood } from '@types';
+import { IArtcile, IFood } from '@types';
 
 export const MOCK_FOODS: IFood[] = [
   {
@@ -312,5 +312,24 @@ export const MOCK_FOODS: IFood[] = [
     imgUrl:
       'https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/a2.png?alt=media&token=abe65f60-e23e-48d9-a2c8-13c9e3ccb921',
     favorite: 0,
+  },
+];
+
+export const MOCK_ACTICLES: IArtcile[] = [
+  {
+    id: 1,
+    title: 'The pros and cons of fast food.',
+    name: 'Article',
+    color: 'green',
+    image:
+      'https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/Group%2036209.png?alt=media&token=57ef4bf8-c2ec-4fb4-927d-1cf16b4bfaaa',
+  },
+  {
+    id: 2,
+    title: 'The pros and cons of vegetable',
+    color: 'secondary',
+    name: 'Article',
+    image:
+      'https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/image1.png?alt=media&token=45bbf690-ea27-466c-b025-67e6fc7aed6a',
   },
 ];

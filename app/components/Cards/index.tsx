@@ -3,25 +3,7 @@ import { StyleSheet, View, FlatList } from 'react-native';
 
 import Card from './Card';
 import { IArtcile } from '@types';
-
-const articles: IArtcile[] = [
-  {
-    id: 1,
-    title: 'The pros and cons of fast food.',
-    name: 'Article',
-    color: 'green',
-    image:
-      'https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/Group%2036209.png?alt=media&token=57ef4bf8-c2ec-4fb4-927d-1cf16b4bfaaa',
-  },
-  {
-    id: 2,
-    title: 'The pros and cons of vegetable',
-    color: 'secondary',
-    name: 'Article',
-    image:
-      'https://firebasestorage.googleapis.com/v0/b/react-my-example.appspot.com/o/image1.png?alt=media&token=45bbf690-ea27-466c-b025-67e6fc7aed6a',
-  },
-];
+import { MOCK_ACTICLES } from '@__mock__';
 
 const Cards = ({ marginTop = 0 }: { marginTop?: number }) => {
   const handleItemSeparatorComponent = useCallback(
@@ -39,7 +21,7 @@ const Cards = ({ marginTop = 0 }: { marginTop?: number }) => {
   return (
     <View style={styles.container}>
       <FlatList
-        data={articles}
+        data={MOCK_ACTICLES}
         keyExtractor={handleKeyExtractor}
         renderItem={handleRenderItem}
         horizontal

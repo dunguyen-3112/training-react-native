@@ -7,17 +7,12 @@ interface BackProps {
   left?: number;
   right?: number;
   bottom?: number;
+  onPress?: () => void;
 }
 
-const Back = ({ top, left, right, bottom }: BackProps) => {
-  const navigation = useNavigation();
-
-  const handlePress = useCallback(() => {
-    navigation.goBack();
-  }, [navigation]);
-
+const Back = ({ top, left, right, bottom, onPress }: BackProps) => {
   return (
-    <TouchableOpacity onPress={handlePress}>
+    <TouchableOpacity onPress={onPress}>
       <Image
         source={require('@assets/icons/back.png')}
         style={[styles.icon, { top, left, right, bottom }]}
