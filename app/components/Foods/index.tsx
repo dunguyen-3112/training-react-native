@@ -1,4 +1,4 @@
-import React, { memo, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import { FlatList, StyleSheet, View } from 'react-native';
 
 import { IFood } from '@types';
@@ -62,10 +62,8 @@ const Foods = ({
   );
 };
 
-export const FoodsVertical = (props: FoodsProps) => <Foods {...props} />;
-export const FoodsHorizontal = (props: FoodsProps) => (
-  <Foods {...props} horizontal />
-);
+const FoodsVertical = (props: FoodsProps) => <Foods {...props} />;
+const FoodsHorizontal = (props: FoodsProps) => <Foods {...props} horizontal />;
 
 const styles = StyleSheet.create({
   container: {
@@ -87,4 +85,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export { Food, FoodImage };
+export { Food, FoodImage, FoodsVertical, FoodsHorizontal };
