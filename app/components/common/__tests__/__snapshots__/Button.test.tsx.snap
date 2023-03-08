@@ -18,7 +18,6 @@ exports[`Button should render type primary 1`] = `
     Array [
       Object {
         "alignItems": "center",
-        "alignSelf": "flex-start",
         "borderRadius": 8,
         "flexDirection": "row",
         "justifyContent": "center",
@@ -68,7 +67,6 @@ exports[`Button should render type secondary 1`] = `
     Array [
       Object {
         "alignItems": "center",
-        "alignSelf": "flex-start",
         "borderRadius": 8,
         "flexDirection": "row",
         "justifyContent": "center",

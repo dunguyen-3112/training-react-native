@@ -93,7 +93,6 @@ exports[`Card Type is default 1`] = `
         Array [
           Object {
             "alignItems": "center",
-            "alignSelf": "flex-start",
             "borderRadius": 8,
             "flexDirection": "row",
             "justifyContent": "center",
