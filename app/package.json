@@ -5,7 +5,7 @@
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
-    "server": "nodemon --watch ./data/db.json --ext json --delay 100ms --exec 'json-server --host 192.168.86.77 ./data/db.json'",
+    "server": "npx json-server --host 192.168.86.77 ./data/db.json",
     "ios": "expo start --ios",
     "web": "expo start --web",
     "storybook": "start-storybook -p 7007",

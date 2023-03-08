@@ -29,7 +29,7 @@
 -   Node: v.18
 -   React: v.18.1.0
 -   React Native: v.0.70.5
--   expo: v.47.0.12
+-   expo: v.47.0.13
 
 -   Clone repository:
 
@@ -37,10 +37,10 @@
     > git clone https://github.com/dunguyen-3112/training-react-native.git
     > ```
 
--   Check out the branch: feature/practice
+-   Check out the branch: develop
 
     > ````
-    > git checkout feature/practice
+    > git checkout develop
     > > ```
     > ````
 
@@ -48,24 +48,58 @@
         > cd app
         > ```
 
--   Install package dependencies and run app:
+-   Install package dependencies:
 
 *   use npm:
 
     > ```
-    > npm install & npm run <platform>
+    > npm install
     > ```
 
 *   Use yarn:
     > ```
-    > yarn install & yarn <platform>
+    > yarn install
     > ```
 
--   Run application on Android:
+-   Run application:
+
+*   Get ipv4 system and change and :
+
+```
+    // line 5 in constants/API.ts
+    const ip = <ipv4>
+    //Example: const ip = '192.168.1.8'
+
+    // line 8 in file packages.json
+```
+
+{
+...
+scripts:{
+...
+
+        "server": "npx json-server --host <ipv4> ./data/db.json",
+        ...
+    }
+    ...
+
+}
+
+````
+
+* Type cmd to run application:
+
     > ```
-    > yarn install & yarn android
+    > yarn server & yarn android
     > ```
+
+-   use ubuntu:
+
+> ```
+> ./run.bash
+> ```
 
 ## 6. Author
 
 -   Du Nguyen
+````
