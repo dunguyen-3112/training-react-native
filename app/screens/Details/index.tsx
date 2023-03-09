@@ -76,7 +76,7 @@ const Details = () => {
       {nutritional && <Nutritional nutritional={nutritional} />}
 
       <View style={styles.details}>
-        <Text fontSize="xxl-0" fontWeight="600">
+        <Text fontSize="xxl-0" fontWeight="b">
           Details
         </Text>
 
