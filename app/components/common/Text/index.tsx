@@ -51,7 +51,7 @@ const CustomText = ({
     <Text
       onPress={onPress}
       style={[
-        { fontSize: _fontSize, fontWeight, color: _color },
+        { fontSize: _fontSize, color: _color, fontWeight },
         { ...customStyle },
       ]}
     >

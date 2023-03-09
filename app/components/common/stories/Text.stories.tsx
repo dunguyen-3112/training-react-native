@@ -8,7 +8,7 @@ storiesOf('Input', module)
   .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)
   .add('default', () => <Text>This is Text!</Text>)
   .add('Set Props', () => (
-    <Text fontSize="xl-7" fontWeight="xxb">
+    <Text fontSize="xl-7" fontWeight="800">
       This is Text!
     </Text>
   ));

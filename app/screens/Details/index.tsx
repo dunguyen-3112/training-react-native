@@ -76,7 +76,7 @@ const Details = () => {
       {nutritional && <Nutritional nutritional={nutritional} />}
 
       <View style={styles.details}>
-        <Text fontSize="xxl-0" fontWeight="b">
+        <Text fontSize="xxl-0" fontWeight="600">
           Details
         </Text>
 
@@ -95,8 +95,6 @@ const Details = () => {
         {/* Display Ingrediants */}
 
         {ingredients && <Ingredients data={ingredients} />}
-
-        {/* add Favorite */}
 
         <Button
           width={'100%'}

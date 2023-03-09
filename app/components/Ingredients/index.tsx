@@ -20,13 +20,13 @@ const Ingredients = ({ data }: { data: TIngredient[] }) => {
       <View style={styles.item}>
         <Text
           fontSize="xl-5"
-          fontWeight="b"
+          fontWeight="600"
           color="regular"
           customStyle={{ textTransform: 'capitalize' }}
         >
           {name}
         </Text>
-        <Text fontSize="xl-5" fontWeight="b" color="regular">
+        <Text fontSize="xl-5" fontWeight="600" color="regular">
           {`${value} cal`}
         </Text>
       </View>
@@ -51,12 +51,12 @@ const Ingredients = ({ data }: { data: TIngredient[] }) => {
     <View style={styles.container}>
       <View style={styles.ingrediant}>
         <View style={styles.ingrediantHeader}>
-          <Text fontSize="xxl-0" fontWeight="b">
+          <Text fontSize="xxl-0" fontWeight="600">
             Ingrediants
           </Text>
           <Text
             fontSize="ms-1"
-            fontWeight="xm"
+            fontWeight="500"
             color="primary"
             onPress={handleSeeAll}
           >

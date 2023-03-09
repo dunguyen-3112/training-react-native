@@ -31,12 +31,18 @@ export type FONT_SIZE_TYPE =
   | 'ms-1'
   | 'ms-0';
 
+const FONT_XXB: FONT_WEIGHT_TYPE = '800';
+const FONT_XB: FONT_WEIGHT_TYPE = '700';
+const FONT_B: FONT_WEIGHT_TYPE = '600';
+const FONT_XM: FONT_WEIGHT_TYPE = '500';
+const FONT_M: FONT_WEIGHT_TYPE = '400';
+
 export const FONT_WEIGHTS = {
-  xxb: '800',
-  xb: '700',
-  b: '600',
-  xm: '500',
-  m: '400',
+  xxb: FONT_XXB,
+  xb: FONT_XB,
+  b: FONT_B,
+  xm: FONT_XM,
+  m: FONT_M,
 };
 
 export type FONT_WEIGHT_TYPE = '800' | '700' | '600' | '500' | '400';
