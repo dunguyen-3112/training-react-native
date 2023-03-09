@@ -16,7 +16,7 @@ import { DETAIL, SEARCH } from '@constants';
 import { IFood } from '@types';
 
 const SearchScreen = () => {
-  const { navigate, goBack } =
+  const { navigate } =
     useNavigation<RootScreenNavigationProps<typeof SEARCH>>();
   const { loading, data, setQuery, query, fetch } = useFood<IFood[]>();
 
@@ -36,9 +36,12 @@ const SearchScreen = () => {
 
   const handlePressItem = useCallback(
     (id: number) => {
-      navigate(DETAIL, { id, onChange: () => fetch(), onBack: () => goBack() });
+      navigate(DETAIL, {
+        id,
+        onChange: () => fetch(),
+      });
     },
-    [fetch, navigate, goBack]
+    [fetch, navigate]
   );
 
   return (

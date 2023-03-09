@@ -7,7 +7,7 @@ import { QuestionIcon } from '@constants';
 const Header = () => {
   return (
     <View style={styles.container}>
-      <Text fontSize="xxl-3" fontWeight="xxb">
+      <Text fontSize="xxl-3" fontWeight="800">
         {`Want to eat\nhealthy Food?`}
       </Text>
 

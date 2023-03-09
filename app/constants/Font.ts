@@ -39,4 +39,4 @@ export const FONT_WEIGHTS = {
   m: '400',
 };
 
-export type FONT_WEIGHT_TYPE = 'xxb' | 'xb' | 'b' | 'xm' | 'm';
+export type FONT_WEIGHT_TYPE = '800' | '700' | '600' | '500' | '400';

@@ -16,17 +16,19 @@ import { DETAIL, SEARCH, HOME } from '@constants';
 import { IFood } from '@types';
 
 const HomeScreen = () => {
-  const { navigate, goBack } =
-    useNavigation<RootScreenNavigationProps<typeof HOME>>();
+  const { navigate } = useNavigation<RootScreenNavigationProps<typeof HOME>>();
   const { data, fetch, setQuery, query } = useFood<IFood[]>();
 
   const { categories }: FoodOptions = query || {};
 
   const handlePressItem = useCallback(
     (id: number) => {
-      navigate(DETAIL, { id, onChange: () => fetch(), onBack: () => goBack() });
+      navigate(DETAIL, {
+        id,
+        onChange: () => fetch(),
+      });
     },
-    [fetch, goBack, navigate]
+    [fetch, navigate]
   );
 
   const handleChangeTag = useCallback(

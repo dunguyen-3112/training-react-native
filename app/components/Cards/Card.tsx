@@ -17,11 +17,11 @@ const Card = (props: CardProps | null) => {
   return (
     <ImageBackground source={{ uri: image }} style={[styles.container]}>
       <View style={styles.info}>
-        <Text fontSize="ms-0" fontWeight="b" color={type}>
+        <Text fontSize="ms-0" fontWeight="600" color={type}>
           Article
         </Text>
 
-        <Text fontSize="xl-7" fontWeight="b" customStyle={{ marginTop: 4 }}>
+        <Text fontSize="xl-7" fontWeight="600" customStyle={{ marginTop: 4 }}>
           {title}
         </Text>
 
@@ -32,7 +32,7 @@ const Card = (props: CardProps | null) => {
           borderRadius={8}
           type={type}
         >
-          <Text fontSize="ms" fontWeight="b" color="white">
+          <Text fontSize="ms" fontWeight="600" color="white">
             Read now
           </Text>
           <ArrowICon />

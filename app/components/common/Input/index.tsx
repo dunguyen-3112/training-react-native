@@ -52,7 +52,7 @@ const Input = ({
       {label && (
         <Text
           fontSize="m"
-          fontWeight="m"
+          fontWeight="400"
           customStyle={{ color: inputType.color }}
         >
           {label}

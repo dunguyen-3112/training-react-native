@@ -29,7 +29,7 @@ const SplashScreen = () => {
         <LoadingImage />
         <Text
           fontSize="xxl"
-          fontWeight="xxb"
+          fontWeight="800"
           color="primary"
           customStyle={{
             marginTop: 20,
@@ -40,7 +40,7 @@ const SplashScreen = () => {
           Laomica
         </Text>
         <Text
-          fontWeight="xm"
+          fontWeight="500"
           fontSize="xl-6"
           customStyle={{ marginTop: 12, textAlign: 'center' }}
         >

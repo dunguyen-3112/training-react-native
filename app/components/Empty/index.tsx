@@ -11,7 +11,7 @@ const Empty = () => {
 
       <Text
         fontSize="xxl-2"
-        fontWeight="xm"
+        fontWeight="500"
         customStyle={{ marginTop: 24, color: '#696969' }}
       >
         No Results Found

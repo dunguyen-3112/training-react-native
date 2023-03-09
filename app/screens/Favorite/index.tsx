@@ -9,7 +9,7 @@ import { DETAIL, FAVORITE } from '@constants';
 import { IFood } from '@types';
 
 const FavoriteScreen = () => {
-  const { navigate, goBack } =
+  const { navigate } =
     useNavigation<RootScreenNavigationProps<typeof FAVORITE>>();
 
   const { data, fetch, setQuery, query } = useFood<IFood[]>({
@@ -28,10 +28,9 @@ const FavoriteScreen = () => {
       navigate(DETAIL, {
         id,
         onChange: () => fetch(),
-        onBack: () => goBack(),
       });
     },
-    [fetch, navigate, goBack]
+    [navigate, fetch]
   );
 
   return (
