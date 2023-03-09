@@ -14,7 +14,9 @@ export type COLOR_TYPES =
   | 'secondary'
   | 'black'
   | 'gray'
-  | 'green';
+  | 'green'
+  | 'light-green'
+  | 'light-gray';
 
 export const TEXT_COLOR = {
   primary: COLORS.PRIMARY,
@@ -23,15 +25,20 @@ export const TEXT_COLOR = {
   secondary: COLORS.ORANGE,
   black: COLORS.BLACK,
   gray: COLORS.LIGHT_1_GRAY,
+  'light-green': COLORS.LIGHT_GREEN,
   green: COLORS.DARK_GREEN,
+  'light-gray': COLORS.LIGHT_GRAY,
 };
 
-interface TextProps {
+export interface TextTransform {
   color?: COLOR_TYPES;
-  onPress?: () => void;
-  textAlign?: boolean;
   fontSize?: FONT_SIZE_TYPE;
   fontWeight?: FONT_WEIGHT_TYPE;
+}
+
+interface TextProps extends TextTransform {
+  onPress?: () => void;
+  textAlign?: boolean;
   customStyle?: ViewStyle | TextStyle;
   children?: ReactNode | string;
 }
