@@ -6,6 +6,7 @@ import {
   FONT_SIZE_TYPE,
   FONT_WEIGHT_TYPE,
 } from '@constants';
+import { getFont } from '@helpers';
 
 export type COLOR_TYPES =
   | 'primary'
@@ -14,7 +15,14 @@ export type COLOR_TYPES =
   | 'secondary'
   | 'black'
   | 'gray'
+  | 'light-green'
   | 'green';
+
+export interface TEXT_TRANSFORM {
+  fontSize?: FONT_SIZE_TYPE;
+  fontWeight?: FONT_WEIGHT_TYPE;
+  color?: COLOR_TYPES;
+}
 
 export const TEXT_COLOR = {
   primary: COLORS.PRIMARY,
@@ -24,14 +32,12 @@ export const TEXT_COLOR = {
   black: COLORS.BLACK,
   gray: COLORS.LIGHT_1_GRAY,
   green: COLORS.DARK_GREEN,
+  'light-green': COLORS.LIGHT_GREEN,
 };
 
-interface TextProps {
-  color?: COLOR_TYPES;
+interface TextProps extends TEXT_TRANSFORM {
   onPress?: () => void;
   textAlign?: boolean;
-  fontSize?: FONT_SIZE_TYPE;
-  fontWeight?: FONT_WEIGHT_TYPE;
   customStyle?: ViewStyle | TextStyle;
   children?: ReactNode | string;
 }
@@ -46,12 +52,13 @@ const CustomText = ({
 }: TextProps) => {
   const _fontSize = fontSize ? FONT_SIZES[fontSize] : 14;
   const _color = TEXT_COLOR[color];
+  const _fontWeight = fontWeight ? getFont(fontWeight) : '400';
 
   return (
     <Text
       onPress={onPress}
       style={[
-        { fontSize: _fontSize, fontWeight, color: _color },
+        { fontSize: _fontSize, fontWeight: _fontWeight, color: _color },
         { ...customStyle },
       ]}
     >

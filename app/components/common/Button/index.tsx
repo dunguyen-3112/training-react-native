@@ -1,43 +1,48 @@
-import React, { memo, ReactNode, useMemo } from 'react';
-import { Pressable, StyleSheet, Text, ViewStyle } from 'react-native';
+import React, { memo, ReactNode } from 'react';
+import { Pressable, StyleSheet, ViewStyle } from 'react-native';
 
-import { COLORS, FONT_SIZES, FONT_WEIGHTS } from '@constants';
-import { getFont } from '@helpers';
+import Text, { COLOR_TYPES, TEXT_TRANSFORM } from '../Text';
 
-const BASE_STYLE = {
-  fontSize: FONT_SIZES['ms-3'],
-  fontWeight: FONT_WEIGHTS.m,
-  color: COLORS.GRAY,
+const ButtonPrimary: TEXT_TRANSFORM & { backgroundColor: COLOR_TYPES } = {
+  backgroundColor: 'primary',
+  color: 'white',
+  fontSize: 'xxl-0',
+  fontWeight: 'b',
+};
+
+const ButtonGreen: TEXT_TRANSFORM & { backgroundColor: COLOR_TYPES } = {
+  backgroundColor: 'green',
+  color: 'white',
+  fontSize: 'ms',
+  fontWeight: 'b',
+};
+
+const ButtonSecondary: TEXT_TRANSFORM & { backgroundColor: COLOR_TYPES } = {
+  backgroundColor: 'secondary',
+  color: 'white',
+  fontSize: 'xxl-0',
+  fontWeight: 'b',
+};
+
+const ButtonActive: TEXT_TRANSFORM & { backgroundColor: COLOR_TYPES } = {
+  backgroundColor: 'light-green',
+  color: 'primary',
+  fontSize: 'ms-3',
+  fontWeight: 'm',
+};
+
+const defaultButton: TEXT_TRANSFORM & { backgroundColor?: COLOR_TYPES } = {
+  fontSize: 'ms-3',
+  fontWeight: 'm',
+  color: 'gray',
 };
 
 const BUTTON_TYPES = {
-  primary: {
-    backgroundColor: COLORS.PRIMARY,
-    color: COLORS.WHITE,
-    fontSize: FONT_SIZES['xxl-0'],
-    fontWeight: FONT_WEIGHTS.b,
-  },
-  green: {
-    backgroundColor: COLORS.GREEN,
-    color: COLORS.WHITE,
-    fontSize: FONT_SIZES.ms,
-    fontWeight: FONT_WEIGHTS.b,
-  },
-  default: {
-    backgroundColor: COLORS.LIGHT_GRAY,
-    ...BASE_STYLE,
-  },
-  secondary: {
-    backgroundColor: COLORS.SECONDARY,
-    color: COLORS.WHITE,
-    fontSize: FONT_SIZES['xxl-0'],
-    fontWeight: FONT_WEIGHTS.b,
-  },
-  active: {
-    backgroundColor: COLORS.LIGHT_GREEN,
-    ...BASE_STYLE,
-    color: COLORS.PRIMARY,
-  },
+  primary: ButtonPrimary,
+  green: ButtonGreen,
+  default: defaultButton,
+  secondary: ButtonSecondary,
+  active: ButtonActive,
 };
 
 export type BUTTON_TYPE =
@@ -72,9 +77,6 @@ const Button = ({
   onPress,
 }: ButtonProps) => {
   const TB = BUTTON_TYPES[type];
-  const { fontWeight } = TB;
-
-  const _fontWeight = useMemo(() => getFont(fontWeight), [fontWeight]);
 
   return (
     <Pressable
@@ -90,11 +92,7 @@ const Button = ({
         },
       ]}
     >
-      {children ? (
-        children
-      ) : (
-        <Text style={{ ...TB, fontWeight: _fontWeight }}>{label}</Text>
-      )}
+      {children ? children : <Text {...TB}>{label}</Text>}
     </Pressable>
   );
 };

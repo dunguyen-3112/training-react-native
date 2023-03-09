@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { RouteProp, useRoute } from '@react-navigation/native';
 
@@ -64,7 +64,7 @@ const Details = () => {
       {data.nutritional && <Nutritional nutritional={data.nutritional} />}
 
       <View style={styles.details}>
-        <Text fontSize="xxl-0" fontWeight="600">
+        <Text fontSize="xxl-0" fontWeight="b">
           Details
         </Text>
 
