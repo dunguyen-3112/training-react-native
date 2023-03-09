@@ -40,7 +40,7 @@ const Foods = ({
       {horizontal && (
         <Text
           fontSize="xxl-0"
-          fontWeight="700"
+          fontWeight="xb"
           customStyle={{ marginTop: 22, marginLeft: 8 }}
         >
           All Food

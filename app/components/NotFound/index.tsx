@@ -12,7 +12,7 @@ const NotFound = ({ marginTop }: { marginTop?: number }) => {
       <Text
         customStyle={{ marginTop: 24, color: '#696969' }}
         fontSize="xxl-2"
-        fontWeight="500"
+        fontWeight="xm"
       >
         No Foods Found
       </Text>
