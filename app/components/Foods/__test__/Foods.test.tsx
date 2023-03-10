@@ -7,7 +7,7 @@ import { MOCK_FOODS } from '@__mock__';
 const mockFoodOnPress = jest.fn();
 
 function setup(props: FoodsProps) {
-  return render(<FoodsHorizontal {...props} />);
+  return render(<FoodsHorizontal {...props} onPressItem={mockFoodOnPress} />);
 }
 
 describe('Component', () => {
@@ -20,13 +20,13 @@ describe('Component', () => {
       if (name) expect(screen.getByText(name)).toBeTruthy();
     });
 
-    // const item = MOCK_FOODS[1];
-    // if (item.name) {
-    //   const select = component.getByText(item.name);
-    //   if (select) {
-    //     fireEvent.press(select);
-    //     expect(mockFoodOnPress).toHaveBeenCalledWith(item.id);
-    //   }
-    // }
+    const item = MOCK_FOODS[1];
+    if (item.name) {
+      const select = component.getByText(item.name);
+      if (select) {
+        fireEvent.press(select);
+        expect(mockFoodOnPress).toHaveBeenCalledWith(item.id);
+      }
+    }
   });
 });

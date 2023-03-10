@@ -26,8 +26,8 @@ exports[`Button should render type primary 1`] = `
       Object {
         "backgroundColor": "#91C788",
         "borderRadius": undefined,
-        "color": "#FFFFFF",
-        "fontSize": 20,
+        "color": "white",
+        "fontSize": "xxl-0",
         "fontWeight": "600",
         "paddingHorizontal": undefined,
         "paddingVertical": undefined,
@@ -37,12 +37,14 @@ exports[`Button should render type primary 1`] = `
 >
   <Text
     style={
-      Object {
-        "backgroundColor": "#91C788",
-        "color": "#FFFFFF",
-        "fontSize": 20,
-        "fontWeight": "600",
-      }
+      Array [
+        Object {
+          "color": "#FFFFFF",
+          "fontSize": 20,
+          "fontWeight": "600",
+        },
+        Object {},
+      ]
     }
   >
     Button
@@ -76,8 +78,8 @@ exports[`Button should render type secondary 1`] = `
       Object {
         "backgroundColor": "#FF8473",
         "borderRadius": undefined,
-        "color": "#FFFFFF",
-        "fontSize": 20,
+        "color": "white",
+        "fontSize": "xxl-0",
         "fontWeight": "600",
         "paddingHorizontal": undefined,
         "paddingVertical": undefined,
@@ -87,12 +89,14 @@ exports[`Button should render type secondary 1`] = `
 >
   <Text
     style={
-      Object {
-        "backgroundColor": "#FF8473",
-        "color": "#FFFFFF",
-        "fontSize": 20,
-        "fontWeight": "600",
-      }
+      Array [
+        Object {
+          "color": "#FFFFFF",
+          "fontSize": 20,
+          "fontWeight": "600",
+        },
+        Object {},
+      ]
     }
   >
     Button

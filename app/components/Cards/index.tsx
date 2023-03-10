@@ -4,6 +4,7 @@ import { StyleSheet, View, FlatList } from 'react-native';
 import Card from './Card';
 import { IArtcile } from '@types';
 import { MOCK_ACTICLES } from '@__mock__';
+import { COLORS } from '@constants';
 
 const Cards = ({ marginTop = 0 }: { marginTop?: number }) => {
   const handleItemSeparatorComponent = useCallback(
@@ -46,7 +47,7 @@ const styles = StyleSheet.create({
   separator: {
     height: 20,
     width: '100%',
-    backgroundColor: '#FFFFFF',
+    backgroundColor: COLORS.WHITE,
     marginTop: 23,
   },
   item: {

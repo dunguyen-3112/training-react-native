@@ -106,8 +106,8 @@ exports[`Categories should render List 1`] = `
               Object {
                 "backgroundColor": "#ECECEC",
                 "borderRadius": 8,
-                "color": "#5C5C5C",
-                "fontSize": 13,
+                "color": "gray",
+                "fontSize": "ms-3",
                 "fontWeight": "400",
                 "paddingHorizontal": 10,
                 "paddingVertical": 4,
@@ -117,12 +117,14 @@ exports[`Categories should render List 1`] = `
         >
           <Text
             style={
-              Object {
-                "backgroundColor": "#ECECEC",
-                "color": "#5C5C5C",
-                "fontSize": 13,
-                "fontWeight": "400",
-              }
+              Array [
+                Object {
+                  "color": "#7E7E7E",
+                  "fontSize": 13,
+                  "fontWeight": "400",
+                },
+                Object {},
+              ]
             }
           >
             Breakfast
@@ -172,8 +174,8 @@ exports[`Categories should render List 1`] = `
               Object {
                 "backgroundColor": "#ECECEC",
                 "borderRadius": 8,
-                "color": "#5C5C5C",
-                "fontSize": 13,
+                "color": "gray",
+                "fontSize": "ms-3",
                 "fontWeight": "400",
                 "paddingHorizontal": 10,
                 "paddingVertical": 4,
@@ -183,12 +185,14 @@ exports[`Categories should render List 1`] = `
         >
           <Text
             style={
-              Object {
-                "backgroundColor": "#ECECEC",
-                "color": "#5C5C5C",
-                "fontSize": 13,
-                "fontWeight": "400",
-              }
+              Array [
+                Object {
+                  "color": "#7E7E7E",
+                  "fontSize": 13,
+                  "fontWeight": "400",
+                },
+                Object {},
+              ]
             }
           >
             Dinner
@@ -238,8 +242,8 @@ exports[`Categories should render List 1`] = `
               Object {
                 "backgroundColor": "#ECECEC",
                 "borderRadius": 8,
-                "color": "#5C5C5C",
-                "fontSize": 13,
+                "color": "gray",
+                "fontSize": "ms-3",
                 "fontWeight": "400",
                 "paddingHorizontal": 10,
                 "paddingVertical": 4,
@@ -249,12 +253,14 @@ exports[`Categories should render List 1`] = `
         >
           <Text
             style={
-              Object {
-                "backgroundColor": "#ECECEC",
-                "color": "#5C5C5C",
-                "fontSize": 13,
-                "fontWeight": "400",
-              }
+              Array [
+                Object {
+                  "color": "#7E7E7E",
+                  "fontSize": 13,
+                  "fontWeight": "400",
+                },
+                Object {},
+              ]
             }
           >
             Dry fruits
@@ -304,8 +310,8 @@ exports[`Categories should render List 1`] = `
               Object {
                 "backgroundColor": "#ECECEC",
                 "borderRadius": 8,
-                "color": "#5C5C5C",
-                "fontSize": 13,
+                "color": "gray",
+                "fontSize": "ms-3",
                 "fontWeight": "400",
                 "paddingHorizontal": 10,
                 "paddingVertical": 4,
@@ -315,12 +321,14 @@ exports[`Categories should render List 1`] = `
         >
           <Text
             style={
-              Object {
-                "backgroundColor": "#ECECEC",
-                "color": "#5C5C5C",
-                "fontSize": 13,
-                "fontWeight": "400",
-              }
+              Array [
+                Object {
+                  "color": "#7E7E7E",
+                  "fontSize": 13,
+                  "fontWeight": "400",
+                },
+                Object {},
+              ]
             }
           >
             Lunch
@@ -370,8 +378,8 @@ exports[`Categories should render List 1`] = `
               Object {
                 "backgroundColor": "#ECECEC",
                 "borderRadius": 8,
-                "color": "#5C5C5C",
-                "fontSize": 13,
+                "color": "gray",
+                "fontSize": "ms-3",
                 "fontWeight": "400",
                 "paddingHorizontal": 10,
                 "paddingVertical": 4,
@@ -381,12 +389,14 @@ exports[`Categories should render List 1`] = `
         >
           <Text
             style={
-              Object {
-                "backgroundColor": "#ECECEC",
-                "color": "#5C5C5C",
-                "fontSize": 13,
-                "fontWeight": "400",
-              }
+              Array [
+                Object {
+                  "color": "#7E7E7E",
+                  "fontSize": 13,
+                  "fontWeight": "400",
+                },
+                Object {},
+              ]
             }
           >
             Vegetables
@@ -436,8 +446,8 @@ exports[`Categories should render List 1`] = `
               Object {
                 "backgroundColor": "#ECECEC",
                 "borderRadius": 8,
-                "color": "#5C5C5C",
-                "fontSize": 13,
+                "color": "gray",
+                "fontSize": "ms-3",
                 "fontWeight": "400",
                 "paddingHorizontal": 10,
                 "paddingVertical": 4,
@@ -447,12 +457,14 @@ exports[`Categories should render List 1`] = `
         >
           <Text
             style={
-              Object {
-                "backgroundColor": "#ECECEC",
-                "color": "#5C5C5C",
-                "fontSize": 13,
-                "fontWeight": "400",
-              }
+              Array [
+                Object {
+                  "color": "#7E7E7E",
+                  "fontSize": 13,
+                  "fontWeight": "400",
+                },
+                Object {},
+              ]
             }
           >
             Greenish
@@ -502,8 +514,8 @@ exports[`Categories should render List 1`] = `
               Object {
                 "backgroundColor": "#ECECEC",
                 "borderRadius": 8,
-                "color": "#5C5C5C",
-                "fontSize": 13,
+                "color": "gray",
+                "fontSize": "ms-3",
                 "fontWeight": "400",
                 "paddingHorizontal": 10,
                 "paddingVertical": 4,
@@ -513,12 +525,14 @@ exports[`Categories should render List 1`] = `
         >
           <Text
             style={
-              Object {
-                "backgroundColor": "#ECECEC",
-                "color": "#5C5C5C",
-                "fontSize": 13,
-                "fontWeight": "400",
-              }
+              Array [
+                Object {
+                  "color": "#7E7E7E",
+                  "fontSize": 13,
+                  "fontWeight": "400",
+                },
+                Object {},
+              ]
             }
           >
             Non-Veg
@@ -568,8 +582,8 @@ exports[`Categories should render List 1`] = `
               Object {
                 "backgroundColor": "#ECECEC",
                 "borderRadius": 8,
-                "color": "#5C5C5C",
-                "fontSize": 13,
+                "color": "gray",
+                "fontSize": "ms-3",
                 "fontWeight": "400",
                 "paddingHorizontal": 10,
                 "paddingVertical": 4,
@@ -579,12 +593,14 @@ exports[`Categories should render List 1`] = `
         >
           <Text
             style={
-              Object {
-                "backgroundColor": "#ECECEC",
-                "color": "#5C5C5C",
-                "fontSize": 13,
-                "fontWeight": "400",
-              }
+              Array [
+                Object {
+                  "color": "#7E7E7E",
+                  "fontSize": 13,
+                  "fontWeight": "400",
+                },
+                Object {},
+              ]
             }
           >
             Fast Food

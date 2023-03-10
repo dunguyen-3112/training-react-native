@@ -4,10 +4,10 @@ import React from 'react';
 import CenterView from '@mstorybook/stories/CenterView';
 import Text from '../Text';
 
-storiesOf('Input', module)
+storiesOf('Text', module)
   .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)
   .add('default', () => <Text>This is Text!</Text>)
-  .add('Set Props', () => (
+  .add('Text with props', () => (
     <Text fontSize="xl-7" fontWeight="800">
       This is Text!
     </Text>

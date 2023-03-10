@@ -1,8 +1,8 @@
 import React, { memo } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { Image, StyleSheet, View } from 'react-native';
 
 import { Text, Button } from '@components/common';
-import { QuestionIcon } from '@constants';
+import { QuestionIcon } from '@themes';
 
 const Header = () => {
   return (
@@ -12,7 +12,7 @@ const Header = () => {
       </Text>
 
       <Button customStyle={styles.buttonHelp}>
-        <QuestionIcon />
+        <Image source={QuestionIcon} />
       </Button>
     </View>
   );

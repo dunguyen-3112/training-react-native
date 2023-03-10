@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import { StyleSheet, View, ImageBackground } from 'react-native';
 
 import { Button, Text } from '../common';
-import { ArrowICon, COLORS } from '@constants';
+import { COLORS } from '@constants';
 export interface CardProps {
   title: string;
   image: string;
@@ -35,7 +35,7 @@ const Card = (props: CardProps | null) => {
           <Text fontSize="ms" fontWeight="600" color="white">
             Read now
           </Text>
-          <ArrowICon />
+          {/* <ArrowICon /> */}
         </Button>
       </View>
     </ImageBackground>

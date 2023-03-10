@@ -1,6 +1,6 @@
-import { StyleSheet, View, Animated, Easing } from 'react-native';
+import { StyleSheet, View, Animated, Easing, Image } from 'react-native';
 import React, { memo } from 'react';
-import { LoadingImage } from '@constants/Image';
+import { LoadingImage } from '@themes/index';
 
 const Loading = ({ marginTop }: { marginTop?: number }) => {
   const rotation = new Animated.Value(0);
@@ -22,7 +22,7 @@ const Loading = ({ marginTop }: { marginTop?: number }) => {
   return (
     <View style={[styles.container, { marginTop }]}>
       <Animated.View style={{ transform: [{ rotate: spin }] }}>
-        <LoadingImage />
+        <Image source={LoadingImage} style={styles.loading} />
       </Animated.View>
     </View>
   );
@@ -35,5 +35,9 @@ const styles = StyleSheet.create({
     width: '100%',
     justifyContent: 'flex-start',
     alignItems: 'center',
+  },
+  loading: {
+    width: 122,
+    height: 122,
   },
 });

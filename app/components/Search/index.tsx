@@ -1,9 +1,9 @@
-import { StyleSheet, View } from 'react-native';
+import { Image, StyleSheet, View } from 'react-native';
 import React, { useCallback, memo } from 'react';
 
 import { COLORS } from '@constants';
 import { Input } from '@components/common';
-import { SearchIcon } from '@constants';
+import { SearchIcon } from '@themes';
 
 interface SearchProps {
   value?: string;
@@ -31,7 +31,7 @@ const Search = ({ value = '', onChangeText, onFocus }: SearchProps) => {
       />
 
       <View style={styles.iconSearch}>
-        <SearchIcon />
+        <Image source={SearchIcon} />
       </View>
     </View>
   );

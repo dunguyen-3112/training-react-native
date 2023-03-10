@@ -14,7 +14,8 @@
       "@hooks/*": ["./hooks/*"],
       "@navigation/*": ["./navigation/*"],
       "@__mock__/*": ["./__mock__/*"],
-      "@mstorybook/*": ["./storybook/*"]
+      "@mstorybook/*": ["./storybook/*"],
+      "@themes/*": ["./themes/*"]
     }
   }
 }

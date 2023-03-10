@@ -2,21 +2,23 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import { FavoriteScreen, HomeScreen, SearchScreen } from '@screens';
+import { FAVORITE, HOME, SEARCH } from '@constants';
+
+import { Image } from 'react-native';
 import {
-  FAVORITE,
   FavoriteMenu,
-  HOME,
+  FavoriteMenuFill,
   HomeMenu,
-  SEARCH,
+  HomeMenuFill,
+  SearchMenuFill,
   SearchMenu,
-} from '@constants';
+} from '@themes/index';
 
 export type TabParamsList = {
   [FAVORITE]: undefined;
   [HOME]: undefined;
   [SEARCH]: undefined;
 };
-
 const TabNavigator = () => {
   const Tab = createBottomTabNavigator<TabParamsList>();
 
@@ -27,14 +29,19 @@ const TabNavigator = () => {
         tabBarLabel: '',
         tabBarStyle: { height: 80 },
         tabBarIcon: ({ focused }) => {
+          let icon;
           switch (route.name) {
             case FAVORITE:
-              return <FavoriteMenu isFill={focused} />;
+              icon = focused ? FavoriteMenuFill : FavoriteMenu;
+              break;
             case HOME:
-              return <HomeMenu isFill={focused} />;
+              icon = focused ? HomeMenuFill : HomeMenu;
+              break;
             case SEARCH:
-              return <SearchMenu isFill={focused} />;
+              icon = focused ? SearchMenuFill : SearchMenu;
+              break;
           }
+          return <Image source={icon} />;
         },
         unmountOnBlur: true,
       })}

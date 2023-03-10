@@ -13,7 +13,7 @@ import {
   Nutritional,
   Text,
 } from '@components';
-import { DETAIL } from '@constants';
+import { COLORS, DETAIL } from '@constants';
 import { IFood } from '@types';
 
 type DetailRoute = RouteProp<RootStackParamsList, typeof DETAIL>;
@@ -67,7 +67,7 @@ const Details = () => {
 
   return (
     <View style={styles.container}>
-      <Back left={20} onPress={handleBack} />
+      <Back left={20} />
 
       <View style={styles.avatar}>
         <Food data={food} type="large" disabled />
@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: 63,
-    backgroundColor: '#fff',
+    backgroundColor: COLORS.WHITE,
   },
   avatar: {
     width: '100%',

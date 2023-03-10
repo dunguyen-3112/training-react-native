@@ -1,19 +1,16 @@
 import React, { memo } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { Image, StyleSheet, View } from 'react-native';
 
 import { Text } from '@components/common';
-import { EmptyImage } from '@constants';
+import { EmptyImage } from '@themes/index';
+import { COLORS } from '@constants';
 
 const Empty = () => {
   return (
     <View style={styles.container}>
-      <EmptyImage />
+      <Image source={EmptyImage} style={styles.empty} />
 
-      <Text
-        fontSize="xxl-2"
-        fontWeight="500"
-        customStyle={{ marginTop: 24, color: '#696969' }}
-      >
+      <Text fontSize="xxl-2" fontWeight="500" customStyle={styles.emptytext}>
         No Results Found
       </Text>
 
@@ -34,7 +31,15 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    backgroundColor: '#fff',
+    backgroundColor: COLORS.WHITE,
     paddingTop: 122,
+  },
+  empty: {
+    width: 108,
+    height: 96,
+  },
+  emptytext: {
+    marginTop: 24,
+    color: COLORS.LIGHT_2_GRAY,
   },
 });

@@ -101,8 +101,8 @@ exports[`Card Type is default 1`] = `
           Object {
             "backgroundColor": "#27AE60",
             "borderRadius": 8,
-            "color": "#FFFFFF",
-            "fontSize": 12,
+            "color": "white",
+            "fontSize": "ms",
             "fontWeight": "600",
             "marginTop": 8,
             "paddingHorizontal": 19,

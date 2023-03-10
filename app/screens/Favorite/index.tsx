@@ -5,7 +5,7 @@ import React, { useCallback } from 'react';
 import { useFood } from '@hooks';
 import { FoodsVertical, NotFound, Search } from '@components';
 import { RootScreenNavigationProps } from '@navigation';
-import { DETAIL, FAVORITE } from '@constants';
+import { COLORS, DETAIL, FAVORITE } from '@constants';
 import { IFood } from '@types';
 
 const FavoriteScreen = () => {
@@ -53,7 +53,7 @@ export default FavoriteScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: COLORS.WHITE,
     paddingTop: 62,
     paddingHorizontal: 16,
   },

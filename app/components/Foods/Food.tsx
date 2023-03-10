@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
     paddingVertical: 17,
   },
   medium: {
-    borderColor: '#DBDBDB',
+    borderColor: COLORS.LIGHT_3_GRAY,
     borderWidth: 1,
     height: 192,
     width: 154,

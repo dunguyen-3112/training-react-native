@@ -12,13 +12,14 @@ import {
   Search,
   Categories,
 } from '@components';
-import { DETAIL, SEARCH } from '@constants';
+import { COLORS, DETAIL, SEARCH } from '@constants';
 import { IFood } from '@types';
 
 const SearchScreen = () => {
   const { navigate } =
     useNavigation<RootScreenNavigationProps<typeof SEARCH>>();
   const { loading, data, setQuery, query, fetch } = useFood<IFood[]>();
+  const { categories = [] } = query || {};
 
   const handleChangeTextSearch = useCallback(
     (text: string) => {
@@ -50,7 +51,11 @@ const SearchScreen = () => {
 
       <Search value={query?.name} onChangeText={handleChangeTextSearch} />
 
-      <Categories marginTop={17} onSelect={handleSelectTag} />
+      <Categories
+        marginTop={17}
+        onSelect={handleSelectTag}
+        selects={categories}
+      />
 
       {loading ? (
         <Loading marginTop={120} />
@@ -68,7 +73,7 @@ export default SearchScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: COLORS.WHITE,
     paddingTop: 62,
     padding: 16,
   },

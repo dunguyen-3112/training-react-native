@@ -1,10 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { Animated, Easing, StyleSheet, View } from 'react-native';
+import { Animated, Easing, Image, StyleSheet, View } from 'react-native';
 
 import { Text } from '@components';
 import { RootScreenNavigationProps } from '@navigation';
-import { LoadingImage, ROOT, SPLASH, SplashImage } from '@constants';
+import { LoadingImage, SplashImage } from '@themes';
+import { COLORS, ROOT, SPLASH } from '@constants';
 
 const SplashScreen = () => {
   const { navigate } =
@@ -25,8 +26,8 @@ const SplashScreen = () => {
   return (
     <Animated.View style={[styles.container, { opacity: animation }]}>
       <View style={styles.background}>
-        <SplashImage />
-        <LoadingImage />
+        <Image source={SplashImage} style={styles.background} />
+        <Image source={LoadingImage} style={styles.logo} />
         <Text
           fontSize="xxl"
           fontWeight="800"
@@ -57,11 +58,15 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'flex-start',
-    backgroundColor: '#FFFFFF',
+    backgroundColor: COLORS.WHITE,
   },
   background: {
-    flex: 1,
+    width: '100%',
     justifyContent: 'flex-start',
     alignItems: 'center',
+  },
+  logo: {
+    width: 122,
+    height: 122,
   },
 });

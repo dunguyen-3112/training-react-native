@@ -1,5 +1,6 @@
-import React, { memo, useCallback } from 'react';
 import { useNavigation } from '@react-navigation/native';
+import { BackIcon } from '@themes';
+import React, { memo } from 'react';
 import { StyleSheet, Image, TouchableOpacity } from 'react-native';
 
 interface BackProps {
@@ -7,14 +8,14 @@ interface BackProps {
   left?: number;
   right?: number;
   bottom?: number;
-  onPress?: () => void;
 }
 
-const Back = ({ top, left, right, bottom, onPress }: BackProps) => {
+const Back = ({ top, left, right, bottom }: BackProps) => {
+  const { goBack } = useNavigation();
   return (
-    <TouchableOpacity onPress={onPress}>
+    <TouchableOpacity onPress={goBack}>
       <Image
-        source={require('@assets/icons/back.png')}
+        source={BackIcon}
         style={[styles.icon, { top, left, right, bottom }]}
       />
     </TouchableOpacity>

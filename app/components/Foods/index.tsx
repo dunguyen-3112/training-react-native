@@ -5,6 +5,7 @@ import { IFood } from '@types';
 import { Text } from '@components/common';
 import Food from './Food';
 import FoodImage from './FoodImage';
+import { COLORS } from '@constants';
 
 export interface FoodsProps {
   foods: IFood[] | null;
@@ -69,7 +70,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'flex-start',
-    backgroundColor: '#FFFFFF',
+    backgroundColor: COLORS.WHITE,
   },
   list: {
     marginTop: 15,

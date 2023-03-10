@@ -1,7 +1,7 @@
 import React, { memo, useCallback, useMemo } from 'react';
 import { FlatList, StyleSheet, View, ViewStyle } from 'react-native';
 
-import { COLOR } from '@constants';
+import { COLOR, COLORS } from '@constants';
 import { TNutritional } from '@types';
 import { Text } from '@components/common';
 
@@ -68,7 +68,7 @@ export default memo(Nutritional);
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#FFF8EE',
+    backgroundColor: COLORS.LIGHT_ORANGE,
     justifyContent: 'center',
     paddingVertical: 19,
     alignItems: 'center',

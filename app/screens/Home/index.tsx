@@ -12,14 +12,14 @@ import {
   FoodsHorizontal,
   FoodsVertical,
 } from '@components';
-import { DETAIL, SEARCH, HOME } from '@constants';
+import { DETAIL, SEARCH, HOME, COLORS } from '@constants';
 import { IFood } from '@types';
 
 const HomeScreen = () => {
   const { navigate } = useNavigation<RootScreenNavigationProps<typeof HOME>>();
   const { data, fetch, setQuery, query } = useFood<IFood[]>();
 
-  const { categories }: FoodOptions = query || {};
+  const { categories = [] }: FoodOptions = query || {};
 
   const handlePressItem = useCallback(
     (id: number) => {
@@ -47,7 +47,11 @@ const HomeScreen = () => {
     <View style={styles.container}>
       <Header />
       <Search onFocus={handleFocusSearch} isFocus={false} />
-      <Categories marginTop={17} onSelect={handleChangeTag} />
+      <Categories
+        marginTop={17}
+        onSelect={handleChangeTag}
+        selects={categories}
+      />
       {(categories === undefined || categories.length === 0) && (
         <Cards marginTop={17} />
       )}
@@ -68,6 +72,6 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: 60,
     paddingHorizontal: 16,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: COLORS.WHITE,
   },
 });

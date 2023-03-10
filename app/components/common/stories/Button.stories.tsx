@@ -10,7 +10,7 @@ storiesOf('Button', module)
   .add('default', () => <Button label="Button" />)
   .add('Type primary', () => <Button label="Button" type="primary" />)
   .add('Type secondary', () => <Button label="Button" type="secondary" />)
-  .add('type primary set style', () => (
+  .add('type primary mutiple props', () => (
     <Button
       label="Button"
       type="primary"

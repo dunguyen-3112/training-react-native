@@ -2,8 +2,6 @@ import { StyleSheet, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import React, { useCallback } from 'react';
 import { useFonts } from 'expo-font';
-import Constants from 'expo-constants';
-import Storybook from './storybook';
 
 import { RootNavigator } from './navigation';
 import * as SplashScreen from 'expo-splash-screen';

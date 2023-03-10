@@ -1,5 +1,5 @@
 import { StyleSheet, FlatList, View } from 'react-native';
-import React, { memo, useCallback, useState } from 'react';
+import React, { memo, useCallback } from 'react';
 
 import { COLORS } from '@constants';
 import { ICategory } from '@types';
@@ -8,21 +8,22 @@ import { CATEGORIES } from '@constants';
 
 export interface ICategories {
   marginTop?: number;
+  selects: number[];
   onSelect?: (ids: number[]) => void;
 }
 
-const Categories = ({ marginTop, onSelect }: ICategories) => {
-  const [tags, setTags] = useState<number[]>([]);
-
+const Categories = ({ marginTop, onSelect, selects }: ICategories) => {
   const handlePressTag = useCallback(
     (id: number) => {
       let newTags;
-      if (tags.includes(id)) newTags = tags.filter((item) => item !== id);
-      else newTags = [...tags, id];
+      if (selects) {
+        if (selects.includes(id))
+          newTags = selects.filter((item) => item !== id);
+        else newTags = [...selects, id];
+      } else newTags = [id];
       onSelect && onSelect(newTags);
-      setTags(newTags);
     },
-    [onSelect, tags]
+    [onSelect, selects]
   );
 
   const handleItemSeparatorComponent = useCallback(
@@ -36,7 +37,7 @@ const Categories = ({ marginTop, onSelect }: ICategories) => {
     ({ item }: { item: ICategory }) => {
       const { id, name } = item;
 
-      const isActive = tags.includes(id);
+      const isActive = selects.includes(id);
 
       return (
         <Button
@@ -50,7 +51,7 @@ const Categories = ({ marginTop, onSelect }: ICategories) => {
         />
       );
     },
-    [handlePressTag, tags]
+    [handlePressTag, selects]
   );
 
   return (
