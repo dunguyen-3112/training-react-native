@@ -4,16 +4,24 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {
     HOME_SCREEN,
     LOGIN_SCREEN,
+    MAP_SCREEN,
     PROFILE_SCREEN,
     SIGNUP_SCREEN,
-} from '../Constants';
-import {HomeScreen, LoginScreen, ProfileScreen, SignupScreen} from '../screens';
+} from '../constants';
+import {
+    HomeScreen,
+    LoginScreen,
+    MapScreen,
+    ProfileScreen,
+    SignupScreen,
+} from '../screens';
 
 export type RootStackParamsList = {
     [HOME_SCREEN]: undefined;
     [LOGIN_SCREEN]: undefined;
     [SIGNUP_SCREEN]: undefined;
     [PROFILE_SCREEN]: undefined;
+    [MAP_SCREEN]: undefined;
 };
 
 const RootNavigation = () => {
@@ -33,6 +41,11 @@ const RootNavigation = () => {
                     name={SIGNUP_SCREEN}
                     component={SignupScreen}
                     options={{headerBackVisible: false}}
+                />
+                <Stack.Screen
+                    name={MAP_SCREEN}
+                    component={MapScreen}
+                    // options={{headerBackVisible: false}}
                 />
             </Stack.Navigator>
         </NavigationContainer>

@@ -3,7 +3,7 @@ import React, {useCallback, useEffect, useState} from 'react';
 import {Input, Switch} from '../../../components';
 import {TAuth} from '../../../types';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {cache} from '../../../Constants';
+import {cache} from '../../../constants';
 
 type FormLoginProps = {
     onLogin: (body: TAuth) => void;

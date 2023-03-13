@@ -1,7 +1,7 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React, {useCallback} from 'react';
 import {FormSignup} from './components';
-import {LOGIN_SCREEN, SIGNUP_SCREEN} from '../../Constants';
+import {LOGIN_SCREEN, SIGNUP_SCREEN} from '../../constants';
 import {useNavigation} from '@react-navigation/native';
 import {RootScreenNavigationProps} from '../../Navigation';
 import {TAuth} from '../../types';

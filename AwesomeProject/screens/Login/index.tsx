@@ -1,6 +1,6 @@
 import {Button, StyleSheet, Text, View} from 'react-native';
 import React, {useCallback, useContext, useEffect, useState} from 'react';
-import {HOME_SCREEN, LOGIN_SCREEN, SIGNUP_SCREEN} from '../../Constants';
+import {HOME_SCREEN, LOGIN_SCREEN, SIGNUP_SCREEN} from '../../constants';
 import {useNavigation} from '@react-navigation/native';
 import {RootScreenNavigationProps} from '../../Navigation';
 import {MyContext} from '../../App';
