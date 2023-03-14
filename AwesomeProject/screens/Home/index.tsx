@@ -35,12 +35,12 @@ const HomeScreen = () => {
 
     const {user, setUser} = useContext(MyContext);
 
-    GoogleSignin.configure({
-        webClientId:
-            '913760054546-90jvnuhv5e2455007i0e8ttan2416h5u.apps.googleusercontent.com',
-    });
-
     useEffect(() => {
+        GoogleSignin.configure({
+            webClientId:
+                '913760054546-90jvnuhv5e2455007i0e8ttan2416h5u.apps.googleusercontent.com',
+        });
+
         if (!user || user === null) {
             navigate(LOGIN_SCREEN);
         }

@@ -4,6 +4,7 @@ import {Input, Switch} from '../../../components';
 import {TAuth} from '../../../types';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {cache} from '../../../constants';
+import {onGoogleButtonPress} from '../../../helpers';
 
 type FormLoginProps = {
     onLogin: (body: TAuth) => void;
@@ -40,7 +41,7 @@ const FormLogin = ({onLogin}: FormLoginProps) => {
                 (item: TAuth) => item.userName === formData.userName,
             );
 
-            if (index) {
+            if (index >= 0) {
                 data[index].password = formData.password;
             }
             data = [formData, ...data];
@@ -80,10 +81,23 @@ const FormLogin = ({onLogin}: FormLoginProps) => {
                 onChange={handleRememberPassword}
             />
             <Button title="Login" onPress={handleLogin} />
+            <Button
+                title="Google Sign-In"
+                onPress={() =>
+                    onGoogleButtonPress().then(() =>
+                        console.log('Signed in with Google!'),
+                    )
+                }
+            />
         </View>
     );
 };
 
 export default FormLogin;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+    googleButton: {
+        width: 160,
+        height: 45,
+    },
+});
