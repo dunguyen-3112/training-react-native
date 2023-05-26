@@ -1,0 +1,597 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Categories should render List 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "height": 26,
+      },
+      Object {
+        "marginTop": undefined,
+      },
+    ]
+  }
+>
+  <RCTScrollView
+    ItemSeparatorComponent={[Function]}
+    data={
+      Array [
+        Object {
+          "id": 1,
+          "name": "Breakfast",
+        },
+        Object {
+          "id": 2,
+          "name": "Dinner",
+        },
+        Object {
+          "id": 3,
+          "name": "Dry fruits",
+        },
+        Object {
+          "id": 4,
+          "name": "Lunch",
+        },
+        Object {
+          "id": 5,
+          "name": "Vegetables",
+        },
+        Object {
+          "id": 6,
+          "name": "Greenish",
+        },
+        Object {
+          "id": 7,
+          "name": "Non-Veg",
+        },
+        Object {
+          "id": 8,
+          "name": "Fast Food",
+        },
+      ]
+    }
+    getItem={[Function]}
+    getItemCount={[Function]}
+    horizontal={true}
+    keyExtractor={[Function]}
+    onContentSizeChange={[Function]}
+    onLayout={[Function]}
+    onMomentumScrollBegin={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEventThrottle={50}
+    showsHorizontalScrollIndicator={false}
+    stickyHeaderIndices={Array []}
+    viewabilityConfigCallbackPairs={Array []}
+  >
+    <View>
+      <View
+        onLayout={[Function]}
+        style={
+          Array [
+            Object {
+              "flexDirection": "row",
+            },
+            null,
+          ]
+        }
+      >
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "alignSelf": "flex-start",
+                "borderRadius": 8,
+                "flexDirection": "row",
+                "justifyContent": "center",
+              },
+              Object {
+                "backgroundColor": "#ECECEC",
+                "borderRadius": 8,
+                "color": "#5C5C5C",
+                "fontSize": 13,
+                "fontWeight": "400",
+                "paddingHorizontal": 10,
+                "paddingVertical": 4,
+              },
+            ]
+          }
+        >
+          <Text
+            style={
+              Object {
+                "backgroundColor": "#ECECEC",
+                "color": "#5C5C5C",
+                "fontSize": 13,
+                "fontWeight": "400",
+              }
+            }
+          >
+            Breakfast
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "marginLeft": 7,
+            }
+          }
+        />
+      </View>
+      <View
+        onLayout={[Function]}
+        style={
+          Array [
+            Object {
+              "flexDirection": "row",
+            },
+            null,
+          ]
+        }
+      >
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "alignSelf": "flex-start",
+                "borderRadius": 8,
+                "flexDirection": "row",
+                "justifyContent": "center",
+              },
+              Object {
+                "backgroundColor": "#ECECEC",
+                "borderRadius": 8,
+                "color": "#5C5C5C",
+                "fontSize": 13,
+                "fontWeight": "400",
+                "paddingHorizontal": 10,
+                "paddingVertical": 4,
+              },
+            ]
+          }
+        >
+          <Text
+            style={
+              Object {
+                "backgroundColor": "#ECECEC",
+                "color": "#5C5C5C",
+                "fontSize": 13,
+                "fontWeight": "400",
+              }
+            }
+          >
+            Dinner
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "marginLeft": 7,
+            }
+          }
+        />
+      </View>
+      <View
+        onLayout={[Function]}
+        style={
+          Array [
+            Object {
+              "flexDirection": "row",
+            },
+            null,
+          ]
+        }
+      >
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "alignSelf": "flex-start",
+                "borderRadius": 8,
+                "flexDirection": "row",
+                "justifyContent": "center",
+              },
+              Object {
+                "backgroundColor": "#ECECEC",
+                "borderRadius": 8,
+                "color": "#5C5C5C",
+                "fontSize": 13,
+                "fontWeight": "400",
+                "paddingHorizontal": 10,
+                "paddingVertical": 4,
+              },
+            ]
+          }
+        >
+          <Text
+            style={
+              Object {
+                "backgroundColor": "#ECECEC",
+                "color": "#5C5C5C",
+                "fontSize": 13,
+                "fontWeight": "400",
+              }
+            }
+          >
+            Dry fruits
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "marginLeft": 7,
+            }
+          }
+        />
+      </View>
+      <View
+        onLayout={[Function]}
+        style={
+          Array [
+            Object {
+              "flexDirection": "row",
+            },
+            null,
+          ]
+        }
+      >
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "alignSelf": "flex-start",
+                "borderRadius": 8,
+                "flexDirection": "row",
+                "justifyContent": "center",
+              },
+              Object {
+                "backgroundColor": "#ECECEC",
+                "borderRadius": 8,
+                "color": "#5C5C5C",
+                "fontSize": 13,
+                "fontWeight": "400",
+                "paddingHorizontal": 10,
+                "paddingVertical": 4,
+              },
+            ]
+          }
+        >
+          <Text
+            style={
+              Object {
+                "backgroundColor": "#ECECEC",
+                "color": "#5C5C5C",
+                "fontSize": 13,
+                "fontWeight": "400",
+              }
+            }
+          >
+            Lunch
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "marginLeft": 7,
+            }
+          }
+        />
+      </View>
+      <View
+        onLayout={[Function]}
+        style={
+          Array [
+            Object {
+              "flexDirection": "row",
+            },
+            null,
+          ]
+        }
+      >
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "alignSelf": "flex-start",
+                "borderRadius": 8,
+                "flexDirection": "row",
+                "justifyContent": "center",
+              },
+              Object {
+                "backgroundColor": "#ECECEC",
+                "borderRadius": 8,
+                "color": "#5C5C5C",
+                "fontSize": 13,
+                "fontWeight": "400",
+                "paddingHorizontal": 10,
+                "paddingVertical": 4,
+              },
+            ]
+          }
+        >
+          <Text
+            style={
+              Object {
+                "backgroundColor": "#ECECEC",
+                "color": "#5C5C5C",
+                "fontSize": 13,
+                "fontWeight": "400",
+              }
+            }
+          >
+            Vegetables
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "marginLeft": 7,
+            }
+          }
+        />
+      </View>
+      <View
+        onLayout={[Function]}
+        style={
+          Array [
+            Object {
+              "flexDirection": "row",
+            },
+            null,
+          ]
+        }
+      >
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "alignSelf": "flex-start",
+                "borderRadius": 8,
+                "flexDirection": "row",
+                "justifyContent": "center",
+              },
+              Object {
+                "backgroundColor": "#ECECEC",
+                "borderRadius": 8,
+                "color": "#5C5C5C",
+                "fontSize": 13,
+                "fontWeight": "400",
+                "paddingHorizontal": 10,
+                "paddingVertical": 4,
+              },
+            ]
+          }
+        >
+          <Text
+            style={
+              Object {
+                "backgroundColor": "#ECECEC",
+                "color": "#5C5C5C",
+                "fontSize": 13,
+                "fontWeight": "400",
+              }
+            }
+          >
+            Greenish
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "marginLeft": 7,
+            }
+          }
+        />
+      </View>
+      <View
+        onLayout={[Function]}
+        style={
+          Array [
+            Object {
+              "flexDirection": "row",
+            },
+            null,
+          ]
+        }
+      >
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "alignSelf": "flex-start",
+                "borderRadius": 8,
+                "flexDirection": "row",
+                "justifyContent": "center",
+              },
+              Object {
+                "backgroundColor": "#ECECEC",
+                "borderRadius": 8,
+                "color": "#5C5C5C",
+                "fontSize": 13,
+                "fontWeight": "400",
+                "paddingHorizontal": 10,
+                "paddingVertical": 4,
+              },
+            ]
+          }
+        >
+          <Text
+            style={
+              Object {
+                "backgroundColor": "#ECECEC",
+                "color": "#5C5C5C",
+                "fontSize": 13,
+                "fontWeight": "400",
+              }
+            }
+          >
+            Non-Veg
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "marginLeft": 7,
+            }
+          }
+        />
+      </View>
+      <View
+        onLayout={[Function]}
+        style={
+          Array [
+            Object {
+              "flexDirection": "row",
+            },
+            null,
+          ]
+        }
+      >
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "alignSelf": "flex-start",
+                "borderRadius": 8,
+                "flexDirection": "row",
+                "justifyContent": "center",
+              },
+              Object {
+                "backgroundColor": "#ECECEC",
+                "borderRadius": 8,
+                "color": "#5C5C5C",
+                "fontSize": 13,
+                "fontWeight": "400",
+                "paddingHorizontal": 10,
+                "paddingVertical": 4,
+              },
+            ]
+          }
+        >
+          <Text
+            style={
+              Object {
+                "backgroundColor": "#ECECEC",
+                "color": "#5C5C5C",
+                "fontSize": 13,
+                "fontWeight": "400",
+              }
+            }
+          >
+            Fast Food
+          </Text>
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
+</View>
+`;

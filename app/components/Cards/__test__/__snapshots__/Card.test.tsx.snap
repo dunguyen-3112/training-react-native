@@ -1,0 +1,138 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card Type is default 1`] = `
+<View
+  accessibilityIgnoresInvertColors={true}
+  style={
+    Array [
+      Object {
+        "borderRadius": 32,
+        "height": 169,
+        "justifyContent": "space-between",
+        "padding": 32,
+        "width": 320,
+      },
+    ]
+  }
+>
+  <Image
+    source={
+      Object {
+        "uri": "https://firebasestorage.googleapis.com/v0/b/react-native-healthy-food-app.appspot.com/o/vegetale.png?alt=media&token=aec0b1a1-5f8a-4f4c-9d27-28032b2e2d79",
+      }
+    }
+    style={
+      Array [
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        Object {
+          "height": 169,
+          "width": 320,
+        },
+        undefined,
+      ]
+    }
+  />
+  <View
+    style={
+      Object {
+        "color": "#330600",
+        "maxWidth": "60%",
+      }
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#1CC379",
+            "fontSize": 10,
+            "fontWeight": "600",
+          },
+          Object {},
+        ]
+      }
+    >
+      Article
+    </Text>
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#5C5C5C",
+            "fontSize": 17,
+            "fontWeight": "600",
+          },
+          Object {
+            "marginTop": 4,
+          },
+        ]
+      }
+    >
+       It is commonly used to test user interactions
+    </Text>
+    <View
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "alignSelf": "flex-start",
+            "borderRadius": 8,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+          Object {
+            "backgroundColor": "#27AE60",
+            "borderRadius": 8,
+            "color": "#FFFFFF",
+            "fontSize": 12,
+            "fontWeight": "600",
+            "marginTop": 8,
+            "paddingHorizontal": 19,
+            "paddingVertical": 6,
+          },
+        ]
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#FFFFFF",
+              "fontSize": 12,
+              "fontWeight": "600",
+            },
+            Object {},
+          ]
+        }
+      >
+        Read now
+      </Text>
+      <Image
+        source={
+          Object {
+            "testUri": "../../../assets/icons/arrow.png",
+          }
+        }
+      />
+    </View>
+  </View>
+</View>
+`;

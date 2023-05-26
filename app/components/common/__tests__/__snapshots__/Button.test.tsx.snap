@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button should render type primary 1`] = `
+<View
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "alignSelf": "flex-start",
+        "borderRadius": 8,
+        "flexDirection": "row",
+        "justifyContent": "center",
+      },
+      Object {
+        "backgroundColor": "#91C788",
+        "borderRadius": undefined,
+        "color": "#FFFFFF",
+        "fontSize": 20,
+        "fontWeight": "600",
+        "paddingHorizontal": undefined,
+        "paddingVertical": undefined,
+      },
+    ]
+  }
+>
+  <Text
+    style={
+      Object {
+        "backgroundColor": "#91C788",
+        "color": "#FFFFFF",
+        "fontSize": 20,
+        "fontWeight": "600",
+      }
+    }
+  >
+    Button
+  </Text>
+</View>
+`;
+
+exports[`Button should render type secondary 1`] = `
+<View
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "alignSelf": "flex-start",
+        "borderRadius": 8,
+        "flexDirection": "row",
+        "justifyContent": "center",
+      },
+      Object {
+        "backgroundColor": "#FF8473",
+        "borderRadius": undefined,
+        "color": "#FFFFFF",
+        "fontSize": 20,
+        "fontWeight": "600",
+        "paddingHorizontal": undefined,
+        "paddingVertical": undefined,
+      },
+    ]
+  }
+>
+  <Text
+    style={
+      Object {
+        "backgroundColor": "#FF8473",
+        "color": "#FFFFFF",
+        "fontSize": 20,
+        "fontWeight": "600",
+      }
+    }
+  >
+    Button
+  </Text>
+</View>
+`;

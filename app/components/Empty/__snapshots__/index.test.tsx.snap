@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#fff",
+      "flex": 1,
+      "paddingTop": 122,
+    }
+  }
+>
+  <Image
+    source={
+      Object {
+        "testUri": "../../../assets/images/empty_2x.png",
+      }
+    }
+    style={
+      Object {
+        "height": 96,
+        "width": 108,
+      }
+    }
+  />
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#5C5C5C",
+          "fontSize": 22,
+          "fontWeight": "500",
+        },
+        Object {
+          "color": "#696969",
+          "marginTop": 24,
+        },
+      ]
+    }
+  >
+    No Results Found
+  </Text>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#7E7E7E",
+          "fontSize": 13,
+          "fontWeight": undefined,
+        },
+        Object {
+          "marginTop": 8,
+          "textAlign": "center",
+        },
+      ]
+    }
+  >
+    Try search for a different keywork or
+ tweek your search a little
+  </Text>
+</View>
+`;

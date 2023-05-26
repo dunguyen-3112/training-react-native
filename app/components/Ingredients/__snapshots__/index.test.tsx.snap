@@ -1,0 +1,186 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Ingredient should 1`] = `
+<View
+  style={
+    Object {
+      "marginTop": 4,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "marginTop": 20,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+        }
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#5C5C5C",
+              "fontSize": 20,
+              "fontWeight": "600",
+            },
+            Object {},
+          ]
+        }
+      >
+        Ingrediants
+      </Text>
+      <Text
+        onPress={[Function]}
+        style={
+          Array [
+            Object {
+              "color": "#91C788",
+              "fontSize": 11,
+              "fontWeight": "500",
+            },
+            Object {},
+          ]
+        }
+      >
+        See All
+      </Text>
+    </View>
+    <View />
+  </View>
+  <RCTScrollView
+    data={
+      Array [
+        Object {
+          "id": 1,
+          "name": "Bread",
+          "value": 200,
+        },
+        Object {
+          "id": 2,
+          "name": "Meat (Chicken)",
+          "value": 200,
+        },
+      ]
+    }
+    getItem={[Function]}
+    getItemCount={[Function]}
+    keyExtractor={[Function]}
+    onContentSizeChange={[Function]}
+    onLayout={[Function]}
+    onMomentumScrollBegin={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEventThrottle={50}
+    stickyHeaderIndices={Array []}
+    viewabilityConfigCallbackPairs={Array []}
+  >
+    <View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "justifyContent": "space-between",
+              "marginTop": 8,
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#5C5C5C",
+                  "fontSize": 15,
+                  "fontWeight": "600",
+                },
+                Object {
+                  "textTransform": "capitalize",
+                },
+              ]
+            }
+          >
+            Bread
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#5C5C5C",
+                  "fontSize": 15,
+                  "fontWeight": "600",
+                },
+                Object {},
+              ]
+            }
+          >
+            200 cal
+          </Text>
+        </View>
+      </View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "justifyContent": "space-between",
+              "marginTop": 8,
+            }
+          }
+        >
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#5C5C5C",
+                  "fontSize": 15,
+                  "fontWeight": "600",
+                },
+                Object {
+                  "textTransform": "capitalize",
+                },
+              ]
+            }
+          >
+            Meat (Chicken)
+          </Text>
+          <Text
+            style={
+              Array [
+                Object {
+                  "color": "#5C5C5C",
+                  "fontSize": 15,
+                  "fontWeight": "600",
+                },
+                Object {},
+              ]
+            }
+          >
+            200 cal
+          </Text>
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
+</View>
+`;
